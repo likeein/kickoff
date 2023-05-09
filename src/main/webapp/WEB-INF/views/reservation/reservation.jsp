@@ -22,7 +22,7 @@
 </head>
 <body>
 	<div class="header-container">
-		<%@include file="/resource/includes/header.jsp"%>
+		<%@include file="/includes/header.jsp"%>
 	</div>
 	
     <!-- title -->

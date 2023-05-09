@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-
+<%-- 짱! --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,18 +81,18 @@
             <ul class="site-nav-ul js-clone-nav">
               <li><a href="/reservation">예약</a></li>
               <li>
-                <a href="/TeamCommit/viewex/game/game.jsp">매칭</a>
+                <a href="/game">매칭</a>
               </li>
-              <li><a href="/TeamCommit/viewex/board/board.jsp">자유 게시판</a></li>
-              <li><a href="/TeamCommit/viewex/team/team.jsp">팀</a></li>
-              <li class = "has-children"><a href="/TeamCommit/viewex/helper/helperList.jsp">용병</a>
+              <li><a href="/board">자유 게시판</a></li>
+              <li><a href="/team">팀</a></li>
+              <li class = "has-children"><a href="/helperList">용병</a>
 
                 <ul class="dropdown">
                   <li>
-                    <a href="/TeamCommit/viewex/helper/helperList.jsp">모집 목록</a>
+                    <a href="/helperList">모집 목록</a>
                   </li>
                   <li>
-                    <a href="/TeamCommit/viewex/helper/helperInsert.jsp">용병 모집 등록</a>
+                    <a href="/helperInsert">용병 모집 등록</a>
                   </li>
                 </ul>
               </li>
@@ -103,10 +103,10 @@
 
 		     <ul class="icons-top d-none d-lg-block">              
               <li>
-                <a href="/TeamCommit/viewex/login/loginAll.jsp"><span class="icon-sign-in"></span></a>
+                <a href="/loginAll"><span class="icon-sign-in"></span></a>
               </li>
               <li>
-                <a href="/TeamCommit/viewex/mypage/myReservation.jsp"><span class="icon-person"></span></a>
+                <a href="/myReservation"><span class="icon-person"></span></a>
               </li>
             </ul>
 
@@ -329,7 +329,7 @@
 					  <tr><td>대구 풋살장</td><td>대구</td> <td>유</td> <td>실내</td></tr>
 					  <tr><td>울산 풋살장</td><td>울산</td> <td>유</td> <td>실외</td></tr>
 					</table>
-                    <p><a href="/TeamCommit/viewex/reservation/reservation.jsp" class="readmore">Read more</a></p>
+                    <p><a href="/reservation" class="readmore">Read more</a></p>
                   </div>
                 </div>
               </div>
@@ -346,7 +346,7 @@
 					  <tr><td>대구 풋살장</td><td>대구</td> <td>3</td> <td>3 vs 3</td> </tr>
 					  <tr><td>울산 풋살장</td><td>울산</td> <td>4</td> <td>6 vs 6</td> </tr>
 					</table>
-                    <p><a href="/TeamCommit/viewex/game/game.jsp" class="readmore">Read more</a></p>
+                    <p><a href="/game" class="readmore">Read more</a></p>
                   </div>
                 </div>
               </div>
@@ -363,7 +363,7 @@
 					  <tr><td>대구 풋살장</td><td>대구</td> <td>유</td> <td>실내</td></tr>
 					  <tr><td>울산 풋살장</td><td>울산</td> <td>유</td> <td>실외</td></tr>
 					</table>
-                    <p><a href="/TeamCommit/viewex/board/board.jsp" class="readmore">Read more</a></p>
+                    <p><a href="/board" class="readmore">Read more</a></p>
                   </div>
                 </div>
               </div>
@@ -381,7 +381,7 @@
             <div class="col-md-4 pr-md-5">
               <h3>KICK OFF</h3>
               <p>풋살만을 위한 사이트</p>
-              <p><a href="/TeamCommit/viewex/main/main.jsp" class="readmore">Go Home</a></p>
+              <p><a href="/main" class="readmore">Go Home</a></p>
               <!-- Read more => 이용약관으로 변환 -->
             </div>
             <div class="col-md-8 ml-auto">
@@ -389,11 +389,11 @@
                 <div class="col-md-3">
                   <h3>Navigation</h3>
                   <ul class="list-unstyled">
-                    <li><a href="/TeamCommit/viewex/reservation/reservation.jsp">예약</a></li>
-                    <li><a href="/TeamCommit/viewex/game/game.jsp">매칭</a></li>
-                    <li><a href="/TeamCommit/viewex/board/board.jsp">자유 게시판</a></li>
-                    <li><a href="/TeamCommit/viewex/team/team.jsp">팀</a></li>
-                    <li><a href="/TeamCommit/viewex/helper/helperList.jsp">용병</a></li>
+                    <li><a href="/reservation">예약</a></li>
+                    <li><a href="/game">매칭</a></li>
+                    <li><a href="/board">자유 게시판</a></li>
+                    <li><a href="/team">팀</a></li>
+                    <li><a href="/helperList">용병</a></li>
                   </ul>
                 </div>
                 <div class="col-md-9 ml-auto">
