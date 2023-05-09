@@ -1,0 +1,89 @@
+package com.teamcommit.kickoff.Do;
+
+import java.util.Date;
+
+public class BoardDO {
+
+	//게시글 번호
+	private int boardSeqno;
+	//작성자 아이디
+	private String writeId;
+	//글 제목
+	private String writeTitle;
+	//글 내용
+	private String writeContent;
+	//등록일자
+	private Date writeRegDate;
+	//수정일자
+	private Date writeEditDate;
+	//게시글 신고수
+	private int reportCount;
+	//게시글 조회수
+	private int viewCount;
+	//파일 이름
+	private String fileName;
+	//파일 저장 경로
+	private String filePath;
+	
+	public int getBoardSeqno() {
+		return boardSeqno;
+	}
+	public void setBoardSeqno(int boardSeqno) {
+		this.boardSeqno = boardSeqno;
+	}
+	public String getWriteId() {
+		return writeId;
+	}
+	public void setWriteId(String writeId) {
+		this.writeId = writeId;
+	}
+	public String getWriteTitle() {
+		return writeTitle;
+	}
+	public void setWriteTitle(String writeTitle) {
+		this.writeTitle = writeTitle;
+	}
+	public String getWriteContent() {
+		return writeContent;
+	}
+	public void setWriteContent(String writeContent) {
+		this.writeContent = writeContent;
+	}
+	public Date getWriteRegDate() {
+		return writeRegDate;
+	}
+	public void setWriteRegDate(Date writeRegDate) {
+		this.writeRegDate = writeRegDate;
+	}
+	public Date getWriteEditDate() {
+		return writeEditDate;
+	}
+	public void setWriteEditDate(Date writeEditDate) {
+		this.writeEditDate = writeEditDate;
+	}
+	public int getReportCount() {
+		return reportCount;
+	}
+	public void setReportCount(int reportCount) {
+		this.reportCount = reportCount;
+	}
+	public int getViewCount() {
+		return viewCount;
+	}
+	public void setViewCount(int viewCount) {
+		this.viewCount = viewCount;
+	}
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	public String getFilePath() {
+		return filePath;
+	}
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+	
+}
