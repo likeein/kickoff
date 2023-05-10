@@ -41,12 +41,14 @@
 										      	<input type="email" placeholder="이메일" />
 										      	<input type="date" placeholder="업체 등록일" />
 										      	<input type="text" placeholder="사업자 번호" />
-										      	<button>사업자 번호 인증</button>
+												  <!--  사업자 번호 인증 버튼 부분 결정하기 -->
+										      	<button onclick="location.href='';">사업자 번호 인증</button>
+												  <button class="confirm" id="confirmNumber">사업자 번호 인증</button>
 										      </div>
 										      <br />
-										      <button>수정하기</button>
+										      <button onclick="location.href='/fixInfo.jsp';">수정하기</button>
 										      <br/>
-										      <a href="main.jsp">회원 탈퇴</a>
+										      <button onclick="location.href='/main.jsp';">회원 탈퇴</button>
 										    </form>									     
 										 </div>
 				                 			                                  
