@@ -183,7 +183,6 @@
         </div>
     </section>
 
-
 	<script type="text/javascript">
 		/* calendar */
 		var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
@@ -207,21 +206,21 @@
 	</script>
 	
     <!-- Js Plugins -->
-    <script src="/kickoff/resource/reservation/js/jquery-3.3.1.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/bootstrap.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/jquery.nice-select.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/jquery-ui.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/jquery.slicknav.js"></script>
-    <script src="/kickoff/resource/reservation/js/mixitup.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/owl.carousel.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/main.js"></script>
-	<script src="/kickoff/resource/reservation/js/common.js"></script>
+    <script src="/reservation/js/jquery-3.3.1.min.js"></script>
+    <script src="/reservation/js/bootstrap.min.js"></script>
+    <script src="/reservation/js/jquery.nice-select.min.js"></script>
+    <script src="/reservation/js/jquery-ui.min.js"></script>
+    <script src="/reservation/js/jquery.slicknav.js"></script>
+    <script src="/reservation/js/mixitup.min.js"></script>
+    <script src="/reservation/js/owl.carousel.min.js"></script>
+    <script src="/reservation/js/main.js"></script>
+	<script src="/reservation/js/common.js"></script>
 	
-    <script src="/kickoff/resource/main/js/vendor/jquery.lettering.js"></script>
-    <script src="/kickoff/resource/main/js/vendor/jquery.sticky.js"></script>
-    <script src="/kickoff/resource/main/js/vendor/ScrollMagic.min.js"></script>
-    <script src="/kickoff/resource/main/js/vendor/scrollmagic.animation.gsap.min.js"></script>
-    <script src="/kickoff/resource/main/js/main.js"></script>
+    <script src="/main/js/vendor/jquery.lettering.js"></script>
+    <script src="/main/js/vendor/jquery.sticky.js"></script>
+    <script src="/main/js/vendor/ScrollMagic.min.js"></script>
+    <script src="/main/js/vendor/scrollmagic.animation.gsap.min.js"></script>
+    <script src="/main/js/main.js"></script>
 	
 </body>
 		

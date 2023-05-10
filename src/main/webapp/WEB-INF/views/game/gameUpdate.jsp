@@ -13,18 +13,18 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-    <link rel = "stylesheet" href = "/kickoff/resource/main/css/vendor/icomoon/style.css">
+    <link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
 	
     <!-- Css Styles -->
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/style.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/includes/css/style.css">
+    <link rel="stylesheet" href="/reservation/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/reservation/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/reservation/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/reservation/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/reservation/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/reservation/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/reservation/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/reservation/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/includes/css/style.css">
     
     <!-- calendar -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -36,7 +36,7 @@
 </head>
 
 <body>
-<%@include file="/resource/includes/header.jsp"%>
+<%@include file="/includes/header.jsp"%>
 
 	<div class="icons-wrap text-md-right"></div>
 
@@ -210,21 +210,21 @@
 	</script>
 	
     <!-- Js Plugins -->
-    <script src="/kickoff/resource/reservation/js/jquery-3.3.1.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/bootstrap.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/jquery.nice-select.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/jquery-ui.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/jquery.slicknav.js"></script>
-    <script src="/kickoff/resource/reservation/js/mixitup.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/owl.carousel.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/main.js"></script>
-	<script src="/kickoff/resource/reservation/js/common.js"></script>
+    <script src="/reservation/js/jquery-3.3.1.min.js"></script>
+    <script src="/reservation/js/bootstrap.min.js"></script>
+    <script src="/reservation/js/jquery.nice-select.min.js"></script>
+    <script src="/reservation/js/jquery-ui.min.js"></script>
+    <script src="/reservation/js/jquery.slicknav.js"></script>
+    <script src="/reservation/js/mixitup.min.js"></script>
+    <script src="/reservation/js/owl.carousel.min.js"></script>
+    <script src="/reservation/js/main.js"></script>
+	<script src="/reservation/js/common.js"></script>
 	
-    <script src="/kickoff/resource/main/js/vendor/jquery.lettering.js"></script>
-    <script src="/kickoff/resource/main/js/vendor/jquery.sticky.js"></script>
-    <script src="/kickoff/resource/main/js/vendor/ScrollMagic.min.js"></script>
-    <script src="/kickoff/resource/main/js/vendor/scrollmagic.animation.gsap.min.js"></script>
-    <script src="/kickoff/resource/main/js/main.js"></script>
+    <script src="/main/js/vendor/jquery.lettering.js"></script>
+    <script src="/main/js/vendor/jquery.sticky.js"></script>
+    <script src="/main/js/vendor/ScrollMagic.min.js"></script>
+    <script src="/main/js/vendor/scrollmagic.animation.gsap.min.js"></script>
+    <script src="/main/js/main.js"></script>
 	
 </body>
 		
