@@ -67,8 +67,8 @@
 		</label>
 		<br />
 		<div class="btn_boardreport">
-				<button type="reset" class="btn_reset" onclick="location.href='/board/boardDetail.jsp';">취소</button>
-				<button class="btn_delete" onclick="location.href='/board/board.jsp';">신고</button>
+				<button type="reset" class="btn_reset" onclick="location.href='boardDetail.jsp'">취소</button>
+				<button class="btn_delete" onclick="location.href='board.jsp'">신고</button>
 		</div>
 	</div>
 </body>
