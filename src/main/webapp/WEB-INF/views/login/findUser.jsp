@@ -17,7 +17,7 @@
 	      <input type="text" placeholder="아이디" />
 	      <input type="text" placeholder="핸드폰 번호" />
 	      <button class="confirm" id="confirmNumber">휴대폰 인증</button><br /><br />
-	      <button href = "/login/findPw.css">비밀번호 찾기</button>
+	      <button onclick="location.href='/findPw';"">비밀번호 찾기</button>
     </form>
   </div>
   <div class="form-container sign-in-container">
@@ -28,7 +28,7 @@
 	      <input type="text" placeholder="이름" />
 	      <input type="text" placeholder="핸드폰 번호" />
 	      <button class="confirm" id="confirmNumber">휴대폰 인증</button><br /><br />
-	      <button href = "/login/findId.css">아이디 찾기</button>
+	      <button onclick="location.href='/findId';">아이디 찾기</button>
     </form>
   </div>
   <div class="overlay-container">
