@@ -91,8 +91,8 @@
 			<hr style="color: #B1D7B4;">
 
 			<div class="btn_boarddetail">
-				<button type="reset" class="btn_reset" onclick="location.href='/kickoff/viewex/game/gameDetail.jsp';">매칭 수정</button>
-				<button class="btn_delete" onclick="location.href='/kickoff/viewex/game/game.jsp';">매칭 신청</button>
+				<button type="reset" class="btn_reset" onclick="location.href='/game/gameDetail.jsp';">매칭 수정</button>
+				<button class="btn_delete" onclick="location.href='/game/game.jsp';">매칭 신청</button>
 			</div>
 		</div>
 	</form>
