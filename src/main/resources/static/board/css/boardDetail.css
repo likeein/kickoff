@@ -69,7 +69,7 @@ label {
 	font-style: bold;
 }
 
-textarea {
+.view_text {
 	width: 100%;
 	height: 150px;
 	border: 1px solid #ebebeb;

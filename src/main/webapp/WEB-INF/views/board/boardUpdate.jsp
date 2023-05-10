@@ -42,38 +42,39 @@
 
 <br>
 <br>
-<form role="form" action="/board/create_action" method="post">
+<form role="form" action="/update_action" method="post" onsubmit="return _onSubmit();" >
+    <input type="hidden" id="boardSeqno" name="boardSeqno" value="${boardContents.boardSeqno}"/>
 <h4>게시글 수정</h4>
 <div class="table-responsive">
 		
-		<div class="board_title">
+		<div class="writeTitle">
 		<span class="formInline">
-		<label for="board_title">제목</label>
-		<input type="text" id="board_title" name="board_title" class="form-control">
+		<label for="writeTitle">${boardContents.writeTitle}</label>
+		<input type="text" id="writeTitle" name="writeTitle" class="form-control">
 		</span>
 		</div>
 		
-		<div class="writer">
-		<span id="boardWriter" class="formWriter">
-		<label for="board_writer" class="writer">작성자</label>
+		<div class="writeId">
+		<span id="writeId" class="formWriter">
+		<label for="writeId" class="writeId">${boardContents.writeId}</label>
 		</span>
 		</div>
 		
 		<div class="filebox bs3-primary preview-image">
-              <input class="upload-name" value="파일선택" disabled="disabled" style="width: 200px;">
+              <input id="fileName" class="fileName" value="파일선택" disabled="disabled" style="width: 200px;">
 
-              <label for="input_file">업로드</label> 
-              <input type="file" id="input_file" class="upload-hidden"> 
+              <label for="filePath">업로드</label>
+              <input type="file" id="filePath" class="filePath-hidden">
         </div>
 		
-		<div class="content">
-		<label for="board_content">내용</label><br>
-			<textarea id="board_content" name="board_content" cols="100" rows="20" class="form-content"></textarea>
+		<div class="writeContent">
+		<label for="writeContent">${boardContents.writeContent}</label><br>
+			<textarea id="writeContent" name="writeContent" cols="100" rows="20" class="form-content"></textarea>
 		</div>
 		
 		<div class="btn_board">
-		<button type="reset" class="btn_reset" onclick="location.href='/board';">취소</button>
-		<button type="submit" class="btn_submit" onclick="location.href='/boardDetail';">수정</button>
+		<button type="reset" class="btn_reset" onclick="location.href='/boardDetailWritter?boardSeqno=${boardContents.boardSeqno}';">취소</button>
+		<button type="submit" class="btn_submit">수정</button>
 		</div>
 </div>	
 </form>
