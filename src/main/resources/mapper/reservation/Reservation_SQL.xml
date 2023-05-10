@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="reservation">
+
+    <!-- Reservation Insert -->
+    <insert id="insertReservation" parameterType="hashmap" useGeneratedKeys="true" keyProperty="BOARD_NO">
+        <selectKey keyProperty="BOARD_NO" resultType="string" order="BEFORE">
+            SELECT RESERVATION_SEQ.NEXTVAL FROM DUAL
+        </selectKey>
+        <![CDATA[
+			INSERT INTO QNA (
+				RESERVATION_NO,
+				USER_ID,
+
+				QNA_WRITER,
+				QNA_COUNT,
+				QNA_CONTENT,
+				QNA_DATE,
+				QNA_HEADER,
+				QNA_PRIVATE_CHECK,
+				QNA_RE_NO
+			)
+       		VALUES (
+       			'QNA',
+				#{BOARD_NO},
+				#{QNA_SUBJECT},
+				#{ID},
+				#{QNA_WRITER},
+				0,
+				#{QNA_CONTENT},
+				SYSDATE,
+				#{QNA_HEADER},
+				#{QNA_PRIVATE_CHECK},
+				#{BOARD_NO}
+			)
+		]]>
+    </insert>
+
+    <!-- Reservation Detail -->
+    <select id="selectReservationDetail" parameterType="hashmap" resultType="hashmap">
+        <![CDATA[
+                SELECT *
+                FROM
+                    RESERVATION
+                WHERE
+                    BOARD_NO = #{BOARD_NO}
+        ]]>
+    </select>
+
+</mapper>

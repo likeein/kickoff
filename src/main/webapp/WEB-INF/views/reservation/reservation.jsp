@@ -40,7 +40,7 @@
     	<div class="container px-4 px-lg-5">
       		<div class="card-footer pt-0 border-top-0 bg-transparent">
             	<div class="text-center insert">
-              		<a class="court-insert" href="reservationInsert">풋살장 등록</a>
+              		<a class="court-insert" href="reservationInsertForm">풋살장 등록</a>
               	</div>
           	</div>
 			<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
