@@ -36,5 +36,5 @@ public class BoardServiceImpl implements BoardService{
     @Override
     public void getBoardDelete(int boardSeqno) {
         boardMapper.getBoardDelete(boardSeqno);
-    }}
+    }
 }

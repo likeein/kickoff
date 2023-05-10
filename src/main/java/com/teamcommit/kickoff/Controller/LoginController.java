@@ -6,7 +6,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LoginController {
 
-    @GetMapping("/loginAll")
+    /*@Autowired
+    private AccountService accountService;
+
+    @RequestMapping(value = "/account/register", method = RequestMethod.GET)
+    public String register() {
+
+        return "/account/register";
+    }
+
+    @RequestMapping(value = "/account/login", method = RequestMethod.GET)
+    public String login() {
+
+        return "/account/login";
+    }*/
+
+    /*@GetMapping("/loginAll")
     public String loginAll() {
         String view = "/login/loginAll";
 
@@ -67,5 +82,5 @@ public class LoginController {
         String view = "/login/findUser";
 
         return view;
-    }
+    }*/
 }
