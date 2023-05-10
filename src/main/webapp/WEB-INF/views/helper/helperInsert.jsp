@@ -8,24 +8,24 @@
 <head>
 <meta charset="UTF-8" />
 
- <link rel="stylesheet" href="/kickoff/resource/includes/css/style.css">
- <link rel="stylesheet" href="/kickoff/resource/helper/css/helperInsert.css">
- <link rel = "stylesheet" href = "/kickoff/resource/main/css/vendor/icomoon/style.css">
+ <link rel="stylesheet" href="/includes/css/style.css">
+ <link rel="stylesheet" href="/helper/css/helperInsert.css">
+ <link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
     
-    <script src="/kickoff/resource/includes/js/jquery-3.3.1.min.js"></script>
-    <script src="/kickoff/resource/includes/js/jquery.lettering.js"></script>
-    <script src="/kickoff/resource/includes/js/jquery.sticky.js"></script>
-    <script src="/kickoff/resource/includes/js/ScrollMagic.min.js"></script>
-    <script src="/kickoff/resource/includes/js/scrollmagic.animation.gsap.min.js"></script>
-    <script src="/kickoff/resource/includes/js/main.js"></script>
-	<script src = "/kickoff/resource/helper/js/helperInsert.js"></script>
+    <script src="/includes/js/jquery-3.3.1.min.js"></script>
+    <script src="/includes/js/jquery.lettering.js"></script>
+    <script src="/includes/js/jquery.sticky.js"></script>
+    <script src="/includes/js/ScrollMagic.min.js"></script>
+    <script src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
+    <script src="/includes/js/main.js"></script>
+	<script src = "/helper/js/helperInsert.js"></script>
 	
 <title>Kick Off: 용병모집</title>
 
 </head>
 <body style="overflow-x: hidden">
 
-<%@include file="/resource/includes/header.jsp"%>
+<%@include file="/includes/header.jsp"%>
 
 
 <div class="bg-dark py-5">
@@ -111,8 +111,8 @@
 		</div>
 		
 		<div class = "btnbtn">
-		<a href = "/kickoff/viewex/helper/helperList.jsp"><button type = "button" class = "btn" id = "btn">등록</button></a>
-		<a href = "/kickoff/viewex/helper/helperList.jsp"><button type = "button" class = "btn" id = "btn">취소</button></a>
+		<a href = "/helperList"><button type = "button" class = "btn" id = "btn">등록</button></a>
+		<a href = "/helperLists"><button type = "button" class = "btn" id = "btn">취소</button></a>
 		</div>
 
 </form>
