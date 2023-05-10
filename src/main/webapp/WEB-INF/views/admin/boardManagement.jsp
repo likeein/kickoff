@@ -8,7 +8,7 @@
 		<!-- Custom styles for this page -->
     <link href="/emp/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="/resource/admin/css/main.css" />
+		<link rel="stylesheet" href="/admin/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
