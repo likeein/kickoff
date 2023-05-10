@@ -24,10 +24,10 @@
 		 <div class="icons-wrap text-md-right">
 		     <ul class="icons-top d-none d-lg-block">              
               <li>
-                <a href="/loginAll"><span class="icon-sign-in"></span></a>
+                <a href="http://localhost:8080/loginAll"><span class="icon-sign-in"></span></a>
               </li>
               <li>
-                <a href="/myInfo"><span class="icon-person"></span></a>
+                <a href="http://localhost:8080/myReservation"><span class="icon-person"></span></a>
               </li>
             </ul>
 		</div>
