@@ -15,15 +15,15 @@
     <link href="https://fonts.google.com/noto/specimen/Noto+Sans+KR?subset=korean&noto.script=Kore" rel="stylesheet">
 	
     <!-- Css Styles -->
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/includes/css/style.css">
-    <link rel="stylesheet" href="/kickoff/resource/reservation/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/reservation/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/reservation/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/rservation/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/reservation/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/reservation/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/reservation/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/reservation/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/includes/css/style.css">
+    <link rel="stylesheet" href="/reservation/css/style.css" type="text/css">
     
     <!-- calendar -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -32,12 +32,12 @@
     <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />    
 	
- 	<link rel = "stylesheet" href = "/kickoff/resource/main/css/vendor/icomoon/style.css">
+ 	<link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
 </head>
 
 <body>
 	<div class="header-container">
-		<%@include file="/resource/includes/header.jsp"%>
+		<%@include file="/includes/header.jsp"%>
 	</div>
 
 	<!-- Header -->
@@ -54,12 +54,13 @@
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form id="frm" name="frm" action="#" method="POST">
+                <form id="" name="frm" action="#" method="POST">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
                                <p>풋살장<span>*</span></p>
-                               <input type="text" value="여기에 '풋살장 이름' 가져오기 (입력 비활성화)" readonly>
+                               <input type="text" name="" value="${}" readonly>
+
                                <!-- readonly: 입력 필드 비활성화되지만 form으로 전송 가능 -->
                            	</div>
                           	<div class="checkout__input">
@@ -176,7 +177,7 @@
     </section>
 
     <!-- Footer -->
-	<%@include file="/resource/includes/footer.jsp"%>
+	<%@include file="/includes/footer.jsp"%>
 
 	<script type="text/javascript">
 		/* calendar */
@@ -187,21 +188,21 @@
 	</script>
 	
     <!-- Js Plugins -->
-    <script src="/kickoff/resource/reservation/js/jquery-3.3.1.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/bootstrap.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/jquery.nice-select.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/jquery-ui.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/jquery.slicknav.js"></script>
-    <script src="/kickoff/resource/reservation/js/mixitup.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/owl.carousel.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/main.js"></script>
-	<script src="/kickoff/resource/reservation/js/common.js"></script>
+    <script src="/reservation/js/jquery-3.3.1.min.js"></script>
+    <script src="/reservation/js/bootstrap.min.js"></script>
+    <script src="/reservation/js/jquery.nice-select.min.js"></script>
+    <script src="/reservation/js/jquery-ui.min.js"></script>
+    <script src="/reservation/js/jquery.slicknav.js"></script>
+    <script src="/reservation/js/mixitup.min.js"></script>
+    <script src="/reservation/js/owl.carousel.min.js"></script>
+    <script src="/reservation/js/main.js"></script>
+	<script src="/reservation/js/common.js"></script>
 	
-    <script src="/kickoff/resource/main/js/vendor/jquery.lettering.js"></script>
-    <script src="/kickoff/resource/main/js/vendor/jquery.sticky.js"></script>
-    <script src="/kickoff/resource/main/js/vendor/ScrollMagic.min.js"></script>
-    <script src="/kickoff/resource/main/js/vendor/scrollmagic.animation.gsap.min.js"></script>
-    <script src="/kickoff/resource/main/js/main.js"></script>
+    <script src="/main/js/vendor/jquery.lettering.js"></script>
+    <script src="/main/js/vendor/jquery.sticky.js"></script>
+    <script src="/main/js/vendor/ScrollMagic.min.js"></script>
+    <script src="/main/js/vendor/scrollmagic.animation.gsap.min.js"></script>
+    <script src="/main/js/main.js"></script>
 	
 </body>
 		
