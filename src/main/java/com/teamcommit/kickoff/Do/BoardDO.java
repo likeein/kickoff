@@ -1,7 +1,10 @@
 package com.teamcommit.kickoff.Do;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class BoardDO {
 
 	//게시글 번호
@@ -13,9 +16,9 @@ public class BoardDO {
 	//글 내용
 	private String writeContent;
 	//등록일자
-	private Date writeRegDate;
+	private String writeRegDate;
 	//수정일자
-	private Date writeEditDate;
+	private String writeEditDate;
 	//게시글 신고수
 	private int reportCount;
 	//게시글 조회수
@@ -49,16 +52,16 @@ public class BoardDO {
 	public void setWriteContent(String writeContent) {
 		this.writeContent = writeContent;
 	}
-	public Date getWriteRegDate() {
+	public String getWriteRegDate() {
 		return writeRegDate;
 	}
-	public void setWriteRegDate(Date writeRegDate) {
+	public void setWriteRegDate(String writeRegDate) {
 		this.writeRegDate = writeRegDate;
 	}
-	public Date getWriteEditDate() {
+	public String getWriteEditDate() {
 		return writeEditDate;
 	}
-	public void setWriteEditDate(Date writeEditDate) {
+	public void setWriteEditDate(String writeEditDate) {
 		this.writeEditDate = writeEditDate;
 	}
 	public int getReportCount() {
