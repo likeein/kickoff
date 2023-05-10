@@ -8,11 +8,15 @@ public class HelperController {
 
     @GetMapping("/helperList")
     public String helperList() {
-        String view = "/helperList";
+        String view = "/helper/helperList";
 
         return view;
     }
 
-
+    @GetMapping("/helperInsert")
+    public String helperInsert() {
+        String view = "/helper/helperInsert";
+        return view;
+    }
 
 }
