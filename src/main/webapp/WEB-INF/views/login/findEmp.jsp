@@ -28,7 +28,7 @@
 	      <input type="text" placeholder="업체명" />
 	      <input type="text" placeholder="사업자 번호" />
 	      	      <button class="confirm" id="confirmNumber">사업자 번호 인증</button><br /><br />
-	      <button href = "/login/findId.css">아이디 찾기</button>
+	      <button onclick="location.href='/findId';">아이디 찾기</button>
     </form>
   </div>
   <div class="overlay-container">
