@@ -54,7 +54,7 @@
 		right: 550px;
 	} */
 	
-	.upload {
+	.filePath {
 		clear: both;
 		margin-top: 1em;
 		margin-bottom: 1em;
@@ -136,7 +136,7 @@
 }
 
 /* named upload */
-.filebox .upload-name {
+.filebox .filePath-name {
   margin-top: 20px;
   margin-bottom: 20px;
   display: inline-block;
@@ -156,19 +156,19 @@
 }
 
 /* imaged preview */
-.filebox .upload-display {
+.filebox .filePath-display {
   margin-bottom: 5px;
 }
 
 @media(min-width: 768px) {
-  .filebox .upload-display {
+  .filebox .filePath-display {
     display: inline-block;
     margin-right: 5px;
     margin-bottom: 0;
   }
 }
 
-.filebox .upload-thumb-wrap {
+.filebox .filePath-thumb-wrap {
   display: inline-block;
   width: 54px;
   padding: 2px;
@@ -178,7 +178,7 @@
   background-color: #fff;
 }
 
-.filebox .upload-display img {
+.filebox .filePath-display img {
   display: block;
   max-width: 100%;
   width: 100% \9;

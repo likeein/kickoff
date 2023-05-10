@@ -26,6 +26,17 @@
 
 <script src="/includes/js/main.js"></script>
 <!-- 여기까지 복붙하기 -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			var msg = "${msg}";
+
+			if(msg != ""){
+				alert(msg);
+			}
+
+		});
+	</script>
 
 <link rel="stylesheet" href="/board/css/boardDetail.css" />
 </head>
@@ -35,8 +46,8 @@
 	<div class="bg-dark py-5">
 		<div class="container px-4 px-lg-5 my-5">
 			<div class="text-center text-white">
-				<h1 class="display-4 fw-bolder">게시글 제목</h1>
-				<p class="lead fw-normal text-white-50 mb-0">작성자</p>
+				<h1 class="display-4 fw-bolder">${boardContents.writeTitle}</h1>
+				<p class="lead fw-normal text-white-50 mb-0">${boardContents.writeId}</p>
 			</div>
 		</div>
 	</div>
@@ -52,25 +63,23 @@
 					</colgroup>
 					<tbody>
 						<tr>
-							<th scope="row">글 번호</th>
-							<td>글번호</td>
-							<th scope="row">조회수</th>
-							<td>조회수</td>
+							<th scope="row" class="active">글 번호</th>
+							<td>${boardContents.boardSeqno}</td>
+							<th scope="row" class="active">조회수</th>
+							<td>${boardContents.viewCount}</td>
 						</tr>
 						<tr>
-							<th scope="row">작성자</th>
-							<td>작성자</td>
-							<th scope="row">작성일</th>
-							<td>작성일</td>
+							<th scope="row" class="active">작성자</th>
+							<td>${boardContents.writeId}</td>
+							<th scope="row" class="active">작성일</th>
+							<td>${boardContents.writeRegDate}</td>
 						</tr>
 						<tr>
-							<th scope="row">제목</th>
-							<td colspan="3"><input type="text" id="title" name="title"
-								value="제목제목" /></td>
+							<th scope="row" class="active" >제목</th>
+							<td colspan="3">${boardContents.writeTitle}</td>
 						</tr>
 						<tr>
-							<td colspan="4" class="view_text"><textarea title="내용"
-									id="contents" name="contents" value="내용내용"></textarea></td>
+							<td colspan="4" class="view_text" id="view_text">${boardContents.writeContent}</td>
 						</tr>
 					</tbody>
 				</table>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.teamcommit.kickoff.service.BoardMapper">
+
+    <!-- Board List -->
+    <select id="getList" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.BoardDO">
+        <![CDATA[
+        SELECT
+            *
+        FROM
+            COMMUNITY_BOARD
+        ]]>
+    </select>
+
+    <!-- Board Insert -->
+    <insert id="insertBoard">
+        <![CDATA[
+            INSERT INTO COMMUNITY_BOARD
+            (
+             BOARD_SEQ,
+             WRITE_TITLE,
+             WRITE_ID,
+             FILE_NAME,
+             FILE_PATH,
+             WRITE_CONTENT
+            )
+            VALUES
+            ((SELECT NVL(MAX(BOARD_SEQ),0)+1 FROM COMMUNITY_BOARD),
+             #{writeTitle},
+             #{writeId},
+             #{fileName},
+             #{filePath},
+             #{writeContent}
+            )
+        ]]>
+    </insert>
+    <!--<select id="insertBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.BoardDO">
+        <![CDATA[
+        SELECT
+            write_id
+        FROM
+            COMMUNITY_BOARD
+        ]]>
+    </select>-->
+
+    <!-- Board Detail -->
+    <select id="getBoardContents" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.BoardDO">
+        <![CDATA[
+        SELECT
+            *
+        FROM
+            COMMUNITY_BOARD
+        WHERE
+            BOARD_SEQNO = #{boardSeqno}
+        ]]>
+    </select>
+
+    <!-- Board Update -->
+    <update id="updaateBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO">
+        <![CDATA[
+        UPDATE
+            COMMUNITY_BOARD
+        SET
+            WRITE_TITLE = #{writeTitle},
+            WRITE_CONTENT = #{writeContent},
+            FILE_NAME = #{fileName},
+            FILE_PATH = #{filePath},
+            WRITE_EDIT_DATE = now()
+        WHERE
+            BOARD_SQENO = #{boardSeqno}
+        ]]>
+    </update>
+
+    <!-- Board Delete -->
+    <delete id="getBoardDelete" parameterType="com.teamcommit.kickoff.Do.BoardDO" >
+    <![CDATA[
+        DELETE
+        FROM
+            COMMUNITY_BOARD
+        WHERE
+            BOARD_SQENO =#{boardSeqno}
+        ]]>
+	</delete>
+</mapper>
