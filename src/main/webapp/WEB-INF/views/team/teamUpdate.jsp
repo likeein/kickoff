@@ -31,20 +31,6 @@
  <div class="header-container">
       <%@include file="/resource/includes/header.jsp"%>
 </div>
-	<!-- 상단바 -->
-	<nav class="untree_co--site-nav js-sticky-nav">
-		<div class="container d-flex align-items-center">
-			<div class="site-nav-ul-wrap text-center d-none d-lg-block">
-				<ul class="site-nav-ul js-clone-nav">
-					<li class="active"><a href="index.html">예약</a></li>
-					<li class="has-children"><a href="rooms.html">매칭</a></li>
-					<li><a href="amenities.html">자유 게시판</a></li>
-					<li><a href="gallery.html">팀</a></li>
-					<li><a href="about.html">용병</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
 
 	<div class="icons-wrap text-md-right"></div>
 

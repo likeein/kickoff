@@ -6,9 +6,9 @@
 	<title>Kick Off: 관리자-게시물 관리</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!-- Custom styles for this page -->
-    <link href="/kickoff/resource/emp/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="/emp/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="/kickoff/resource/admin/css/main.css" />
+		<link rel="stylesheet" href="/resource/admin/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -23,7 +23,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="myBoard.jsp" class="logo"><strong>마이 페이지</strong> 관리자 전용</a>									
+									<a href="/boardManagement" class="logo"><strong>마이 페이지</strong> 관리자 전용</a>
 								</header>
 							
 							<!-- Begin Page Content -->
@@ -529,8 +529,8 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="/kickoff/view/admin/userManagement.jsp">회원 관리</a></li>
-										<li><a href="/kickoff/view/admin/boardManagement.jsp">신고 게시글 관리</a></li>
+										<li><a href="/userManagement">회원 관리</a></li>
+										<li><a href="/boardManagement">신고 게시글 관리</a></li>
 									</ul>
 								</nav>
 
@@ -542,19 +542,19 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="/kickoff/resource/emp/js/jquery.min.js"></script>
-			<script src="/kickoff/resource/emp/js/skel.min.js"></script>
-			<script src="/kickoff/resource/emp/js/util.js"></script>
+			<script src="/emp/js/jquery.min.js"></script>
+			<script src="/emp/js/skel.min.js"></script>
+			<script src="/emp/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="/kickoff/resource/emp/js/main.js"></script>
+			<script src="/emp/js/main.js"></script>
 			
 			
     <!-- Page level plugins-->
-    <script src="/kickoff/resource/emp/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="/kickoff/resource/emp/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="/emp/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/emp/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/kickoff/resource/emp/js/demo/datatables-demo.js"></script>
+    <script src="/emp/js/demo/datatables-demo.js"></script>
 
 	</body>
 </html>

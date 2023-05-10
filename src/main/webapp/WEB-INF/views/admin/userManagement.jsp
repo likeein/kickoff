@@ -6,18 +6,18 @@
 	<title>Kick Off: 관리자-회원 관리</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="/kickoff/resource/admin/css/main.css" />
+		<link rel="stylesheet" href="/admin/css/main.css" />
 		
 		
-		<link rel="stylesheet" href="/kickoff/resource/admin/css/theme.css" />
+		<link rel="stylesheet" href="/admin/css/theme.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	
 		<!-- Fontfaces CSS-->
-		<link href="/kickoff/resource/admin/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+		<link href="/admin/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
 		  <!-- Vendor CSS-->
-		 <link href="/kickoff/resource/admin/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+		 <link href="/admin/vendor/select2/select2.min.css" rel="stylesheet" media="all">
 		
 		
 		
@@ -33,7 +33,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="index.html" class="logo"><strong>마이 페이지</strong> 관리자 전용</a>
+									<a href="/userManagement" class="logo"><strong>마이 페이지</strong> 관리자 전용</a>
 								</header>
 
 							<!-- Banner -->
@@ -289,8 +289,8 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="/kickoff/viewex/admin/userManagement.jsp">회원 관리</a></li>
-										<li><a href="/kickoff/viewex/admin/boardManagement.jsp">신고 게시글 관리</a></li>
+										<li><a href="/userManagement">회원 관리</a></li>
+										<li><a href="/boardManagement">신고 게시글 관리</a></li>
 									</ul>
 								</nav>
 
@@ -300,27 +300,27 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="/kickoff/resource/admin/js/jquery.min.js"></script>
-			<script src="/kickoff/resource/admin/js/skel.min.js"></script>
-			<script src="/kickoff/resource/admin/js/util.js"></script>
+			<script src="/admin/js/jquery.min.js"></script>
+			<script src="/admin/js/skel.min.js"></script>
+			<script src="/admin/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="/kickoff/resource/admin/js/main.js"></script>
+			<script src="/admin/js/main.js"></script>
 			
 		
    <!-- Jquery JS-->
-    <script src="/kickoff/resource/admin/vendor/jquery-3.2.1.min.js"></script>
-    <script src="/kickoff/resource/admin/vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="/kickoff/resource/admin/vendor/counter-up/jquery.counterup.min.js"></script>
+    <script src="/admin/vendor/jquery-3.2.1.min.js"></script>
+    <script src="/admin/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="/admin/vendor/counter-up/jquery.counterup.min.js"></script>
     
     
     <!-- Vendor JS       -->
-    <script src="/kickoff/resource/admin/vendor/select2/select2.min.js"></script>
+    <script src="/admin/vendor/select2/select2.min.js"></script>
     
     
     </script>
    
  <!-- Main JS-->
-    <script src="/kickoff/resource/admin/js/user.js"></script>
+    <script src="/admin/js/user.js"></script>
 
 	</body>
 </html>
