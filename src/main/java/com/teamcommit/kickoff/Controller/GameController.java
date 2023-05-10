@@ -9,7 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Map;
 
 @Controller
-
 public class GameController {
 
     @GetMapping("/game")
