@@ -10,9 +10,9 @@
     <!-- Google Font -->
     <link href="https://fonts.google.com/noto/specimen/Noto+Sans+KR?subset=korean&noto.script=Kore" rel="stylesheet">
     
-    <link rel = "stylesheet" href = "/kickoff/resource/main/css/vendor/icomoon/style.css">
-    <link href="/kickoff/resource/includes/css/style.css" rel="stylesheet" >
-    <link href="/kickoff/resource/reservation/css/detail.css" rel="stylesheet" >
+    <link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
+    <link href="/includes/css/style.css" rel="stylesheet" >
+    <link href="/reservation/css/detail.css" rel="stylesheet" >
 </head>
 
 <body>
@@ -20,7 +20,7 @@
 		<div class="full-cover">
 			<!-- header -->
 			<div class="header-container">
-				<%@include file="/resource/includes/header.jsp"%>
+				<%@include file="/includes/header.jsp"%>
 			</div>
 
 			<!-- title -->
@@ -37,7 +37,7 @@
 			<div class="root-container">
 				<!-- 추후 풋살장이미지 경로 변경해야함 -->
 				<div class="picture">
-					<img class="mainImage" src="/TeamCommit/resource/reservation/images/court.jpg">
+					<img class="mainImage" src="/reservation/images/court.jpg">
 				</div>
 			</div>
 
@@ -63,51 +63,51 @@
 						<div class="facility-wrap">
 							<!-- 아마 아이콘도 추후 경로 변경해야 함 -->
 							<div class="img-wrap">
-								<img src="/TeamCommit/resource/reservation/images/court.png">
+								<img src="/reservation/images/court.png">
 							</div>
 							<b class="text-dark">코트</b><small>A코트</small>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">
-								<img src="/TeamCommit/resource/reservation/images/size.png">
+								<img src="/reservation/images/size.png">
 							</div>
 							<b class="text-dark">규격</b><small>30 x 27</small>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">
-								<img src="/TeamCommit/resource/reservation/images/vs.png">
+								<img src="/reservation/images/vs.png">
 							</div>
 							<b class="text-dark">경기</b><small>6 vs 6</small>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">
-								<img src="/TeamCommit/resource/reservation/images/loading.png">
+								<img src="/reservation/images/loading.png">
 							</div>
 							<b class="text-dark">예약</b><small>예약대기</small>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">
-								<img src="/TeamCommit/resource/reservation/images/form.png">
+								<img src="/reservation/images/form.png">
 							</div>
 							<b class="text-dark">바닥</b><small>천연잔디</small>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">
-								<img src="/TeamCommit/resource/reservation/images/personnel.png">
+								<img src="/reservation/images/personnel.png">
 							</div>
 							<b class="text-dark">인원</b><small>12명</small>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">
 								<!-- 실외, 실내 따라 각 아이콘 가져오기 -->
-								<img src="/TeamCommit/resource/reservation/images/sunlight.png">
+								<img src="/reservation/images/sunlight.png">
 								<!-- <img src="/TeamCommit/resource/reservation/images/no sunlight.png"> -->
 							</div>
 							<b class="text-dark">공간</b><small>실외</small>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">
-								<img src="/TeamCommit/resource/reservation/images/lighting.png">
+								<img src="/reservation/images/lighting.png">
 							</div>
 							<b class="text-dark">조명</b><small>YES</small>
 						</div>
@@ -128,26 +128,26 @@
 				<!-- button -->
 				<div class="btn-container">
 					<!-- <a href="#this" id="list" class="btn">목록</a> -->
-					<a href="reservationUpdate.jsp" id="update" class="btn">수정</a>
-					<a href="reservationRequest.jsp" id="booking" class="btn">예약</a>
+					<a href="/reservationUpdate" id="update" class="btn">수정</a>
+					<a href="/reservationRequest" id="booking" class="btn">예약</a>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- footer -->
-	<%@include file="/resource/includes/footer.jsp"%>
+	<%@include file="/includes/footer.jsp"%>
 
 	<!-- script -->
-	<script src="/kickoff/resource/includes/js/jquery-3.3.1.min.js"></script>
-	<script src="/kickoff/resource/includes/js/jquery.lettering.js"></script>
-	<script src="/kickoff/resource/includes/js/jquery.sticky.js"></script>
-	<script src="/kickoff/resource/includes/js/ScrollMagic.min.js"></script>
-	<script src="/kickoff/resource/includes/js/scrollmagic.animation.gsap.min.js"></script>
-	<script src="/kickoff/resource/includes/js/main.js"></script>
+	<script src="/includes/js/jquery-3.3.1.min.js"></script>
+	<script src="/includes/js/jquery.lettering.js"></script>
+	<script src="/includes/js/jquery.sticky.js"></script>
+	<script src="/includes/js/ScrollMagic.min.js"></script>
+	<script src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
+	<script src="/includes/js/main.js"></script>
 	
 	<!-- map script -->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f57239f34313ff7472d82f235d2600be"></script>
-	<script src="/kickoff/resource/includes/js/kakaoMap.js"></script>
+	<script src="/includes/js/kakaoMap.js"></script>
 </body>
 </html>
