@@ -120,9 +120,9 @@
 			</div>
 
 			<div class="btn_boarddetail">
-				<button type="reset" class="btn_reset" onclick="location.href='/board/board.jsp';">목록</button>
-				<button class="btn_update" onclick="location.href='/board/boardUpdate.jsp';">수정</button>
-				<button class="btn_delete" onclick="location.href='/board/board.jsp';">삭제</button>
+				<button type="reset" class="btn_reset" onclick="location.href='board.jsp'">목록</button>
+				<button class="btn_update" onclick="location.href='boardUpdate.jsp'">수정</button>
+				<button class="btn_delete" onclick="location.href='board.jsp'">삭제</button>
 			</div>
 		</div>
 	</form>

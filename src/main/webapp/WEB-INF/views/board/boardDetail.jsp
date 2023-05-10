@@ -115,8 +115,8 @@
 			</div>
 
 			<div class="btn_boarddetail">
-				<button type="reset" class="btn_reset" onclick="location.href='/board/board.jsp';">목록</button>
-				<button class="btn_delete" onclick="location.href='/board/boardReport.jsp';">신고</button>
+				<button type="reset" class="btn_reset" onclick="location.href='board.jsp'">목록</button>
+				<button class="btn_delete" onclick="location.href='boardReport.jsp'">신고</button>
 			</div>
 		</div>
 	</form>
