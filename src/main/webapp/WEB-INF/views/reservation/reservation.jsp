@@ -12,13 +12,13 @@
     <title>Kick off: 풋살장 예약 목록</title>
     <link href="https://fonts.google.com/noto/specimen/Noto+Sans+KR?subset=korean&noto.script=Kore" rel="stylesheet">
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="/kickoff/resource/reservation/assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/reservation/assets/favicon.ico" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link rel = "stylesheet" href = "/kickoff/resource/main/css/vendor/icomoon/style.css">
-    <link href="/kickoff/resource/reservation/css/styles.css" rel="stylesheet" />
-    <link href="/kickoff/resource/includes/css/style.css" rel="stylesheet" />
+    <link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
+    <link href="/reservation/css/styles.css" rel="stylesheet" />
+    <link href="/includes/css/style.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="header-container">
@@ -40,7 +40,7 @@
     	<div class="container px-4 px-lg-5">
       		<div class="card-footer pt-0 border-top-0 bg-transparent">
             	<div class="text-center insert">
-              		<a class="court-insert" href="reservationInsert.jsp">풋살장 등록</a>
+              		<a class="court-insert" href="reservationInsert">풋살장 등록</a>
               	</div>
           	</div>
 			<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
@@ -100,7 +100,7 @@
 	                    <div class="col mb-5">
 			                    <div class="card h-100">
 			                        <!-- Product image-->
-			                        <img class="card-img-top" src="/TeamCommit/resource/reservation/images/court2.jpg" />
+			                        <img class="card-img-top" src="/reservation/images/court2.jpg" />
 			                        <!-- Product details-->
 			                        <div class="card-body p-4">
 			                            <div class="text-center">
@@ -116,7 +116,7 @@
 			                        <!-- Product actions-->
 			                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 			                            <div class="text-center">
-			                            	<a class="btn btn-outline-dark mt-auto" href="reservationDetail.jsp">상세보기</a>
+			                            	<a class="btn btn-outline-dark mt-auto" href="/reservationDetail">상세보기</a>
 			                            </div>
 			                        </div>
 			                    </div>
@@ -256,18 +256,18 @@
     </section>
     
     <!-- Footer-->
-    <%@include file="/resource/includes/footer.jsp"%>
+    <%@include file="/includes/footer.jsp"%>
     
     
     
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <script src="/kickoff/resource/includes/js/jquery-3.3.1.min.js"></script>
-    <script src="/kickoff/resource/includes/js/jquery.lettering.js"></script>
-    <script src="/kickoff/resource/includes/js/jquery.sticky.js"></script>
-    <script src="/kickoff/resource/includes/js/ScrollMagic.min.js"></script>
-    <script src="/kickoff/resource/includes/js/scrollmagic.animation.gsap.min.js"></script>
-    <script src="/kickoff/resource/includes/js/main.js"></script>
+    <script src="/includes/js/jquery-3.3.1.min.js"></script>
+    <script src="/includes/js/jquery.lettering.js"></script>
+    <script src="/includes/js/jquery.sticky.js"></script>
+    <script src="/includes/js/ScrollMagic.min.js"></script>
+    <script src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
+    <script src="/includes/js/main.js"></script>
 </body>
 </html>
