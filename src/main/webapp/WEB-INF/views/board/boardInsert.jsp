@@ -73,9 +73,9 @@
 		</div>
 		
 		<div class="btn_board">
-		<button type="reset" class="btn_reset" onclick="location.href='/board/board.jsp';">취소</button>
+		<button type="reset" class="btn_reset" onclick="location.href='board.jsp'">취소</button>
 		<!-- <a href="boardDetail.jsp"><button type="submit" class="btn_submit">등록</button></a> -->
-		<button type="reset" class="btn_reset" onclick="location.href='/board/boardDetail.jsp';">등록</button>
+		<button type="reset" class="btn_reset" onclick="location.href='boardDetail.jsp'">등록</button>
 		</div>
 </div>
 			

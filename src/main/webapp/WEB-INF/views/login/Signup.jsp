@@ -30,7 +30,7 @@
 				</div>
 				<br />
 				<div class="signbtn">
-				<button type="button" onclick="location.href='/login/loginAll.jsp';">회원가입 </button>
+				<button type="button" onclick="location.href='loginAll.jsp'">회원가입 </button>
 				</div>
 		</form>
 	</div>
