@@ -31,7 +31,7 @@ public class ReservationController {
 
         ModelAndView mv = new ModelAndView();
 
-        Map<String, Object> map = new HashMap<String, Object>();
+/*        Map<String, Object> map = new HashMap<String, Object>();
 
         if(session.getAttribute("user_id") != null) {
             String id = (String)session.getAttribute("user_id");
@@ -43,7 +43,7 @@ public class ReservationController {
 
         Map<String, Object> mem = reservationService.selectMemInfo(map);
 
-        mv.addObject("mem", mem);
+        mv.addObject("mem", mem);*/
         mv.setViewName("/reservation/reservationInsert");
 
         return mv;

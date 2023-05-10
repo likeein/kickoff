@@ -3,21 +3,43 @@
 
 <mapper namespace="reservation">
 
+    <!-- Member Info -->
+
     <!-- Reservation Insert -->
-    <insert id="insertReservation" parameterType="hashmap" useGeneratedKeys="true" keyProperty="BOARD_NO">
-        <selectKey keyProperty="BOARD_NO" resultType="string" order="BEFORE">
+    <insert id="insertReservation" parameterType="hashmap" useGeneratedKeys="true" keyProperty="RESERVATION_NO">
+        <selectKey keyProperty="RESERVATION_NO" resultType="string" order="BEFORE">
             SELECT RESERVATION_SEQ.NEXTVAL FROM DUAL
         </selectKey>
-        <![CDATA[
-			INSERT INTO RESERVATION (
-				RESERVATION_NO,
-				USER_ID,
-
-			)
-       		VALUES (
-
-			)
-		]]>
+            <![CDATA[
+                INSERT INTO RESERVATION (
+                    RESERVATION_NO,
+                /*    USER_ID,
+                    PLACE_ID,
+                    PLACE_NAME,*/
+                    RESERVATION_COURT_NAME,
+                 /*   PLACE_ADDRESS,*/
+                    RESERVATION_COURT_FORM,
+                    RESERVATION_DATE,
+                    RESERVATION_START_TIME,
+                    RESERVATION_END_TIME,
+                    RESERVATION_STATUS,
+                    RESERVATION_PRICE,
+                    RESERVATION_COMMENT,
+                    RESERVATION_REG_DATE
+                )
+                VALUES (
+                    #{RESERVATION_NO},
+                    #{RESERVATION_COURT_NAME},
+                    #{RESERVATION_COURT_FORM},
+                    #{RESERVATION_DATE},
+                    #{RESERVATION_START_TIME},
+                    #{RESERVATION_END_TIME},
+                    'Y',
+                    #{RESERVATION_PRICE},
+                    #{RESERVATION_COMMENT},
+                    SYSDATE
+                )
+            ]]>
     </insert>
 
     <!-- Reservation Detail -->

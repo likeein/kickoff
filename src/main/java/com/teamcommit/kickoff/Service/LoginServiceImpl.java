@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.Map;
 
-@Service
+@Service("loginService")
 public class LoginServiceImpl implements LoginService {
     @Resource
     private LoginDAO loginDAO;
