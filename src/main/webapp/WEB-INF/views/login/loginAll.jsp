@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel = "stylesheet" href = "/kickoff/resource/login/css/loginAll.css">
+<link rel = "stylesheet" href = "/login/css/loginAll.css">
 <title>Kick Off: 로그인</title>
 </head>
 <body style="overflow-y: hidden">
@@ -15,8 +15,8 @@
 	  <br /> <br /> 
 	  <input type="text" placeholder="아이디" /> 
 	  <input type="password" placeholder="비밀번호" /> 
-	  <a href="/kickoff/viewex/login/findEmp.jsp">아이디/비밀번호 찾기</a>
-	  <a href="/kickoff/viewex/login/loginAgreeEmp.jsp">회원가입</a>
+	  <a href="/findEmp">아이디/비밀번호 찾기</a>
+	  <a href="/loginAgreeEmp">회원가입</a>
 	  <button>로그인</button>
     </form>
   </div>
@@ -26,8 +26,8 @@
 	  <br /> <br /> 
       <input type="text" placeholder="아이디" /> 
 	  <input type="password" placeholder="비밀번호" /> 
-	  <a href="/kickoff/viewex/login/findUser.jsp">아이디/비밀번호 찾기</a>
-	  <a href="/kickoff/viewex/login/loginAgree.jsp">회원가입</a>
+	  <a href="/findUser">아이디/비밀번호 찾기</a>
+	  <a href="/loginAgree">회원가입</a>
 	  <button>로그인</button>
     </form>
   </div>
@@ -46,6 +46,6 @@
     </div>
   </div>
 </div>
-	<script src = "/kickoff/resource/login/js/loginAll.js"></script>
+	<script src = "/login/js/loginAll.js"></script>
 </body>
 </html>

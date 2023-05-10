@@ -11,21 +11,21 @@
 
     <title>Kick Off: 자유게시판</title>
 
-	<link rel="stylesheet" href="/kickoff/resource/includes/css/style.css">
-	<link rel = "stylesheet" href = "/kickoff/resource/includes/css/footer.css" />
-	<link rel = "stylesheet" href = "/kickoff/resource/main/css/vendor/icomoon/style.css">
+	<link rel="stylesheet" href="/includes/css/style.css">
+	<link rel = "stylesheet" href = "/includes/css/footer.css" />
+	<link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
 
     <!-- Custom fonts for this template -->
-    <link href="/kickoff/resource/board/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/board/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/kickoff/resource/board/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/board/css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
-    <link href="/kickoff/resource/board/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="/board/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -34,7 +34,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-	<%@include file="/resource/includes/header.jsp"%>
+	<%@include file="/includes/header.jsp"%>
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -537,7 +537,7 @@
                                     </tbody>
                                 </table>
                                 <div class="btn_insert">
-                                <a href="boardInsert.jsp"><button type="insert" class="btn_insert">글 등록</button></a>
+                                <a href="/boardInsert"><button type="insert" class="btn_insert">글 등록</button></a>
                                 </div>
                             </div>
                         </div>
@@ -549,7 +549,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <%@include file="/resource/includes/footer.jsp"%>
+            <%@include file="/includes/footer.jsp"%>
             <!-- End of Footer -->
 
         </div>
@@ -584,29 +584,29 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="/kickoff/resource/board/vendor/jquery/jquery.min.js"></script>
-    <script src="/kickoff/resource/board/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/board/vendor/jquery/jquery.min.js"></script>
+    <script src="/board/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="/kickoff/resource/board/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/board/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="/kickoff/resource/board/js/sb-admin-2.min.js"></script>
+    <script src="/board/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="/kickoff/resource/board/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="/kickoff/resource/board/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="/board/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/board/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/kickoff/resource/board/js/demo/datatables-demo.js"></script>
+    <script src="/board/js/demo/datatables-demo.js"></script>
 
-    <script src="/kickoff/resource/includes/js/jquery.lettering.js"></script>
-    <script src="/kickoff/resource/includes/js/jquery.sticky.js"></script>
+    <script src="/includes/js/jquery.lettering.js"></script>
+    <script src="/includes/js/jquery.sticky.js"></script>
     
-    <script src="/kickoff/resource/includes/js/ScrollMagic.min.js"></script>
-    <script src="/kickoff/resource/includes/js/scrollmagic.animation.gsap.min.js"></script>
+    <script src="/includes/js/ScrollMagic.min.js"></script>
+    <script src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
 
-    <script src="/kickoff/resource/includes/js/main.js"></script>
+    <script src="/includes/js/main.js"></script>
 
 </body>
 
