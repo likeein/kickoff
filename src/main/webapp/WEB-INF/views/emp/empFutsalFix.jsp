@@ -6,11 +6,11 @@
 	<title>Insert title here</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!-- Custom styles for this page -->
-    <link href="/kickoff/resource/emp/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="/kickoff/resource/emp/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <link href="/emp/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+		<!--[if lte IE 8]><script src="/emp/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/emp/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="/emp/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="/emp/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
 
@@ -551,44 +551,25 @@
 									</ul>
 								</nav>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-									<ul class="contact">
-										<li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
-										<li class="fa-phone">(000) 000-0000</li>
-										<li class="fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
 						</div>
 					</div>
 
 			</div>
 
 		<!-- Scripts -->
-			<script src="/kickoff/resource/emp/js/jquery.min.js"></script>
-			<script src="/kickoff/resource/emp/js/skel.min.js"></script>
-			<script src="/kickoff/resource/emp/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="/kickoff/resource/emp/js/main.js"></script>
+			<script src="/emp/js/jquery.min.js"></script>
+			<script src="/emp/js/skel.min.js"></script>
+			<script src="/emp/js/util.js"></script>
+			<!--[if lte IE 8]><script src="/emp/js/ie/respond.min.js"></script><![endif]-->
+			<script src="/emp/js/main.js"></script>
 			
 			
     <!-- Page level plugins-->
-    <script src="/kickoff/resource/emp/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="/kickoff/resource/emp/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="/emp/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/emp/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/kickoff/resource/emp/js/demo/datatables-demo.js"></script>
+    <script src="/emp/js/demo/datatables-demo.js"></script>
 
 	</body>
 </html>

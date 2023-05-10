@@ -5,11 +5,11 @@
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel = "stylesheet" href = "/kickoff/resource/emp/css/fixInfo.css">
-		<link rel="stylesheet" href="/kickoff/resource/emp/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 8]><script src="/emp/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel = "stylesheet" href = "/emp/css/fixInfo.css">
+		<link rel="stylesheet" href="/emp/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="/emp/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="/emp/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
 		<!-- Wrapper -->
@@ -46,7 +46,7 @@
 										      <br />
 										      <button>수정하기</button>
 										      <br/>
-										      <a href="/TeamCommit/viewex/main/main.jsp">회원 탈퇴</a>
+										      <a href="main.jsp">회원 탈퇴</a>
 										    </form>									     
 										 </div>
 				                 			                                  
@@ -80,37 +80,18 @@
 									</ul>
 								</nav>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-									<ul class="contact">
-										<li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
-										<li class="fa-phone">(000) 000-0000</li>
-										<li class="fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
 						</div>
 					</div>
 
 			</div>
 
 		<!-- Scripts -->
-			<script src = "/kickoff/resource/login/js/login.js"></script>
-			<script src="/kickoff/resource/emp/js/jquery.min.js"></script>
-			<script src="/kickoff/resource/emp/js/skel.min.js"></script>
-			<script src="/kickoff/resource/emp/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="/kickoff/resource/emp/js/main.js"></script>
+			<script src = "/login/js/loginEmp.js"></script>
+			<script src="/emp/js/jquery.min.js"></script>
+			<script src="/emp/js/skel.min.js"></script>
+			<script src="/emp/js/util.js"></script>
+			<!--[if lte IE 8]><script src="/emp/js/ie/respond.min.js"></script><![endif]-->
+			<script src="/emp/js/main.js"></script>
 
 	</body>
 </html>
