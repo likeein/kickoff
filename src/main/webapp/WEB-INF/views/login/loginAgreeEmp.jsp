@@ -64,7 +64,7 @@
               </div>
             </li>
           </ul>
-          <button type="button" class="next-button" onclick="location.href='SignupEmp.jsp'">동의</button>
+          <button type="button" class="next-button" onclick="location.href='/SignupEmp';">동의</button>
         </form>
       </div>    
 </div>
