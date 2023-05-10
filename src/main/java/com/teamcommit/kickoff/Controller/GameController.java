@@ -13,15 +13,36 @@ import java.util.Map;
 public class GameController {
 
     @GetMapping("/game")
-    public String reservationList() {
+    public String game() {
         String view = "/game/game";
 
         return view;
     }
 
     @GetMapping("/gameUpdate")
-    public String reservationInsert() {
+    public String gameUpdate() {
         String view = "/game/gameUpdate";
+
+        return view;
+    }
+
+    @GetMapping("/gameDetail")
+    public String gameDetail() {
+        String view = "/game/gameDetail";
+
+        return view;
+    }
+
+    @GetMapping("/gameFix")
+    public String gameFix() {
+        String view = "/game/gameFix";
+
+        return view;
+    }
+
+    @GetMapping("/gameScore")
+    public String gameScore() {
+        String view = "/game/gameScore";
 
         return view;
     }
