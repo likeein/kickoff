@@ -26,6 +26,7 @@ dependencies {
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
 
 	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+
 }
 
 tasks.named('test') {
