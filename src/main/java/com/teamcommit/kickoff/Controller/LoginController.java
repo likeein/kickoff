@@ -31,7 +31,7 @@ public class LoginController {
 //        return "/account/login";
 //    }
 
-    @Resource
+    @Resource(name="loginService")
     private LoginService loginService;
 
     @GetMapping("/loginAll")

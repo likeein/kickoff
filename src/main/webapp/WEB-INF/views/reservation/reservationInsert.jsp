@@ -54,18 +54,16 @@
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form id="" name="frm" action="#" method="POST">
+                <form id="frm" name="frm" action="/reservationInsert" method="POST">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
-                               <p>풋살장<span>*</span></p>
-                               <input type="text" name="" value="${}" readonly>
-
-                               <!-- readonly: 입력 필드 비활성화되지만 form으로 전송 가능 -->
+                                <p>풋살장<span>*</span></p>
+                                <input type="text" name="PLACE_NAME" value="${map.PLACE_NAME}" readonly>
                            	</div>
                           	<div class="checkout__input">
                                 <p>코트<span>*</span></p>
-                                <select id="courtName" onChange="selectCourt(this)">
+                                <select id="courtName" name="RESERVATION_COURT_NAME" onChange="selectCourt(this)">
                                 	<option value="">코트 선택하기</option>
                                 	<option value="A">A코트</option>
                                 	<option value="B">B코트</option>
@@ -76,26 +74,26 @@
                             </div>
                            	<div class="checkout__input">
                                 <p>위치<span>*</span></p>
-                                <input type="text" value="'주소' 정보 가져오기 (입력 비활성화)" readonly>
+                                <input type="text" name="PLACE_ADDRESS" value="${map.PLACE_ADDRESS}" readonly>
                             </div>
                             <div class="checkout__input">
                                 <p>형태<span>*</span></p>
                                 <label>
-                                	<input type="radio" name="placeForm" value="indoor" onclick='getPlaceForm(event)' />&nbsp실내
+                                	<input type="radio" name="RESERVATION_COURT_FORM" value="indoor" onclick='getPlaceForm(event)' />&nbsp실내
                                 </label>
                                 <label>
-                                	<input type="radio" name="placeForm" value="outdoor" onclick='getPlaceForm(event)' />&nbsp실외
+                                	<input type="radio" name="RESERVATION_COURT_FORM" value="outdoor" onclick='getPlaceForm(event)' />&nbsp실외
                                 </label>
                             </div>
                    			<div class="checkout__input">
                         		<p>예약 날짜<span>*</span></p>
-                       			<input id="setDate" onChange="getDate()" />
+                       			<input id="setDate" name="RESERVATION_DATE" onChange="getDate()" />
                    			</div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>시작 시간<span>*</span></p>
-                                        <select id="openTime" name="openTime" onChange="getStartTime(this)">
+                                        <select id="openTime" name="RESERVATION_START_TIME" onChange="getStartTime(this)">
                                         	<option value="">시작 시간 선택</option>
                                         	<c:forEach var="i" begin="1" end="24">
 	                                        	<c:choose>
@@ -113,7 +111,7 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>종료 시간<span>*</span></p>
-                                        <select id="closeTime" name="closeTime" onChange="getEndTime(this)">
+                                        <select id="closeTime" name="RESERVATION_END_TIME" onChange="getEndTime(this)">
                                         	<option value="">종료 시간 선택</option>
                                         	<c:forEach var="i" begin="1" end="24">
 	                                        	<c:choose>
@@ -132,7 +130,7 @@
                             <div class="checkout__input">
                                 <p>예약 상태<span>*</span></p>
                                 <label>
-                                	<input type="radio" name="status" value="예약 중" onclick='getStatus(event)' checked/>&nbsp예약
+                                	<input type="radio" onclick='getStatus(event)' checked/>&nbsp예약
                                 </label>
                                 <label>
                                 	<input type="radio" disabled/>&nbsp예약 완료
@@ -140,11 +138,11 @@
                             </div>
                             <div class="checkout__input">
                                 <p>대관비<span>*</span></p>
-                                <input type="number" class="inputPrice" id="inputPrice" onChange="getPrice()" placeholder="ex) 50000">
+                                <input type="number" class="inputPrice" id="inputPrice" name="RESERVATION_PRICE" onChange="getPrice()" placeholder="ex) 50000">
                             </div>
                             <div class="checkout__input">
 								<p>기타사항</p>
-                               	<textarea class="etc"></textarea>
+                               	<textarea class="etc" name="RESERVATION_PRICE"></textarea>
                             </div>
                         </div>
                         
@@ -156,9 +154,9 @@
 									Title<span>Content</span>
 								</div>
 								<ul>
-									<li>풋살장<span>이름이름</span></li>
+									<li>풋살장<span>${map.PLACE_NAME}</span></li>
 									<li>코트<span id="court"></span></li>
-									<li>위치<span>주소주소</span></li>
+									<li>위치<span>${map.PLACE_ADDRESS}</span></li>
 									<li>형태<span id="placeForm"></span></li>
 									<li>예약 날짜<span id="date"></span></li>
 									<li>시작 시간<span id="startTime"></span></li>
@@ -166,7 +164,7 @@
 									<li>예약 상태<span id="status">예약</span></li>
 									<li>대관비<span id="price"></span></li>
 								</ul>
-								<a href="#this" id="insert" class="site-btn-insert">등록</a>
+								<a type="submit" id="insert" class="site-btn-insert" onclick="document.getElementById('frm').submit();">등록</a>
 								<a href="#this" id="cancle" class="site-btn-cancle">취소</a>
 							</div>
 						</div>
@@ -185,7 +183,7 @@
 			format: "yyyy-mm-dd",
 		    uiLibrary: 'bootstrap4',
 		});
-	</script>
+    </script>
 	
     <!-- Js Plugins -->
     <script src="/reservation/js/jquery-3.3.1.min.js"></script>
