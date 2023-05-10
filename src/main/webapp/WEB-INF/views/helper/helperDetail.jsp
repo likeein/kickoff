@@ -11,29 +11,29 @@
 <title>Kick Off: 자유게시판 글 상세보기</title>
 <!-- include할 문서에 스타일, js -->
 <link rel="stylesheet"
-	href="/kickoff/resource/includes/css/style.css">
-	<link rel = "stylesheet" href = "/kickoff/resource/main/css/vendor/icomoon/style.css">
+	href="/includes/css/style.css">
+	<link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
 
-<script src="/kickoff/resource/includes/js/jquery-3.3.1.min.js"></script>
+<script src="/includes/js/jquery-3.3.1.min.js"></script>
 
-<script src="/kickoff/resource/includes/js/jquery.lettering.js"></script>
-<script src="/kickoff/resource/includes/js/jquery.sticky.js"></script>
+<script src="/includes/js/jquery.lettering.js"></script>
+<script src="/includes/js/jquery.sticky.js"></script>
 
 
-<script src="/kickoff/resource/includes/js/ScrollMagic.min.js"></script>
+<script src="/includes/js/ScrollMagic.min.js"></script>
 <script
-	src="/kickoff/resource/includes/js/scrollmagic.animation.gsap.min.js"></script>
+	src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
 
 
-<script src="/kickoff/resource/includes/js/main.js"></script>
+<script src="/includes/js/main.js"></script>
 <!-- 여기까지 복붙하기 -->
 
 <link rel="stylesheet"
-	href="/kickoff/resource/board/css/boardDetail.css" />
+	href="/board/css/boardDetail.css" />
 
 </head>
 <body>
-	<%@include file="/resource/includes/header.jsp"%>
+	<%@include file="/includes/header.jsp"%>
 	<!-- Header -->
 	<div class="bg-dark py-5">
 		<div class="container px-4 px-lg-5 my-5">
@@ -118,8 +118,8 @@
 			</div>
 
 			<div class="btn_boarddetail">
-				<button type="reset" class="btn_reset" onclick="location.href='/kickoff/viewex/board/board.jsp';">목록</button>
-				<button class="btn_delete" onclick="location.href='/kickoff/viewex/board/boardReport.jsp';">신고</button>
+				<button type="reset" class="btn_reset" onclick="location.href='/board';">목록</button>
+				<button class="btn_delete" onclick="location.href='/boardReport';">신고</button>
 			</div>
 		</div>
 	</form>
