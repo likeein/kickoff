@@ -17,7 +17,7 @@
 	      <input type="text" placeholder="아이디" />
 	      <input type="text" placeholder="사업자 번호" />
 	      <button class="confirm" id="confirmNumber">사업자 번호 인증</button><br /><br />
-	      <button href = "/login/findPw.css">비밀번호 찾기</button>
+	      <button onclick="location.href='/findPw';">비밀번호 찾기</button>
     </form>
   </div>
   <div class="form-container sign-in-container">
