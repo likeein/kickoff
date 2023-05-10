@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="/kickoff/resource/login/css/login.css">
+	<link rel="stylesheet" href="/login/css/login.css">
 	<title>Kick Off: 회원가입</title>
 </head>
 <body style="overflow-y: hidden">
@@ -30,7 +30,7 @@
 				</div>
 				<br />
 				<div class="signbtn">
-				<button type="button" onclick="location.href='/kickoff/viewex/login/loginAll.jsp';">회원가입 </button>
+				<button type="button" onclick="location.href='/login/loginAll.jsp';">회원가입 </button>
 				</div>
 		</form>
 	</div>

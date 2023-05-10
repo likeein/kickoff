@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel = "stylesheet" href = "/kickoff/resource/login/css/loginAgree.css">
-<title>Kick Off: 로그인</title>
+<link rel = "stylesheet" href = "/login/css/loginAgree.css">
+<title>Kick Off: 약관동의</title>
 </head>
 <body style="overflow-y: hidden">
 <div class="container" id="container" style="overflow: auto; width: 500px; height: 500px; background: #F7F6DC​; border-radius: 10px;">
@@ -64,7 +64,7 @@
               </div>
             </li>
           </ul>
-          <button type="button" class="next-button" onclick="location.href='/kickoff/viewex/login/Signup.jsp';">확인</button>
+          <button type="button" class="next-button" onclick="location.href='/login/Signup.jsp';">확인</button>
         </form>
       </div>    
 </div>

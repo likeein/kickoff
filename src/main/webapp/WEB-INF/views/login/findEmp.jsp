@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel = "stylesheet" href = "/kickoff/resource/findPw/css/loginFind.css">
+<link rel = "stylesheet" href = "/findPw/css/loginFind.css">
 <title>Kick Off: 아이디, 비밀번호 찾기</title>
 </head>
 <body style="overflow-y: hidden">
@@ -17,7 +17,7 @@
 	      <input type="text" placeholder="아이디" />
 	      <input type="text" placeholder="사업자 번호" />
 	      <button class="confirm" id="confirmNumber">사업자 번호 인증</button><br /><br />
-	      <button href = "/TeamCommit/viewex/login/findPw.css">비밀번호 찾기</button>
+	      <button href = "/login/findPw.css">비밀번호 찾기</button>
     </form>
   </div>
   <div class="form-container sign-in-container">
@@ -28,7 +28,7 @@
 	      <input type="text" placeholder="업체명" />
 	      <input type="text" placeholder="사업자 번호" />
 	      	      <button class="confirm" id="confirmNumber">사업자 번호 인증</button><br /><br />
-	      <button href = "/TeamCommit/viewex/login/findId.css">아이디 찾기</button>
+	      <button href = "/login/findId.css">아이디 찾기</button>
     </form>
   </div>
   <div class="overlay-container">
@@ -45,6 +45,6 @@
     </div>
   </div>
 </div>
-	<script src = "/kickoff/resource/findPw/js/loginFind.js"></script>
+	<script src = "/findPw/js/loginFind.js"></script>
 </body>
 </html>
