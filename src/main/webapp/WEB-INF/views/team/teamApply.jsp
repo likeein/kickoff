@@ -11,37 +11,37 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
-    <link rel = "stylesheet" href = "/kickoff/resource/main/css/vendor/icomoon/style.css">
+    <link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="/kickoff/resource/teamApply/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff//resource/teamApply/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/teamApply/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/teamApply/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/teamApply/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/teamApply/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/teamApply/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/teamApply/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/teamApply/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/teamApply/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/teamApply/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/teamApply/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/teamApply/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/teamApply/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/teamApply/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/teamApply/css/style.css" type="text/css">
     
-    <link rel="stylesheet" href="/kickoff/resource/includes/css/style.css">
+    <link rel="stylesheet" href="/includes/css/style.css">
     
-    <script src="/kickoff/resource/teamApply/js/common.js"></script>
-    <script src="/kickoff/resource/teamApply/js/jquery.slicknav.js"></script>
+    <script src="/teamApply/js/common.js"></script>
+    <script src="/teamApply/js/jquery.slicknav.js"></script>
     
-    <script src="/kickoff/resource/includes/js/jquery-3.3.1.min.js"></script>
+    <script src="/includes/js/jquery-3.3.1.min.js"></script>
 
-    <script src="/kickoff/resource/includes/js/jquery.lettering.js"></script>
-    <script src="/kickoff/resource/includes/js/jquery.sticky.js"></script>
+    <script src="/includes/js/jquery.lettering.js"></script>
+    <script src="/includes/js/jquery.sticky.js"></script>
 
-    <script src="/TeamCommit/resource/includes/js/ScrollMagic.min.js"></script>
-    <script src="/TeamCommit/resource/includes/js/scrollmagic.animation.gsap.min.js"></script>
+    <script src="/includes/js/ScrollMagic.min.js"></script>
+    <script src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
 
-    <script src="/TeamCommit/resource/includes/js/main.js"></script>
+    <script src="/includes/js/main.js"></script>
 </head>
 
 <body>
 	
-    <%@include file="/resource/includes/header.jsp"%>
+    <%@include file="/includes/header.jsp"%>
     
     <!-- Header -->
     <div class="bg-dark py-5">
@@ -103,8 +103,8 @@
 									<li>핸드폰 번호<span>번호 가져오기</span></li>
 									<li>포지션<span id="position"></span></li>
 								</ul>
-									<a href="#this" id="insert" class="site-btn-insert">등록</a>
-									<a href="#this" id="cancle" class="site-btn-cancle">취소</a>
+									<a href="/team" id="insert" class="site-btn-insert">등록</a>
+									<a href="/team" id="cancle" class="site-btn-cancle">취소</a>
 							</div>
 						</div>
                     </div>

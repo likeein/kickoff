@@ -11,21 +11,21 @@
 
     <title>Kick Off: 풋살팀 페이지</title>
 
-	<link rel="stylesheet" href="/kickoff/resource/includes/css/style.css">
-	<link rel = "stylesheet" href = "/kickoff/resource/includes/css/footer.css" />
-	<link rel = "stylesheet" href = "/kickoff/resource/main/css/vendor/icomoon/style.css">
+	<link rel="stylesheet" href="/includes/css/style.css">
+	<link rel = "stylesheet" href = "/includes/css/footer.css" />
+	<link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
 
     <!-- Custom fonts for this template -->
-    <link href="/TeamCommit/resource/team/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/team/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/kickoff/resource/team/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/team/css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
-    <link href="/kickoff/resource/team/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="/team/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -34,7 +34,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-	<%@include file="/resource/includes/header.jsp"%>
+	<%@include file="/includes/header.jsp"%>
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -67,8 +67,8 @@
                     <div class="card shadow mb-4">
                     <div class = "calender">
                         <div class="card-header py-3">
-							<a href="/TeamCommit/viewex/team/teamRank.jsp" style="font-size: 18px;">
-     							 <img src="/TeamCommit/resource/team/img/free-icon-trophy-3176355.png"/>&nbsp; 팀 랭킹
+							<a href="/teamRank" style="font-size: 18px;">
+     							 <img src="/team/img/free-icon-trophy-3176355.png"/>&nbsp; 팀 랭킹
   							</a>
   						
                         </div>
@@ -547,7 +547,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <button onclick="location.href='/TeamCommit/viewex/team/teamInsert.jsp';">팀 등록</button>
+                            <button onclick="location.href='/teamInsert';">팀 등록</button>
                         </div>
                     </div>
 
@@ -558,7 +558,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <%@include file="/resource/includes/footer.jsp"%>
+            <%@include file="/includes/footer.jsp"%>
             <!-- End of Footer -->
 
         </div>
@@ -593,34 +593,34 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="/kickoff/resource/team/vendor/jquery/jquery.min.js"></script>
-    <script src="/kickoff/resource/team/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/team/vendor/jquery/jquery.min.js"></script>
+    <script src="/team/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="/kickoff/resource/team/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/team/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="/kickoff/resource/team/js/sb-admin-2.min.js"></script>
+    <script src="/team/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="/kickoff/resource/team/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="/kickoff/resource/team/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="/team/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/team/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/kickoff/resource/team/js/demo/datatables-demo.js"></script>
+    <script src="/team/js/demo/datatables-demo.js"></script>
 
     
 
 
-    <script src="/kickoff/resource/includes/js/jquery.lettering.js"></script>
-    <script src="/kickoff/resource/includes/js/jquery.sticky.js"></script>
+    <script src="/includes/js/jquery.lettering.js"></script>
+    <script src="/includes/js/jquery.sticky.js"></script>
 
 
-    <script src="/kickoff/resource/includes/js/ScrollMagic.min.js"></script>
-    <script src="/kickoff/resource/includes/js/scrollmagic.animation.gsap.min.js"></script>
+    <script src="/includes/js/ScrollMagic.min.js"></script>
+    <script src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
 
 
-    <script src="/kickoff/resource/includes/js/main.js"></script>
+    <script src="/includes/js/main.js"></script>
 
 </body>
 

@@ -7,16 +7,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="/TeamCommit/resource/Management/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="/TeamCommit/resource/Management/img/favicon.png">
-  <link rel = "stylesheet" href = "/TeamCommit/resource/main/css/vendor/icomoon/style.css">
+  <link rel="apple-touch-icon" sizes="76x76" href="/management/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="/management/img/favicon.png">
+  <link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
 
   <title>Kick Off: 풋살팀 랭킹</title>  
 
 
   
   
-  <link rel="stylesheet" href="/kickoff/resource/includes/css/style.css">
+  <link rel="stylesheet" href="/includes/css/style.css">
   
 
   
@@ -30,13 +30,13 @@
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
-  <link id="pagestyle" href="/kickoff/resource/Management/css/material-dashboard.css" rel="stylesheet" />
+  <link id="pagestyle" href="/management/css/material-dashboard.css" rel="stylesheet" />
   
   
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
-<%@include file="/resource/includes/header.jsp"%>
+<%@include file="/includes/header.jsp"%>
 
     <div class="container-fluid py-4">
       <div class="row">
@@ -61,7 +61,7 @@
                   <tbody>
                     <tr>            
                       <td>
-                        <p class="font-weight-bold mb-0"><img src="/TeamCommit/resource/team/img/free-icon-gold-medal-1910528.png"/></p>
+                        <p class="font-weight-bold mb-0"><img src="/team/img/free-icon-gold-medal-1910528.png"/></p>
                       </td>
                       <td class="align-middle text-center text-sm"> <!-- width 값 조정 -->
                         <span class="badge badge-sm bg-gradient-success">4조 FC</span>
@@ -72,7 +72,7 @@
                     <tr>
                 
                       <td>
-                        <p class="font-weight-bold mb-0"><img src="/TeamCommit/resource/team/img/free-icon-silver-medal-1910534.png"/></p>
+                        <p class="font-weight-bold mb-0"><img src="/team/img/free-icon-silver-medal-1910534.png"/></p>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <span class="badge badge-sm bg-gradient-secondary">Offline</span>
@@ -83,7 +83,7 @@
                     <tr>
                       
                       <td>
-                        <p class="font-weight-bold mb-0"><img src="/TeamCommit/resource/team/img/free-icon-bronze-medal-1910542.png"/></p>
+                        <p class="font-weight-bold mb-0"><img src="/team/img/free-icon-bronze-medal-1910542.png"/></p>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <span class="badge badge-sm bg-gradient-success">Online</span>
@@ -130,7 +130,7 @@
         </div>
       </div>
       
-      <button type="reset" class="btn_reset" onclick="location.href='/TeamCommit/viewex/team/team.jsp';">목록</button>
+      <button type="reset" class="btn_reset" onclick="location.href='/team';">목록</button>
      
     </div>
   </main>
@@ -138,27 +138,27 @@
 
 
   <!--   Core JS Files   -->
-   <script src="/kickoff/resource/includes/js/jquery-3.3.1.min.js"></script>
-  <script src="/kickoff/resource/Management/js/core/popper.min.js"></script>
-  <script src="/kickoff/resource/Management/js/core/bootstrap.min.js"></script>
-  <script src="/kickoff/resource/Management/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="/kickoff/resource/Management/js/plugins/smooth-scrollbar.min.js"></script>
+   <script src="/includes/js/jquery-3.3.1.min.js"></script>
+  <script src="/management/js/core/popper.min.js"></script>
+  <script src="/management/js/core/bootstrap.min.js"></script>
+  <script src="/management/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="/management/js/plugins/smooth-scrollbar.min.js"></script>
 
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="/kickoff/resource/Management/js/material-dashboard.min.js"></script>
+  <script src="/management/js/material-dashboard.min.js"></script>
  
     
    
 
-    <script src="/kickoff/resource/includes/js/jquery.lettering.js"></script>
-    <script src="/kickoff/resource/includes/js/jquery.sticky.js"></script>
+    <script src="/includes/js/jquery.lettering.js"></script>
+    <script src="/includes/js/jquery.sticky.js"></script>
 
-    <script src="/kickoff/resource/includes/js/ScrollMagic.min.js"></script>
-    <script src="/kickoff/resource/includes/js/scrollmagic.animation.gsap.min.js"></script>
+    <script src="/includes/js/ScrollMagic.min.js"></script>
+    <script src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
 
-    <script src="/kickoff/resource/includes/js/main.js"></script>
+    <script src="/includes/js/main.js"></script>
   
   
 </body>

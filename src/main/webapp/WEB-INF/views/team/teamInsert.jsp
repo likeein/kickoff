@@ -15,21 +15,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel = "stylesheet" href = "/kickoff/resource/main/css/vendor/icomoon/style.css">
-    <link rel="stylesheet" href="/kickoff/resource/teamInsert/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/teamInsert/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/teamInsert/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/teamInsert/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/teamInsert/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/teamInsert/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/teamInsert/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/team/css/style.css" type="text/css">
-    <link rel="stylesheet" href="/kickoff/resource/includes/css/style.css">
+    <link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
+    <link rel="stylesheet" href="/teamInsert/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/teamInsert/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/teamInsert/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/teamInsert/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/teamInsert/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/teamInsert/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/teamInsert/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/team/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/includes/css/style.css">
 </head>
 
 <body>
  <div class="header-container">
-      <%@include file="/resource/includes/header.jsp"%>
+      <%@include file="/includes/header.jsp"%>
 </div>
 
 
@@ -146,8 +146,8 @@
 									<li>팀장 포지션<span id="master-position"></span></li>
 									<li>모집 상태<span></span></li>
 								</ul>
-								<a href="#" onclick="location.href='/TeamCommit/viewex/team/team.jsp';" id="insert" class="site-btn-insert">등록</a>
-								<a href="#" onclick="location.href='/TeamCommit/viewex/team/team.jsp';" id="cancel" class="site-btn-cancle">취소</a>
+								<a href="#" onclick="location.href='/team';" id="insert" class="site-btn-insert">등록</a>
+								<a href="#" onclick="location.href='/team';" id="cancel" class="site-btn-cancle">취소</a>
 							</div>
 						</div>
 					</div>
@@ -159,31 +159,31 @@
   
     <!-- Js Plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/jquery-3.3.1.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/bootstrap.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/jquery.nice-select.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/jquery-ui.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/jquery.slicknav.js"></script>
-    <script src="/kickoff/resource/reservation/js/mixitup.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/owl.carousel.min.js"></script>
-    <script src="/kickoff/resource/reservation/js/main.js"></script>
-	<script src="/kickoff/resource/team/js/common.js"></script>
+    <script src="/reservation/js/jquery-3.3.1.min.js"></script>
+    <script src="/reservation/js/bootstrap.min.js"></script>
+    <script src="/reservation/js/jquery.nice-select.min.js"></script>
+    <script src="/reservation/js/jquery-ui.min.js"></script>
+    <script src="/reservation/js/jquery.slicknav.js"></script>
+    <script src="/reservation/js/mixitup.min.js"></script>
+    <script src="/reservation/js/owl.carousel.min.js"></script>
+    <script src="/reservation/js/main.js"></script>
+	<script src="/team/js/common.js"></script>
 	
-    <script src="/kickoff/resource/main/js/vendor/jquery.lettering.js"></script>
-    <script src="/kickoff/resource/main/js/vendor/jquery.sticky.js"></script>
-    <script src="/kickoff/resource/main/js/vendor/ScrollMagic.min.js"></script>
-    <script src="/kickoff/resource/main/js/vendor/scrollmagic.animation.gsap.min.js"></script>
-    <script src="/kickoff/resource/team/js/main.js"></script>
+    <script src="/main/js/vendor/jquery.lettering.js"></script>
+    <script src="/main/js/vendor/jquery.sticky.js"></script>
+    <script src="/main/js/vendor/ScrollMagic.min.js"></script>
+    <script src="/main/js/vendor/scrollmagic.animation.gsap.min.js"></script>
+    <script src="/team/js/main.js"></script>
     
-     <script src="/kickoff/resource/includes/js/jquery.lettering.js"></script>
-    <script src="/kickoff/resource/includes/js/jquery.sticky.js"></script>
+     <script src="/includes/js/jquery.lettering.js"></script>
+    <script src="/includes/js/jquery.sticky.js"></script>
 
 
-    <script src="/kickoff/resource/includes/js/ScrollMagic.min.js"></script>
-    <script src="/kickoff/resource/includes/js/scrollmagic.animation.gsap.min.js"></script>
+    <script src="/includes/js/ScrollMagic.min.js"></script>
+    <script src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
 
 
-    <script src="/kickoff/resource/includes/js/main.js"></script>
+    <script src="/includes/js/main.js"></script>
   
 	
 </body>
