@@ -6,6 +6,7 @@ import com.teamcommit.kickoff.Service.HelperService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -45,5 +46,19 @@ public class HelperController {
         return view;
     }
 
+    @PostMapping("/helperInsert")
+    public String helperInsert(@ModelAttribute("helperDO") HelperDO helperDO, Model model) {
+        String view = "/helper/helperInsert";
+
+        try {
+            helperService.insertHelper(helperDO);
+            model.addAttribute("script", "alert('용병 모집을 등록했습니다!');");
+        }
+        catch (Exception e) {
+            model.addAttribute("script", "alert('중복된 값이거나 양식이 올바르지 않습니다.');");
+        }
+
+        return view;
+    }
 
 }

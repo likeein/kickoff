@@ -27,6 +27,7 @@ public class HelperDO {
 	private int helperWant;
 	private String helperTime;
 	private String helperTeamLevel;
+	private String helperPlaceName;
 
 	public int getHelperSeqno() {
 		return helperSeqno;
@@ -138,6 +139,14 @@ public class HelperDO {
 
 	public void setHelperTeamLevel(String helperTeamLevel) {
 		this.helperTeamLevel = helperTeamLevel;
+	}
+
+	public String getHelperPlaceName() {
+		return helperPlaceName;
+	}
+
+	public void setHelperPlaceName(String helperPlaceName) {
+		this.helperPlaceName = helperPlaceName;
 	}
 
 	/*public String selectValue(String what) {
