@@ -59,7 +59,7 @@
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
                                 <p>풋살장<span>*</span></p>
-                                <input type="text" name="PLACE_NAME" value="${map.PLACE_NAME}" readonly>
+                                <input type="text" name="PLACE_NAME" value="풋살장 이름" readonly>
                            	</div>
                           	<div class="checkout__input">
                                 <p>코트<span>*</span></p>
@@ -74,7 +74,7 @@
                             </div>
                            	<div class="checkout__input">
                                 <p>위치<span>*</span></p>
-                                <input type="text" name="PLACE_ADDRESS" value="${map.PLACE_ADDRESS}" readonly>
+                                <input type="text" name="PLACE_ADDRESS" value="서울시 강남구" readonly>
                             </div>
                             <div class="checkout__input">
                                 <p>형태<span>*</span></p>
@@ -142,7 +142,7 @@
                             </div>
                             <div class="checkout__input">
 								<p>기타사항</p>
-                               	<textarea class="etc" name="RESERVATION_PRICE"></textarea>
+                               	<textarea class="etc" name="RESERVATION_COMMENT"></textarea>
                             </div>
                         </div>
                         
@@ -154,9 +154,9 @@
 									Title<span>Content</span>
 								</div>
 								<ul>
-									<li>풋살장<span>${map.PLACE_NAME}</span></li>
+									<li>풋살장<span>풋살장 이름</span></li>
 									<li>코트<span id="court"></span></li>
-									<li>위치<span>${map.PLACE_ADDRESS}</span></li>
+									<li>위치<span>서울시 강남구</span></li>
 									<li>형태<span id="placeForm"></span></li>
 									<li>예약 날짜<span id="date"></span></li>
 									<li>시작 시간<span id="startTime"></span></li>
@@ -164,8 +164,9 @@
 									<li>예약 상태<span id="status">예약</span></li>
 									<li>대관비<span id="price"></span></li>
 								</ul>
-								<a type="submit" id="insert" class="site-btn-insert" onclick="document.getElementById('frm').submit();">등록</a>
-								<a href="#this" id="cancle" class="site-btn-cancle">취소</a>
+								<input type="submit" id="insert" class="site-btn-insert" value="등록"></input>
+                               <%-- <a href="#this" id="insert" class="site-btn-insert">등록</a>--%>
+                                <a href="#this" id="cancle" class="site-btn-cancle">취소</a>
 							</div>
 						</div>
 					</div>
@@ -174,6 +175,7 @@
         </div>
     </section>
 
+    <%@include file="/includes/include-body.jspf"%>
     <!-- Footer -->
 	<%@include file="/includes/footer.jsp"%>
 
@@ -183,6 +185,7 @@
 			format: "yyyy-mm-dd",
 		    uiLibrary: 'bootstrap4',
 		});
+
     </script>
 	
     <!-- Js Plugins -->
@@ -195,13 +198,13 @@
     <script src="/reservation/js/owl.carousel.min.js"></script>
     <script src="/reservation/js/main.js"></script>
 	<script src="/reservation/js/common.js"></script>
-	
+
     <script src="/main/js/vendor/jquery.lettering.js"></script>
     <script src="/main/js/vendor/jquery.sticky.js"></script>
     <script src="/main/js/vendor/ScrollMagic.min.js"></script>
     <script src="/main/js/vendor/scrollmagic.animation.gsap.min.js"></script>
     <script src="/main/js/main.js"></script>
-	
+
 </body>
 		
 </html>
