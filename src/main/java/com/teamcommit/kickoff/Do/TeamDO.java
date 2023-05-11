@@ -1,7 +1,10 @@
 package com.teamcommit.kickoff.Do;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class TeamDO {
 
 	//풋살팀 아이디
