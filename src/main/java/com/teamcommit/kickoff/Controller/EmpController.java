@@ -45,6 +45,7 @@ public class EmpController {
         return view;
     }
 
+    /* empFutsal이 등록이고 empFutsalFix가 목록임 */
     @GetMapping("/empFutsalFix")
     public String empFutsalFix() {
         String view = "/emp/empFutsalFix";

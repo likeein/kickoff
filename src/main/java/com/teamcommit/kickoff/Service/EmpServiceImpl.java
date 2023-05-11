@@ -11,11 +11,11 @@ import java.util.List;
 public class EmpServiceImpl implements EmpService {
 
     @Autowired
-    private BoardMapper boardMapper;
+    private EmpMapper empMapper;
 
     @Override
     public List<EmployerDO> getList(EmployerDO employerDO) {
-        return boardMapper.getList(employerDO);
+        return empMapper.getList(employerDO);
     }
 
 }
