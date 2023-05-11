@@ -3,8 +3,7 @@ package com.teamcommit.kickoff.Controller;
 import com.teamcommit.kickoff.Do.UserDO;
 import com.teamcommit.kickoff.Service.LoginService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -40,27 +39,44 @@ public class LoginController {
         return view;
     }
 
-    // 로그인 요청
-    @PostMapping("/loginAll")
-    public String login(String userId, String userPw, HttpSession session) {
-        //화면에서 입력한 아이디와 비밀번호가 일치하는 회원 정보가 DB에 있는지 확인하여
-        HashMap<String, String> map = new HashMap<String, String>();
+    // 회원 로그인 요청
+    @RequestMapping("/loginAll")
+    public String login(@RequestParam("userId") String userId, @RequestParam("userPw") String userPw, HttpSession session) {
+        UserDO userDO = new UserDO();
+        userDO.setUserId(userId);
+        userDO.setUserPw(userPw);
 
-        map.put("userId", userId);
-        map.put("userPw", userPw);
-        UserDO userDO = loginService.member_login(map);
+        UserDO result = this.loginService.member_login(userDO);
 
-        if (userDO != null) {
-            session.setAttribute("login_info", userDO);
+        if (result != null) {
+            session.setAttribute("login_info", result);
             return "redirect:/main";
         } else {
+            session.removeAttribute("login_info");  // 로그인 실패 시 로그아웃 처리
             return "redirect:/login/loginAll";
         }
+    }
 
-//        //일치하는 회원 정보가 있다면 회원 정보를 세션에 담는다
-//        session.setAttribute("login_info", userDO);
-//
-//        return userDO == null ? "false" : "true";
+//    // 업체 로그인 요청
+//    @PostMapping({"/loginAll"})
+//    public String login(String userId, String userPw, HttpSession session) {
+//        UserDO userDO = new UserDO();
+//        userDO.setUserId(userId);
+//        userDO.setUserPw(userPw);
+//        UserDO result = this.loginService.member_login(userDO);
+//        if (result != null) {
+//            session.setAttribute("login_info", result);
+//            return "redirect:/main";
+//        } else {
+//            return "redirect:/login/loginAll";
+//        }
+//    }
+
+    // 로그아웃
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("login_info");
+        return "redirect:/main";
     }
 
     @GetMapping("/loginAgree")

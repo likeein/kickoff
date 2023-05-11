@@ -21,7 +21,7 @@
     </form>
   </div>
   <div class="form-container sign-in-container">
-    <form method="POST">
+    <form method="POST" action="/loginAll">
       <h1>회원 로그인</h1>
 	  <br /> <br /> 
       <input type="text" placeholder="아이디" name="userId" />
