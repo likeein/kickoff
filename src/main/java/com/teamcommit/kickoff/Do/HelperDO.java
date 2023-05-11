@@ -8,7 +8,7 @@ public class HelperDO {
 	//용병 게시글 번호
 	private int helperSeqno;
 	//사용자 아이디
-	private String userId;
+	private String helperId;
 	//경기 번호
 	private int gameSeqno;
 	//메시지 번호
@@ -37,12 +37,12 @@ public class HelperDO {
 		this.helperSeqno = helperSeqno;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getHelperId() {
+		return helperId;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setHelperId(String helperId) {
+		this.helperId = helperId;
 	}
 
 	public int getGameSeqno() {

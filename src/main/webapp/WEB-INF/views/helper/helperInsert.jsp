@@ -84,7 +84,7 @@
 
 	<div class = "userBox">
 		<label>신청자 ID:</label>
-		<input type = "text" name = "userId" id = "userId" />
+		<input type = "text" name = "helperId" id = "helperId" />
 	</div>
 
 	<div class = "helperBox">
