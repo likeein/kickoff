@@ -60,7 +60,7 @@ public class ReservationController {
     }
 
     @RequestMapping("/reservationDetail")
-    public ModelAndView reservationDetail(CommandMap commandMap) throws Exception {
+    public ModelAndView selectReservationDetail(CommandMap commandMap) throws Exception {
         ModelAndView mv = new ModelAndView("/reservation/reservationDetail");
 
         Map<String, Object> map = reservationService.selectReservationDetail(commandMap.getMap());

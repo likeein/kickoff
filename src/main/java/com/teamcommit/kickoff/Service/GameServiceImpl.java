@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Service("reservationService")
+@Service("gameService")
 public class GameServiceImpl implements GameService {
 
     @Resource(name="gameDAO")
