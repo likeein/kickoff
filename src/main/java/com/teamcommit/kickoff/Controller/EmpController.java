@@ -16,6 +16,10 @@ import java.util.Map;
 @Controller
 public class EmpController {
 
+    @Qualifier("EmpService")
+    @Autowired
+    private EmpService empService;
+
     @GetMapping("/empReservation")
     public String empReservation() {
         String view = "/emp/empReservation";
@@ -23,16 +27,13 @@ public class EmpController {
         return view;
     }
 
-    @Qualifier("EmpService")
-    @Autowired
-    private EmpService empService;
 
     @RequestMapping(value = "/myBoard", method = RequestMethod.GET)
     public String Boardlist(@ModelAttribute("EmployerDO") EmployerDO EmployerDO, HttpServletRequest request, Model model) {
 
         String view = "/emp/myBoard";
 
-        List<EmployerDO> boardList = EmpService.getList(EmployerDO);
+        List<EmployerDO> boardList = empService.getList(EmployerDO);
         model.addAttribute("boardList", boardList);
 
         return view;
