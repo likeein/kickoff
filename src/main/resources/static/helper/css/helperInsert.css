@@ -47,7 +47,7 @@ body {
   left: 33%;
   
 }
-.selectBox .select {
+.selectBox .helperTeamLevel, .selectBox .helperMatch, .selectBox .helperPosition {
   width: inherit;
   height: inherit;
   border: 0 none;
@@ -56,7 +56,7 @@ body {
   position: relative;
   z-index: 3; 
 }
-.selectBox .select option {
+.selectBox .helperTeamLevel option, .selectBox .helperMatch option, .selectBox .helperPosition option{
   background: #b1d7b4;
   color: #fff;
   padding: 3px 0;
@@ -100,13 +100,13 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 
-#location {
+#helperPlace {
 	position: absolute;
 	top: 50%;
 	left: 34%;
 }
 
-#matchTime {
+#helperTime {
 	position: absolute;
 	top: 100%;
 	left: 34%;
@@ -142,13 +142,13 @@ h1 {
 .helperBox {
 	position: absolute;
 	  left: 50%;
-	  top: 49%;
+	  top: 56%;
 }
 
 .genderBox {
 	position: absolute;
 	  left: 50%;
-	  top: 57.5%;
+	  top: 63.5%;
 }
 
 
@@ -173,25 +173,31 @@ h1 {
 #positionBox {
 position: absolute;
 	  left: 53.8%;
-	  top: 63.2%;
+	  top: 68.2%;
 }
 
 #position {
 position: absolute;
 	  left: 50%;
-	  top: 64.2%;
+	  top: 69.2%;
 }
 
 .moneyBox {
 	position: absolute;
 	  left: 50%;
-	  top: 70.5%;
+	  top: 75.5%;
+}
+
+.userBox {
+    position: absolute;
+    left: 50%;
+    top: 48%;
 }
 
 .btnbtn {
 	position: absolute;
 	left: 50%;
-	top: 78.4%;
+	top: 82.4%;
 }
 
 button {
