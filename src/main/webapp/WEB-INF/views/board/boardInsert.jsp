@@ -21,27 +21,27 @@
     <script src="/includes/js/ScrollMagic.min.js"></script>
     <script src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
 
-
     <script src="/includes/js/main.js"></script>
 <!-- 여기까지 복붙하기 -->    
 <script type="text/javascript">
-    function _onSubmit(){
+    function _onSubmit() {
 
-        if($("#writeTitle").val() == ""){
+        if ($("#writeTitle").val() == "") {
             alert("제목을 입력해주세요");
             $("#writeTitle").focus();
             return false;
         }
 
-        if($("#writeContent").val() == ""){
+        if ($("#writeContent").val() == "") {
             alert("내용을 입력해주세요");
             $("#writeContent").focus();
             return false;
         }
 
-        if(!confirm("등록하시겠습니까?")){
+        if (!confirm("등록하시겠습니까?")) {
             return false;
         }
+    }
 </script>
 
 <link rel = "stylesheet" href = "/board/css/boardInsert.css" />
@@ -57,10 +57,9 @@
             </div>
         </div>
     </div>
-
 <br>
 <br>
-<form role="form" action="/insert_action" method="post">
+<form role="form" id="frm" name="frm" action="insert_action" method="post" onsubmit="return _onSubmit();">
 <h4>게시글 등록</h4>
 <div class="table-responsive">
 		
@@ -72,17 +71,17 @@
 		</div>
 		
 		<div class="writer">
-		<span id="writeId" class="formWriter">
+		<span id="writeId" name="writeId" class="formWriter">
 		<label for="writeId" class="writeId" >작성자</label>
             <%--<label for="writeId" class="writeId" ><c:out value="${list.writeId}" /></label>--%>
 		</span>
 		</div>
 		
 		<div class="filebox bs3-primary preview-image">
-              <input id="fileName"  class="fileName" value="파일선택" disabled="disabled" style="width: 200px;">
+              <input id="fileName" name="fileName" class="fileName" value="파일선택" disabled="disabled" style="width: 200px;">
 
               <label for="filePath">업로드</label>
-              <input type="file" id="filePath" class="filePath-hidden">
+              <input type="file" id="filePath" name="filePath" class="filePath-hidden">
         </div>
 		
 		<div class="content">
@@ -93,13 +92,13 @@
 		<div class="btn_board">
 		<button type="reset" class="btn_reset" onclick="location.href='/board';">취소</button>
 		<!-- <a href="boardDetail.jsp"><button type="submit" class="btn_submit">등록</button></a> -->
-		<button type="submit" class="btn_submit" >등록</button>
+		<button type="submit" class="btn_submit" onclick="document.getElementById('frm').submit();">등록</button>
 		</div>
 </div>
-			
 </div>
 </form>
-
+<!-- Footer-->
+<%@include file="/includes/footer.jsp"%>
 </body>
 </html>
 

@@ -1,16 +1,15 @@
 package com.teamcommit.kickoff.Controller;
 
+import com.teamcommit.kickoff.Do.BoardDO;
 import com.teamcommit.kickoff.Do.UserDO;
 import com.teamcommit.kickoff.Service.LoginService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.Map;
 
 
 @Controller
@@ -34,6 +33,7 @@ public class LoginController {
     @Resource(name="loginService")
     private LoginService loginService;
 
+
     @GetMapping("/loginAll")
     public String loginAll() {
         String view = "/login/loginAll";
@@ -41,21 +41,47 @@ public class LoginController {
         return view;
     }
 
-    // 로그인 요청
-    @ResponseBody
-    @RequestMapping("/login")
-    public String login(String userId, String userPw, HttpSession session) {
-        //화면에서 입력한 아이디와 비밀번호가 일치하는 회원 정보가 DB에 있는지 확인하여
-        Map<String, String> map = new HashMap<String, String>();
+    // 회원 로그인 요청
+    @RequestMapping("/loginAll")
+    public ModelAndView login(@ModelAttribute("userDO") UserDO userDO, @RequestParam("userId") String userId, @RequestParam("userPw") String userPw, HttpSession session, Model model) throws Exception {
 
-        map.put("id", userId);
-        map.put("pw", userPw);
-       UserDO userDO = loginService.member_login(map);
+        userDO.setUserId(userId);
+        userDO.setUserPw(userPw);
 
-        //일치하는 회원 정보가 있다면 회원 정보를 세션에 담는다
-        session.setAttribute("login_info", userDO);
+        UserDO result = this.loginService.member_login(userDO);
 
-        return userDO == null ? "false" : "true";
+        if (result != null) {
+            ModelAndView mv = new ModelAndView("redirect:/main");
+            session.setAttribute("login_info", result);
+            return mv;
+        } else {
+            ModelAndView mv = new ModelAndView("redirect:/loginAll");
+            session.removeAttribute("login_info");  // 로그인 실패 시 로그아웃 처리
+            return mv;
+        }
+    }
+
+//    // 업체 로그인 요청
+//    @PostMapping({"/loginAll"})
+//    public String login(String userId, String userPw, HttpSession session) {
+//        UserDO userDO = new UserDO();
+//        userDO.setUserId(userId);
+//        userDO.setUserPw(userPw);
+//        UserDO result = this.loginService.member_login(userDO);
+//        if (result != null) {
+//            session.setAttribute("login_info", result);
+//            return "redirect:/main";
+//        } else {
+//            return "redirect:/login/loginAll";
+//        }
+//    }
+
+    // 로그아웃
+    @GetMapping("/logout")
+    public ModelAndView logout(HttpSession session) {
+        session.removeAttribute("login_info");
+        ModelAndView mv = new ModelAndView("redirect:/main");
+        return mv;
     }
 
     @GetMapping("/loginAgree")

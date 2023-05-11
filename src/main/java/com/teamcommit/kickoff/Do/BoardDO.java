@@ -1,6 +1,8 @@
 package com.teamcommit.kickoff.Do;
 
+import com.teamcommit.kickoff.Controller.BoardController;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import java.util.Date;
 

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.teamcommit.kickoff.Service.TeamMapper">
+
+    <!-- Team List -->
+    <select id="getList" parameterType="com.teamcommit.kickoff.Do.TeamDO" resultType="com.teamcommit.kickoff.Do.TeamDO">
+        <![CDATA[
+        SELECT
+            *
+        FROM
+            TEAM
+        ]]>
+    </select>
+
+<!--    &lt;!&ndash; Team Insert &ndash;&gt;-->
+<!--    <insert id="insertBoard">-->
+<!--        <![CDATA[-->
+<!--            INSERT INTO COMMUNITY_BOARD-->
+<!--            (-->
+<!--             BOARD_SEQ,-->
+<!--             WRITE_TITLE,-->
+<!--             WRITE_ID,-->
+<!--             FILE_NAME,-->
+<!--             FILE_PATH,-->
+<!--             WRITE_CONTENT-->
+<!--            )-->
+<!--            VALUES-->
+<!--            ((SELECT NVL(MAX(BOARD_SEQ),0)+1 FROM COMMUNITY_BOARD),-->
+<!--             #{writeTitle},-->
+<!--             #{writeId},-->
+<!--             #{fileName},-->
+<!--             #{filePath},-->
+<!--             #{writeContent}-->
+<!--            )-->
+<!--        ]]>-->
+<!--    </insert>-->
+<!--    &lt;!&ndash;<select id="insertBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.BoardDO">-->
+<!--        <![CDATA[-->
+<!--        SELECT-->
+<!--            write_id-->
+<!--        FROM-->
+<!--            COMMUNITY_BOARD-->
+<!--        ]]>-->
+<!--    </select>&ndash;&gt;-->
+
+<!--    &lt;!&ndash; Board Detail &ndash;&gt;-->
+<!--    <select id="getBoardContents" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.BoardDO">-->
+<!--        <![CDATA[-->
+<!--        SELECT-->
+<!--            *-->
+<!--        FROM-->
+<!--            COMMUNITY_BOARD-->
+<!--        WHERE-->
+<!--            BOARD_SEQNO = #{boardSeqno}-->
+<!--        ]]>-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash; Board Update &ndash;&gt;-->
+<!--    <update id="updaateBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO">-->
+<!--        <![CDATA[-->
+<!--        UPDATE-->
+<!--            COMMUNITY_BOARD-->
+<!--        SET-->
+<!--            WRITE_TITLE = #{writeTitle},-->
+<!--            WRITE_CONTENT = #{writeContent},-->
+<!--            FILE_NAME = #{fileName},-->
+<!--            FILE_PATH = #{filePath},-->
+<!--            WRITE_EDIT_DATE = now()-->
+<!--        WHERE-->
+<!--            BOARD_SQENO = #{boardSeqno}-->
+<!--        ]]>-->
+<!--    </update>-->
+
+<!--    &lt;!&ndash; Board Delete &ndash;&gt;-->
+<!--    <delete id="getBoardDelete" parameterType="com.teamcommit.kickoff.Do.BoardDO" >-->
+<!--    <![CDATA[-->
+<!--        DELETE-->
+<!--        FROM-->
+<!--            COMMUNITY_BOARD-->
+<!--        WHERE-->
+<!--            BOARD_SQENO =#{boardSeqno}-->
+<!--        ]]>-->
+<!--	</delete>-->
+</mapper>

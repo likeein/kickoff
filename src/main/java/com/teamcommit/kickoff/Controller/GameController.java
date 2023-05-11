@@ -1,15 +1,23 @@
 package com.teamcommit.kickoff.Controller;
 
 import com.teamcommit.kickoff.Common.CommandMap;
+import com.teamcommit.kickoff.Service.GameService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.Map;
 
 @Controller
 public class GameController {
+
+    @Resource(name="gameService")
+    private GameService gameService;
 
     @GetMapping("/game")
     public String game() {
@@ -17,32 +25,48 @@ public class GameController {
 
         return view;
     }
+    @RequestMapping("/gameDetail")
+    public ModelAndView gameDetail(CommandMap commandMap, HttpSession session) throws Exception {
 
-    @GetMapping("/gameUpdate")
-    public String gameUpdate() {
-        String view = "/game/gameUpdate";
+        ModelAndView mv = new ModelAndView();
 
-        return view;
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        if(session.getAttribute("user_id") != null) {
+            String id = (String)session.getAttribute("user_id");
+            map.put("id", id);
+        } else if(session.getAttribute("emp_id") != null) {
+            String id = (String)session.getAttribute("emp_id");
+            map.put("id", id);
+        }
+
+        Map<String, Object> mem = gameService.selectMemInfo(map);
+
+        mv.addObject("mem", mem);
+        mv.setViewName("/game/gameDeatail");
+
+        return mv;
     }
 
-    @GetMapping("/gameDetail")
-    public String gameDetail() {
-        String view = "/game/gameDetail";
+    @RequestMapping(value = "/gameUpdate")
+    public ModelAndView gameUpdate(CommandMap commandMap, HttpServletRequest request) throws Exception {
 
-        return view;
+        ModelAndView mv = new ModelAndView("redirect:/game");
+
+        gameService.gameDetail(commandMap.getMap(), request);
+
+        return mv;
     }
 
-    @GetMapping("/gameFix")
-    public String gameFix() {
-        String view = "/game/gameFix";
+    @RequestMapping("/gameScore")
+    public ModelAndView gameScore(CommandMap commandMap) throws Exception {
+        ModelAndView mv = new ModelAndView("/game/gameScore");
 
-        return view;
-    }
+        Map<String, Object> map = gameService.selectGameDetail(commandMap.getMap());
 
-    @GetMapping("/gameScore")
-    public String gameScore() {
-        String view = "/game/gameScore";
+        mv.addObject("map", map.get("map"));
+        mv.addObject("list", map.get("list"));
 
-        return view;
+        return mv;
     }
 }

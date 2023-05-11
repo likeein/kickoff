@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div>
 	<!-- 상단바 -->
@@ -21,16 +22,39 @@
 				</li>
 			</ul>
 		</div>
+
+
 		 <div class="icons-wrap text-md-right">
-		     <ul class="icons-top d-none d-lg-block">              
-              <li>
-                <a href="http://localhost:8080/loginAll"><span class="icon-sign-in"></span></a>
-              </li>
-              <li>
-                <a href="http://localhost:8080/myReservation"><span class="icon-person"></span></a>
-              </li>
-            </ul>
+
+
+			 <!-- 로그인 안 한 경우 -->
+			 <core:if test="${empty login_info}">
+				 <ul class="icons-top d-none d-lg-block">
+					 <li>
+						 <a href="/loginAll"><span class="icon-unlock"></span></a>
+					 </li>
+					 <li>
+						 <a href="#" onclick="alert('로그인 후 이용하실 수 있습니다.'); return false;"><span class="icon-person"></span></a>
+					 </li>
+				 </ul>
+			 </core:if>
+
+			 <!-- 로그인 한 경우 -->
+			 <core:if test="${!empty login_info}">
+				 <ul class="icons-top d-none d-lg-block">
+					 <li>
+						 <a href="/logout"><span class="icon-lock"></span></a>
+					 </li>
+					 <li>
+						 <a href="/myReservation"><span class="icon-person"></span></a>
+					 </li>
+				 </ul>
+			 </core:if>
+
+
 		</div>
+
+
 			</nav>
 		</div>
 

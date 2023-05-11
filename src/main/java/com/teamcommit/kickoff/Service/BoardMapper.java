@@ -1,4 +1,4 @@
-package com.teamcommit.kickoff.service;
+package com.teamcommit.kickoff.Service;
 
 import com.teamcommit.kickoff.Do.BoardDO;
 import org.apache.ibatis.annotations.Mapper;

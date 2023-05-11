@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%-- 짱! --%>
 <!DOCTYPE html>
 <html>
@@ -101,14 +103,30 @@
           </div>
           <div class="icons-wrap text-md-right">
 
-		     <ul class="icons-top d-none d-lg-block">              
+
+            <!-- 로그인 안 한 경우 -->
+            <core:if test="${empty login_info}">
+		     <ul class="icons-top d-none d-lg-block">
               <li>
-                <a href="/loginAll"><span class="icon-sign-in"></span></a>
+                <a href="/loginAll"><span class="icon-unlock"></span></a>
               </li>
               <li>
-                <a href="/myReservation"><span class="icon-person"></span></a>
+                <a href="#" onclick="alert('로그인 후 이용하실 수 있습니다.'); return false;"><span class="icon-person"></span></a>
               </li>
             </ul>
+            </core:if>
+
+            <!-- 로그인 한 경우 -->
+            <core:if test="${!empty login_info}">
+              <ul class="icons-top d-none d-lg-block">
+                <li>
+                  <a href="/logout"><span class="icon-lock"></span></a>
+                </li>
+                <li>
+                  <a href="/myReservation"><span class="icon-person"></span></a>
+                </li>
+              </ul>
+            </core:if>
 
             <!-- Mobile Toggle -->
             <a href="#" class="d-block d-lg-none burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
