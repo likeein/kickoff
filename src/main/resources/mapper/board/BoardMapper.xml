@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.teamcommit.kickoff.service.BoardMapper">
+<mapper namespace="com.teamcommit.kickoff.Service.BoardMapper">
 
     <!-- Board List -->
     <select id="getList" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.BoardDO">
@@ -16,34 +16,27 @@
     <!-- Board Insert -->
     <insert id="insertBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO">
         <![CDATA[
-            INSERT INTO COMMUNITY_BOARD
+        INSERT INTO COMMUNITY_BOARD
+        (
+            BOARD_SEQ,
+            WRITE_TITLE,
+            WRITE_ID,
+            FILE_NAME,
+            FILE_PATH,
+            WRITE_CONTENT
+        )
+        VALUES
             (
-             BOARD_SEQ,
-             WRITE_TITLE,
-             WRITE_ID,
-             FILE_NAME,
-             FILE_PATH,
-             WRITE_CONTENT
-            )
-            VALUES
-            (
-             BOARD_SEQ.NEXTVAL,
-             #{writeTitle},
-             #{writeId},
-             #{fileName},
-             #{filePath},
-             #{writeContent}
+                BOARD_SEQ.NEXTVAL,
+                #{writeTitle},
+                #{writeId},
+                #{fileName},
+                #{filePath},
+                #{writeContent}
             )
         ]]>
     </insert>
-    <!--<select id="insertBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.BoardDO">
-        <![CDATA[
-        SELECT
-            write_id
-        FROM
-            COMMUNITY_BOARD
-        ]]>
-    </select>-->
+
 
     <!-- Board Detail -->
     <select id="getBoardContents" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.BoardDO">
@@ -58,7 +51,7 @@
     </select>
 
     <!-- Board Update -->
-    <update id="updaateBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO">
+    <update id="updateBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO">
         <![CDATA[
         UPDATE
             COMMUNITY_BOARD
