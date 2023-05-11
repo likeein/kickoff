@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class TeamController {
 
     @GetMapping("/team")
-    public String teamList() {
+    public String team() {
         String view = "/team/team";
 
         return view;

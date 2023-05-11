@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
+/*인텔리야 힘을내*/
 @Mapper
 public interface BoardMapper {
 
