@@ -30,7 +30,7 @@ public class ReservationServiceImpl implements ReservationService {
         /* 조회수를 보여줘야할까? 고민해보자 */
 
         Map<String,Object> resultMap = new HashMap<String, Object>();
-        Map<String,Object> tempMap = reservationDAO.selectBoardDetail(map);
+        Map<String,Object> tempMap = reservationDAO.selectReservationDetail(map);
         resultMap.put("map", tempMap);
 
         /* 사진 하나인데, List로 넘겨야할까? */

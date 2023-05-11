@@ -49,7 +49,7 @@ public class ReservationController {
         return mv;
     }
 
-    @RequestMapping(value = "/reservationInsert")
+    @RequestMapping("/reservationInsert")
     public ModelAndView reservationInsert(CommandMap commandMap, HttpServletRequest request) throws Exception {
 
         ModelAndView mv = new ModelAndView("redirect:/reservation");
