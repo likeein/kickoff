@@ -2,7 +2,6 @@ package com.teamcommit.kickoff.Dao;
 
 import com.teamcommit.kickoff.Common.AbstractDAO;
 import com.teamcommit.kickoff.Do.HelperDO;
-import com.teamcommit.kickoff.Do.HelperInsertDO;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -15,8 +14,8 @@ public class HelperDAO extends AbstractDAO {
         return (List<HelperDO>) selectList("helper.selectHelper");
     }
 
-    public void insertHelper(HelperInsertDO helperInsertDO) throws Exception {
-        insert("helper.insertHelper", helperInsertDO);
+    public void insertHelper(HelperDO helperDO) throws Exception {
+        insert("helper.insertHelper", helperDO);
     }
 
     @SuppressWarnings("unchecked")
