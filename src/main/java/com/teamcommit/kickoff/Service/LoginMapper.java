@@ -7,5 +7,5 @@ import java.util.HashMap;
 
 @Mapper
 public interface LoginMapper {
-    public UserDO member_login(HashMap<String, String> map);
+    UserDO member_login(UserDO userDO);
 }

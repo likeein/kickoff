@@ -12,9 +12,10 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private LoginMapper loginMapper;
 
-    @Override
-    public UserDO member_login(HashMap<String, String> map) {
-        return loginMapper.member_login(map);
+    public LoginServiceImpl() {
     }
 
+    public UserDO member_login(UserDO userDO) {
+        return this.loginMapper.member_login(userDO);
+    }
 }

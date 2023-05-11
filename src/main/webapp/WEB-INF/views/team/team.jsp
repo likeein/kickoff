@@ -53,18 +53,18 @@
                             <i class="fa fa-bars"></i>
                         </button>
                     </form>
-                                    
+
                 </nav>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                
+
                 <!-- Page Heading-->
                     <h1 class="h3 mb-2 text-gray-800">팀 게시판</h1>
                     <br/>
 
-                    
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                     <div class = "calender">
@@ -72,7 +72,7 @@
 							<a href="/teamRank" style="font-size: 18px;">
      							 <img src="/team/img/free-icon-trophy-3176355.png"/>&nbsp; 팀 랭킹
   							</a>
-  						
+
                         </div>
                         </div>
                         <div class="card-body">
@@ -88,16 +88,16 @@
                                             <th class="fs-status">모집 상태</th>
                                         </tr>
                                     </thead>
-                               
+
                                     <tbody>
                                     <c:forEach var="list" items="${teamList}">
                                         <tr>
-                                            <td><c:out value="${list.teamName}" /></td>
-                                            <td><c:out value="${list.teamGender}" /></td>
-                                            <td><c:out value="${list.teamNumber}" /></td>
-                                            <td><c:out value="${list.teamStartDate}" /></td>
-                                            <td><c:out value="${list.teamEndDate}" /></td>
-                                            <td><button class="btn-end"><c:out value="${list.teamStatus}" /></button></td>
+                                            <th><c:out value="${list.teamName}" /></th>
+                                            <th><c:out value="${list.teamGender}" /></th>
+                                            <th><c:out value="${list.teamNumber}" /></th>
+                                            <th><c:out value="${list.teamStartDate}" /></th>
+                                            <th><c:out value="${list.teamEndDate}" /></th>
+                                            <th><button class="btn-end">모집 완료</button></th>
                                         </tr>
 <%--                                         <tr>--%>
 <%--                                            <th>4조 FC</th>--%>
@@ -149,7 +149,7 @@
     <!-- Page level custom scripts -->
     <script src="/team/js/demo/datatables-demo.js"></script>
 
-    
+
 
 
     <script src="/includes/js/jquery.lettering.js"></script>
