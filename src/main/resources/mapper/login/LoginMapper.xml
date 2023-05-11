@@ -5,7 +5,9 @@
 
     <select id="member_login" parameterType="com.teamcommit.kickoff.Do.UserDO" resultType="com.teamcommit.kickoff.Do.UserDO">
         <![CDATA[
-        SELECT * FROM USER WHERE USER_ID = #{userId} AND USER_PW = #{userPw}
+        SELECT *
+        FROM USERS
+        WHERE USER_ID = #{userId} AND USER_PW = #{userPw}
         ]]>
     </select>
 

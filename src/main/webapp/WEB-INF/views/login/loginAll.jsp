@@ -21,11 +21,11 @@
     </form>
   </div>
   <div class="form-container sign-in-container">
-    <form method="POST" action="/loginAll">
+    <form method="POST" name="loginAll" action="loginAll">
       <h1>회원 로그인</h1>
 	  <br /> <br /> 
-      <input type="text" placeholder="아이디" name="userId" />
-	  <input type="password" placeholder="비밀번호" name="userPw" />
+      <input type="text" placeholder="아이디" name="userId" id="userId"/>
+	  <input type="password" placeholder="비밀번호" name="userPw" id="userPw"/>
 	  <a href="/findUser">아이디/비밀번호 찾기</a>
 	  <a href="/loginAgree">회원가입</a>
 	  <button type="submit" id="loginUser">로그인</button>

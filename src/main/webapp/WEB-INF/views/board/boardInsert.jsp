@@ -57,7 +57,6 @@
             </div>
         </div>
     </div>
-
 <br>
 <br>
 <form role="form" id="frm" name="frm" action="insert_action" method="post" onsubmit="return _onSubmit();">
@@ -72,17 +71,17 @@
 		</div>
 		
 		<div class="writer">
-		<span id="writeId" class="formWriter">
+		<span id="writeId" name="writeId" class="formWriter">
 		<label for="writeId" class="writeId" >작성자</label>
             <%--<label for="writeId" class="writeId" ><c:out value="${list.writeId}" /></label>--%>
 		</span>
 		</div>
 		
 		<div class="filebox bs3-primary preview-image">
-              <input id="fileName"  class="fileName" value="파일선택" disabled="disabled" style="width: 200px;">
+              <input id="fileName" name="fileName" class="fileName" value="파일선택" disabled="disabled" style="width: 200px;">
 
               <label for="filePath">업로드</label>
-              <input type="file" id="filePath" class="filePath-hidden">
+              <input type="file" id="filePath" name="filePath" class="filePath-hidden">
         </div>
 		
 		<div class="content">
@@ -96,7 +95,6 @@
 		<button type="submit" class="btn_submit" onclick="document.getElementById('frm').submit();">등록</button>
 		</div>
 </div>
-			
 </div>
 </form>
 <!-- Footer-->

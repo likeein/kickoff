@@ -1,13 +1,15 @@
 package com.teamcommit.kickoff.Controller;
 
+import com.teamcommit.kickoff.Do.BoardDO;
 import com.teamcommit.kickoff.Do.UserDO;
 import com.teamcommit.kickoff.Service.LoginService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
 
 
 @Controller
@@ -41,19 +43,20 @@ public class LoginController {
 
     // 회원 로그인 요청
     @RequestMapping("/loginAll")
-    public String login(@RequestParam("userId") String userId, @RequestParam("userPw") String userPw, HttpSession session) {
-        UserDO userDO = new UserDO();
+    public ModelAndView login(@ModelAttribute("userDO") UserDO userDO, @RequestParam("userId") String userId, @RequestParam("userPw") String userPw, HttpSession session, Model model) throws Exception {
+
         userDO.setUserId(userId);
         userDO.setUserPw(userPw);
 
         UserDO result = this.loginService.member_login(userDO);
 
         if (result != null) {
-            session.setAttribute("login_info", result);
-            return "redirect:/main";
+            ModelAndView mv = new ModelAndView("redirect:/main");
+            return mv;
         } else {
+            ModelAndView mv = new ModelAndView("redirect:/loginAll");
             session.removeAttribute("login_info");  // 로그인 실패 시 로그아웃 처리
-            return "redirect:/login/loginAll";
+            return mv;
         }
     }
 
