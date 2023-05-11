@@ -1,11 +1,10 @@
-package com.teamcommit.kickoff.service;
+package com.teamcommit.kickoff.Service;
 
 import com.teamcommit.kickoff.Do.BoardDO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
-/*인텔리야 힘을내*/
 @Mapper
 public interface BoardMapper {
 

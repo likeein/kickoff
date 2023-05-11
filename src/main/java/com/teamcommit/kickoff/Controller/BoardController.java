@@ -1,7 +1,7 @@
 package com.teamcommit.kickoff.Controller;
 
 import com.teamcommit.kickoff.Do.BoardDO;
-import com.teamcommit.kickoff.service.BoardService;
+import com.teamcommit.kickoff.Service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -45,6 +45,8 @@ public class BoardController {
     @RequestMapping(value = "/insert_action", method =  RequestMethod.POST)
     public String insert_action(@ModelAttribute("boardDO") BoardDO boardDO, HttpServletRequest request, RedirectAttributes redirect) {
 
+        String view = "/board/boardDetailWritter";
+
         try{
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -61,7 +63,7 @@ public class BoardController {
             redirect.addFlashAttribute("msg", "오류가 발생되었습니다.");
         }
 
-        return "redirect:/board/boardDetailWritter";
+        return "redirect:/board/insert_action";
     }
 
     @RequestMapping(value = "/boardDetailWritter", method = RequestMethod.GET)
@@ -125,14 +127,11 @@ public class BoardController {
         return "redirect:/board";
     }
 
-    /*
-
-    @RequestMapping("/boardReport", metho)
+    @RequestMapping(value = "/boardReport", method = RequestMethod.GET)
     public String boardReport() {
         String view = "/board/boardReport";
 
         return view;
     }
 
-    */
 }

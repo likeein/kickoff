@@ -11,8 +11,8 @@
 <title>Kick Off: 자유게시판 글 상세보기</title>
 <!-- include할 문서에 스타일, js -->
 <link rel="stylesheet" href="/includes/css/style.css">
-<link rel = "stylesheet" href = "/includes/css/footer.css" />
 <link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
+	<link rel = "stylesheet" href = "/includes/css/footer.css" />
 
 <script src="/includes/js/jquery-3.3.1.min.js"></script>
 
@@ -22,7 +22,6 @@
 
 <script src="/includes/js/ScrollMagic.min.js"></script>
 <script src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
-
 
 <script src="/includes/js/main.js"></script>
 <!-- 여기까지 복붙하기 -->

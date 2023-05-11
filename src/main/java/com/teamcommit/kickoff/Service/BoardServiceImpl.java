@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/*저도 안돼서 미치겟어여 ㅋ*/
 @Service("BoardService")
 public class BoardServiceImpl implements BoardService{
 
@@ -20,7 +19,7 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
-    public void insertBoard(BoardDO boardDO) {
+    public void insertBoard(BoardDO boardDO) throws Exception {
         boardMapper.insertBoard(boardDO);
     }
 
@@ -30,7 +29,7 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
-    public void updateBoard(BoardDO boardDO) {
+    public void updateBoard(BoardDO boardDO) throws Exception {
         boardMapper.updateBoard(boardDO);
     }
 
