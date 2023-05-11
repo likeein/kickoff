@@ -1,4 +1,4 @@
-package com.teamcommit.kickoff.service;
+package com.teamcommit.kickoff.Service;
 
 import com.teamcommit.kickoff.Do.BoardDO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*저도 안돼서 미치겟어여 ㅋ*/
 @Service("BoardService")
 public class BoardServiceImpl implements BoardService{
 
