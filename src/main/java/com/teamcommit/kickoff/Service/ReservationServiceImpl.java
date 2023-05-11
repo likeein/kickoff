@@ -26,7 +26,7 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public Map<String, Object> selectReservationDetail(Map<String, Object> map) throws Exception {
+    public Map<String, Object> selectReservation(Map<String, Object> map) throws Exception {
         /* 조회수를 보여줘야할까? 고민해보자 */
 
         Map<String,Object> resultMap = new HashMap<String, Object>();
