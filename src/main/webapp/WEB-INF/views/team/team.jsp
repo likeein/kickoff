@@ -92,12 +92,12 @@
                                     <tbody>
                                     <c:forEach var="list" items="${teamList}">
                                         <tr>
-                                            <th><c:out value="${list.teamName}" /></th>
-                                            <th><c:out value="${list.teamGender}" /></th>
-                                            <th><c:out value="${list.teamNumber}" /></th>
-                                            <th><c:out value="${list.teamStartDate}" /></th>
-                                            <th><c:out value="${list.teamEndDate}" /></th>
-                                            <th><button class="btn-end">모집 완료</button></th>
+                                            <td><c:out value="${list.teamName}" /></td>
+                                            <td><c:out value="${list.teamGender}" /></td>
+                                            <td><c:out value="${list.teamNumber}" /></td>
+                                            <td><c:out value="${list.teamStartDate}" /></td>
+                                            <td><c:out value="${list.teamEndDate}" /></td>
+                                            <td><button class="btn-end">모집 완료</button></td>
                                         </tr>
 <%--                                         <tr>--%>
 <%--                                            <th>4조 FC</th>--%>

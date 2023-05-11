@@ -52,6 +52,7 @@ public class LoginController {
 
         if (result != null) {
             ModelAndView mv = new ModelAndView("redirect:/main");
+            session.setAttribute("login_info", result);
             return mv;
         } else {
             ModelAndView mv = new ModelAndView("redirect:/loginAll");
@@ -77,9 +78,10 @@ public class LoginController {
 
     // 로그아웃
     @GetMapping("/logout")
-    public String logout(HttpSession session) {
+    public ModelAndView logout(HttpSession session) {
         session.removeAttribute("login_info");
-        return "redirect:/main";
+        ModelAndView mv = new ModelAndView("redirect:/main");
+        return mv;
     }
 
     @GetMapping("/loginAgree")
