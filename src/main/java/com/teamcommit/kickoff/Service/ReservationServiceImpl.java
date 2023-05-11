@@ -15,10 +15,10 @@ public class ReservationServiceImpl implements ReservationService {
     @Resource(name="reservationDAO")
     private ReservationDAO reservationDAO;
 
-    @Override
+/*    @Override
     public Map<String, Object> selectMemInfo(Map<String, Object> map) throws Exception {
         return reservationDAO.selectMemInfo(map);
-    }
+    }*/
 
     @Override
     public void insertReservation(Map<String, Object> map, HttpServletRequest request) throws Exception {

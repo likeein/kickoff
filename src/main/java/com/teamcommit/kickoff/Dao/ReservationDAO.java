@@ -9,10 +9,10 @@ import java.util.Map;
 @Repository("reservationDAO")
 public class ReservationDAO extends AbstractDAO {
 
-    @SuppressWarnings("unchecked")
+/*    @SuppressWarnings("unchecked")
     public Map<String, Object> selectMemInfo(Map<String, Object> map) throws Exception {
         return (Map<String, Object>) selectOne("reservation.selectMemInfo", map);
-    }
+    }*/
 
     public void insertReservation(Map<String, Object> map) throws Exception {
         insert("reservation.insertReservation", map);

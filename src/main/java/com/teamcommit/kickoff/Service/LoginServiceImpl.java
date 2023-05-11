@@ -1,17 +1,16 @@
-package com.teamcommit.kickoff.Dao;
+package com.teamcommit.kickoff.Service;
 
+import com.teamcommit.kickoff.Dao.LoginDAO;
 import com.teamcommit.kickoff.Do.UserDO;
-import com.teamcommit.kickoff.Service.LoginService;
-import org.apache.ibatis.session.SqlSession;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Map;
 
-@Repository
-public class LoginDAO implements LoginService {
+@Service("loginService")
+public class LoginServiceImpl implements LoginService {
     @Resource
-    private SqlSession sql;
+    private LoginDAO loginDAO;
 
 //    @Override
 //    public boolean member_insert(UserDO userDO) {
@@ -27,7 +26,7 @@ public class LoginDAO implements LoginService {
 
     @Override
     public UserDO member_login(Map<String, String> map) {
-        return sql.selectOne("login.mapper.login", map);
+        return loginDAO.member_login(map);
     }
 
 //    @Override
