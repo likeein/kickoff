@@ -14,7 +14,7 @@
     </select>
 
     <!-- Board Insert -->
-    <insert id="insertBoard">
+    <insert id="insertBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO">
         <![CDATA[
             INSERT INTO COMMUNITY_BOARD
             (
@@ -26,7 +26,8 @@
              WRITE_CONTENT
             )
             VALUES
-            ((SELECT NVL(MAX(BOARD_SEQ),0)+1 FROM COMMUNITY_BOARD),
+            (
+             BOARD_SEQ.NEXTVAL,
              #{writeTitle},
              #{writeId},
              #{fileName},

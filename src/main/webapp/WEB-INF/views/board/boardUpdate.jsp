@@ -42,7 +42,7 @@
 
 <br>
 <br>
-<form role="form" action="/update_action" method="post" onsubmit="return _onSubmit();" >
+<form role="form" id="frm" name="frm" action="/update_action" method="post" onsubmit="return _onSubmit();" >
     <input type="hidden" id="boardSeqno" name="boardSeqno" value="${boardContents.boardSeqno}"/>
 <h4>게시글 수정</h4>
 <div class="table-responsive">
@@ -74,7 +74,7 @@
 		
 		<div class="btn_board">
 		<button type="reset" class="btn_reset" onclick="location.href='/boardDetailWritter?boardSeqno=${boardContents.boardSeqno}';">취소</button>
-		<button type="submit" class="btn_submit">수정</button>
+		<button type="submit" class="btn_submit" onclick="document.getElementById('frm').submit();">수정</button>
 		</div>
 </div>	
 </form>
