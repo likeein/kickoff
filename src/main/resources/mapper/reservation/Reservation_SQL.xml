@@ -1,45 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.teamcommit.kickoff.Dao.reservation">
+<mapper namespace="com.teamcommit.kickoff.Service.ReservationMapper">
 
     <!-- Member Info -->
 
+    <!-- Reservation List -->
+    <select id="selectReservationList" parameterType="com.teamcommit.kickoff.Do.ReservationDO" resultType="com.teamcommit.kickoff.Do.ReservationDO">
+        <![CDATA[
+            SELECT
+                    *
+            FROM
+                RESERVATION
+        ]]>
+    </select>
+
     <!-- Reservation Insert -->
-    <insert id="insertReservation" parameterType="hashmap" useGeneratedKeys="true" keyProperty="RESERVATION_NO">
-        <selectKey keyProperty="RESERVATION_NO" resultType="string" order="BEFORE">
-            SELECT RESERVATION_SEQ.NEXTVAL FROM DUAL
-        </selectKey>
-            <![CDATA[
-                INSERT INTO RESERVATION (
-                    RESERVATION_NO,
-                /*    USER_ID,
-                    PLACE_ID,
-                    PLACE_NAME,*/
-                    RESERVATION_COURT_NAME,
-                 /*   PLACE_ADDRESS,*/
-                    RESERVATION_COURT_FORM,
-                    RESERVATION_DATE,
-                    RESERVATION_START_TIME,
-                    RESERVATION_END_TIME,
-                    RESERVATION_STATUS,
-                    RESERVATION_PRICE,
-                    RESERVATION_COMMENT,
-                    RESERVATION_REG_DATE
-                )
-                VALUES (
-                    RESERVATION_SEQ.NEXTVAL,
-                    #{RESERVATION_COURT_NAME},
-                    #{RESERVATION_COURT_FORM},
-                    #{RESERVATION_DATE},
-                    #{RESERVATION_START_TIME},
-                    #{RESERVATION_END_TIME},
-                    'Y',
-                    #{RESERVATION_PRICE},
-                    #{RESERVATION_COMMENT},
-                    SYSDATE
-                )
-            ]]>
+    <insert id="insertReservation" parameterType="com.teamcommit.kickoff.Do.ReservationDO">
+        <![CDATA[
+            INSERT INTO RESERVATION (
+                RESERVATION_NO,
+            /*    USER_ID,
+                PLACE_ID,
+                PLACE_NAME,*/
+                RESERVATION_COURT_NAME,
+             /*   PLACE_ADDRESS,*/
+                RESERVATION_COURT_FORM,
+                RESERVATION_DATE,
+                RESERVATION_START_TIME,
+                RESERVATION_END_TIME,
+                RESERVATION_STATUS,
+                RESERVATION_PRICE,
+                RESERVATION_COMMENT,
+                RESERVATION_REG_DATE
+            )
+            VALUES (
+                RESERVATION_SEQ.NEXTVAL,
+                #{RESERVATION_COURT_NAME},
+                #{RESERVATION_COURT_FORM},
+                #{RESERVATION_DATE},
+                #{RESERVATION_START_TIME},
+                #{RESERVATION_END_TIME},
+                'Y',
+                #{RESERVATION_PRICE},
+                #{RESERVATION_COMMENT},
+                SYSDATE
+            )
+        ]]>
     </insert>
 
     <!-- Reservation Detail -->
