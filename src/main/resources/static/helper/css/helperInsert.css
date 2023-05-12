@@ -123,8 +123,8 @@ h1 {
 }
 
 .reservation {
-	position: absolute;
-	top: 42%;
+    position: absolute;
+    top: 42%;
 }
 
 #matchBox {
@@ -244,7 +244,7 @@ button:disabled {
   opacity: 0.5;
 }
 
-button.btn, .reservation {
+button.btn, .reservation, .reservationClose {
   --button-bg-color: #b1d7b4;
   --button-hover-bg-color: #7fb77e;
 }

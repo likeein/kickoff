@@ -33,7 +33,7 @@ window.onload = function() {
 
 	    var buttons = document.getElementsByClassName("btn");
 	    for(var j = 0; j < buttons.length; j++) {
-	        if(buttons[j].firstChild.textContent.trim() == today.getDate()) {
+	        if(buttons[j].firstChild.textContent.trim() == today.getDate() && days[(nowDate.getDay() + j) % 7] == days[today.getDay()]) {
 	            selectButton(buttons[j]);
 	        } else {
 	            buttons[j].classList.remove("selected");

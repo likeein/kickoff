@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,7 +76,16 @@
                                     <th>경기 날짜</th>
                                 </tr>
                                 </thead>
-                                ${table}
+                                <c:forEach var="list" items="${table}">
+                                    <tr>
+                                        <td><c:out value="${list.helperMatch}" /></td>
+                                        <td><c:out value="${list.helperPosition}" /></td>
+                                        <td><c:out value="${list.helperTeamLevel}" /></td>
+                                        <td><c:out value="${list.helperGender}" /></td>
+                                        <td><c:out value="${list.helperPlace}" /></td>
+                                        <td><c:out value="${list.helperTime}" /></td>
+                                    </tr>
+                                </c:forEach>
                             </table>
                             <div class="btn_insert">
                                 <a href="/helperInsert"><button type="button" class="btn_insert">등록</button></a>
