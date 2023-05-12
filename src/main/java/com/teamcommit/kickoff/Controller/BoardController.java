@@ -2,6 +2,7 @@ package com.teamcommit.kickoff.Controller;
 
 import com.teamcommit.kickoff.Do.BoardDO;
 import com.teamcommit.kickoff.Do.ReplyDO;
+import com.teamcommit.kickoff.Do.ReportDO;
 import com.teamcommit.kickoff.Service.BoardService;
 //import com.teamcommit.kickoff.Service.ReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,9 +64,9 @@ public class BoardController {
             boardService.insertBoard(boardDO);
 
             redirect.addFlashAttribute("redirect", boardDO.getBoardSeqno());
-            redirect.addFlashAttribute("msg", "등록이 완료되었습니다.");
+            redirect.addFlashAttribute("msg", "등록 완료되었습니다.");
         } catch (Exception e) {
-            redirect.addFlashAttribute("msg", "오류가 발생되었습니다.");
+            redirect.addFlashAttribute("msg", "오류가 발생되었습니다. 다시 시도해주세요.");
         }
 
         return mv;
@@ -117,9 +118,9 @@ public class BoardController {
             boardService.updateBoard(boardDO);
             redirect.addFlashAttribute("redirect", boardDO.getBoardSeqno());
 
-            redirect.addFlashAttribute("msg", "수정이 완료되었습니다.");
+            redirect.addFlashAttribute("msg", "수정 완료되었습니다.");
         } catch (Exception e) {
-            redirect.addFlashAttribute("msg", "오류가 발생되었습니다.");
+            redirect.addFlashAttribute("msg", "오류가 발생되었습니다. 다시 시도해주세요.");
         }
 
         return mv;
@@ -133,9 +134,9 @@ public class BoardController {
 
         try {
             boardService.getBoardDelete(boardSeqno);
-            redirect.addFlashAttribute("msg", "삭제가 완료되었습니다.");
+            redirect.addFlashAttribute("msg", "삭제 완료되었습니다.");
         } catch (Exception e) {
-            redirect.addFlashAttribute("msg", "오류가 발생되었습니다.");
+            redirect.addFlashAttribute("msg", "오류가 발생되었습니다. 다시 시도해주세요.");
         }
 
         return mv;
@@ -147,6 +148,24 @@ public class BoardController {
         String view = "/board/boardReport";
 
         return view;
+    }
+
+    //게시글 신고 사유
+    @RequestMapping( "/report_action")
+    public ModelAndView report_action(@ModelAttribute("reportDO") ReportDO reportDO, @RequestParam("boardSeqno") int boardSeqno, HttpServletRequest request, RedirectAttributes redirect, Model model) throws Exception {
+
+        ModelAndView mv = new ModelAndView("redirect:/board");
+
+        try {
+            boardService.reportBoard(reportDO);
+            redirect.addFlashAttribute("redirect", reportDO.getBoardSeqno());
+
+            redirect.addFlashAttribute("msg", "신고 완료되었습니다.");
+        } catch (Exception e) {
+            redirect.addFlashAttribute("msg", "오류가 발생되었습니다. 다시 시도해주세요.");
+        }
+
+        return mv;
     }
 
     /*//댓글 쓰기

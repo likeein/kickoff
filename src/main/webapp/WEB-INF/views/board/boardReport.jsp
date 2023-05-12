@@ -40,37 +40,39 @@
 
 <br>
 <br>
+<form id="frm" name="frm" action="report_action" onsubmit="return _onSubmit();" method="post">
 	<div class="report">
 		<label for="report"> 
-			<input type="checkbox" name="report" value="1"> 
+			<input type="radio" name="report" value="광고성이거나 스팸성 게시물" >
 			<span>광고성이거나 스팸성 게시물</span>
 		</label> 
 		<br />
 		<label for="report"> 
-			<input type="checkbox" name="report" value="2"> 
-			<span>혐오 발언, 인종 차별, 성차별 등 다른 사용자를 비방하거나 차별하는 내용이 포함된 게시물.</span>
+			<input type="radio" name="report" value="혐오 발언, 인종 차별, 성차별 등 다른 사용자를 비방하거나 차별하는 내용이 포함된 게시물">
+			<span>혐오 발언, 인종 차별, 성차별 등 다른 사용자를 비방하거나 차별하는 내용이 포함된 게시물</span>
 		</label> 
 		<br />
 		<label for="report"> 
-			<input type="checkbox" name="report" value="3"> 
+			<input type="radio" name="report" value="불법적인 내용이 포함된 게시물 (저작권 침해, 명예훼손, 개인정보 유출 등)">
 			<span>불법적인 내용이 포함된 게시물 (저작권 침해, 명예훼손, 개인정보 유출 등)</span>
 		</label>
 		<br /> 
 		<label for="report"> 
-			<input type="checkbox" name="report" value="4"> 
+			<input type="radio" name="report" value="욕설이나 비속어, 음란물 등 부적절한 내용이 포함된 게시물">
 			<span>욕설이나 비속어, 음란물 등 부적절한 내용이 포함된 게시물</span>
 		</label>
 		<br /> 
 		<label for="report"> 
-			<input type="checkbox" name="report" value="5"> 
+			<input type="radio" name="report" value="풋살 게임에 대한 부적절한 규칙 및 행동을 제안하거나 언급하는 게시물">
 			<span>풋살 게임에 대한 부적절한 규칙 및 행동을 제안하거나 언급하는 게시물</span>
 		</label>
 		<br />
 		<div class="btn_boardreport">
 				<button type="reset" class="btn_reset" onclick="location.href='/boardDetail';">취소</button>
-				<button class="btn_delete" onclick="location.href='/board';">신고</button>
+				<button type="submit" class="btn_delete" onclick="document.getElementById('frm').submit();">신고</button>
 		</div>
 	</div>
+</form>
 </body>
 </html>
 

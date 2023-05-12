@@ -33,7 +33,7 @@
 	
 	form {
 	display: block;
-	width: 70%;
+	width: 55%;
 	}
 	
 	.formInline {
@@ -156,8 +156,8 @@ p {
 }
 
 .report {
-	width: 50%;
-	font-size: .9em;
+	width: 100%;
+	font-size: 18px;
 	padding: 20px;
 	background-color: #ffffff;
     border: 1px solid #B1D7B4;
@@ -172,4 +172,8 @@ p {
   text-align: center;
   margin: auto;
   display: block;
+}
+
+[type="radio"]:checked {
+	border: 0.4em solid #7fb77e;
 }
