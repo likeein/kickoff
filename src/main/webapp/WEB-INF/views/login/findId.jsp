@@ -10,7 +10,7 @@
 <body style="overflow-y: hidden">
 <div class="container" id="container">
   <div class="form-container sign-in-container">
-    <form action="#">
+    <form method="GET" name="findId" action="/findId">
       <h1>아이디 찾기</h1>
       <br />
 	      <p>정보에 해당되는 아이디입니다.</p><br /><br />
