@@ -4,6 +4,7 @@ import com.teamcommit.kickoff.Common.CommandMap;
 import com.teamcommit.kickoff.Do.HelperDO;
 import com.teamcommit.kickoff.Do.ReservationDO;
 import com.teamcommit.kickoff.Service.HelperService;
+import com.teamcommit.kickoff.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +22,8 @@ public class HelperController {
 
     @Autowired
     private HelperService helperService;
+    @Autowired
+    private LoginService loginService;
 
     @GetMapping("/helperList")
     public String helperList(@ModelAttribute("helperDO") HelperDO helperDO, Model model) {
