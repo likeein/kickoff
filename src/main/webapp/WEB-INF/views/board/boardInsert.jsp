@@ -59,7 +59,7 @@
     </div>
 <br>
 <br>
-<form role="form" id="frm" name="frm" action="insert_action" method="post" onsubmit="return _onSubmit();">
+<form id="frm" name="frm" action="insert_action" method="post" onsubmit="return _onSubmit();">
 <h4>게시글 등록</h4>
 <div class="table-responsive">
 		

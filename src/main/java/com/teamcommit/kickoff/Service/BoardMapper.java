@@ -1,6 +1,7 @@
 package com.teamcommit.kickoff.Service;
 
 import com.teamcommit.kickoff.Do.BoardDO;
+import com.teamcommit.kickoff.Do.ReportDO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -17,4 +18,6 @@ public interface BoardMapper {
     public void updateBoard(BoardDO boardDO);
 
     public void getBoardDelete(int boardSeqno);
+
+    public void reportBoard(ReportDO reportDO);
 }
