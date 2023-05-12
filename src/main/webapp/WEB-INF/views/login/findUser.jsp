@@ -15,8 +15,8 @@
       <h4>개인 회원용</h4>
       <br />
 	      <input type="text" placeholder="아이디" name="userId" />
-	      <input type="text" placeholder="핸드폰 번호" name="userPhoneNumber" />
-	      <button class="confirm" id="confirmNumber">휴대폰 인증</button><br /><br />
+	      <input type="text" placeholder="핸드폰 번호" name="userPhoneNumber" /><br/><br/>
+<%--	      <button class="confirm" id="confirmNumber">휴대폰 인증</button><br /><br />--%>
 	      <button onclick="location.href='/findPw';">비밀번호 찾기</button>
     </form>
   </div>
@@ -26,9 +26,9 @@
       <h4>개인 회원용</h4>
       <br />
 	      <input type="text" placeholder="이름" name="userName" />
-	      <input type="text" placeholder="핸드폰 번호" name="userPhoneNumber" />
-	      <button class="confirm" id="confirmNumber">휴대폰 인증</button><br /><br />
-	      <button onclick="location.href='/findId';">아이디 찾기</button>
+	      <input type="text" placeholder="핸드폰 번호" name="userPhoneNumber" /><br/><br/>
+<%--	      <button class="confirm" id="confirmNumber">휴대폰 인증</button><br /><br />--%>
+	      <button type="submit" id="findId">아이디 찾기</button>
     </form>
   </div>
   <div class="overlay-container">
