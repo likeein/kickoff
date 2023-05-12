@@ -1,11 +1,11 @@
 package com.teamcommit.kickoff.Service;
 
 import com.teamcommit.kickoff.Dao.GameDAO;
+import com.teamcommit.kickoff.Do.GameDO;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,9 +21,10 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public Map<String, Object> selectGameDetail(Map<String, Object> map) throws Exception {
-        return null;
+    public List<GameDO> selectGameDetail() throws Exception {
+        return gameDAO.selectGameDetail();
     }
+
 
     @Override
     public Map<String, Object> selectMemInfo(Map<String, Object> map) throws Exception {

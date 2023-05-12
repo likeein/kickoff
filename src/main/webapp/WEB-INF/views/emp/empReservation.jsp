@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>Kick Off: 업체 예약 관리</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="/emp/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="/emp/css/main.css" />
@@ -60,12 +60,12 @@
                                     </div>
                                     <div class="table-data__tool-right">
                                         <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                            <i class="zmdi zmdi-plus"></i>add item</button>
+                                            <i class="zmdi zmdi-plus"></i>예약 등록</button>
                                         <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                                             <select class="js-select2" name="type">
-                                                <option selected="selected">Export</option>
-                                                <option value="">Option 1</option>
-                                                <option value="">Option 2</option>
+                                                <option selected="selected">정렬 방식</option>
+                                                <option value="">최신 순</option>
+                                                <option value="">기본 순</option>
                                             </select>
                                             <div class="dropDownSelect2"></div>
                                         </div>
@@ -81,12 +81,13 @@
                                                         <span class="au-checkmark"></span>
                                                     </label>
                                                 </th>
-                                                <th>name</th>
-                                                <th>email</th>
-                                                <th>description</th>
-                                                <th>date</th>
-                                                <th>status</th>
-                                                <th>price</th>
+                                                <th>예약 날짜</th>
+                                                <th>예약 인원</th>
+                                                <th>예약 등록일</th>
+                                                <th>예약 시간</th>
+                                                <th>예약 상태</th>
+                                                <th></th>
+                                                <th>예약 취소</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -234,7 +235,9 @@
                                     </table>
                                 </div>
                                 <!-- END DATA TABLE -->
+                                    </div>
 					    </section>
+                        </div>
 				</div>
 				</div>
 				<!-- Sidebar -->
