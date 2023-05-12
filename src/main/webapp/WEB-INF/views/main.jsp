@@ -77,7 +77,7 @@
       <nav class="untree_co--site-nav js-sticky-nav">
         <div class="container d-flex align-items-center">
           <div class="logo-wrap">
-            <a href="index.html" class="untree_co--site-logo">Kick Off</a>
+            <a href="/main" class="untree_co--site-logo">Kick Off</a>
           </div>
           <div class="site-nav-ul-wrap text-center d-none d-lg-block">
             <ul class="site-nav-ul js-clone-nav">

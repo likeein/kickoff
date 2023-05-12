@@ -22,13 +22,13 @@ public class TeamDO {
 	//팀 소속지역
 	private String teamLocal;
 	//팀원 모집 시작 기간
-	private Date teamStartDate;
+	private String teamStartDate;
 	//팀원 모집 종료 기간
-	private Date teamEndDate;
+	private String teamEndDate;
 	//랭킹 순위
 	private int teamRank;
 	//게임 점수
-	private int teanGameScore;
+	private int teamGameScore;
 	//팀 등급
 	private String teamGrade;
 	//기타 사항
@@ -78,16 +78,16 @@ public class TeamDO {
 	public void setTeamLocal(String teamLocal) {
 		this.teamLocal = teamLocal;
 	}
-	public Date getTeamStartDate() {
+	public String getTeamStartDate() {
 		return teamStartDate;
 	}
-	public void setTeamStartDate(Date teamStartDate) {
+	public void setTeamStartDate(String teamStartDate) {
 		this.teamStartDate = teamStartDate;
 	}
-	public Date getTeamEndDate() {
+	public String getTeamEndDate() {
 		return teamEndDate;
 	}
-	public void setTeamEndDate(Date teamEndDate) {
+	public void setTeamEndDate(String teamEndDate) {
 		this.teamEndDate = teamEndDate;
 	}
 	public int getTeamRank() {
@@ -96,11 +96,11 @@ public class TeamDO {
 	public void setTeamRank(int teamRank) {
 		this.teamRank = teamRank;
 	}
-	public int getTeanGameScore() {
-		return teanGameScore;
+	public int getTeamGameScore() {
+		return teamGameScore;
 	}
-	public void setTeanGameScore(int teanGameScore) {
-		this.teanGameScore = teanGameScore;
+	public void setTeamGameScore(int teamGameScore) {
+		this.teamGameScore = teamGameScore;
 	}
 	public String getTeamGrade() {
 		return teamGrade;
