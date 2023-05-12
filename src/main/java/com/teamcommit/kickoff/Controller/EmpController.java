@@ -2,11 +2,8 @@ package com.teamcommit.kickoff.Controller;
 
 
 import com.teamcommit.kickoff.Common.CommandMap;
-import com.teamcommit.kickoff.Do.GameDO;
-import com.teamcommit.kickoff.Do.PlaceDO;
-import com.teamcommit.kickoff.Do.ReservationDO;
+import com.teamcommit.kickoff.Do.*;
 import com.teamcommit.kickoff.Service.EmpService;
-import com.teamcommit.kickoff.Do.EmployerDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -48,11 +45,11 @@ public class EmpController {
 
 
     @RequestMapping(value = "/myBoard", method = RequestMethod.GET)
-    public String Boardlist(@ModelAttribute("EmployerDO") EmployerDO EmployerDO, HttpServletRequest request, Model model) {
+    public String Boardlist(@ModelAttribute("BoardDO") BoardDO BoardDO, HttpServletRequest request, Model model) {
 
         String view = "/emp/myBoard";
 
-        List<EmployerDO> boardList = empService.getList(EmployerDO);
+        List<BoardDO> boardList = empService.getList(BoardDO);
         model.addAttribute("boardList", boardList);
 
         return view;

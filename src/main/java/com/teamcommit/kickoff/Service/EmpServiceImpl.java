@@ -23,7 +23,7 @@ public class EmpServiceImpl implements EmpService {
 
     @Override
     public List<BoardDO> getList(BoardDO boardDO) {
-        return null;
+        return empMapper.getList(boardDO);
     }
 
     @Override
