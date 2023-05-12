@@ -78,12 +78,12 @@
                                 </thead>
                                 <c:forEach var="list" items="${table}">
                                     <tr>
-                                        <td><c:out value="${list.HELPER_MATCH}" /></td>
-                                        <td><c:out value="${list.HELPER_POSITION}" /></td>
-                                        <td><c:out value="${list.HELPER_TEAMLEVEL}" /></td>
-                                        <td><c:out value="${list.HELPER_GENDER}" /></td>
-                                        <td><c:out value="${list.HELPER_PLACE}" /></td>
-                                        <td><c:out value="${list.HELPER_TIME}" /></td>
+                                        <td><c:out value="${list.helperMatch}" /></td>
+                                        <td><c:out value="${list.helperPosition}" /></td>
+                                        <td><c:out value="${list.helperTeamLevel}" /></td>
+                                        <td><c:out value="${list.helperGender}" /></td>
+                                        <td><c:out value="${list.helperPlace}" /></td>
+                                        <td><c:out value="${list.helperTime}" /></td>
                                     </tr>
                                 </c:forEach>
                             </table>

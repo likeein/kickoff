@@ -11,11 +11,20 @@
         ]]>
     </select>
 
-    <insert id = "insertHelper">
+    <select id = "selectReservation" parameterType="String" resultType="com.teamcommit.kickoff.Do.ReservationDO">
+        <![CDATA[
+        SELECT *
+        from
+            RESERVATION
+        where id = #{userId}
+        ]]>
+    </select>
+
+    <insert id = "insertHelper" parameterType="com.teamcommit.kickoff.Do.HelperDO">
         <![CDATA[
         INSERT INTO HELPER_BOARD
         (HELPER_SEQNO, USER_ID, HELPER_POSITION, HELPER_PRICE, HELPER_MATCH, HELPER_PLACE, HELPER_GENDER, HELPER_WANT, HELPER_TIME, HELPER_TEAMLEVEL, HELPER_PLACE_NAME)
-        VALUES(HELPER_SEQ.NEXTVAL, #{HELPER_ID}, #{HELPER_POSITION}, #{HELPER_PRICE}, #{HELPER_MATCH}, #{HELPER_PLACE}, #{HELPER_GENDER}, #{HELPER_WANT}, #{HELPER_TIME}, #{HELPER_TEAMLEVEL}, #{HELPER_PLACE_NAME});
+        VALUES(HELPER_SEQ.NEXTVAL, #{HELPER_ID}, #{HELPER_POSITION}, #{HELPER_PRICE}, #{HELPER_MATCH}, #{HELPER_PLACE}, #{HELPER_GENDER}, #{HELPER_WANT}, #{HELPER_TIME}, #{HELPER_TEAMLEVEL}, #{HELPER_PLACE_NAME})
         ]]>
     </insert>
 </mapper>
