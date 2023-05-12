@@ -59,7 +59,7 @@ public class LoginController {
 
             if (result != null) {
                 ModelAndView mv = new ModelAndView("redirect:/main");
-                session.setAttribute("login_info", result);
+                session.setAttribute("userId", result.getUserId());
                 return mv;
             }
         } else if (empId != null && empPw != null) {
@@ -71,14 +71,14 @@ public class LoginController {
 
             if (result != null) {
                 ModelAndView mv = new ModelAndView("redirect:/main");
-                session.setAttribute("login_info", result);
+                session.setAttribute("userId", result.getEmpId());
                 return mv;
             }
         }
 
         // 로그인 실패 시 로그아웃 처리
         ModelAndView mv = new ModelAndView("redirect:/loginAll");
-        session.removeAttribute("login_info");
+        session.removeAttribute("userId");
         return mv;
     }
 
@@ -86,7 +86,7 @@ public class LoginController {
     // 로그아웃
     @GetMapping("/logout")
     public ModelAndView logout(HttpSession session) {
-        session.removeAttribute("login_info");
+        session.removeAttribute("userId");
         ModelAndView mv = new ModelAndView("redirect:/main");
         return mv;
     }
