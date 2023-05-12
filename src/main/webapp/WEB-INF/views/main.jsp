@@ -105,7 +105,7 @@
 
 
             <!-- 로그인 안 한 경우 -->
-            <core:if test="${empty login_info}">
+            <core:if test="${empty userId}">
 		     <ul class="icons-top d-none d-lg-block">
               <li>
                 <a href="/loginAll"><span class="icon-unlock"></span></a>
@@ -117,7 +117,7 @@
             </core:if>
 
             <!-- 로그인 한 경우 -->
-            <core:if test="${!empty login_info}">
+            <core:if test="${!empty userId}">
               <ul class="icons-top d-none d-lg-block">
                 <li>
                   <a href="/logout"><span class="icon-lock"></span></a>

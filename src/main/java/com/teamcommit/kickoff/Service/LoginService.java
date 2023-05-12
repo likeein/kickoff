@@ -18,4 +18,7 @@ public interface LoginService {
 
     // 업체 회원 아이디 찾기
     String findEmp_id(String empName, String empNo);
+
+    // 로그인한 이용자 정보 가져오기
+    UserDO procSetUserInfo(UserDO userDO);
 }

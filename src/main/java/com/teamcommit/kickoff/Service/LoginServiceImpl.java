@@ -33,4 +33,9 @@ public class LoginServiceImpl implements LoginService {
     public String findEmp_id(String empName, String empNo) {
         return this.loginMapper.findEmp_id(empName, empNo);
     }
+
+    @Override
+    public UserDO procSetUserInfo(UserDO userDO) {
+        return this.loginMapper.procSetUserInfo(userDO);
+    }
 }
