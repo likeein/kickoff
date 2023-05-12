@@ -1,6 +1,7 @@
 package com.teamcommit.kickoff.Service;
 
 
+import com.teamcommit.kickoff.Do.BoardDO;
 import com.teamcommit.kickoff.Do.EmployerDO;
 import com.teamcommit.kickoff.Do.PlaceDO;
 import com.teamcommit.kickoff.Do.ReservationDO;
@@ -11,9 +12,9 @@ import java.util.Map;
 
 public interface EmpService {
 
-    List<EmployerDO> getList(EmployerDO employerDO);
-
     EmployerDO info_fix(EmployerDO employerDO);
+
+    List<BoardDO> getList(BoardDO boardDO);
 
     List<PlaceDO> getList(PlaceDO placeDO);
 

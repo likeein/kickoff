@@ -1,6 +1,7 @@
 package com.teamcommit.kickoff.Service;
 
 import com.teamcommit.kickoff.Dao.PlaceDAO;
+import com.teamcommit.kickoff.Do.BoardDO;
 import com.teamcommit.kickoff.Do.EmployerDO;
 import com.teamcommit.kickoff.Do.PlaceDO;
 import com.teamcommit.kickoff.Do.ReservationDO;
@@ -18,12 +19,12 @@ public class EmpServiceImpl implements EmpService {
     @Autowired
     private EmpMapper empMapper;
 
-    @Override
-    public List<EmployerDO> getList(EmployerDO employerDO) {
-        return empMapper.getList(employerDO);
-    }
-
     public EmployerDO info_fix(EmployerDO employerDO) { return this.empMapper.info_fix(employerDO); }
+
+    @Override
+    public List<BoardDO> getList(BoardDO boardDO) {
+        return null;
+    }
 
     @Override
     public List<PlaceDO> getList(PlaceDO placeDO) { return empMapper.getList(placeDO); }
