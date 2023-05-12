@@ -86,7 +86,7 @@ public class LoginController {
     // 로그아웃
     @GetMapping("/logout")
     public ModelAndView logout(HttpSession session) {
-        session.removeAttribute("login_info");
+        session.removeAttribute("userId");
         ModelAndView mv = new ModelAndView("redirect:/main");
         return mv;
     }
