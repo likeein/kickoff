@@ -30,4 +30,13 @@
         ]]>
     </select>
 
+    <!-- 업체 회원 아이디 찾기 -->
+    <select id="findEmp_id" parameterType="com.teamcommit.kickoff.Do.EmployerDO" resultType="com.teamcommit.kickoff.Do.EmployerDO">
+        <![CDATA[
+        SELECT EMP_ID = #{empId}
+        FROM EMPLOYER
+        WHERE EMP_NAME = #{empName} AND EMP_NO = #{empNo}
+        ]]>
+    </select>
+
 </mapper>
