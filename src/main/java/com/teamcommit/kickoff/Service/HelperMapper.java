@@ -14,4 +14,6 @@ public interface HelperMapper {
 
     List<ReservationDO> selectReservation(String userId);
 
+    HelperDO selectHelperDetail(int helperSeqno);
+
 }
