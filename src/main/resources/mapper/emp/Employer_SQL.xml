@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.teamcommit.kickoff.Service.EmpMapper">
+
+    <!-- Employer Board List -->
+    <select id="getList" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.EmployerDO">
+        <![CDATA[
+        SELECT
+            *
+        FROM
+            COMMUNITY_BOARD
+        ]]>
+    </select>
+
+    <!-- Employer info_fix -->
+    <insert id="info_fix" parameterType="com.teamcommit.kickoff.Do.EmployerDO">
+        <![CDATA[
+        INSERT INTO EMPLOYER
+        (
+         EMP_ID,
+         EMP_PW,
+         EMP_NAME,
+         EMP_ADDRESS,
+         EMP_PHONE_NUMBER,
+         EMP_EMAIL,
+         EMP_DATE
+        )
+        VALUES
+            (
+             #{writeId},
+             #{writePw},
+             #{writeName},
+             #{writeAddress},
+             #{writePhoneNumber},
+             #{writeEmail},
+             #{writeDate}
+            )
+
+        ]]>
+    </insert>
+
+    <!-- Futsal(place) Insert -->
+    <insert id="insertFutsal" parameterType="hashmap" useGeneratedKeys="true" keyProperty="PLACE">
+        <selectKey keyProperty="PLACE" resultType="string" order="BEFORE">
+            SELECT PLACE_SEQ.NEXTVAL FROM DUAL
+        </selectKey>
+        <![CDATA[
+                INSERT INTO PLACE
+                (
+                    PLACE_ID,
+                    IMG_NAME,
+                    PLACE_NAME,
+                    PLACE_ADDRESS,
+                    PLACE_PHONE_NUMBER,
+                    PLACE_HOMEPAGE,
+                    PLACE_SIZE,
+                    PLACE_PRICE,
+                    PLACE_OTHER
+                )
+                VALUES (
+                    PLACE_ID.NEXTVAL,
+                    #{PLACE_IMG_NAME},
+                    #{PLACE_NAME},
+                    #{PLACE_ADDRESS},
+                    #{PLACE_PHONE_NUMBER},
+                    #{PLACE_HOMEPAGE},
+                    #{PLACE_GROUND},
+                    #{RESERVATION_COMMENT},
+                    SYSDATE
+                )
+            ]]>
+    </insert>
+
+
+
+</mapper>
