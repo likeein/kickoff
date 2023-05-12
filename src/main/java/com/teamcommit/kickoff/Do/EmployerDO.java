@@ -20,7 +20,10 @@ public class EmployerDO {
 	private Date empDate;
 	//풋살장 아이디
 	private int placeId;
-	
+	// 사업자 번호
+	private String empNo;
+
+
 	public String getEmpId() {
 		return empId;
 	}
@@ -68,6 +71,12 @@ public class EmployerDO {
 	}
 	public void setPlaceId(int placeId) {
 		this.placeId = placeId;
+	}
+	public String getEmpNo() {
+		return empNo;
+	}
+	public void setEmpNo(String empNo) {
+		this.empNo = empNo;
 	}
 	
 }

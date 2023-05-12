@@ -127,16 +127,6 @@ public class LoginController {
         return view;
     }
 
-    // 개인 회원 아이디 찾기
-    @RequestMapping("/findUser")
-    public String findUser_id(@RequestParam("userName") String userName,@RequestParam("userPhoneNumber") String userPhoneNumber) {
-
-        String result = this.loginService.findUser_id(userName, userPhoneNumber);
-
-        return result;
-    }
-
-
     // 업체 회원 아이디,비밀번호 찾기 페이지 이동
     @GetMapping("/findEmp")
     public String findEmp() {
@@ -145,29 +135,48 @@ public class LoginController {
         return view;
     }
 
-    // 찾은 아이디 보는 페이지 이동
-    @GetMapping("/findId")
+    // 아이디 찾기
+    @RequestMapping(value = {"/findUser", "/findEmp"})
+    public ModelAndView find_id(@RequestParam("userName") String userName,
+                          @RequestParam("userPhoneNumber") String phoneNumber,
+                          @RequestParam("empName") String empName,
+                          @RequestParam("empNo") String empNo, Model model) {
+
+        String userResult = "";
+        String empResult = "";
+
+        if (userName != null && phoneNumber != null) {
+            userResult = this.loginService.findUser_id(userName, phoneNumber);
+        } else {
+            empResult = this.loginService.findEmp_id(empName, empNo);
+        }
+        model.addAttribute("userResult", userResult);
+        model.addAttribute("empResult", empResult);
+
+        // 아이디 보여주는 페이지로 이동
+        ModelAndView mv = new ModelAndView("redirect:/login/findId");
+        return mv;
+    }
+
+//    @RequestMapping("/findId")
+//    public String showUser_id(@ModelAttribute("result") String result, Model model) {
+//        model.addAttribute("userId", result);
+//        return "/login/findId";
+//    }
+
+    // 아이디 찾기 페이지 이동
+    @RequestMapping("/findId")
     public String findId() {
         String view = "/login/findId";
 
         return view;
     }
 
-    // 찾은 아이디 보기
-//    @RequestMapping("/findUser")
-//    public String listUser_id(@RequestParam("userId") String userId) {
-//
-//        String result = this.loginService.listUser_id(userName, userPhoneNumber);
-//
-//        return result;
-//    }
-
-    // 찾은 비밀번호 보는 페이지 이동
-    @GetMapping("/findPw")
+    // 비밀번호 찾기 페이지 이동
+    @RequestMapping("/findPw")
     public String findPw() {
         String view = "/login/findPw";
 
         return view;
     }
-
 }

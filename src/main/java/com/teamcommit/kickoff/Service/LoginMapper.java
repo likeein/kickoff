@@ -17,4 +17,7 @@ public interface LoginMapper {
 
     // 개인 회원 아이디 찾기
     public String findUser_id(String userName, String userPhoneNumber);
+
+    // 업체 회원 아이디 찾기
+    public String findEmp_id(String empName, String empNo);
 }

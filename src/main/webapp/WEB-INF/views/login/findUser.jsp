@@ -10,7 +10,7 @@
 <body style="overflow-y: hidden">
 <div class="container" id="container">
   <div class="form-container sign-up-container">
-    <form form method="GET" name="findUser" action="/findUser">
+    <form form method="POST" name="findUser" action="/findUser">
       <h1>비밀번호 찾기</h1>
       <h4>개인 회원용</h4>
       <br />
@@ -21,7 +21,7 @@
     </form>
   </div>
   <div class="form-container sign-in-container">
-    <form form method="GET" name="findUser" action="/findUser">
+    <form form method="POST" name="findUser" action="/findUser">
       <h1>아이디 찾기</h1>
       <h4>개인 회원용</h4>
       <br />
@@ -46,5 +46,6 @@
   </div>
 </div>
 	<script src = "/findPw/js/loginFind.js"></script>
+</div>
 </body>
 </html>
