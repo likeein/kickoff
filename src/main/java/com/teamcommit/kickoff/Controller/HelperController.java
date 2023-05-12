@@ -8,9 +8,7 @@ import com.teamcommit.kickoff.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -27,7 +25,7 @@ public class HelperController {
 
     @GetMapping("/helperList")
     public String helperList(@ModelAttribute("helperDO") HelperDO helperDO, Model model) {
-        String result = "";
+        String view = "/helper/helperList";
 
         try {
             List<HelperDO> list = helperService.selectHelper(helperDO);
@@ -36,7 +34,22 @@ public class HelperController {
         catch (Exception e) {
             e.printStackTrace();
         }
-        return "/helper/helperList";
+        return view;
+    }
+
+    @RequestMapping("/helperDetail")
+    public String helperDetail(@ModelAttribute("helperDO") HelperDO helperDO, @RequestParam(value = "helperSeqno") int helperSeqno, Model model) {
+        String view = "/helper/helperDetail";
+
+        try {
+            HelperDO detail = helperService.selectHelperDetail(helperSeqno);
+            model.addAttribute("content", detail);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return view;
     }
 
     @GetMapping("/helperInsert")
@@ -76,5 +89,7 @@ public class HelperController {
         }
         return view;
     }
+
+
 
 }

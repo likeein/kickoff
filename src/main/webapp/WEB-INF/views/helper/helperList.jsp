@@ -74,6 +74,7 @@
                                     <th>성별</th>
                                     <th>위치</th>
                                     <th>경기 날짜</th>
+                                    <th>용병 상태</th>
                                 </tr>
                                 </thead>
                                 <c:forEach var="list" items="${table}">
@@ -84,11 +85,12 @@
                                         <td><c:out value="${list.helperGender}" /></td>
                                         <td><c:out value="${list.helperPlace}" /></td>
                                         <td><c:out value="${list.helperTime}" /></td>
+                                        <td><button type = "button" class = "btn_insert" onclick="location.href='/helperDetail?helperSeqno=${list.helperSeqno}';">진행 중</button></td>
                                     </tr>
                                 </c:forEach>
                             </table>
                             <div class="btn_insert">
-                                <a href="/helperInsert"><button type="button" class="btn_insert">등록</button></a>
+                                <button type="submit" class="btn_insert" onclick="location.href='/helperInsert';">등록</button>
                             </div>
                         </div>
                     </div>

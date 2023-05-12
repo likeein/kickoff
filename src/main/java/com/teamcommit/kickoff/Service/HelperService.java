@@ -13,5 +13,5 @@ public interface HelperService {
 
     List<ReservationDO> selectReservation(String userId) throws Exception;
 
-
+    HelperDO selectHelperDetail(int helperSeqno) throws Exception;
 }

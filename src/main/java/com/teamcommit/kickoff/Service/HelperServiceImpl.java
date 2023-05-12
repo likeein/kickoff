@@ -26,7 +26,12 @@ public class HelperServiceImpl implements HelperService {
     }
 
     @Override
-    public  List<ReservationDO> selectReservation(String userId) {
+    public List<ReservationDO> selectReservation(String userId) {
         return helperMapper.selectReservation(userId);
+    }
+
+    @Override
+    public HelperDO selectHelperDetail(int helperSeqno) {
+        return helperMapper.selectHelperDetail(helperSeqno);
     }
 }

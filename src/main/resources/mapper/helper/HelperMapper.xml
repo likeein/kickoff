@@ -20,6 +20,15 @@
         ]]>
     </select>
 
+    <select id="selectHelperDetail" parameterType="com.teamcommit.kickoff.Do.HelperDO" resultType="com.teamcommit.kickoff.Do.HelperDO">
+        <![CDATA[
+        SELECT *
+        FROM
+            HELPER_BOARD
+        WHERE HELPER_SEQNO = #{helperSeqno}
+        ]]>
+    </select>
+
     <insert id = "insertHelper" parameterType="com.teamcommit.kickoff.Do.HelperDO">
         <![CDATA[
         INSERT INTO HELPER_BOARD
