@@ -1,8 +1,10 @@
 package com.teamcommit.kickoff.Controller;
 
 import com.teamcommit.kickoff.Do.BoardDO;
+import com.teamcommit.kickoff.Do.EmployerDO;
 import com.teamcommit.kickoff.Do.UserDO;
 import com.teamcommit.kickoff.Service.LoginService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -41,40 +43,45 @@ public class LoginController {
         return view;
     }
 
-    // 회원 로그인 요청
+    // 로그인 요청
     @RequestMapping("/loginAll")
-    public ModelAndView login(@ModelAttribute("userDO") UserDO userDO, @RequestParam("userId") String userId, @RequestParam("userPw") String userPw, HttpSession session, Model model) throws Exception {
+    public ModelAndView login(@RequestParam(value = "userId", required = false) String userId,
+                              @RequestParam(value = "userPw", required = false) String userPw,
+                              @RequestParam(value = "empId", required = false) String empId,
+                              @RequestParam(value = "empPw", required = false) String empPw,
+                              HttpSession session, Model model) throws Exception {
+        if (userId != null && userPw != null) {
+            // 회원 로그인 처리
+            UserDO userDO = new UserDO();
+            userDO.setUserId(userId);
+            userDO.setUserPw(userPw);
+            UserDO result = this.loginService.member_login(userDO);
 
-        userDO.setUserId(userId);
-        userDO.setUserPw(userPw);
+            if (result != null) {
+                ModelAndView mv = new ModelAndView("redirect:/main");
+                session.setAttribute("login_info", result);
+                return mv;
+            }
+        } else if (empId != null && empPw != null) {
+            // 업체 로그인 처리
+            EmployerDO empDO = new EmployerDO();
+            empDO.setEmpId(empId);
+            empDO.setEmpPw(empPw);
+            EmployerDO result = this.loginService.emp_login(empDO);
 
-        UserDO result = this.loginService.member_login(userDO);
-
-        if (result != null) {
-            ModelAndView mv = new ModelAndView("redirect:/main");
-            session.setAttribute("login_info", result);
-            return mv;
-        } else {
-            ModelAndView mv = new ModelAndView("redirect:/loginAll");
-            session.removeAttribute("login_info");  // 로그인 실패 시 로그아웃 처리
-            return mv;
+            if (result != null) {
+                ModelAndView mv = new ModelAndView("redirect:/main");
+                session.setAttribute("login_info", result);
+                return mv;
+            }
         }
+
+        // 로그인 실패 시 로그아웃 처리
+        ModelAndView mv = new ModelAndView("redirect:/loginAll");
+        session.removeAttribute("login_info");
+        return mv;
     }
 
-//    // 업체 로그인 요청
-//    @PostMapping({"/loginAll"})
-//    public String login(String userId, String userPw, HttpSession session) {
-//        UserDO userDO = new UserDO();
-//        userDO.setUserId(userId);
-//        userDO.setUserPw(userPw);
-//        UserDO result = this.loginService.member_login(userDO);
-//        if (result != null) {
-//            session.setAttribute("login_info", result);
-//            return "redirect:/main";
-//        } else {
-//            return "redirect:/login/loginAll";
-//        }
-//    }
 
     // 로그아웃
     @GetMapping("/logout")
@@ -112,6 +119,25 @@ public class LoginController {
         return view;
     }
 
+    // 개인 회원 아이디,비밀번호 찾기 페이지 이동
+    @GetMapping("/findUser")
+    public String findUser() {
+        String view = "/login/findUser";
+
+        return view;
+    }
+
+    // 개인 회원 아이디 찾기
+    @RequestMapping("/findUser")
+    public String findUser_id(@RequestParam("userName") String userName,@RequestParam("userPhoneNumber") String userPhoneNumber) {
+
+        String result = this.loginService.findUser_id(userName, userPhoneNumber);
+
+        return result;
+    }
+
+
+    // 업체 회원 아이디,비밀번호 찾기 페이지 이동
     @GetMapping("/findEmp")
     public String findEmp() {
         String view = "/login/findEmp";
@@ -119,6 +145,7 @@ public class LoginController {
         return view;
     }
 
+    // 찾은 아이디 보는 페이지 이동
     @GetMapping("/findId")
     public String findId() {
         String view = "/login/findId";
@@ -126,6 +153,16 @@ public class LoginController {
         return view;
     }
 
+    // 찾은 아이디 보기
+//    @RequestMapping("/findUser")
+//    public String listUser_id(@RequestParam("userId") String userId) {
+//
+//        String result = this.loginService.listUser_id(userName, userPhoneNumber);
+//
+//        return result;
+//    }
+
+    // 찾은 비밀번호 보는 페이지 이동
     @GetMapping("/findPw")
     public String findPw() {
         String view = "/login/findPw";
@@ -133,10 +170,4 @@ public class LoginController {
         return view;
     }
 
-    @GetMapping("/findUser")
-    public String findUser() {
-        String view = "/login/findUser";
-
-        return view;
-    }
 }
