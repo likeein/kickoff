@@ -13,7 +13,8 @@ import java.util.List;
         private TeamMapper teamMapper;
 
         @Override
-        public List<TeamDO> getList(TeamDO teamDO){
+        public List<TeamDO> getList(TeamDO teamDO) throws Exception
+        {
             return teamMapper.getList(teamDO);
         }
 
