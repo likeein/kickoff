@@ -33,9 +33,9 @@ public class EmpController {
         try{
             List<ReservationDO> list = empService.getList();
                 for (ReservationDO reservation : list) {
-                    result += "<tr><td>" + reservation.getReservationDate() + "</td><td>" + reservation.getReservationNumber() +
-                            "</td><td>" + reservation.getReservationRegDate() + "</td><td>" + reservation.getReservationStartTime() +
-                            "</td><td>" + reservation.getReservationStatus() + "</td><td>" + reservation.getReservationCancel() + "</td></tr>";
+                    result += "<tr><td>" + reservation.getRESERVATION_DATE() + "</td><td>" + reservation.getRESERVATION_NUMBER() +
+                            "</td><td>" + reservation.getRESERVATION_REG_DATE() + "</td><td>" + reservation.getRESERVATION_START_TIME() +
+                            "</td><td>" + reservation.getRESERVATION_STATUS() + "</td><td>" + reservation.getRESERVATION_CANCEL() + "</td></tr>";
                 }
                 model.addAttribute("table", result);
             }

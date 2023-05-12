@@ -54,27 +54,27 @@
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form id="frm" name="frm" action="/reservationInsert" method="POST">
+                <form role="form" id="frm" name="frm" action="/reservationInsert" method="POST">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
                                 <p>풋살장<span>*</span></p>
-                                <input type="text" name="PLACE_NAME" value="풋살장 이름" readonly>
+                                <input type="text" name="" value="풋살장 이름" readonly>
                            	</div>
                           	<div class="checkout__input">
                                 <p>코트<span>*</span></p>
-                                <select id="courtName" name="RESERVATION_COURT_NAME" onChange="selectCourt(this)">
+                                <select id="courtName" name="RESERVATION_COURT_NAME" value="${RESERVATION_COURT_NAME}" onChange="selectCourt(this)">
                                 	<option value="">코트 선택하기</option>
-                                	<option value="A">A코트</option>
-                                	<option value="B">B코트</option>
-                                	<option value="C">C코트</option>
-                                	<option value="D">D코트</option>
-                                	<option value="E">E코트</option>
+                                	<option value="A코트">A코트</option>
+                                	<option value="A코트">A코트</option>
+                                	<option value="C코트">C코트</option>
+                                	<option value="D코트">D코트</option>
+                                	<option value="E코트">E코트</option>
                                 </select>
                             </div>
                            	<div class="checkout__input">
                                 <p>위치<span>*</span></p>
-                                <input type="text" name="PLACE_ADDRESS" value="서울시 강남구" readonly>
+                                <input type="text" name="" value="서울시 강남구" readonly>
                             </div>
                             <div class="checkout__input">
                                 <p>형태<span>*</span></p>
@@ -166,7 +166,7 @@
 								</ul>
 								<input type="submit" id="insert" class="site-btn-insert" value="등록"></input>
                                <%-- <a href="#this" id="insert" class="site-btn-insert">등록</a>--%>
-                                <a href="#this" id="cancle" class="site-btn-cancle">취소</a>
+                                <a href="/reservation" id="cancle" class="site-btn-cancle">취소</a>
 							</div>
 						</div>
 					</div>
