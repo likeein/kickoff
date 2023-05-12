@@ -19,12 +19,13 @@ import java.util.List;
 @Controller
 public class TeamController {
 
-    @Qualifier("TeamService")
     @Autowired
+    @Qualifier("TeamService")
     private TeamService teamService;
 
+    // 팀 목록
     @RequestMapping(value = "/team", method = RequestMethod.GET)
-    public String TeamList(@ModelAttribute("teamDO") TeamDO teamDO, HttpServletRequest request, Model model) {
+    public String TeamList(@ModelAttribute("teamDO") TeamDO teamDO, HttpServletRequest request, Model model) throws Exception {
 
         String view = "/team/team";
 
@@ -34,6 +35,7 @@ public class TeamController {
         return view;
     }
 
+    // 팀 등록 페이지 이동
     @GetMapping("/teamInsert")
     public String teamInsert() {
         String view = "/team/teamInsert";
@@ -41,6 +43,7 @@ public class TeamController {
         return view;
     }
 
+    // 팀 랭킹
     @GetMapping("/teamRank")
     public String teamRank() {
         String view = "/team/teamRank";

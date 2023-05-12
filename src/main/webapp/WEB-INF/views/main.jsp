@@ -77,7 +77,7 @@
       <nav class="untree_co--site-nav js-sticky-nav">
         <div class="container d-flex align-items-center">
           <div class="logo-wrap">
-            <a href="index.html" class="untree_co--site-logo">Kick Off</a>
+            <a href="/main" class="untree_co--site-logo">Kick Off</a>
           </div>
           <div class="site-nav-ul-wrap text-center d-none d-lg-block">
             <ul class="site-nav-ul js-clone-nav">
@@ -105,7 +105,7 @@
 
 
             <!-- 로그인 안 한 경우 -->
-            <core:if test="${empty login_info}">
+            <core:if test="${empty userId}">
 		     <ul class="icons-top d-none d-lg-block">
               <li>
                 <a href="/loginAll"><span class="icon-unlock"></span></a>
@@ -117,7 +117,7 @@
             </core:if>
 
             <!-- 로그인 한 경우 -->
-            <core:if test="${!empty login_info}">
+            <core:if test="${!empty userId}">
               <ul class="icons-top d-none d-lg-block">
                 <li>
                   <a href="/logout"><span class="icon-lock"></span></a>

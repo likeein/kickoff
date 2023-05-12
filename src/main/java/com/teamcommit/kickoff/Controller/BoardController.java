@@ -3,17 +3,21 @@ package com.teamcommit.kickoff.Controller;
 import com.teamcommit.kickoff.Do.BoardDO;
 import com.teamcommit.kickoff.Do.ReplyDO;
 import com.teamcommit.kickoff.Do.ReportDO;
+import com.teamcommit.kickoff.Do.UserDO;
 import com.teamcommit.kickoff.Service.BoardService;
 //import com.teamcommit.kickoff.Service.ReplyService;
+import com.teamcommit.kickoff.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,6 +31,8 @@ public class BoardController {
     @Qualifier("BoardService")
     private BoardService boardService;
 
+    @Autowired
+    private LoginService loginService;
     // 게시판 목록
     @RequestMapping( "/board")
     public String Boardlist(@ModelAttribute("boardDO") BoardDO boardDO, HttpServletRequest request, Model model) throws Exception {
@@ -41,15 +47,21 @@ public class BoardController {
 
     //게시판 등록페이지 이동
     @RequestMapping( "/boardInsert")
-    public String insert(@ModelAttribute("boardDO") BoardDO boardDO, Model model) throws Exception {
+    public String insert(@ModelAttribute("boardDO") BoardDO boardDO, HttpServletRequest request, Model model) throws Exception {
         String view = "/board/boardInsert";
 
+        String userId = (String) request.getSession().getAttribute("userId");
+        UserDO userDO =new UserDO();
+        userDO.setUserId(userId);
+        userDO = loginService.procSetUserInfo(userDO);
+
+        model.addAttribute("userDO",userDO);
         return view;
     }
 
     //게시판 등록
     @RequestMapping( "/insert_action")
-    public ModelAndView insert_action(@ModelAttribute("boardDO") BoardDO boardDO, HttpServletRequest request, RedirectAttributes redirect) throws Exception {
+    public ModelAndView insert_action(@ModelAttribute("boardDO") BoardDO boardDO, ModelMap model, HttpServletRequest request, RedirectAttributes redirect) throws Exception {
 
         ModelAndView mv = new ModelAndView("redirect:/boardDetailWritter");
 
@@ -167,36 +179,5 @@ public class BoardController {
 
         return mv;
     }
-
-    /*//댓글 쓰기
-    @RequestMapping("/sample/writeComment.do")
-    public ModelAndView writeReply(ReplyDO replyDO) throws Exception {
-        ModelAndView mv = new ModelAndView("redirect:/board/boardDetail");
-        boardService.writeReply(replyDO.getReplyNo());
-
-        mv.addObject("replyNo",replyDO.getReplyNo("replyNo"));
-
-        return mv;
-    }
-
-    //댓글 삭제
-    @RequestMapping("/sample/deleteComment.do")
-    public ModelAndView deleteReply(ReplyDO replyDO) throws Exception {
-        ModelAndView mv = new ModelAndView("redirect:/board/boardDetail");
-        boardService.deleteReply(replyDO.getReplyNo());
-
-        mv.addObject("replyNo",replyDO.getReplyNo("replyNo"));
-        return mv;
-    }
-
-    //댓글 수정
-    @RequestMapping("/sample/updateComment.do")
-    public ModelAndView updateReply(CommandMap commandMap) throws Exception {
-        ModelAndView mv = new ModelAndView("redirect:/board/boardDetail");
-        boardService.updateReply(commandMap.getMap());
-
-        mv.addObject("replyNo",commandMap.get("replyNo"));
-        return mv;
-    }*/
 
 }

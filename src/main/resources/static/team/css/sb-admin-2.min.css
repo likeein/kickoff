@@ -59,14 +59,14 @@ th.fs-gender, th.fs-number, th.fs-startDate, th.fs-endDate, th.fs-status
 	width: 100px;
 }
 
-button.btn-end {
+.team-end {
 	width: 80%;
 	background: #d6d6d6;
 	display: block;
 	margin: 0 auto;
 }
 
-button.btn-ing {
+.team-ing {
 	width: 80%;
 	background: #5cb0ff;
 	display: block;
