@@ -52,8 +52,7 @@
                         </div>
                         </div>
                         <section>
-                            <div class="container-fluid">
-                                <div class="table-data__tool">
+                            <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="rs-select2--light rs-select2--md">
                                             <select class="js-select2" name="property">
@@ -250,7 +249,6 @@
                                     </table>
                                 </div>
                                 <!-- END DATA TABLE -->
-                            </div>
                         </section>
                     </div>
                                 <div class="btn_insert">
@@ -260,7 +258,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
