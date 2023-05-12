@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="helper">
+<mapper namespace="com.teamcommit.kickoff.Service.HelperMapper">
 
     <select id="selectHelper" parameterType="com.teamcommit.kickoff.Do.HelperDO" resultType="com.teamcommit.kickoff.Do.HelperDO">
         <![CDATA[
@@ -11,11 +11,11 @@
         ]]>
     </select>
 
-    <insert id = "insertHelper" parameterType = "com.teamcommit.kickoff.Do.HelperDO">
-        <![CADATA[
-        INSERT INTO KICKOFF.HELPER_BOARD
+    <insert id = "insertHelper">
+        <![CDATA[
+        INSERT INTO HELPER_BOARD
         (HELPER_SEQNO, USER_ID, HELPER_POSITION, HELPER_PRICE, HELPER_MATCH, HELPER_PLACE, HELPER_GENDER, HELPER_WANT, HELPER_TIME, HELPER_TEAMLEVEL, HELPER_PLACE_NAME)
-        VALUES(HELPER_SEQ.NEXTVAL, #{helperId}, #{helperPosition}, #{helperPrice}, #{helperMatch}, #{helperPlace}, #{helperGender}, #{helperWant}, #{helperTime}, #{helperTeamLevel}, #{helperPlaceName});
-
+        VALUES(HELPER_SEQ.NEXTVAL, #{HELPER_ID}, #{HELPER_POSITION}, #{HELPER_PRICE}, #{HELPER_MATCH}, #{HELPER_PLACE}, #{HELPER_GENDER}, #{HELPER_WANT}, #{HELPER_TIME}, #{HELPER_TEAMLEVEL}, #{HELPER_PLACE_NAME});
+        ]]>
     </insert>
 </mapper>

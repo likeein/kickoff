@@ -8,26 +8,26 @@ public class HelperDO {
 	//용병 게시글 번호
 	private int helperSeqno;
 	//사용자 아이디
-	private String helperId;
+	private String HELPER_ID;
 	//경기 번호
 	private int gameSeqno;
 	//메시지 번호
 	private int messageSeqno;
 	//용병 포지션
-	private String helperPosition;
+	private String HELPER_POSITION;
 	//용병 상태
 	private String helperStatus;
 	//참가비
-	private int helperPrice;
+	private int HELPER_PRICE;
 
-	private String helperMatch;
-	private String helperPlace;
+	private String HELPER_MATCH;
+	private String HELPER_PLACE;
 	private String helperAddress;
-	private String helperGender;
-	private int helperWant;
-	private String helperTime;
-	private String helperTeamLevel;
-	private String helperPlaceName;
+	private String HELPER_GENDER;
+	private int HELPER_WANT;
+	private String HELPER_TIME;
+	private String HELPER_TEAMLEVEL;
+	private String HELPER_PLACE_NAME;
 
 	public int getHelperSeqno() {
 		return helperSeqno;
@@ -37,12 +37,12 @@ public class HelperDO {
 		this.helperSeqno = helperSeqno;
 	}
 
-	public String getHelperId() {
-		return helperId;
+	public String getHELPER_ID() {
+		return HELPER_ID;
 	}
 
-	public void setHelperId(String helperId) {
-		this.helperId = helperId;
+	public void setHELPER_ID(String HELPER_ID) {
+		this.HELPER_ID = HELPER_ID;
 	}
 
 	public int getGameSeqno() {
@@ -61,12 +61,12 @@ public class HelperDO {
 		this.messageSeqno = messageSeqno;
 	}
 
-	public String getHelperPosition() {
-		return helperPosition;
+	public String getHELPER_POSITION() {
+		return HELPER_POSITION;
 	}
 
-	public void setHelperPosition(String helperPosition) {
-		this.helperPosition = helperPosition;
+	public void setHELPER_POSITION(String HELPER_POSITION) {
+		this.HELPER_POSITION = HELPER_POSITION;
 	}
 
 	public String getHelperStatus() {
@@ -77,28 +77,28 @@ public class HelperDO {
 		this.helperStatus = helperStatus;
 	}
 
-	public int getHelperPrice() {
-		return helperPrice;
+	public int getHELPER_PRICE() {
+		return HELPER_PRICE;
 	}
 
-	public void setHelperPrice(int helperPrice) {
-		this.helperPrice = helperPrice;
+	public void setHELPER_PRICE(int HELPER_PRICE) {
+		this.HELPER_PRICE = HELPER_PRICE;
 	}
 
-	public String getHelperMatch() {
-		return helperMatch;
+	public String getHELPER_MATCH() {
+		return HELPER_MATCH;
 	}
 
-	public void setHelperMatch(String helperMatch) {
-		this.helperMatch = helperMatch;
+	public void setHELPER_MATCH(String HELPER_MATCH) {
+		this.HELPER_MATCH = HELPER_MATCH;
 	}
 
-	public String getHelperPlace() {
-		return helperPlace;
+	public String getHELPER_PLACE() {
+		return HELPER_PLACE;
 	}
 
-	public void setHelperPlace(String helperPlace) {
-		this.helperPlace = helperPlace;
+	public void setHELPER_PLACE(String HELPER_PLACE) {
+		this.HELPER_PLACE = HELPER_PLACE;
 	}
 
 	public String getHelperAddress() {
@@ -109,44 +109,44 @@ public class HelperDO {
 		this.helperAddress = helperAddress;
 	}
 
-	public String getHelperGender() {
-		return helperGender;
+	public String getHELPER_GENDER() {
+		return HELPER_GENDER;
 	}
 
-	public void setHelperGender(String helperGender) {
-		this.helperGender = helperGender;
+	public void setHELPER_GENDER(String HELPER_GENDER) {
+		this.HELPER_GENDER = HELPER_GENDER;
 	}
 
-	public int getHelperWant() {
-		return helperWant;
+	public int getHELPER_WANT() {
+		return HELPER_WANT;
 	}
 
-	public void setHelperWant(int helperWant) {
-		this.helperWant = helperWant;
+	public void setHELPER_WANT(int HELPER_WANT) {
+		this.HELPER_WANT = HELPER_WANT;
 	}
 
-	public String getHelperTime() {
-		return helperTime;
+	public String getHELPER_TIME() {
+		return HELPER_TIME;
 	}
 
-	public void setHelperTime(String helperTime) {
-		this.helperTime = helperTime;
+	public void setHELPER_TIME(String HELPER_TIME) {
+		this.HELPER_TIME = HELPER_TIME;
 	}
 
-	public String getHelperTeamLevel() {
-		return helperTeamLevel;
+	public String getHELPER_TEAMLEVEL() {
+		return HELPER_TEAMLEVEL;
 	}
 
-	public void setHelperTeamLevel(String helperTeamLevel) {
-		this.helperTeamLevel = helperTeamLevel;
+	public void setHELPER_TEAMLEVEL(String HELPER_TEAMLEVEL) {
+		this.HELPER_TEAMLEVEL = HELPER_TEAMLEVEL;
 	}
 
-	public String getHelperPlaceName() {
-		return helperPlaceName;
+	public String getHELPER_PLACE_NAME() {
+		return HELPER_PLACE_NAME;
 	}
 
-	public void setHelperPlaceName(String helperPlaceName) {
-		this.helperPlaceName = helperPlaceName;
+	public void setHELPER_PLACE_NAME(String HELPER_PLACE_NAME) {
+		this.HELPER_PLACE_NAME = HELPER_PLACE_NAME;
 	}
 
 	/*public String selectValue(String what) {

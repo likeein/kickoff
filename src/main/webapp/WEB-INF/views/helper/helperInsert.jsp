@@ -44,7 +44,7 @@
 
 	<span id = "level">레벨: </span>
 	<div class="selectBox">
-		<select name="helperTeamLevel" class="helperTeamLevel">
+		<select name="HELPER_TEAMLEVEL" class="helperTeamLevel">
 			<option disabled>팀 레벨 ⚽</option>
 			<option value="레벨 1">레벨 1</option>
 			<option value="레벨 2">레벨 2</option>
@@ -57,9 +57,9 @@
 
 	<div class = "reservationBox">
 		<label>예약 내역: </label>&nbsp;
-		<input type = "text" name = "helperPlaceName" id = "helperPlaceName" placeholder = " 업체명"/><br />
-		<input type = "text" name = "helperPlace" id = "helperPlace" placeholder = " 업체위치"/><br />
-		<input type = "text" name = "helperTime" id = "helperTime" placeholder = " 매치날짜"/><br />
+		<input type = "text" name = "HELPER_PLACE_NAME" id = "helperPlaceName" placeholder = " 업체명"/><br />
+		<input type = "text" name = "HELPER_PLACE" id = "helperPlace" placeholder = " 업체위치"/><br />
+		<input type = "text" name = "HELPER_TIME" id = "helperTime" placeholder = " 매치날짜"/><br />
 		<button type = "button" class = "reservation" id = "reservation">내역조회</button>
 	</div>
 
@@ -73,7 +73,7 @@
 
 	<span id = "match">매치 형태: </span>
 	<div class="selectBox" id = "matchBox">
-		<select name="helperMatch" class="helperMatch">
+		<select name="HELPER_MATCH" class="helperMatch">
 			<option disabled>VS 🔥</option>
 			<option value="3 vs 3">3 vs 3</option>
 			<option value="5 vs 5">5 vs 5</option>
@@ -84,25 +84,25 @@
 
 	<div class = "userBox">
 		<label>신청자 ID:</label>
-		<input type = "text" name = "helperId" id = "helperId" />
+		<input type = "text" name = "HELPER_ID" id = "helperId" />
 	</div>
 
 	<div class = "helperBox">
 		<label>모집인원:</label>&nbsp;
-		<input type = "number" name = "helperWant" id = "helperWant" />&nbsp;<span>명</span>
+		<input type = "number" name = "HELPER_WANT" id = "helperWant" />&nbsp;<span>명</span>
 	</div>
 
 	<div class = "genderBox">
-		<label for = "helperGender">남자</label>
-		<input type = "radio" name = "helperGender" id = "helperGender" value = "남자" />
+		<label>남자</label>
+		<input type = "radio" name = "HELPEL_GENDER" id = "helperGender" value = "남자" />
 
-		<label for = "helperGender">여자</label>
-		<input type = "radio" name = "helperGender" id = "helperGender" value = "여자" />
+		<label>여자</label>
+		<input type = "radio" name = "HELPEL_GENDER" id = "helperGender" value = "여자" />
 	</div>
 
 	<span id = "position">포지션: </span>
 	<div class="selectBox" id = "positionBox">
-		<select name="helperPosition" class="helperPosition">
+		<select name="HELPER_POSITION" class="helperPosition">
 			<option disabled>포지션 ⛹️‍♀️</option>
 			<option value = "PIVO">PIVO(피보):공격수</option>
 			<option value = "ALA">ALA(아라):미드필더</option>
@@ -115,12 +115,12 @@
 
 	<div class = "moneyBox">
 		<label>참가비:</label>&nbsp;
-		<input type = "number" name = "helperPrice" id = "helperPrice" />&nbsp;<span>원</span>
+		<input type = "number" name = "HELPER_POSITION" id = "helperPrice" />&nbsp;<span>원</span>
 	</div>
 
 	<div class = "btnbtn">
 		<a href = "/helperList"><button type = "submit" class = "btn" id = "btn">등록</button></a>
-		<a href = "/helperLists"><button type = "button" class = "btn" id = "btn">취소</button></a>
+		<a href = "/helperList"><button type = "button" class = "btn" id = "btn">취소</button></a>
 	</div>
 
 </form>
