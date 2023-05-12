@@ -168,35 +168,4 @@ public class BoardController {
         return mv;
     }
 
-    /*//댓글 쓰기
-    @RequestMapping("/sample/writeComment.do")
-    public ModelAndView writeReply(ReplyDO replyDO) throws Exception {
-        ModelAndView mv = new ModelAndView("redirect:/board/boardDetail");
-        boardService.writeReply(replyDO.getReplyNo());
-
-        mv.addObject("replyNo",replyDO.getReplyNo("replyNo"));
-
-        return mv;
-    }
-
-    //댓글 삭제
-    @RequestMapping("/sample/deleteComment.do")
-    public ModelAndView deleteReply(ReplyDO replyDO) throws Exception {
-        ModelAndView mv = new ModelAndView("redirect:/board/boardDetail");
-        boardService.deleteReply(replyDO.getReplyNo());
-
-        mv.addObject("replyNo",replyDO.getReplyNo("replyNo"));
-        return mv;
-    }
-
-    //댓글 수정
-    @RequestMapping("/sample/updateComment.do")
-    public ModelAndView updateReply(CommandMap commandMap) throws Exception {
-        ModelAndView mv = new ModelAndView("redirect:/board/boardDetail");
-        boardService.updateReply(commandMap.getMap());
-
-        mv.addObject("replyNo",commandMap.get("replyNo"));
-        return mv;
-    }*/
-
 }
