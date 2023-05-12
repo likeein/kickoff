@@ -2,6 +2,7 @@ package com.teamcommit.kickoff.Service;
 
 import com.teamcommit.kickoff.Do.BoardDO;
 import com.teamcommit.kickoff.Do.ReplyDO;
+import com.teamcommit.kickoff.Do.ReportDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ public class BoardServiceImpl implements BoardService{
     private BoardMapper boardMapper;
 
     @Override
-    public List<BoardDO> getList(BoardDO boardDO){
+    public List<BoardDO> getList(BoardDO boardDO) throws Exception {
         return boardMapper.getList(boardDO);
     }
 
@@ -26,7 +27,7 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
-    public BoardDO getBoardContents(int boardSeqno) {
+    public BoardDO getBoardContents(int boardSeqno) throws Exception {
         return boardMapper.getBoardContents(boardSeqno);
     }
 
@@ -36,23 +37,13 @@ public class BoardServiceImpl implements BoardService{
     }
 
     @Override
-    public void getBoardDelete(int boardSeqno) {
+    public void getBoardDelete(int boardSeqno) throws Exception {
         boardMapper.getBoardDelete(boardSeqno);
     }
 
-    /*@Override
-    public void writeReply(Map<String, Object> map) throws Exception {
-        ReplyDO.insertReply(map);
-    }
-
     @Override
-    public void deleteReply(Map<String, Object> map) throws Exception {
-        ReplyDO.deleteReply(map);
+    public void  reportBoard(ReportDO reportDO) throws Exception {
+        boardMapper.reportBoard(reportDO);
     }
-
-    @Override
-    public void updateReply(Map<String, Object> map) throws Exception {
-        ReplyDO.updateReply(map);
-    }*/
 
 }
