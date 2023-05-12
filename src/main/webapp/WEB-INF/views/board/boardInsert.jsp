@@ -72,10 +72,10 @@
 		
 		<div class="writer">
 		<span class="formWriter">
-		<label for="writeId" class="writeId" >작성자</label>
+		<label for="writeId" class="writeId" >${userDO.userId}</label>
             <%--<label for="writeId" class="writeId" ><c:out value="${list.writeId}" /></label>--%>
 		</span>
-        <input type="hidden" id="writeId" name="writeId" value="${boardVO.writeId}">
+        <input type="hidden" id="writeId" name="writeId" value="${userDO.userId}">
 		</div>
 		
 		<div class="filebox bs3-primary preview-image">
