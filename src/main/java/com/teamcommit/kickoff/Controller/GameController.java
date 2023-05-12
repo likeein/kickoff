@@ -1,6 +1,8 @@
 package com.teamcommit.kickoff.Controller;
 
 import com.teamcommit.kickoff.Common.CommandMap;
+import com.teamcommit.kickoff.Do.GameDO;
+import org.springframework.ui.Model;
 import com.teamcommit.kickoff.Service.GameService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,21 +12,23 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
 public class GameController {
 
-    @Resource(name="gameService")
+    @Resource(name = "gameService")
     private GameService gameService;
 
     @GetMapping("/game")
-    public String game() {
+    public String gameList() {
         String view = "/game/game";
 
         return view;
     }
+
+    /*
     @RequestMapping("/gameDetail")
     public ModelAndView gameDetail(CommandMap commandMap, HttpSession session) throws Exception {
 
@@ -32,11 +36,11 @@ public class GameController {
 
         Map<String, Object> map = new HashMap<String, Object>();
 
-        if(session.getAttribute("user_id") != null) {
-            String id = (String)session.getAttribute("user_id");
+        if (session.getAttribute("user_id") != null) {
+            String id = (String) session.getAttribute("user_id");
             map.put("id", id);
-        } else if(session.getAttribute("emp_id") != null) {
-            String id = (String)session.getAttribute("emp_id");
+        } else if (session.getAttribute("emp_id") != null) {
+            String id = (String) session.getAttribute("emp_id");
             map.put("id", id);
         }
 
@@ -57,16 +61,6 @@ public class GameController {
 
         return mv;
     }
-
-    @RequestMapping("/gameScore")
-    public ModelAndView gameScore(CommandMap commandMap) throws Exception {
-        ModelAndView mv = new ModelAndView("/game/gameScore");
-
-        Map<String, Object> map = gameService.selectGameDetail(commandMap.getMap());
-
-        mv.addObject("map", map.get("map"));
-        mv.addObject("list", map.get("list"));
-
-        return mv;
-    }
+     */
 }
+
