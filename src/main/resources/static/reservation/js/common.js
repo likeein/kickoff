@@ -12,6 +12,7 @@ function selectCourt(e) {
 	const text = e.options[e.selectedIndex].text;
 
 	document.getElementById('court').innerText = text;
+	document.getElementById('court2').innerText = text;
 }
 
 /* placeForm */

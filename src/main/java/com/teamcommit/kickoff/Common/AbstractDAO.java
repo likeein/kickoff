@@ -59,7 +59,7 @@ public class AbstractDAO {
         return sqlSession.selectList(queryId, params);
     }
 
-    @SuppressWarnings("unchecked")
+/*    @SuppressWarnings("unchecked")
     public Object selectPagingList(String queryId, Object params) {
         printQueryId(queryId);
         Map<String, Object> map = (Map<String,Object>) params;
@@ -80,7 +80,7 @@ public class AbstractDAO {
         map.put("END", (nPageIndex * nPageRow) + nPageRow);
 
         return sqlSession.selectList(queryId, map);
-    }
+    }*/
 }
 
 
