@@ -3,7 +3,7 @@
 
 
 <mapper namespace="com.teamcommit.kickoff.Service.GameMapper">
-    <select id="gameList" parameterType="com.teamcommit.kickoff.Do.GameDO">
+    <select id="gameDetail" parameterType="com.teamcommit.kickoff.Do.GameDO" resultType="com.teamcommit.kickoff.Do.GameDO">
         <![CDATA[
         SELECT *
         FROM
