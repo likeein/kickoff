@@ -1,7 +1,10 @@
 package com.teamcommit.kickoff.Do;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class GameDO {
 
 	//경기번호
@@ -13,7 +16,7 @@ public class GameDO {
 	//풋살장 아이디
 	private int placeId;
 	//메시지 번호
-	private int MessageSeqno;
+	private int messageSeqno;
 	//경기 날짜
 	private Date gameDate;
 	//경기 시작 시간
@@ -30,82 +33,107 @@ public class GameDO {
 	private String gameStatus;
 	//매칭 기타사항
 	private String gameOther;
-	
+
 	public int getGameSeqno() {
 		return gameSeqno;
 	}
+
 	public void setGameSeqno(int gameSeqno) {
 		this.gameSeqno = gameSeqno;
 	}
+
 	public int getTeam1Id() {
 		return team1Id;
 	}
+
 	public void setTeam1Id(int team1Id) {
 		this.team1Id = team1Id;
 	}
+
 	public int getTeam2Id() {
 		return team2Id;
 	}
+
 	public void setTeam2Id(int team2Id) {
 		this.team2Id = team2Id;
 	}
+
 	public int getPlaceId() {
 		return placeId;
 	}
+
 	public void setPlaceId(int placeId) {
 		this.placeId = placeId;
 	}
+
 	public int getMessageSeqno() {
-		return MessageSeqno;
+		return messageSeqno;
 	}
+
 	public void setMessageSeqno(int messageSeqno) {
-		MessageSeqno = messageSeqno;
+		this.messageSeqno = messageSeqno;
 	}
+
 	public Date getGameDate() {
 		return gameDate;
 	}
+
 	public void setGameDate(Date gameDate) {
 		this.gameDate = gameDate;
 	}
+
 	public String getGameStartTime() {
 		return gameStartTime;
 	}
+
 	public void setGameStartTime(String gameStartTime) {
 		this.gameStartTime = gameStartTime;
 	}
+
 	public String getGameEndTime() {
 		return gameEndTime;
 	}
+
 	public void setGameEndTime(String gameEndTime) {
 		this.gameEndTime = gameEndTime;
 	}
+
 	public String getGameStyle() {
 		return gameStyle;
 	}
+
 	public void setGameStyle(String gameStyle) {
 		this.gameStyle = gameStyle;
 	}
+
 	public String getGameScore() {
 		return gameScore;
 	}
+
 	public void setGameScore(String gameScore) {
 		this.gameScore = gameScore;
 	}
+
 	public String getGameGender() {
 		return gameGender;
 	}
+
 	public void setGameGender(String gameGender) {
 		this.gameGender = gameGender;
 	}
+
 	public String getGameStatus() {
 		return gameStatus;
 	}
+
 	public void setGameStatus(String gameStatus) {
 		this.gameStatus = gameStatus;
 	}
+
 	public String getGameOther() {
 		return gameOther;
 	}
+
 	public void setGameOther(String gameOther) {
 		this.gameOther = gameOther;
 	}

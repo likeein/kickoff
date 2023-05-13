@@ -14,9 +14,6 @@ import java.util.Map;
 @Service("gameService")
 public class GameServiceImpl implements GameService {
 
-    @Resource(name="gameDAO")
-    private GameDAO gameDAO;
-
     @Autowired
     private GameMapper gameMapper;
 
@@ -27,13 +24,13 @@ public class GameServiceImpl implements GameService {
 
     @Override
     public List<GameDO> selectGameDetail() throws Exception {
-        return gameDAO.selectGameDetail();
+        return gameMapper.selectGameDetail();
     }
 
 
     @Override
     public Map<String, Object> selectMemInfo(Map<String, Object> map) throws Exception {
-        return gameDAO.selectMemInfo(map);
+        return gameMapper.selectMemInfo(map);
     }
 
 
