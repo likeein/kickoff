@@ -53,9 +53,6 @@ public class EmpController {
 
         //로그인한 업체ID로 로그인 정보 가져오기
         String empId = (String) request.getSession().getAttribute("empId");
-        EmployerDO employerDO = new EmployerDO();
-        employerDO.setEmpId(empId);
-        employerDO = loginService.procSetEmployerInfo(employerDO);
 
         List<BoardDO> boardList = boardService.getList(BoardDO);
         model.addAttribute("boardList", boardList);

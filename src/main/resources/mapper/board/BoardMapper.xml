@@ -25,7 +25,8 @@
             FILE_PATH,
             WRITE_CONTENT,
             VIEW_COUNT,
-            REPORT_COUNT
+            REPORT_COUNT,
+            WRITE_ID_EMP
         )
         VALUES
             (
@@ -35,7 +36,8 @@
                 #{fileName},
                 #{filePath},
                 #{writeContent},
-                0,0
+                0,0,
+                #{writeIdEmp}
             )
         ]]>
     </insert>

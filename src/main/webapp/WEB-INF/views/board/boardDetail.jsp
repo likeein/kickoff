@@ -55,7 +55,7 @@
 		<div class="container px-4 px-lg-5 my-5">
 			<div class="text-center text-white">
 				<h1 class="display-4 fw-bolder">${boardContents.writeTitle}</h1>
-				<p class="lead fw-normal text-white-50 mb-0">${boardContents.writeId}</p>
+				<p class="lead fw-normal text-white-50 mb-0">${boardContents.writeId}${boardContents.writeIdEmp}</p>
 			</div>
 		</div>
 	</div>
@@ -78,7 +78,7 @@
 						</tr>
 						<tr>
 							<th scope="row" class="active">작성자</th>
-							<td>${boardContents.writeId}</td>
+							<td>${boardContents.writeId}${boardContents.writeIdEmp}</td>
 							<th scope="row" class="active">작성일</th>
 							<td>${boardContents.writeRegDate}</td>
 						</tr>

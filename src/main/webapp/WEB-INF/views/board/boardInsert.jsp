@@ -73,20 +73,10 @@
 		<div class="writer">
 		<<span class="formWriter">
 		<label for="writeId" class="writeId" >작성자 : ${userId}</label>
+            <label class="writeIdEmp">${empId}</label>
 		</span>
             <input type="hidden" id="writeId" name="writeId" value="${userId}">
-        <%--<c:if test="${!empty userId and empty empId}">
-            <span class="formWriter">
-		    <label for="writeId" class="writeId" >작성자 : ${userId}</label>
-		    </span>
-            <input type="hidden" id="writeId" name="writeId" value="${userId}">
-        </c:if>
-        <c:if test="${empty userId and !empty empId}">
-            <span class="formWriter">
-		    <label for="writeId" class="writeId" >작성자 : ${empId}</label>
-		    </span>
-            <input type="hidden" id="writeId" name="writeId" value="${empId}">
-        </c:if>--%>
+            <input type="hidden" id="writeIdEmp" name="writeIdEmp" value="${empId}">
 		</div>
 		
 		<div class="filebox bs3-primary preview-image">
