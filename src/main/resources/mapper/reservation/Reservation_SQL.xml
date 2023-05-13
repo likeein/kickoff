@@ -8,8 +8,7 @@
     <!-- Reservation List -->
     <select id="selectReservationList" parameterType="com.teamcommit.kickoff.Do.ReservationDO" resultType="com.teamcommit.kickoff.Do.ReservationDO">
         <![CDATA[
-            SELECT
-                    *
+            SELECT *
             FROM
                 RESERVATION
         ]]>
@@ -36,27 +35,38 @@
             )
             VALUES (
                 RESERVATION_SEQ.NEXTVAL,
-                #{RESERVATION_COURT_NAME},
-                #{RESERVATION_COURT_FORM},
-                #{RESERVATION_DATE},
-                #{RESERVATION_START_TIME},
-                #{RESERVATION_END_TIME},
+                #{reservationCourtName},
+                #{reservationCourtForm},
+                #{reservationDate},
+                #{reservationStartTime},
+                #{reservationEndTime},
                 'Y',
-                #{RESERVATION_PRICE},
-                #{RESERVATION_COMMENT},
+                #{reservationPrice},
+                #{reservationComment},
                 SYSDATE
             )
         ]]>
     </insert>
 
     <!-- Reservation Detail -->
-    <select id="selectReservationDetail" parameterType="hashmap" resultType="hashmap">
+    <select id="selectReservationDetail" parameterType="com.teamcommit.kickoff.Do.ReservationDO" resultType="com.teamcommit.kickoff.Do.ReservationDO">
         <![CDATA[
-                SELECT *
-                FROM
-                    RESERVATION
-                WHERE
+            SELECT *
+            FROM
+                RESERVATION
+            WHERE
+                RESERVATION_NO = #{reservationNo}
+        ]]>
+    </select>
 
+    <!-- Reservation procSetUserInfo -->
+    <select id="procSetUserInfo" parameterType="com.teamcommit.kickoff.Do.EmployerDO" resultType="com.teamcommit.kickoff.Do.EmployerDO">
+        <![CDATA[
+            SELECT *
+            FROM
+                EMPLOYER
+            WHERE
+                EMP_ID = #{empId}
         ]]>
     </select>
 

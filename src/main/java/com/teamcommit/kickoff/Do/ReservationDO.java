@@ -5,171 +5,171 @@ import java.util.Date;
 public class ReservationDO {
 
 	//예약 고유 번호
-	private int RESERVATION_NO;
+	private int reservationNo;
 	//예약자 아이디
-	private String USER_ID;
+	private String userId;
 	//예약 풋살장 아이디
-	private int PLACE_ID;
+	private int placeId;
 	//예약 날짜
-	private String RESERVATION_DATE;
+	private String reservationDate;
 	//예약 인원
-	private int RESERVATION_NUMBER;
+	private int reservationNumber;
 	//예약 상태
-	private String RESERVATION_STATUS;
+	private String reservationStatus;
 	//예약 등록 일자
-	private String RESERVATION_REG_DATE;
+	private String reservationRegDate;
 	//예약 수정 일자
-	private String RESERVATION_EDIT_DATE;
+	private String reservationEditDate;
 	//예약 시작 시간
-	private String RESERVATION_START_TIME;
+	private String reservationStartTime;
 	//예약 종료 시간
-	private String RESERVATION_END_TIME;
+	private String reservationEndTime;
 	//예약 기타 사항
-	private String RESERVATION_COMMENT;
+	private String reservationComment;
 	//예약 가격
-	private String RESERVATION_PRICE;
+	private Long reservationPrice;
 	//경기 형태
-	private String RESERVATION_GAME_STYLE;
+	private String reservationGameStyle;
 	//코트 이름
-	private String RESERVATION_COURT_NAME;
+	private String reservationCourtName;
 	//코트 형태
-	private String RESERVATION_COURT_FORM;
+	private String reservationCourtForm;
 	//예약 취소 유무
-	private String RESERVATION_CANCEL;
+	private String reservationCancel;
 
 	public ReservationDO() {
 
 	}
 
-	public int getRESERVATION_NO() {
-		return RESERVATION_NO;
+	public ReservationDO(int reservationNo) {
+		this.reservationNo = reservationNo;
 	}
 
-	public void setRESERVATION_NO(int RESERVATION_NO) {
-		this.RESERVATION_NO = RESERVATION_NO;
+	public int getReservationNo() {
+		return reservationNo;
 	}
 
-	public String getUSER_ID() {
-		return USER_ID;
+	public void setReservationNo(int reservationNo) {
+		this.reservationNo = reservationNo;
 	}
 
-	public void setUSER_ID(String USER_ID) {
-		this.USER_ID = USER_ID;
+	public String getUserId() {
+		return userId;
 	}
 
-	public int getPLACE_ID() {
-		return PLACE_ID;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
-	public void setPLACE_ID(int PLACE_ID) {
-		this.PLACE_ID = PLACE_ID;
+	public int getPlaceId() {
+		return placeId;
 	}
 
-	public String getRESERVATION_DATE() {
-		return RESERVATION_DATE;
+	public void setPlaceId(int placeId) {
+		this.placeId = placeId;
 	}
 
-	public void setRESERVATION_DATE(String RESERVATION_DATE) {
-		this.RESERVATION_DATE = RESERVATION_DATE;
+	public String getReservationDate() {
+		return reservationDate;
 	}
 
-	public int getRESERVATION_NUMBER() {
-		return RESERVATION_NUMBER;
+	public void setReservationDate(String reservationDate) {
+		this.reservationDate = reservationDate;
 	}
 
-	public void setRESERVATION_NUMBER(int RESERVATION_NUMBER) {
-		this.RESERVATION_NUMBER = RESERVATION_NUMBER;
+	public int getReservationNumber() {
+		return reservationNumber;
 	}
 
-	public String getRESERVATION_STATUS() {
-		return RESERVATION_STATUS;
+	public void setReservationNumber(int reservationNumber) {
+		this.reservationNumber = reservationNumber;
 	}
 
-	public void setRESERVATION_STATUS(String RESERVATION_STATUS) {
-		this.RESERVATION_STATUS = RESERVATION_STATUS;
+	public String getReservationStatus() {
+		return reservationStatus;
 	}
 
-	public String getRESERVATION_REG_DATE() {
-		return RESERVATION_REG_DATE;
+	public void setReservationStatus(String reservationStatus) {
+		this.reservationStatus = reservationStatus;
 	}
 
-	public void setRESERVATION_REG_DATE(String RESERVATION_REG_DATE) {
-		this.RESERVATION_REG_DATE = RESERVATION_REG_DATE;
+	public String getReservationRegDate() {
+		return reservationRegDate;
 	}
 
-	public String getRESERVATION_EDIT_DATE() {
-		return RESERVATION_EDIT_DATE;
+	public void setReservationRegDate(String reservationRegDate) {
+		this.reservationRegDate = reservationRegDate;
 	}
 
-	public void setRESERVATION_EDIT_DATE(String RESERVATION_EDIT_DATE) {
-		this.RESERVATION_EDIT_DATE = RESERVATION_EDIT_DATE;
+	public String getReservationEditDate() {
+		return reservationEditDate;
 	}
 
-	public String getRESERVATION_START_TIME() {
-		return RESERVATION_START_TIME;
+	public void setReservationEditDate(String reservationEditDate) {
+		this.reservationEditDate = reservationEditDate;
 	}
 
-	public void setRESERVATION_START_TIME(String RESERVATION_START_TIME) {
-		this.RESERVATION_START_TIME = RESERVATION_START_TIME;
+	public String getReservationStartTime() {
+		return reservationStartTime;
 	}
 
-	public String getRESERVATION_END_TIME() {
-		return RESERVATION_END_TIME;
+	public void setReservationStartTime(String reservationStartTime) {
+		this.reservationStartTime = reservationStartTime;
 	}
 
-	public void setRESERVATION_END_TIME(String RESERVATION_END_TIME) {
-		this.RESERVATION_END_TIME = RESERVATION_END_TIME;
+	public String getReservationEndTime() {
+		return reservationEndTime;
 	}
 
-	public String getRESERVATION_COMMENT() {
-		return RESERVATION_COMMENT;
+	public void setReservationEndTime(String reservationEndTime) {
+		this.reservationEndTime = reservationEndTime;
 	}
 
-	public void setRESERVATION_COMMENT(String RESERVATION_COMMENT) {
-		this.RESERVATION_COMMENT = RESERVATION_COMMENT;
+	public String getReservationComment() {
+		return reservationComment;
 	}
 
-	public String getRESERVATION_PRICE() {
-		return RESERVATION_PRICE;
+	public void setReservationComment(String reservationComment) {
+		this.reservationComment = reservationComment;
 	}
 
-	public void setRESERVATION_PRICE(String RESERVATION_PRICE) {
-		this.RESERVATION_PRICE = RESERVATION_PRICE;
+	public Long getReservationPrice() {
+		return reservationPrice;
 	}
 
-	public String getRESERVATION_GAME_STYLE() {
-		return RESERVATION_GAME_STYLE;
+	public void setReservationPrice(Long reservationPrice) {
+		this.reservationPrice = reservationPrice;
 	}
 
-	public void setRESERVATION_GAME_STYLE(String RESERVATION_GAME_STYLE) {
-		this.RESERVATION_GAME_STYLE = RESERVATION_GAME_STYLE;
+	public String getReservationGameStyle() {
+		return reservationGameStyle;
 	}
 
-	public String getRESERVATION_COURT_NAME() {
-		return RESERVATION_COURT_NAME;
+	public void setReservationGameStyle(String reservationGameStyle) {
+		this.reservationGameStyle = reservationGameStyle;
 	}
 
-	public void setRESERVATION_COURT_NAME(String RESERVATION_COURT_NAME) {
-		this.RESERVATION_COURT_NAME = RESERVATION_COURT_NAME;
+	public String getReservationCourtName() {
+		return reservationCourtName;
 	}
 
-	public String getRESERVATION_COURT_FORM() {
-		return RESERVATION_COURT_FORM;
+	public void setReservationCourtName(String reservationCourtName) {
+		this.reservationCourtName = reservationCourtName;
 	}
 
-	public void setRESERVATION_COURT_FORM(String RESERVATION_COURT_FORM) {
-		this.RESERVATION_COURT_FORM = RESERVATION_COURT_FORM;
+	public String getReservationCourtForm() {
+		return reservationCourtForm;
 	}
 
-	public String getRESERVATION_CANCEL() {
-		return RESERVATION_CANCEL;
+	public void setReservationCourtForm(String reservationCourtForm) {
+		this.reservationCourtForm = reservationCourtForm;
 	}
 
-	public void setRESERVATION_CANCEL(String RESERVATION_CANCEL) {
-		this.RESERVATION_CANCEL = RESERVATION_CANCEL;
+	public String getReservationCancel() {
+		return reservationCancel;
 	}
 
-
-
-
+	public void setReservationCancel(String reservationCancel) {
+		this.reservationCancel = reservationCancel;
+	}
 }
