@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface GameService {
 
-    void gameDetail(Map<String, Object> map, HttpServletRequest request) throws Exception;
+    List<GameDO> gameDetail(GameDO gameDO) throws Exception;
 
     List<GameDO> selectGameDetail() throws Exception;
 

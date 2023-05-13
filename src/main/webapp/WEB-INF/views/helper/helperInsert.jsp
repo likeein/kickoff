@@ -57,9 +57,9 @@
 
 	<div class = "reservationBox">
 		<label>예약 내역: </label>&nbsp;
-		<input type = "text" name = "helperPlaceName" id = "helperPlaceName" placeholder = " 업체명"/><br />
-		<input type = "text" name = "helperPlace" id = "helperPlace" placeholder = " 업체위치"/><br />
-		<input type = "text" name = "helperTime" id = "helperTime" placeholder = " 매치날짜"/><br />
+		<input type = "text" name = "helperPlaceName" id = "helperPlaceName" disabled placeholder = " 업체명" required /><br />
+		<input type = "text" name = "helperAddress" id = "helperAddress" disabled placeholder = " 업체위치" required /><br />
+		<input type = "text" name = "helperTime" id = "helperTime" disabled placeholder = " 매치날짜" required /><br />
 		<button type = "button" class = "reservation" id = "reservation">내역조회</button>
 	</div>
 
@@ -98,12 +98,12 @@
 
 	<div class = "userBox">
 		<label>신청자 ID:</label>
-		<input type = "text" name = "helperId" id = "helperId" disabled placeholder="${userId}"/>
+		<input type = "text" name = "helperId" id = "helperId" disabled placeholder="${userId}" required/>
 	</div>
 
 	<div class = "helperBox">
 		<label>모집인원:</label>&nbsp;
-		<input type = "number" name = "helperWant" id = "helperWant" />&nbsp;<span>명</span>
+		<input type = "number" name = "helperWant" id = "helperWant" / required>&nbsp;<span>명</span>
 	</div>
 
 	<div class = "genderBox">
@@ -129,7 +129,7 @@
 
 	<div class = "moneyBox">
 		<label>참가비:</label>&nbsp;
-		<input type = "number" name = "helperPrice" id = "helperPrice" />&nbsp;<span>원</span>
+		<input type = "number" name = "helperPrice" id = "helperPrice" required />&nbsp;<span>원</span>
 	</div>
 
 	<div class = "btnbtn">

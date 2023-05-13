@@ -52,17 +52,6 @@ public class BoardController {
         userDO.setUserId(userId);
         userDO = loginService.procSetUserInfo(userDO);
 
-        //일반 로그인이 아닌경우 업체로그인에서 정보 가져오기
-        if (userDO == null){
-            EmployerDO employerDO = new EmployerDO();
-            employerDO.setEmpId(userId);
-            employerDO = loginService.procSetEmployerInfo(employerDO);
-            model.addAttribute("userId", employerDO.getEmpId());
-        }
-
-        if(userDO != null) {
-            model.addAttribute("userId", userDO.getUserId());
-        }
         return view;
     }
 
