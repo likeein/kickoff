@@ -55,12 +55,13 @@ public class HelperController {
     @GetMapping("/helperInsert")
     public String helperInsert(Model model, HttpSession session) {
         String view = "/helper/helperInsert";
-            if(session.getAttribute("login_info") == null) {
+
+            if(session.getAttribute("userId") == null) {
                 model.addAttribute("msg", "로그인 후 이용해주세요.");
             }
-            else if(session.getAttribute("login_info") != null) {
+            else if(session.getAttribute("userId") != null) {
                 try {
-                    List<ReservationDO> list = helperService.selectReservation((String) session.getAttribute("login_info"));
+                    List<ReservationDO> list = helperService.selectReservation((String) session.getAttribute("userId"));
                     model.addAttribute("reservation", list);
                 }
                 catch (Exception e) {
@@ -74,10 +75,10 @@ public class HelperController {
     public String helperInsert(@ModelAttribute("helperDO") HelperDO helperDO, Model model, HttpSession session) {
         String view = "/helper/helperInsert";
 
-        if(session.getAttribute("login_info") == null) {
+        if(session.getAttribute("userId") == null) {
             model.addAttribute("script", "alert('로그인 후 이용이 가능합니다.');");
         }
-        else if (session.getAttribute("login_info") != null) {
+        else if (session.getAttribute("userId") != null) {
             try {
                 helperService.insertHelper(helperDO);
                 model.addAttribute("script", "alert('용병 모집을 등록했습니다!');");

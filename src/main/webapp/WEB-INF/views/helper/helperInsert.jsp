@@ -68,6 +68,7 @@
 		<button type = "reset" class="reservationClose">x</button>
 		<div>
 			${msg}
+
 		</div>
 	</div>
 
