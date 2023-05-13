@@ -85,7 +85,7 @@
 								<img src="/reservation/images/loading.png">
 							</div>
 							<c:choose>
-								<c:when test="${reservationDetail.reservationStatus == 'Y'}">
+								<c:when test="${reservationDetail.reservationStatus == '예약대기'}">
 									<b class="text-dark">예약</b><small>예약대기</small>
 								</c:when>
 								<c:otherwise>
@@ -143,12 +143,13 @@
 				<!-- button -->
 				<div class="btn-container">
 					<!-- <a href="#this" id="list" class="btn">목록</a> -->
-					<a href="/reservationUpdate" id="update" class="btn">수정</a>
-					<a href="/reservationRequest" id="booking" class="btn">예약</a>
+					<a href="/reservationUpdateForm?reservationNo=${reservationDetail.reservationNo}" id="update" class="btn">수정</a>
+					<a href="/reservationRequest?reservationNo=${reservationDetail.reservationNo}" id="booking" class="btn">예약</a>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 	<!-- footer -->
 	<%@include file="/includes/footer.jsp"%>

@@ -55,6 +55,7 @@
         <div class="container">
             <div class="checkout__form">
                 <form id="frm" name="frm" action="#" method="POST">
+                    <input type="hidden" id="reservationNo" name="reservationNo" value="${reservationDetail.reservationNo}" />
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
@@ -63,14 +64,14 @@
                                <!-- readonly: 입력 필드 비활성화되지만 form으로 전송 가능 -->
                            	</div>
                           	<div class="checkout__input">
-                                <p>코트<span>*</span></p>
-                                <select id="courtName" onChange="selectCourt(this)">
+                                <p>코트<span>*${reservationDetail.reservationCourtName}</span></p>
+                                <select id="courtName" name="reservationCourtName" onChange="selectCourt(this)">
                                 	<option value="">코트 선택하기</option>
-                                	<option value="A">A코트</option>
-                                	<option value="B">B코트</option>
-                                	<option value="C">C코트</option>
-                                	<option value="D">D코트</option>
-                                	<option value="E">E코트</option>
+                                    <option value="A코트" <c:if test="${reservationDetail.reservationCourtName == 'A코트'}">selected</c:if>>A코트</option>
+                                	<option value="B코트" <c:if test="${reservationDetail.reservationCourtName == 'B코트'}">selected</c:if>>B코트</option>
+                                	<option value="C코트" <c:if test="${reservationDetail.reservationCourtName == 'C코트'}">selected</c:if>>C코트</option>
+                                	<option value="D코트" <c:if test="${reservationDetail.reservationCourtName == 'D코트'}">selected</c:if>>D코트</option>
+                                	<option value="E코트" <c:if test="${reservationDetail.reservationCourtName == 'E코트'}">selected</c:if>>E코트</option>
                                 </select>
                             </div>
                            	<div class="checkout__input">
@@ -80,10 +81,10 @@
                             <div class="checkout__input">
                                 <p>형태<span>*</span></p>
                                 <label>
-                                	<input type="radio" name="placeForm" value="indoor" onclick='getPlaceForm(event)' />&nbsp실내
+                                	<input type="radio" name="placeForm" value="indoor" onclick='getPlaceForm(event)' <c:if test="${reservationDetail.reservationCourtForm eq 'indoor'}">checked="checked"</c:if>/>&nbsp실내
                                 </label>
                                 <label>
-                                	<input type="radio" name="placeForm" value="outdoor" onclick='getPlaceForm(event)' />&nbsp실외
+                                	<input type="radio" name="placeForm" value="outdoor" onclick='getPlaceForm(event)' <c:if test="${reservationDetail.reservationCourtForm eq 'outdoor'}">checked="checked"</c:if>/>&nbsp실외
                                 </label>
                             </div>
                    			<div class="checkout__input">
@@ -131,19 +132,19 @@
                             <div class="checkout__input">
                                 <p>예약 상태<span>*</span></p>
                                 <label>
-                                	<input type="radio" name="status" value="예약" onclick='getStatus(event)' />&nbsp예약
+                                    <input type="radio" name="status" value="예약대기" onclick='getStatus(event)' <c:if test="${reservationDetail.reservationStatus eq '예약대기'}">checked="checked"</c:if>/>&nbsp예약대기
                                 </label>
                                 <label>
-                                	<input type="radio" name="status" value="예약 완료" onclick='getStatus(event)' />&nbsp예약 완료
+                                    <input type="radio" name="status" value="예약완료" onclick='getStatus(event)'<c:if test="${reservationDetail.reservationStatus eq '예약완료'}">checked="checked"</c:if>/>&nbsp예약완료
                                 </label>
                             </div>
                             <div class="checkout__input">
                                 <p>대관비<span>*</span></p>
-                                <input type="number" class="inputPrice" id="inputPrice" onChange="getPrice()" placeholder="ex) 50000">
+                                <input type="number" class="inputPrice" id="inputPrice" name="reservationPrice" value="${reservationDetail.reservationPrice}" onChange="getPrice()" placeholder="ex) 50000">
                             </div>
                             <div class="checkout__input">
 								<p>기타사항</p>
-                               	<textarea class="etc"></textarea>
+                               	<textarea class="etc" name="reservationComment" value="${reservationDetail.reservationComment}"></textarea>
                             </div>
                         </div>
                         
@@ -162,7 +163,7 @@
 									<li>예약 날짜<span id="date"></span></li>
 									<li>시작 시간<span id="startTime"></span></li>
 									<li>종료 시간<span id="endTime"></span></li>
-									<li>예약 상태<span id="status">예약</span></li>
+									<li>예약 상태<span id="status"></span></li>
 									<li>대관비<span id="price"></span></li>
 								</ul>
 								<a href="#this" id="insert" class="site-btn-insert">수정</a>
@@ -184,6 +185,9 @@
 			format: "yyyy-mm-dd",
             uiLibrary: 'bootstrap4'
         });
+
+
+
 	</script>
 	
     <!-- Js Plugins -->

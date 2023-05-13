@@ -20,10 +20,10 @@
             INSERT INTO RESERVATION (
                 RESERVATION_NO,
             /*    USER_ID,
-                PLACE_ID,
-                PLACE_NAME,*/
+                PLACE_ID, */
+                RESERVATION_PLACE_NAME,
+                RESERVATION_PLACE_ADDRESS,
                 RESERVATION_COURT_NAME,
-             /*   PLACE_ADDRESS,*/
                 RESERVATION_COURT_FORM,
                 RESERVATION_DATE,
                 RESERVATION_START_TIME,
@@ -35,12 +35,14 @@
             )
             VALUES (
                 RESERVATION_SEQ.NEXTVAL,
+                #{reservationPlaceName},
+                #{reservationPlaceAddress},
                 #{reservationCourtName},
                 #{reservationCourtForm},
                 #{reservationDate},
                 #{reservationStartTime},
                 #{reservationEndTime},
-                'Y',
+                '예약대기',
                 #{reservationPrice},
                 #{reservationComment},
                 SYSDATE
@@ -59,14 +61,40 @@
         ]]>
     </select>
 
-    <!-- Reservation procSetUserInfo -->
-    <select id="procSetUserInfo" parameterType="com.teamcommit.kickoff.Do.EmployerDO" resultType="com.teamcommit.kickoff.Do.EmployerDO">
+    <!-- Reservation Update -->
+    <update id="updateReservation" parameterType="com.teamcommit.kickoff.Do.ReservationDO">
         <![CDATA[
-            SELECT *
-            FROM
-                EMPLOYER
-            WHERE
-                EMP_ID = #{empId}
+        UPDATE
+            RESERVATION_COURT_NAME,
+            RESERVATION_COURT_FORM,
+            RESERVATION_DATE,
+            RESERVATION_START_TIME,
+            RESERVATION_END_TIME,
+            RESERVATION_STATUS,
+            RESERVATION_PRICE,
+            RESERVATION_COMMENT
+        SET
+            #{reservationCourtname},
+            #{reservationCourtForm},
+            #{reservationDate},
+            #{reservationStartTime},
+            #{reservationEndTime},
+            #{reservationStatus},
+            #{reservationPrice},
+            #{reservationComment}
+        WHERE
+            RESERVATION_NO = #{reservationNo}
+        ]]>
+    </update>
+
+    <!-- Place info -->
+    <select id="selectPlaceInfo" parameterType="com.teamcommit.kickoff.Do.PlaceDO" resultType="com.teamcommit.kickoff.Do.PlaceDO">
+        <![CDATA[
+        SELECT *
+        FROM
+            PLACE
+        WHERE
+            PLACE_ID = #{placeId}
         ]]>
     </select>
 

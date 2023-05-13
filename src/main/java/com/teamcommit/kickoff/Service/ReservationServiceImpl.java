@@ -1,16 +1,12 @@
 package com.teamcommit.kickoff.Service;
 
-import com.teamcommit.kickoff.Dao.ReservationDAO;
 import com.teamcommit.kickoff.Do.EmployerDO;
+import com.teamcommit.kickoff.Do.PlaceDO;
 import com.teamcommit.kickoff.Do.ReservationDO;
-import com.teamcommit.kickoff.Do.UserDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
-import java.util.Map;
-
 
 @Service("reservationService")
 public class ReservationServiceImpl implements ReservationService {
@@ -34,8 +30,13 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public EmployerDO procSetUserInfo(EmployerDO employerDO) {
-        return reservationMapper.procSetUserInfo(employerDO);
+    public void updateReservation(ReservationDO reservationDO) {
+        reservationMapper.updateReservation(reservationDO);
+    }
+
+    @Override
+    public PlaceDO selectPlaceInfo(int placeId) throws Exception {
+        return reservationMapper.selectPlaceInfo(placeId);
     }
 
 }
