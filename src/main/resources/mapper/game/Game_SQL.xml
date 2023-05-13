@@ -3,5 +3,37 @@
 
 
 <mapper namespace="com.teamcommit.kickoff.Service.GameMapper">
+    <select id="gameList" parameterType="com.teamcommit.kickoff.Do.GameDO">
+        <![CDATA[
+        SELECT *
+        FROM
+            GAME
 
+        ]]>
+    </select>
+
+    <insert id = "selectGame" parameterType="com.teamcommit.kickoff.Do.GameDO">
+        <![CDATA[
+        INSERT INTO GAME
+        (
+            GAME_SEQNO,
+            PLACE_ID,
+            TEAM1_ID,TEAM2_ID,
+            GAME_START_TIME,
+            GAME_STYLE,
+            GAME_GENDER,
+            GAME_STATUS
+        )
+        VALUES(
+                  GAME_SEQ.NEXTVAL,
+                  #{placeId},
+                  #{team1Id},
+                  #{tema2Id},
+                  #{gameStartTime},
+                  #{gameStyle},
+                  #{gameGender},
+                  #{gameStatus}
+              )
+        ]]>
+    </insert>
 </mapper>
