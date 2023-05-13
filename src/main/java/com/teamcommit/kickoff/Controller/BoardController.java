@@ -1,9 +1,6 @@
 package com.teamcommit.kickoff.Controller;
 
-import com.teamcommit.kickoff.Do.BoardDO;
-import com.teamcommit.kickoff.Do.ReplyDO;
-import com.teamcommit.kickoff.Do.ReportDO;
-import com.teamcommit.kickoff.Do.UserDO;
+import com.teamcommit.kickoff.Do.*;
 import com.teamcommit.kickoff.Service.BoardService;
 //import com.teamcommit.kickoff.Service.ReplyService;
 import com.teamcommit.kickoff.Service.LoginService;
@@ -49,7 +46,7 @@ public class BoardController {
     @RequestMapping( "/boardInsert")
     public String insert(@ModelAttribute("boardDO") BoardDO boardDO, HttpServletRequest request, Model model) throws Exception {
         String view = "/board/boardInsert";
-
+        //로그인한 이용자 ID로 로그인 정보 가져오기
         String userId = (String) request.getSession().getAttribute("userId");
         UserDO userDO =new UserDO();
         userDO.setUserId(userId);
@@ -64,7 +61,7 @@ public class BoardController {
 
         ModelAndView mv = new ModelAndView("redirect:/boardDetailWritter");
 
-        try{
+
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
             Date time = new Date();
@@ -73,12 +70,13 @@ public class BoardController {
             boardDO.setWriteRegDate(time1);
 
             boardService.insertBoard(boardDO);
+            int boardSeq = boardService.procGetMaxSeqno();
+            System.out.println("!!!!!!!!!!!!!!!!");
+            System.out.println(boardSeq);
 
-            redirect.addFlashAttribute("redirect", boardDO.getBoardSeqno());
+            redirect.addFlashAttribute("redirect", boardSeq);
             redirect.addFlashAttribute("msg", "등록 완료되었습니다.");
-        } catch (Exception e) {
-            redirect.addFlashAttribute("msg", "오류가 발생되었습니다. 다시 시도해주세요.");
-        }
+
 
         return mv;
     }
@@ -102,6 +100,8 @@ public class BoardController {
     public String boardDetail(@ModelAttribute("boardDO") BoardDO boardDO, @RequestParam("boardSeqno") int boardSeqno, Model model) throws Exception {
         String view = "/board/boardDetail";
 
+        System.out.println("@@@@@@@@@@@@@@@@@@@@");
+        System.out.println(boardSeqno);
         BoardDO boardContents = boardService.getBoardContents(boardSeqno);
         model.addAttribute("boardContents", boardContents);
 

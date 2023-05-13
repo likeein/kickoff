@@ -23,4 +23,7 @@ public interface LoginMapper {
 
     // 로그인한 이용자 정보 가져오기
     public UserDO procSetUserInfo(UserDO userDO);
+
+    // 로그인한 이용자 정보 가져오기
+    public EmployerDO procSetEmployerInfo(EmployerDO employerDO);
 }

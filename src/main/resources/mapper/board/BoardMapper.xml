@@ -94,4 +94,13 @@
             )
         ]]>
     </insert>
+
+    <select id="procGetMaxSeqno" parameterType="int">
+        <![CDATA[
+        SELECT
+            MAX(BOARD_SEQNO)
+        FROM
+            COMMUNITY_BOARD
+        ]]>
+    </select>
 </mapper>

@@ -19,4 +19,6 @@ public interface BoardService {
     void getBoardDelete(int boardSeqno) throws Exception;
 
     void reportBoard(ReportDO reportDO) throws Exception;
+
+    Integer procGetMaxSeqno() throws Exception;
 }
