@@ -118,9 +118,9 @@ public class HelperController {
         return view;
     }
 
-    @PostMapping("/helperMessage")
+    /*@PostMapping("/helperMessage")
     public String helperMessage(@ModelAttribute("messageDO") MessageDO messageDO, Model model, HttpSession session) {
 
-    }
+    }*/
 
 }
