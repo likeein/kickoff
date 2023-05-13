@@ -83,8 +83,9 @@
 			</div>
 		</div>
 		<div id="map" style="width:500px;height:350px;margin-left: 15px;"></div>
-
-		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5d724483fb639866457f6535349fcd24"></script>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5d724483fb639866457f6535349fcd24&libraries=services"></script>
+		<script>
+			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5d724483fb639866457f6535349fcd24&libraries=services"></script>
 		<script>
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 					mapOption = {
@@ -92,36 +93,40 @@
 						level: 3 // 지도의 확대 레벨
 					};
 
-			var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+			// 지도를 생성합니다
+			var map = new kakao.maps.Map(mapContainer, mapOption);
 
-			var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667);
+			// 주소-좌표 변환 객체를 생성합니다
+			var geocoder = new kakao.maps.services.Geocoder();
 
-			// 마커를 생성합니다
-			var marker = new kakao.maps.Marker({
-				position: markerPosition
+			// 주소로 좌표를 검색합니다
+			geocoder.addressSearch('${content.helperAddress}', function(result, status) {
+
+				// 정상적으로 검색이 완료됐으면
+				if (status === kakao.maps.services.Status.OK) {
+
+					var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+					// 결과값으로 받은 위치를 마커로 표시합니다
+					var marker = new kakao.maps.Marker({
+						map: map,
+						position: coords
+					});
+
+					// 인포윈도우로 장소에 대한 설명을 표시합니다
+					var infowindow = new kakao.maps.InfoWindow({
+						content: '<div style="width:150px;text-align:center;padding:6px 0;">${content.helperAddress}</div>'
+					});
+					infowindow.open(map, marker);
+
+					// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+					map.setCenter(coords);
+				}
 			});
-
-			marker.setMap(map);
-
-			var iwContent = '<div style="padding:5px;">${content.helperAddress}<br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-					iwPosition = new kakao.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
-
-			// 인포윈도우를 생성합니다
-			var infowindow = new kakao.maps.InfoWindow({
-				position : iwPosition,
-				content : iwContent
-			});
-
-			// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-			infowindow.open(map, marker);
-
-			// 아래와 같이 옵션을 입력하지 않아도 된다
 			var zoomControl = new kakao.maps.ZoomControl();
-
-			// 지도 오른쪽에 줌 컨트롤이 표시되도록 지도에 컨트롤을 추가한다.
 			map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 		</script>
-		<button type = "button" class = "btn" id = "btn" onclick="location.href='/helperMessage';">신청</button>
+			<button type = "button" class = "btn" id = "btn" onclick="location.href='/helperMessage';">신청</button>
 		<button type = "button" class = "btn" id = "btn" onclick="location.href='/helperList';">돌아가기</button>
 	</form>
 </body>

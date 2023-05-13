@@ -58,7 +58,7 @@
 	<div class = "reservationBox">
 		<label>예약 내역: </label>&nbsp;
 		<input type = "text" name = "helperPlaceName" id = "helperPlaceName" placeholder = " 업체명"/><br />
-		<input type = "text" name = "helperPlace" id = "helperPlace" placeholder = " 업체위치"/><br />
+		<input type = "text" name = "helperAddress" id = "helperAddress" placeholder = " 업체위치"/><br />
 		<input type = "text" name = "helperTime" id = "helperTime" placeholder = " 매치날짜"/><br />
 		<button type = "button" class = "reservation" id = "reservation">내역조회</button>
 	</div>
