@@ -42,13 +42,15 @@ public class GameController {
 
     @RequestMapping("/gameScore")
     public String gameScore(@ModelAttribute("gameDO") GameDO gameDO, @RequestParam("gameSeqno") int gameSeqno, Model model) throws Exception {
-
         String view = "/game/gameScore";
 
-        System.out.println("@@@@@@@@@@@@@@@@@@@@");
-        System.out.println(gameSeqno);
-        GameDO gameScoreDetail = gameService.getGameScoreDetail(gameSeqno);
-        model.addAttribute("gameScoreDetail", gameScoreDetail);
+        try {
+            GameDO gameScoreDetail = gameService.getGameScoreDetail(gameSeqno);
+            model.addAttribute("gameScoreDetail", gameScoreDetail);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return view;
     }

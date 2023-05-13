@@ -53,34 +53,32 @@
 					</colgroup>
 					<tbody>
 						<tr>
-							<th scope="row">팀 이름</th>
-							<td>팀 이름</td>
+							<th scope="row">풋살장 이름</th>
+							<td>${gameScoreDetail.placeId}</td>
 						</tr>
 						<tr>
-							<th scope="row">상대팀 이름</th>
-							<td>상대팀 이름</td>
+							<th scope="row">팀 이름</th>
+							<td>${gameScoreDetail.team1Id} v/s ${gameScoreDetail.team2Id}</td>
 						</tr>
 						<tr>
 							<th scope="row">매칭 일정</th>
-							<td>날짜 들어가는 듯</td>
+							<td>${gameScoreDetail.gameDate}</td>
 						</tr>
 						<tr>
 							<th scope="row">매칭 시간</th>
-							<td>시작시간/종료시간 나누기</td>
+							<td>${gameScoreDetail.gameStartTime}</td>
 						</tr>
 						<tr>
 							<th scope="row">성별</th>
-							<td>정하기</td>
+							<td>${gameScoreDetail.gameGender}</td>
 							<th scope="row">경기형태</th>
-							<td>6 v/s 6</td>
+							<td>${gameScoreDetail.gameStyle}</td>
 						</tr>
 						<tr>
-							<th scope="row">매칭 장소</th>
-							<td>정하기</td>
-						</tr>
-						<tr>
-							<th scope="row">경기 점수</th>
-							<td>우리 팀 점수 / 상대팀 점수</td>
+							<th scope="row">기타 사항</th>
+							<td>${gameScoreDetail.gameOther}</td>
+							<th scope="row">매칭 상태</th>
+							<td>${gameScoreDetail.gameStatus}</td>
 						</tr>
 					</tbody>
 				</table>

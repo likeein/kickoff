@@ -30,7 +30,7 @@
             GAME_SEQNO,
             PLACE_ID,
             TEAM1_ID,TEAM2_ID,
-            GAME_START_TIME,
+            GAME_DATE,
             GAME_STYLE,
             GAME_GENDER,
             GAME_STATUS
@@ -40,7 +40,7 @@
                   #{placeId},
                   #{team1Id},
                   #{tema2Id},
-                  #{gameStartTime},
+                  #{gameDate},
                   #{gameStyle},
                   #{gameGender},
                   #{gameStatus}

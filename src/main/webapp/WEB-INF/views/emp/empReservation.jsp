@@ -13,10 +13,10 @@
 	    <!-- Bootstrap CSS-->
 	    <link href="/emp/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 	
-	    <!-- Vendor CSS-->	       
+	    <!-- Vendor CSS-->
 	    <link href="/emp/vendor/select2/select2.min.css" rel="stylesheet" media="all">
 	    <link href="/emp/vendor/mdi-font/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-	
+
 	    <!-- Main CSS-->
 	    <link href="/emp/css/empReservation/theme.css" rel="stylesheet" media="all">
 	</head>
@@ -236,10 +236,10 @@
                                 </div>
                                 <!-- END DATA TABLE -->
                                     </div>
-					    </section>
+					        </section>
                         </div>
-				</div>
-				</div>
+				    </div>
+
 				<!-- Sidebar -->
 					<div id="sidebar">
 						<div class="inner">
@@ -250,15 +250,15 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<a href="empReservation.jsp">예약관리</a>
-										<li><a href="myBoard.jsp">내 게시글</a></li>
-										<li><a href="fixInfo.jsp">회원 정보 수정</a></li>
+										<a href="/empReservation">예약관리</a>
+										<li><a href="/myBoard">내 게시글</a></li>
+										<li><a href="/fixInfo">회원 정보 수정</a></li>
 										<li>
 											<!-- opener 에 원래 active 열고 닫게 할 수 있어야 함 -->
 											<span class="opener">풋살장 관리</span>
 											<ul>
-												<li><a href="empFutsal.jsp">풋살장 등록</a></li>
-												<li><a href="empFutsalFix.jsp">풋살장 수정</a></li>												
+												<li><a href="/empFutsal">풋살장 등록</a></li>
+												<li><a href="/empFutsalFix">풋살장 수정</a></li>
 											</ul>
 										</li>										
 									</ul>
@@ -267,26 +267,18 @@
 						</div>
 					</div>
 
-			</div>
-
 		<!-- Scripts -->
-		<!-- <script src = "/kickoff/resource/login/js/login.js"></script> -->
-			<script src="/emp/js/jquery.min.js"></script>
+            <script src="/emp/js/jquery.min.js"></script>
 			<script src="/emp/js/skel.min.js"></script>
 			<script src="/emp/js/util.js"></script>
 			<!--[if lte IE 8]><script src="/emp/js/ie/respond.min.js"></script><![endif]-->
-			<script src="/emp/js/main.js"></script>
-			 <!-- Jquery JS-->
-		    <script src="/emp/vendor/jquery-3.2.1.min.js"></script>
-		    <!-- Bootstrap JS-->
+            <script src="/emp/js/main.js"></script>
+		    <!-- <script src="/emp/vendor/jquery-3.2.1.min.js"></script> -->
+		    <!-- Bootstrap JS
 		    <script src="/emp/vendor/bootstrap-4.1/popper.min.js"></script>
-		    <script src="/emp/vendor/bootstrap-4.1/bootstrap.min.js"></script>
-		    <!-- Vendor JS       -->
-		    <script src="/emp/vendor/select2/select2.min.js"></script>
-
-		    <!-- Main JS-->
-		    <script src="/emp/js/reservationMain.js"></script>
-			
+		    <script src="/emp/vendor/bootstrap-4.1/bootstrap.min.js"></script> -->
+		    <!-- Vendor JS
+		    <script src="/emp/vendor/select2/select2.min.js"></script>   -->
 
 	</body>
 </html>

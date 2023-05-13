@@ -5,15 +5,15 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Ogani Template">
-    <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kick off: 매칭 등록</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/includes/css/style.css">
+    <link rel = "stylesheet" href = "/includes/css/footer.css" />
     <link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 	
     <!-- Css Styles -->
     <link rel="stylesheet" href="/reservation/css/bootstrap.min.css" type="text/css">
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="/reservation/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/reservation/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/reservation/css/style.css" type="text/css">
-    <link rel="stylesheet" href="/includes/css/style.css">
+    <link rel="stylesheet" href="/reservation/css/styles.css" type="text/css">
     
     <!-- calendar -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -38,17 +38,15 @@
 <body>
 <%@include file="/includes/header.jsp"%>
 
-	<div class="icons-wrap text-md-right"></div>
-
-	<!-- Header -->
-    <div class="bg-dark py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">매칭 등록</h1>
-                <p class="lead fw-normal text-white-50 mb-0">상대 팀과 겨루기 어쩌구</p>
+        <!-- title -->
+        <header class="bg-dark py-5" style="background-color: #7fb77e !important;">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">매칭 등록</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">팀 별로 경쟁하여 순위를 겨루세요</p>
+                </div>
             </div>
-        </div>
-    </div>
+        </header>
 
     <!-- Section -->
     <section class="checkout spad">
@@ -184,7 +182,7 @@
     </section>
 
     <!-- Footer / 메인과 통일-->
-	
+    <%@include file="/includes/footer.jsp"%>
 	<!-- Footer Section End -->
 
 	<script type="text/javascript">
