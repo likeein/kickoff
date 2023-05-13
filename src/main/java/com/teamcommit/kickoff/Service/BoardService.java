@@ -20,5 +20,9 @@ public interface BoardService {
 
     void reportBoard(ReportDO reportDO) throws Exception;
 
+    // 가장큰 시퀀스 값 가져오기
     Integer procGetMaxSeqno() throws Exception;
+
+    //조회수 증가
+    void procAddViewCount(BoardDO boardDO);
 }

@@ -22,4 +22,7 @@ public interface BoardMapper {
     public void reportBoard(ReportDO reportDO);
 
     public Integer procGetMaxSeqno();
+
+    //조회수 증가
+    public void procAddViewCount(BoardDO boardDO);
 }

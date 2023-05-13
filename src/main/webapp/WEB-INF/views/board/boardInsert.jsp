@@ -75,7 +75,7 @@
 		<label for="writeId" class="writeId" >작성자 : ${userId}</label>
             <%--<label for="writeId" class="writeId" ><c:out value="${list.writeId}" /></label>--%>
 		</span>
-        <input type="hidden" id="writeId" name="writeId" value="${userDO.userId}">
+        <input type="hidden" id="writeId" name="writeId" value="${userId}">
 		</div>
 		
 		<div class="filebox bs3-primary preview-image">
