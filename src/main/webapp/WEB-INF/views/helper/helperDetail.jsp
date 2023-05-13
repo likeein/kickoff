@@ -26,7 +26,9 @@
 
 
 <script src="/includes/js/main.js"></script>
-
+<script>
+	${messageScript}
+</script>
 <!-- 여기까지 복붙하기 -->
 
 <link rel="stylesheet"
