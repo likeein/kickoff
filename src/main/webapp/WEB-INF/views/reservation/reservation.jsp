@@ -40,17 +40,18 @@
     <!-- Section-->
 	<section class="py-5">
     	<div class="container px-4 px-lg-5">
+			<%--<c:if test="${employerDO.empId == true}">--%>
       		<div class="card-footer pt-0 border-top-0 bg-transparent">
             	<div class="text-center insert">
               		<a class="court-insert" href="reservationInsertForm">풋살장 등록</a>
               	</div>
           	</div>
+			<%--</c:if>--%>
 			<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             
             	<%--<c:choose>
             		<c:when test="${fn:length(reservetionlist) > 0}">--%>
             			<c:forEach var="row" items="${reservationList}">
-            			
 			                <div class="col mb-5">
 			                    <div class="card h-100">
 			                        <!-- Product image-->
@@ -58,22 +59,21 @@
 			                        <!-- Product details-->
 			                        <div class="card-body p-4">
 			                            <div class="text-center">
-											<!-- RESERVATION NO -->
-			                                <!-- PLACE NAME -->
+											<!-- PLACE NAME -->
 			                                <h5 class="fw-bolder">
-												<c:out value="${row.RESERVATION_NO}" />
+												<c:out value="${row.reservationNo}" />
 											</h5>
 			                                <!-- RESERVATION DATE -->
-			                                <c:out value="${row.RESERVATION_DATE}" />
+			                                <c:out value="${row.reservationDate}" />
 			                                <br>
 			                                <!-- RESERVATION PRICE -->
-											<c:out value="${row.RESERVATION_PRICE}" />
+											<c:out value="${row.reservationPrice}" />
 			                            </div>
 			                        </div>
 			                        <!-- Product actions-->
 			                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 			                            <div class="text-center">
-			                            	<a class="btn btn-outline-dark mt-auto" href="#">상세보기</a>
+			                            	<a class="btn btn-outline-dark mt-auto" href="/reservationDetail?reservationNo=${row.reservationNo}">상세보기</a>
 			                            </div>
 			                        </div>
 			                    </div>
