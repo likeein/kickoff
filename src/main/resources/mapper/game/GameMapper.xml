@@ -11,6 +11,18 @@
         ]]>
     </select>
 
+    <!-- Board Detail -->
+    <select id="getGameScoreDetail" parameterType="com.teamcommit.kickoff.Do.GameDO" resultType="com.teamcommit.kickoff.Do.GameDO">
+        <![CDATA[
+        SELECT
+            *
+        FROM
+            GAME
+        WHERE
+            GAME_SEQNO = #{gameSeqno}
+        ]]>
+    </select>
+
     <insert id = "selectGame" parameterType="com.teamcommit.kickoff.Do.GameDO">
         <![CDATA[
         INSERT INTO GAME

@@ -11,9 +11,11 @@ import java.util.Map;
 @Repository("gameDAO")
 public class GameDAO extends AbstractDAO {
 
+    /*
     public List<GameDO> selectGameDetail() throws Exception {
         return (List<GameDO>) selectList("game.selectGameDetail");
     }
+     */
 
     @SuppressWarnings("unchecked")
     public Map<String, Object> selectMemInfo(Map<String, Object> map) throws Exception {
