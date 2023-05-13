@@ -48,4 +48,12 @@
         ]]>
     </select>
 
+    <select id="procSetEmployerInfo" parameterType="com.teamcommit.kickoff.Do.EmployerDO" resultType="com.teamcommit.kickoff.Do.EmployerDO">
+        <![CDATA[
+        SELECT *
+        FROM EMPLOYER
+        WHERE EMP_ID = #{empId}
+        ]]>
+    </select>
+
 </mapper>

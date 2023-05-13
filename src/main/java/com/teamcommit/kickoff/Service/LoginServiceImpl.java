@@ -34,8 +34,14 @@ public class LoginServiceImpl implements LoginService {
         return this.loginMapper.findEmp_id(empName, empNo);
     }
 
+    // 로그인한 이용자 정보 가져오기
     @Override
     public UserDO procSetUserInfo(UserDO userDO) {
         return this.loginMapper.procSetUserInfo(userDO);
+    }
+
+    @Override
+    public EmployerDO procSetEmployerInfo(EmployerDO employerDO) {
+        return this.loginMapper.procSetEmployerInfo(employerDO);
     }
 }

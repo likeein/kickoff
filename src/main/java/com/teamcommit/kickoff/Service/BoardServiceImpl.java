@@ -46,4 +46,9 @@ public class BoardServiceImpl implements BoardService{
         boardMapper.reportBoard(reportDO);
     }
 
+    @Override
+    public Integer procGetMaxSeqno() throws Exception {
+        return boardMapper.procGetMaxSeqno();
+    }
+
 }

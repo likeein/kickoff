@@ -21,4 +21,6 @@ public interface LoginService {
 
     // 로그인한 이용자 정보 가져오기
     UserDO procSetUserInfo(UserDO userDO);
+
+    EmployerDO procSetEmployerInfo(EmployerDO employerDO);
 }

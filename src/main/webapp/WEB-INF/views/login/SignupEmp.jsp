@@ -8,7 +8,7 @@
 </head>
 <body style="overflow-y: hidden">
 	<div class="container" id="container">
-			<form action="#">
+			<form action="signupemp_action" id="frm" name="frm" method="post" onsubmit="return _onSubmit();" >
 				<h1>업체 회원가입</h1>
 				<br /> <br />
 				<div class="signupform" style="overflow: auto; width: 350px; height: 350px; background: #F7F6DC​; border-radius: 10px;">
@@ -26,7 +26,7 @@
 				</div>
 				<br />
 				<div class="signbtn">
-				<button type="button" onclick="location.href='/loginAll';" >회원가입 </button>
+				<button type="submit" class="btn_submit" onclick="document.getElementById('frm').submit();" >회원가입 </button>
 				</div>
 		</form>
 	</div>
