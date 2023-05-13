@@ -18,4 +18,6 @@ public interface HelperMapper {
     HelperDO selectHelperDetail(int helperSeqno);
     public void insertMessage(MessageDO messageDO);
 
+
+
 }

@@ -38,4 +38,5 @@ public class HelperServiceImpl implements HelperService {
 
     @Override
     public void insertMessage(MessageDO messageDO) {helperMapper.insertMessage(messageDO);}
+
 }

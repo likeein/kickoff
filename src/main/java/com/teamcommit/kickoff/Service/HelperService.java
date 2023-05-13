@@ -17,4 +17,5 @@ public interface HelperService {
     HelperDO selectHelperDetail(int helperSeqno) throws Exception;
 
     public void insertMessage(MessageDO messageDO);
+
 }
