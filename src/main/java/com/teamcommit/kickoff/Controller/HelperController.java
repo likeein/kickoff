@@ -79,6 +79,7 @@ public class HelperController {
 
         if(session.getAttribute("userId") == null) {
             model.addAttribute("script", "alert('로그인 후 이용이 가능합니다.');");
+            view = "login/loginAll";
         }
         else if (session.getAttribute("userId") != null) {
             try {

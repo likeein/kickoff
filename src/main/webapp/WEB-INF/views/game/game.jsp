@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,7 +73,7 @@
                         <c:forEach var="list" items="${table}">
                             <tr>
                                 <td><c:out value="${list.placeId}" /></td>
-                                <td><c:out value="${list.helperPosition} v/s ${list.helperTeamLevel}" /></td>
+                                <td><c:out value="${list.team1Id} v/s ${list.team2Id}" /></td>
                                 <td><c:out value="${list.gameStartTime}" /></td>
                                 <td><c:out value="${list.gameStyle}" /></td>
                                 <td><c:out value="${list.gameGender}" /></td>
