@@ -58,10 +58,10 @@ public class BoardController {
     //게시판 등록
     @RequestMapping( "/insert_action")
     public ModelAndView insert_action(@ModelAttribute("boardDO") BoardDO boardDO, ModelMap model, HttpServletRequest request, RedirectAttributes redirect) throws Exception {
+        int boardSeq = 0;
+        ModelAndView mv = new ModelAndView();
 
-        ModelAndView mv = new ModelAndView("redirect:/boardDetailWritter");
-
-
+        try{
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
             Date time = new Date();
@@ -70,13 +70,15 @@ public class BoardController {
             boardDO.setWriteRegDate(time1);
 
             boardService.insertBoard(boardDO);
-            int boardSeq = boardService.procGetMaxSeqno();
-            System.out.println("!!!!!!!!!!!!!!!!");
-            System.out.println(boardSeq);
+            boardSeq = boardService.procGetMaxSeqno();
+
+            mv = new ModelAndView("redirect:/boardDetail?boardSeqno=" + boardSeq);
 
             redirect.addFlashAttribute("redirect", boardSeq);
             redirect.addFlashAttribute("msg", "등록 완료되었습니다.");
-
+        } catch (Exception e) {
+            redirect.addFlashAttribute("msg", "오류가 발생되었습니다. 다시 시도해주세요.");
+        }
 
         return mv;
     }
@@ -97,13 +99,17 @@ public class BoardController {
 
     //게시판 상세보기
     @RequestMapping( "/boardDetail")
-    public String boardDetail(@ModelAttribute("boardDO") BoardDO boardDO, @RequestParam("boardSeqno") int boardSeqno, Model model) throws Exception {
+    public String boardDetail(@ModelAttribute("boardDO") BoardDO boardDO, @RequestParam("boardSeqno") int boardSeqno, HttpServletRequest request, Model model) throws Exception {
         String view = "/board/boardDetail";
 
-        System.out.println("@@@@@@@@@@@@@@@@@@@@");
-        System.out.println(boardSeqno);
+        //로그인한 이용자 ID로 로그인 정보 가져오기
+        String userId = (String) request.getSession().getAttribute("userId");
+
         BoardDO boardContents = boardService.getBoardContents(boardSeqno);
+
+        boardService.procAddViewCount(boardContents);
         model.addAttribute("boardContents", boardContents);
+        model.addAttribute("userId", userId);
 
         return view;
     }
@@ -123,16 +129,18 @@ public class BoardController {
     @RequestMapping( "/update_action")
     public ModelAndView update_acttion(@ModelAttribute("boardDO") BoardDO boardDO, HttpServletRequest request, RedirectAttributes redirect, Model model) throws Exception {
 
-        ModelAndView mv = new ModelAndView("redirect:/boardDetailWritter?boardSeqno=" + boardDO.getBoardSeqno());
+        ModelAndView mv = new ModelAndView("redirect:/boardDetail?boardSeqno=" + boardDO.getBoardSeqno());
 
-        try {
-            boardService.updateBoard(boardDO);
-            redirect.addFlashAttribute("redirect", boardDO.getBoardSeqno());
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date time = new Date();
 
-            redirect.addFlashAttribute("msg", "수정 완료되었습니다.");
-        } catch (Exception e) {
-            redirect.addFlashAttribute("msg", "오류가 발생되었습니다. 다시 시도해주세요.");
-        }
+        String time1 = format.format(time);
+        boardDO.setWriteEditDate(time1);
+        boardService.updateBoard(boardDO);
+        redirect.addFlashAttribute("redirect", boardDO.getBoardSeqno());
+
+        redirect.addFlashAttribute("msg", "수정 완료되었습니다.");
+
 
         return mv;
     }
@@ -154,20 +162,23 @@ public class BoardController {
     }
 
     //게시판 신고
-    @RequestMapping("/boardReport")
-    public String boardReport() throws Exception{
+    @RequestMapping( "/boardReport")
+    public String boardReport(@ModelAttribute("boardDO") BoardDO boardDO, @RequestParam("boardSeqno") int boardSeqno, Model model) throws Exception {
         String view = "/board/boardReport";
+        model.addAttribute("boardSeqno",boardSeqno);
 
         return view;
     }
 
     //게시글 신고 사유
     @RequestMapping( "/report_action")
+
     public ModelAndView report_action(@ModelAttribute("reportDO") ReportDO reportDO, @RequestParam("boardSeqno") int boardSeqno, HttpServletRequest request, RedirectAttributes redirect, Model model) throws Exception {
 
         ModelAndView mv = new ModelAndView("redirect:/board");
 
         try {
+            reportDO.setBoardSeqno(boardSeqno);
             boardService.reportBoard(reportDO);
             redirect.addFlashAttribute("redirect", reportDO.getBoardSeqno());
 
