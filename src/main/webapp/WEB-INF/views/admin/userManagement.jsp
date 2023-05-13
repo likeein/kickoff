@@ -141,7 +141,17 @@
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <span class="role admin"><c:out value="${list.userClassification}" /></span>
+                                                         <span class="
+                                                             <c:choose>
+                                                                <c:when test="${list.userClassification == 'Admin'}">role admin</c:when>
+                                                                <c:when test="${list.userClassification == 'Master'}">role master</c:when>
+                                                                <c:when test="${list.userClassification == 'User'}">role user</c:when>
+                                                                <c:when test="${list.userClassification == 'Emp'}">role emp</c:when>
+                                                                <c:otherwise>default-role</c:otherwise>
+                                                            </c:choose>
+                                                         ">
+                                                             <c:out value="${list.userClassification}" />
+                                                        </span>
                                                     </td>
                                                     <td>
                                                         <span class="cancel-number"><c:out value="${list.userCancelCount}" /></span>
@@ -151,7 +161,14 @@
                                                     </td>
                                                     <td>
                                                         <div class="rs-select2--trans rs-select2--sm">
-                                                            <span class="${list.userStatus eq '활동' ? 'status-active' : 'status-stop'}">${list.userStatus}</span>
+                                                            <span class="
+                                                             <c:choose>
+                                                                <c:when test="${list.userStatus == '활동'}">status-active</c:when>
+                                                                <c:when test="${list.userStatus == '정지'}">status-stop</c:when>
+                                                            </c:choose>
+                                                         ">
+                                                             <c:out value="${list.userStatus}" />
+                                                        </span>
                                                         </div>
                                                     </td>
                                                     <td>
@@ -160,20 +177,6 @@
                                                     </td>
                                                 </tr>
                                                     </c:forEach>
-
-
-<%--                                                    <td>--%>
-<%--                                                        <span class="role master">Master</span>--%>
-<%--                                                    </td>--%>
-<%--                                                    --%>
-<%--                                                    <td>--%>
-<%--                                                        <span class="role user">user</span>--%>
-<%--                                                    </td>--%>
-<%--                                                    --%>
-<%--                                              --%>
-<%--                                                    <td>--%>
-<%--                                                        <span class="role emp">Emp</span>--%>
-<%--                                                    </td>--%>
                                             </tbody>
                                         </table>
                                     </div>

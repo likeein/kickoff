@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 
@@ -49,7 +50,7 @@ public class LoginController {
                               @RequestParam(value = "userPw", required = false) String userPw,
                               @RequestParam(value = "empId", required = false) String empId,
                               @RequestParam(value = "empPw", required = false) String empPw,
-                              HttpSession session, Model model) throws Exception {
+                              HttpSession session, Model model, HttpServletRequest request) throws Exception {
         if (userId != null && userPw != null) {
             // 회원 로그인 처리
             UserDO userDO = new UserDO();
@@ -60,6 +61,7 @@ public class LoginController {
             if (result != null) {
                 ModelAndView mv = new ModelAndView("redirect:/main");
                 session.setAttribute("userId", result.getUserId());
+                session.removeAttribute("empId");
                 return mv;
             }
         } else if (empId != null && empPw != null) {
@@ -71,6 +73,7 @@ public class LoginController {
             if (result != null) {
                 ModelAndView mv = new ModelAndView("redirect:/main");
                 session.setAttribute("empId", result.getEmpId());
+                session.removeAttribute("userId");
                 return mv;
             }
         }
@@ -78,6 +81,7 @@ public class LoginController {
         // 로그인 실패 시 로그아웃 처리
         ModelAndView mv = new ModelAndView("redirect:/loginAll");
         session.removeAttribute("userId");
+        session.removeAttribute("empId");
         return mv;
     }
 
@@ -86,6 +90,7 @@ public class LoginController {
     @GetMapping("/logout")
     public ModelAndView logout(HttpSession session) {
         session.removeAttribute("userId");
+        session.removeAttribute("empId");
         ModelAndView mv = new ModelAndView("redirect:/main");
         return mv;
     }
@@ -153,7 +158,7 @@ public class LoginController {
         model.addAttribute("empResult", empResult);
 
         // 아이디 보여주는 페이지로 이동
-        ModelAndView mv = new ModelAndView("redirect:/login/findId");
+        ModelAndView mv = new ModelAndView("/login/findId");
         return mv;
     }
 

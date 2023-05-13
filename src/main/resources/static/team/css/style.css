@@ -186,7 +186,7 @@ ol {
 }
 
 .site-btn-insert,
-.site-btn-cancle {
+.site-btn-cancel {
 	font-size: 15px;
 	color: #ffffff;
 	font-weight: 800;
@@ -199,12 +199,12 @@ ol {
 }
 
 .site-btn-insert:hover,
-.site-btn-cancle:hover {
+.site-btn-cancel:hover {
 	background: #ffc090;
 }
 
 .request,
-.cancle {
+.cancel {
 	font-size: 15px;
 	color: #ffffff;
 	font-weight: 800;
@@ -218,7 +218,7 @@ ol {
 }
 
 .request:hover,
-.cancle:hover {
+.cancel:hover {
 	background: #ffc090;
 }
 
@@ -524,7 +524,7 @@ select:disabled,
     margin-right: 20px;
 }
 
-.checkout__order a.site-btn-cancle {
+.checkout__order a.site-btn-cancel {
 	font-size: 15px;
 	letter-spacing: 2px;
 	width: 40%;

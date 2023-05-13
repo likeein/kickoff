@@ -105,7 +105,7 @@
 
 
             <!-- 로그인 안 한 경우 -->
-            <core:if test="${empty userId}">
+            <core:if test="${empty userId and empty empId}">
 		     <ul class="icons-top d-none d-lg-block">
               <li>
                 <a href="/loginAll"><span class="icon-unlock"></span></a>
@@ -116,14 +116,26 @@
             </ul>
             </core:if>
 
-            <!-- 로그인 한 경우 -->
-            <core:if test="${!empty userId}">
+            <!-- 로그인 한 경우 - 개인 회원 -->
+            <core:if test="${!empty userId and empty empId}">
               <ul class="icons-top d-none d-lg-block">
                 <li>
                   <a href="/logout"><span class="icon-lock"></span></a>
                 </li>
                 <li>
                   <a href="/myReservation"><span class="icon-person"></span></a>
+                </li>
+              </ul>
+            </core:if>
+
+            <!-- 로그인 한 경우 - 업체 회원 -->
+            <core:if test="${empty userId and !empty empId}">
+              <ul class="icons-top d-none d-lg-block">
+                <li>
+                  <a href="/logout"><span class="icon-lock"></span></a>
+                </li>
+                <li>
+                  <a href="/empFutsal"><span class="icon-person"></span></a>
                 </li>
               </ul>
             </core:if>

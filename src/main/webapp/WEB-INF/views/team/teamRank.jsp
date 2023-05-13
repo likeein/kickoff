@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 
@@ -59,69 +60,23 @@
                     </tr>
                   </thead>
                   <tbody>
+                  <c:forEach var="list" items="${teamList}">
                     <tr>            
                       <td>
-                        <p class="font-weight-bold mb-0"><img src="/team/img/free-icon-gold-medal-1910528.png"/></p>
+                        <p class="font-weight-bold mb-0">
+                          <img src="/team/img/free-icon-gold-medal-1910528.png" alt="Gold Medal"
+                               c:if="${list.teamRank == 1}"/>
+                          <img src="/team/img/free-icon-silver-medal-1910534.png" alt="Silver Medal"
+                               c:if="${list.teamRank == 2}"/>
+                          <img src="/team/img/free-icon-bronze-medal-1910542.png" alt="Bronze Medal"
+                               c:if="${list.teamRank == 3}"/>
+                        </p>
                       </td>
                       <td class="align-middle text-center text-sm"> <!-- width 값 조정 -->
-                        <span class="badge badge-sm bg-gradient-success">4조 FC</span>
+                        <span class="badge badge-sm bg-gradient-success"><c:out value="${list.teamName}" /></span>
                       </td>
-                     
-                    
                     </tr>
-                    <tr>
-                
-                      <td>
-                        <p class="font-weight-bold mb-0"><img src="/team/img/free-icon-silver-medal-1910534.png"/></p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-                      </td>
-                      
-                     
-                    </tr>
-                    <tr>
-                      
-                      <td>
-                        <p class="font-weight-bold mb-0"><img src="/team/img/free-icon-bronze-medal-1910542.png"/></p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">Online</span>
-                      </td>
-                    
-                    </tr>
-                    <tr>
-                      
-                      <td>
-                        <p class="text-xs font-weight-bold">4위</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">Online</span>
-                      </td>
-                    
-                      
-                    </tr>
-                    <tr>
-                      
-                      <td>
-                        <p class="text-xs font-weight-bold">5위</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-                      </td>
-                     
-                     
-                    </tr>
-                    <tr>
-                     <td>
-                        <p class="text-xs font-weight-bold">6위</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-                      </td>
-                      
-                      
-                    </tr>
+                  </c:forEach>
                   </tbody>
                 </table>
               </div>

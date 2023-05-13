@@ -13,38 +13,37 @@
         ]]>
     </select>
 
-<!--    &lt;!&ndash; Team Insert &ndash;&gt;-->
-<!--    <insert id="insertBoard">-->
-<!--        <![CDATA[-->
-<!--            INSERT INTO COMMUNITY_BOARD-->
-<!--            (-->
-<!--             BOARD_SEQ,-->
-<!--             WRITE_TITLE,-->
-<!--             WRITE_ID,-->
-<!--             FILE_NAME,-->
-<!--             FILE_PATH,-->
-<!--             WRITE_CONTENT-->
-<!--            )-->
-<!--            VALUES-->
-<!--            ((SELECT NVL(MAX(BOARD_SEQ),0)+1 FROM COMMUNITY_BOARD),-->
-<!--             #{writeTitle},-->
-<!--             #{writeId},-->
-<!--             #{fileName},-->
-<!--             #{filePath},-->
-<!--             #{writeContent}-->
-<!--            )-->
-<!--        ]]>-->
-<!--    </insert>-->
-<!--    &lt;!&ndash;<select id="insertBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.BoardDO">-->
-<!--        <![CDATA[-->
-<!--        SELECT-->
-<!--            write_id-->
-<!--        FROM-->
-<!--            COMMUNITY_BOARD-->
-<!--        ]]>-->
-<!--    </select>&ndash;&gt;-->
+    <!-- Team Insert -->
+    <insert id = "insertTeam" parameterType="com.teamcommit.kickoff.Do.TeamDO">
+        <![CDATA[
+        INSERT INTO TEAM
+        (
+            TEAM_SEQNO,
+            TEAM_NAME,
+            TEAM_NUMBER,
+            TEAM_GENDER,
+            TEAM_LOCAL,
+            TEAM_START_DATE,
+            TEAM_END_DATE,
+            TEAM_STATUS,
+            TEAM_OTHER
+        )
+        VALUES(
+                  TEAM_SQ.NEXTVAL,
+                  #{teamName},
+                  #{teamNumber},
+                  #{teamGender},
+                  #{team_local},
+                  #{teamStartDate},
+                  #{teamEndDate},
+                  #{teamStatus},
+                  #{teamOther}
+              )
+        ]]>
+    </insert>
 
-    <!-- Board Detail -->
+
+    <!-- Team Detail -->
     <select id="getTeamContents" parameterType="com.teamcommit.kickoff.Do.TeamDO" resultType="com.teamcommit.kickoff.Do.TeamDO">
         <![CDATA[
         SELECT
@@ -72,14 +71,4 @@
 <!--        ]]>-->
 <!--    </update>-->
 
-<!--    &lt;!&ndash; Board Delete &ndash;&gt;-->
-<!--    <delete id="getBoardDelete" parameterType="com.teamcommit.kickoff.Do.BoardDO" >-->
-<!--    <![CDATA[-->
-<!--        DELETE-->
-<!--        FROM-->
-<!--            COMMUNITY_BOARD-->
-<!--        WHERE-->
-<!--            BOARD_SQENO =#{boardSeqno}-->
-<!--        ]]>-->
-<!--	</delete>-->
 </mapper>

@@ -35,6 +35,8 @@ public class TeamDO {
 	private String teamOther;
 	//팀원 모집 상태
 	private String teamStatus;
+	// 팀 게시글 번호
+	private int teamSeqNo;
 	
 	public int getTeamId() {
 		return teamId;
@@ -120,5 +122,6 @@ public class TeamDO {
 	public void setTeamStatus(String teamStatus) {
 		this.teamStatus = teamStatus;
 	}
-	
+	public int getTeamSeqNo() {return teamSeqNo;}
+	public void setTeamSeqNo(int teamSeqNo) {this.teamSeqNo = teamSeqNo;}
 }

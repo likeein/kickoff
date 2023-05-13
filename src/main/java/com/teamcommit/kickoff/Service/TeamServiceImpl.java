@@ -24,10 +24,10 @@ import java.util.List;
             return teamMapper.getTeamContents(teamName);
         }
 
-//        @Override
-//        public void insertTeam(TeamDO teamDO) throws Exception {
-//
-//        }
+        @Override
+        public void insertTeam(TeamDO teamDO) throws Exception {
+            teamMapper.insertTeam(teamDO);
+        }
 //
 //        @Override
 //        public void updateTeam(TeamDO teamDO) throws Exception {
