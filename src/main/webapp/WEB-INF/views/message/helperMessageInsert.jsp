@@ -37,6 +37,10 @@
 				<div id="write_msg">
 					<ul>
 						<li>
+							<span class="col1">용병 게시글 번호 : </span>
+							<span class="col2"><input type="number" name="helperSeqno" id = "helperSeqno" disabled placeholder="${helperS}"></span>
+						</li>
+						<li>
 							<span class="col1">보내는 사람 : </span>
 							<span class="col2"><input type="text" name="messageSendId" id ="messageSendId" disabled placeholder="${userId}"></span>
 						</li>
@@ -46,7 +50,7 @@
 						</li>
 						<li>
 							<span class="col1">제목 : </span>
-							<span class="col2"><input type="text" name="messageTitle"></span>
+							<span class="col2"><input type="text" name="messageTitle" id = "messageTitle"></span>
 						</li>
 						<li id="textarea">
 							<span class="col1">내용 : </span>
