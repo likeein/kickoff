@@ -26,28 +26,22 @@ public class EmpController {
     private BoardService boardService;
 
     @GetMapping("/empReservation")
-    public String empReservation(Model model) {
-        String result = "";
+    public String empReservation(@ModelAttribute("reservationDO") ReservationDO reservationDO, Model model) {
+        String view = "/emp/empReservation";
 
-        try{
-            List<ReservationDO> list = empService.getList();
-                for (ReservationDO reservation : list) {
-                    result += "<tr><td>" + reservation.getReservationDate() + "</td><td>" + reservation.getReservationNumber() +
-                            "</td><td>" + reservation.getReservationRegDate() + "</td><td>" + reservation.getReservationStartTime() +
-                            "</td><td>" + reservation.getReservationStatus() + "</td><td>" + reservation.getReservationCancel() + "</td></tr>";
-                }
-                model.addAttribute("table", result);
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
-            return "/emp/empReservation";
-
+        try {
+            List<ReservationDO> list = empService.selectReservation(reservationDO);
+            model.addAttribute("table", list);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return view;
     }
 
 
-    @RequestMapping(value = "/myBoard", method = RequestMethod.GET)
-    public String boardList(@ModelAttribute("BoardDO") BoardDO BoardDO, HttpServletRequest request, Model model) throws Exception {
+    @RequestMapping( "/myBoard")
+    public String boardList(@ModelAttribute("boardDO") BoardDO BoardDO, HttpServletRequest request, Model model) throws Exception {
 
         String view = "/emp/myBoard";
 

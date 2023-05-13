@@ -4,6 +4,7 @@ package com.teamcommit.kickoff.Service;
 import com.teamcommit.kickoff.Do.BoardDO;
 import com.teamcommit.kickoff.Do.EmployerDO;
 import com.teamcommit.kickoff.Do.PlaceDO;
+import com.teamcommit.kickoff.Do.ReservationDO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -17,4 +18,6 @@ public interface EmpMapper {
     EmployerDO info_fix(EmployerDO employerDO);
 
     List<BoardDO> getList(BoardDO boardDO);
+
+    List<ReservationDO> selectReservation(ReservationDO reservationDO);
 }
