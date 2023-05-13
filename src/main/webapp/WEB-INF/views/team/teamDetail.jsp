@@ -91,6 +91,7 @@
 
 			<div class="btn_boarddetail">
 				<button type="reset" class="btn_reset" onclick="location.href='/team';">목록</button>
+				<button type="button" class="btn_apply" onclick="location.href='/teamReply';">팀 지원</button>
 			</div>
 		</div>
 	</form>
