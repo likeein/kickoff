@@ -82,8 +82,8 @@
                         </c:forEach>
                     </table>
                     <div class="btn_insert">
-                    <a href="/gameScore"><button type="insert" class="btn_insert">매칭 기록</button></a>
-                    <a href="/gameUpdate"><button type="insert" class="btn_insert">매칭 글 등록</button></a>
+                    <button type="button" class="btn_insert" onclick="location.href='/gameScore';">매칭 기록</button>
+                    <button type="button" class="btn_insert" onclick="location.href='/gameUpdate';">매칭 글 등록</button>
                 </div>
             </div>
             </div>
