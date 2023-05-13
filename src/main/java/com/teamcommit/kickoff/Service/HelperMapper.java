@@ -1,6 +1,7 @@
 package com.teamcommit.kickoff.Service;
 
 import com.teamcommit.kickoff.Do.HelperDO;
+import com.teamcommit.kickoff.Do.MessageDO;
 import com.teamcommit.kickoff.Do.ReservationDO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -15,5 +16,6 @@ public interface HelperMapper {
     List<ReservationDO> selectReservation(String userId);
 
     HelperDO selectHelperDetail(int helperSeqno);
+    public void insertMessage(MessageDO messageDO);
 
 }
