@@ -49,21 +49,20 @@
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form id="frm" name="frm" action="#" method="POST">
+                <form id="frm" name="frm" action="/teamInsert" method="POST">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
                                <p>풋살팀 이름<span>*</span></p>
-                               <input type="text" value="여기에 '풋살팀 이름' 가져오기 (입력 비활성화)" readonly>
-                               <!-- readonly: 입력 필드 비활성화되지만 form으로 전송 가능 -->
+                               <input type="text" value="" name="teamName">
                            	</div>
                            	<div class="checkout__input">
                                <p>모집 인원<span>*</span></p>
-                               <input type="text" value="" id="team-number" onChange="selectNumber(this)">
+                               <input type="text" value="" name="teamNumber" onChange="selectNumber(this)">
                            	</div>
                           	<div class="checkout__input">
                                 <p>풋살팀 성별<span>*</span></p>
-                                <select id="team-gender" onChange="selectGender(this)">
+                                <select name="teamGender" onChange="selectGender(this)">
                                 	<option value="">성별 선택하기</option>
                                 	<option value="A">남성</option>
                                 	<option value="B">여성</option>
@@ -72,7 +71,7 @@
                             </div>
                            	<div class="checkout__input">
                                 <p>풋살팀 소속지역<span>*</span></p>
-                                <select id="team-local" onChange="selectTeam(this)">
+                                <select name="teamLocal" onChange="selectTeam(this)">
                                 	<option>서울</option>
                                    <option>경기</option>
                                    <option>인천</option>
@@ -95,37 +94,28 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>모집 시작일<span>*</span></p>
-                                        	<input type="date" id="open-date" name="open-date" onChange="getStartDate(this)">
+                                        	<input type="date" name="teamStartDate" onChange="getStartDate(this)">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>모집 종료일<span>*</span></p>
-                                        	<input type="date" id="close-date" name="close-date" onChange="getEndDate(this)">
+                                        	<input type="date" name="teamEndDate" onChange="getEndDate(this)">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="checkout__input">
-                                <p>팀장 포지션<span>*</span></p>
-                                <select id="master-position" onChange="selectGender(this)">
-                                	<option>PIVO(피보):공격수</option>
-                                   <option>ALA(아라):미드필더</option>
-                                   <option>FIXO(픽소):수비수</option>
-                                   <option>GOLEIRO(골레이로):골키퍼</option>
-                                </select>
                             </div>
                              <div class="checkout__input">
                                 <p>모집 상태<span>*</span></p>
                                 <label>
-                                	<input type="radio" name="placeForm" value="indoor" onclick='getPlaceForm(event)' checked/>&nbsp모집중
+                                	<input type="radio" name="teamStatus" value="indoor" onclick='getPlaceForm(event)' checked/>&nbsp모집중
                                 </label>
                                 <label>
-                                	<input type="radio" name="placeForm" value="outdoor" onclick='getPlaceForm(event)' />&nbsp모집완료
+                                	<input type="radio" name="teamStatus" value="outdoor" onclick='getPlaceForm(event)' />&nbsp모집완료
                                 </label>
                             </div>
                             <div class="checkout__input">
 								<p>기타사항</p>
-                               	<textarea class="etc"></textarea>
+                               	<textarea class="etc" name="teamOther"></textarea>
                             </div>
                         </div>
                         
@@ -138,16 +128,15 @@
 								</div>
 								<ul>
 									<li>풋살팀 이름<span>이름이름</span></li>
-									<li>모집 인원<span id="tema-number"></span></li>
-									<li>풋살팀 성별<span></span></li>
+									<li>모집 인원<span id="team-number"></span></li>
+									<li>풋살팀 성별<span id="team-gender"></span></li>
 									<li>풋살팀 소속 지역<span id="team-local"></span></li>
 									<li>모집 시작일<span id="open-date"></span></li>
 									<li>모집 종료일<span id="close-date"></span></li>
-									<li>팀장 포지션<span id="master-position"></span></li>
-									<li>모집 상태<span></span></li>
+									<li>모집 상태<span id="team-status"></span></li>
 								</ul>
 								<a href="#" onclick="location.href='/team';" id="insert" class="site-btn-insert">등록</a>
-								<a href="#" onclick="location.href='/team';" id="cancel" class="site-btn-cancle">취소</a>
+								<a href="#" onclick="location.href='/team';" id="cancel" class="site-btn-cancel">취소</a>
 							</div>
 						</div>
 					</div>

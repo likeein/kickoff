@@ -29,7 +29,7 @@
             <p>${empResult}</p>
             <br /><br />
         </c:if>
-	      <button onclick="location.href='/login/loginAll';">로그인</button><br /><br /><br />
+	      <button onclick="location.href='/loginAll';">로그인</button><br /><br /><br />
     </form>
   </div>
 </div>

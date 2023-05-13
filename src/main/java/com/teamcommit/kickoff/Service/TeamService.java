@@ -9,7 +9,7 @@ public interface TeamService {
 
     List<TeamDO> getList(TeamDO teamDO) throws Exception;
 
-//    void insertTeam(TeamDO teamDO) throws Exception;
+    void insertTeam(TeamDO teamDO) throws Exception;
 
     TeamDO getTeamContents(String teamName) throws Exception;
 
