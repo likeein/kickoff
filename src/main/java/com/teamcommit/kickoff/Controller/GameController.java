@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import com.teamcommit.kickoff.Service.GameService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
@@ -39,10 +36,15 @@ public class GameController {
         return view;
     }
 
-
-    @RequestMapping("/gameScore")
-    public String gameScore(@ModelAttribute("gameDO") GameDO gameDO, @RequestParam("gameSeqno") int gameSeqno, Model model) throws Exception {
+    @GetMapping("/gameScore")
+    public String gameScore() {
         String view = "/game/gameScore";
+        return view;
+    }
+
+    @PostMapping("/gameScore")
+    public ModelAndView gameScore(@ModelAttribute("gameDO") GameDO gameDO, @RequestParam("gameSeqno") int gameSeqno, Model model) throws Exception {
+        ModelAndView mv = new ModelAndView("/game/gameScore");
 
         try {
             GameDO gameScoreDetail = gameService.getGameScoreDetail(gameSeqno);
@@ -52,7 +54,7 @@ public class GameController {
             e.printStackTrace();
         }
 
-        return view;
+        return mv;
     }
 
     @RequestMapping("/gameUpdate")
