@@ -1,7 +1,7 @@
 package com.teamcommit.kickoff.Controller;
 
-import com.teamcommit.kickoff.Common.CommandMap;
 import com.teamcommit.kickoff.Do.HelperDO;
+import com.teamcommit.kickoff.Do.MessageDO;
 import com.teamcommit.kickoff.Do.ReservationDO;
 import com.teamcommit.kickoff.Service.HelperService;
 import com.teamcommit.kickoff.Service.LoginService;
@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.*;
 
@@ -34,21 +33,6 @@ public class HelperController {
         catch (Exception e) {
             e.printStackTrace();
         }
-        return view;
-    }
-
-    @RequestMapping("/helperDetail")
-    public String helperDetail(@ModelAttribute("helperDO") HelperDO helperDO, @RequestParam(value = "helperSeqno") int helperSeqno, Model model) {
-        String view = "/helper/helperDetail";
-
-        try {
-            HelperDO detail = helperService.selectHelperDetail(helperSeqno);
-            model.addAttribute("content", detail);
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-
         return view;
     }
 
@@ -94,11 +78,49 @@ public class HelperController {
         return view;
     }
 
-    @RequestMapping("/helperMessage")
-    public ModelAndView helperMessage() {
-        ModelAndView mv = new ModelAndView("/message/MessageInsert");
-        return mv;
+    @RequestMapping("/helperDetail")
+    public String helperDetail(@ModelAttribute("helperDO") HelperDO helperDO, @RequestParam(value = "helperSeqno") int helperSeqno, HttpSession session) {
+        String view = "/helper/helperDetail";
+
+        try {
+            HelperDO detail = helperService.selectHelperDetail(helperSeqno);
+            session.setAttribute("content", detail);
+            session.setAttribute("helperSeqNo", helperSeqno);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return view;
     }
 
+    @GetMapping("/helperMessage")
+    public String helperMessage(Model model, HttpSession session) {
+        String view = "/message/helperMessageInsert";
+
+        if(session.getAttribute("userId") == null) {
+            model.addAttribute("messageScript", "alert('로그인 후 이용해주세요');");
+            view = "forward:/helperDetail?helperSeqno=" + (Integer)session.getAttribute("helperSeqNo");
+        }
+        else if(session.getAttribute("userId") != null) {
+            try{
+                HelperDO message = helperService.selectHelperDetail((Integer)session.getAttribute("helperSeqNo"));
+                model.addAttribute("message", message);
+
+                String userId = (String)session.getAttribute("userId");
+                model.addAttribute("userId", userId);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        return view;
+    }
+
+    @PostMapping("/helperMessage")
+    public String helperMessage(@ModelAttribute("messageDO") MessageDO messageDO, Model model, HttpSession session) {
+
+    }
 
 }

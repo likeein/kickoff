@@ -70,7 +70,7 @@ public class LoginController {
             EmployerDO result = this.loginService.emp_login(empDO);
             if (result != null) {
                 ModelAndView mv = new ModelAndView("redirect:/main");
-                session.setAttribute("userId", result.getEmpId());
+                session.setAttribute("empId", result.getEmpId());
                 return mv;
             }
         }

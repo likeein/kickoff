@@ -22,7 +22,27 @@ public class MessageDO {
 	private String gameYN;
 	//메시지 열람 구분
 	private String messageType;
-	
+
+	private int helperSeqNo;
+
+	private String messageTitle;
+
+	public String getMessageTitle() {
+		return messageTitle;
+	}
+
+	public void setMessageTitle(String messageTitle) {
+		this.messageTitle = messageTitle;
+	}
+
+	public int getHelperSeqNo() {
+		return helperSeqNo;
+	}
+
+	public void setHelperSeqNo(int helperSeqNo) {
+		this.helperSeqNo = helperSeqNo;
+	}
+
 	public int getMessageSeqno() {
 		return messageSeqno;
 	}

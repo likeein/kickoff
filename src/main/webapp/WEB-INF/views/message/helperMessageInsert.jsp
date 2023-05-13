@@ -8,8 +8,7 @@
 	<!-- 쪽지작성 페이지의 전용 스타일 -->
 	<link rel="stylesheet" href="/message/css/message.css">
 	<link rel = "stylesheet" href = "/includes/css/footer.css" />
-	<link rel="stylesheet"
-		  href="/includes/css/style.css">
+	<link rel="stylesheet" href="/includes/css/style.css">
 	<link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
 
 	<script src="/includes/js/jquery-3.3.1.min.js"></script>
@@ -30,7 +29,7 @@
 	<%@include file="/includes/header.jsp"%>
 </header>
 <section>
-	<div id="main_content">
+	<div id="main_content" style="padding: 50px;margin:20px;">
 		<div id="message_box">
 			<h3 id="write_title">메시지 보내기</h3>
 			<!-- message_insert.php를 통해 DB의 message테이블에 저장 : 송신id는 get방식으로 -->
@@ -39,19 +38,19 @@
 					<ul>
 						<li>
 							<span class="col1">보내는 사람 : </span>
-							<span class="col2"></span>
+							<span class="col2"><input type="text" name="messageSendId" id ="messageSendId" disabled placeholder="${userId}"></span>
 						</li>
 						<li>
 							<span class="col1">수신 아이디 : </span>
-							<span class="col2"><input type="text" name="rv_id"></span>
+							<span class="col2"><input type="text" name="messageReceiveId" id = "messageReceiveId" disabled placeholder="${message.helperId}"></span>
 						</li>
 						<li>
 							<span class="col1">제목 : </span>
-							<span class="col2"><input type="text" name="subject"></span>
+							<span class="col2"><input type="text" name="messageTitle"></span>
 						</li>
 						<li id="textarea">
 							<span class="col1">내용 : </span>
-							<span class="col2"><textarea name="content"></textarea></span>
+							<span class="col2"><textarea name="messageContent" id = "messageContent"></textarea></span>
 						</li>
 					</ul>
 					<!-- 서밋버튼 -->
