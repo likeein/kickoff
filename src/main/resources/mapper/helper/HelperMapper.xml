@@ -32,8 +32,9 @@
     <insert id = "insertHelper" parameterType="com.teamcommit.kickoff.Do.HelperDO">
         <![CDATA[
         INSERT INTO HELPER_BOARD
-        (HELPER_SEQNO,
-         USER_ID,
+        (
+         HELPER_SEQNO,
+         HELPER_ID,
          HELPER_POSITION,
          HELPER_PRICE,
          HELPER_MATCH,
@@ -42,8 +43,10 @@
          HELPER_WANT,
          HELPER_TIME,
          HELPER_TEAMLEVEL,
-         HELPER_PLACE_NAME)
-        VALUES(HELPER_SEQ.NEXTVAL,
+         HELPER_PLACE_NAME
+         )
+        VALUES(
+               HELPER_SEQ.NEXTVAL,
                #{helperId},
                #{helperPosition},
                #{helperPrice},
@@ -53,7 +56,8 @@
                #{helperWant},
                #{helperTime},
                #{helperTeamLevel},
-               #{helperPlaceName})
+               #{helperPlaceName}
+        )
         ]]>
     </insert>
 </mapper>
