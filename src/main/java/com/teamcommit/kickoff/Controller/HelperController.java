@@ -94,13 +94,10 @@ public class HelperController {
         return view;
     }
 
-    @GetMapping("/helperMessage")
-    public String helperMessage() {
-        String view = "/message/messageInsert";
-
-
-
-        return view;
+    @RequestMapping("/helperMessage")
+    public ModelAndView helperMessage() {
+        ModelAndView mv = new ModelAndView("/message/MessageInsert");
+        return mv;
     }
 
 

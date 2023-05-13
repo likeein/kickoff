@@ -8,7 +8,22 @@
 	<!-- 쪽지작성 페이지의 전용 스타일 -->
 	<link rel="stylesheet" href="/message/css/message.css">
 	<link rel = "stylesheet" href = "/includes/css/footer.css" />
-	<link rel="stylesheet" href="/includes/css/style.css">
+	<link rel="stylesheet"
+		  href="/includes/css/style.css">
+	<link rel = "stylesheet" href = "/main/css/vendor/icomoon/style.css">
+
+	<script src="/includes/js/jquery-3.3.1.min.js"></script>
+
+	<script src="/includes/js/jquery.lettering.js"></script>
+	<script src="/includes/js/jquery.sticky.js"></script>
+
+
+	<script src="/includes/js/ScrollMagic.min.js"></script>
+	<script
+			src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
+
+
+	<script src="/includes/js/main.js"></script>
 </head>
 <body>
 <header>
@@ -52,15 +67,5 @@
 <footer>
 	<%@include file="/includes/footer.jsp"%>
 </footer>
-<script src="/helper/vendor/jquery/jquery.min.js"></script>
-<script src="/includes/js/jquery.lettering.js"></script>
-<script src="/includes/js/jquery.sticky.js"></script>
-
-
-<script src="/includes/js/ScrollMagic.min.js"></script>
-<script src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
-
-
-<script src="/includes/js/main.js"></script>
 </body>
 </html>

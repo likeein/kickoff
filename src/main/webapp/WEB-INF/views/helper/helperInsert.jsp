@@ -68,17 +68,17 @@
 		<button type = "reset" class="reservationClose">x</button>
 		<div>
 			${msg}
-
 				<table>
 					<tr>
 						<th>업체명</th>
 						<th>업체위치</th>
 						<th>경기 날짜</th>
-						<th></th>
 					</tr>
 					<c:forEach var="list" items="${reservation}">
 					<tr>
-						<td><c:out value="${list.res}" /></td>
+						<td><c:out value="${list.reservationPlaceName}" /></td>
+						<td><c:out value = "${list.reservationPlaceAddress}" /></td>
+						<td><c:out value = "${list.reservationPlaceAddress}" /></td>
 					</tr>
 					</c:forEach>
 				</table>
@@ -103,7 +103,7 @@
 
 	<div class = "helperBox">
 		<label>모집인원:</label>&nbsp;
-		<input type = "number" name = "helperWant" id = "helperWant" / required>&nbsp;<span>명</span>
+		<input type = "number" name = "helperWant" id = "helperWant"  required />&nbsp;<span>명</span>
 	</div>
 
 	<div class = "genderBox">
@@ -134,7 +134,7 @@
 
 	<div class = "btnbtn">
 		<a href = "/helperList"><button type = "submit" class = "btn" id = "btn">등록</button></a>
-		<a href = "/helperList"><button type = "button" class = "btn" id = "btn" >취소</button></a>
+		<a href = "/helperList"><button type = "button" class = "btn" id = "btn">취소</button></a>
 	</div>
 
 </form>

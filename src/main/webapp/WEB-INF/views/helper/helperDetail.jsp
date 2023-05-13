@@ -32,6 +32,17 @@
 <link rel="stylesheet"
 	href="/board/css/boardDetail.css" />
 
+<style>
+	.kakao {
+		background: #B1D7B4;
+		padding: 5px;
+		width: 540px;
+		margin-left: 13px;
+		box-shadow: 0 2px 5px rgba(127, 183, 126, .75);
+		border-radius: 4px;
+	}
+</style>
+
 </head>
 <body>
 	<%@include file="/includes/header.jsp"%>
@@ -82,10 +93,10 @@
 				</table>
 			</div>
 		</div>
-		<div id="map" style="width:500px;height:350px;margin-left: 15px;"></div>
+		<div class = "kakao">
+			<div id="map" style="width:500px;height:350px;margin-left: 15px;"></div>
+		</div>
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5d724483fb639866457f6535349fcd24&libraries=services"></script>
-		<script>
-			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5d724483fb639866457f6535349fcd24&libraries=services"></script>
 		<script>
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 					mapOption = {
@@ -126,8 +137,8 @@
 			var zoomControl = new kakao.maps.ZoomControl();
 			map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 		</script>
-			<button type = "button" class = "btn" id = "btn" onclick="location.href='/helperMessage';">신청</button>
-		<button type = "button" class = "btn" id = "btn" onclick="location.href='/helperList';">돌아가기</button>
+		<button type = "button" class = "btn1" id = "btn1" onclick="location.href='/helperMessage';">신청</button>
+		<button type = "button" class = "btn2" id = "btn2" onclick="location.href='/helperList';">돌아가기</button>
 	</form>
 </body>
 </html>
