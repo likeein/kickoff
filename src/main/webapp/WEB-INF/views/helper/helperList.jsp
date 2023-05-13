@@ -83,7 +83,7 @@
                                         <td><c:out value="${list.helperPosition}" /></td>
                                         <td><c:out value="${list.helperTeamLevel}" /></td>
                                         <td><c:out value="${list.helperGender}" /></td>
-                                        <td><c:out value="${list.helperPlace}" /></td>
+                                        <td><c:out value="${list.helperAddress}" /></td>
                                         <td><c:out value="${list.helperTime}" /></td>
                                         <td><button type = "button" class = "btn_insert" onclick="location.href='/helperDetail?helperSeqno=${list.helperSeqno}';">진행 중</button></td>
                                     </tr>

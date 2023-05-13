@@ -100,7 +100,7 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 
-#helperPlace {
+#helperAddress {
 	position: absolute;
 	top: 50%;
 	left: 34%;
