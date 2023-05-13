@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%-- 짱! --%>
 <!DOCTYPE html>
@@ -105,7 +105,7 @@
 
 
             <!-- 로그인 안 한 경우 -->
-            <core:if test="${empty userId and empty empId}">
+            <c:if test="${empty userId and empty empId}">
 		     <ul class="icons-top d-none d-lg-block">
               <li>
                 <a href="/loginAll"><span class="icon-unlock"></span></a>
@@ -114,10 +114,10 @@
                 <a href="#" onclick="alert('로그인 후 이용하실 수 있습니다.'); return false;"><span class="icon-person"></span></a>
               </li>
             </ul>
-            </core:if>
+            </c:if>
 
             <!-- 로그인 한 경우 - 개인 회원 -->
-            <core:if test="${!empty userId and empty empId}">
+            <c:if test="${!empty userId and empty empId}">
               <ul class="icons-top d-none d-lg-block">
                 <li>
                   <a href="/logout"><span class="icon-lock"></span></a>
@@ -126,10 +126,10 @@
                   <a href="/myReservation"><span class="icon-person"></span></a>
                 </li>
               </ul>
-            </core:if>
+            </c:if>
 
             <!-- 로그인 한 경우 - 업체 회원 -->
-            <core:if test="${empty userId and !empty empId}">
+            <c:if test="${empty userId and !empty empId}">
               <ul class="icons-top d-none d-lg-block">
                 <li>
                   <a href="/logout"><span class="icon-lock"></span></a>
@@ -138,7 +138,7 @@
                   <a href="/empFutsal"><span class="icon-person"></span></a>
                 </li>
               </ul>
-            </core:if>
+            </c:if>
 
             <!-- Mobile Toggle -->
             <a href="#" class="d-block d-lg-none burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
