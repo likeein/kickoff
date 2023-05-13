@@ -3,124 +3,157 @@ package com.teamcommit.kickoff.Do;
 public class PlaceDO {
 
 	//풋살장 아이디
-	private int PLACE_ID;
+	private int placeId;
 	//풋살장 이름
-	private String PLACE_NAME;
+	private String placeName;
 	//풋살장 주소
-	private String PLACE_ADDRESS;
+	private String placeAddress;
 	//풋살장 전화번호
-	private String PLACE_PHONE_NUMBER;
+	private String placePhoneNumber;
 	//풋살장 홈페이지
-	private String PLACE_HOMEPAGE;
+	private String placeHomepage;
 	//풋살장 바닥형태
-	private String PLACE_GROUND;
+	private String placeGround;
 	//풋살장 규격
-	private String PLACE_SIZE;
+	private String placeSize;
 	//풋살장 형태(실내/실외)
-	private String PLACE_FORM;
+	private String placeForm;
 	//조명 유무
-	private String PLACE_LIGHT;
+	private String placeLight;
 	//풋살장 개방일수
-	private String PLACE_OPEN;
+	private String placeOpen;
 	//풋살장 대관료
-	private String PLACE_PRICE;
+	private String placePrice;
 	//풋살장 대여시간
-	private String PLACE_TIME;
+	private String placeTime;
 	//기타사항
-	private String PLACE_OTHER;
+	private String placeOther;
 	//이미지 파일 이름
-	private String IMG_NAME;
+	private String imgName;
 	//이미지 파일 저장 경로
-	private String IMG_PATH;
-	
-	public int getPLACE_ID() {
-		return PLACE_ID;
+	private String imgPath;
+
+	public PlaceDO() {
+
 	}
-	public void setPLACE_ID(int PLACE_ID) {
-		this.PLACE_ID = PLACE_ID;
+
+	public int getPlaceId() {
+		return placeId;
 	}
-	public String getPLACE_NAME() {
-		return PLACE_NAME;
+
+	public void setPlaceId(int placeId) {
+		this.placeId = placeId;
 	}
-	public void setPLACE_NAME(String PLACE_NAME) {
-		this.PLACE_NAME = PLACE_NAME;
+
+	public String getPlaceName() {
+		return placeName;
 	}
-	public String getPLACE_ADDRESS() {
-		return PLACE_ADDRESS;
+
+	public void setPlaceName(String placeName) {
+		this.placeName = placeName;
 	}
-	public void setPLACE_ADDRESS(String PLACE_ADDRESS) {
-		this.PLACE_ADDRESS = PLACE_ADDRESS;
+
+	public String getPlaceAddress() {
+		return placeAddress;
 	}
-	public String getPLACE_PHONE_NUMBER() {
-		return PLACE_PHONE_NUMBER;
+
+	public void setPlaceAddress(String placeAddress) {
+		this.placeAddress = placeAddress;
 	}
-	public void setPLACE_PHONE_NUMBER(String PLACE_PHONE_NUMBER) {
-		this.PLACE_PHONE_NUMBER = PLACE_PHONE_NUMBER;
+
+	public String getPlacePhoneNumber() {
+		return placePhoneNumber;
 	}
-	public String getPLACE_HOMEPAGE() {
-		return PLACE_HOMEPAGE;
+
+	public void setPlacePhoneNumber(String placePhoneNumber) {
+		this.placePhoneNumber = placePhoneNumber;
 	}
-	public void setPLACE_HOMEPAGE(String PLACE_HOMEPAGE) {
-		this.PLACE_HOMEPAGE = PLACE_HOMEPAGE;
+
+	public String getPlaceHomepage() {
+		return placeHomepage;
 	}
-	public String getPLACE_GROUND() {
-		return PLACE_GROUND;
+
+	public void setPlaceHomepage(String placeHomepage) {
+		this.placeHomepage = placeHomepage;
 	}
-	public void setPLACE_GROUND(String PLACE_GROUND) {
-		this.PLACE_GROUND = PLACE_GROUND;
+
+	public String getPlaceGround() {
+		return placeGround;
 	}
-	public String getPLACE_SIZE() {
-		return PLACE_SIZE;
+
+	public void setPlaceGround(String placeGround) {
+		this.placeGround = placeGround;
 	}
-	public void setPLACE_SIZE(String PLACE_SIZE) {
-		this.PLACE_SIZE = PLACE_SIZE;
+
+	public String getPlaceSize() {
+		return placeSize;
 	}
-	public String getPLACE_FORM() {
-		return PLACE_FORM;
+
+	public void setPlaceSize(String placeSize) {
+		this.placeSize = placeSize;
 	}
-	public void setPLACE_FORM(String PLACE_FORM) {
-		this.PLACE_FORM = PLACE_FORM;
+
+	public String getPlaceForm() {
+		return placeForm;
 	}
-	public String getPLACE_LIGHT() {
-		return PLACE_LIGHT;
+
+	public void setPlaceForm(String placeForm) {
+		this.placeForm = placeForm;
 	}
-	public void setPLACE_LIGHT(String PLACE_LIGHT) {
-		this.PLACE_LIGHT = PLACE_LIGHT;
+
+	public String getPlaceLight() {
+		return placeLight;
 	}
-	public String getPLACE_OPEN() {
-		return PLACE_OPEN;
+
+	public void setPlaceLight(String placeLight) {
+		this.placeLight = placeLight;
 	}
-	public void setPLACE_OPEN(String PLACE_OPEN) {
-		this.PLACE_OPEN = PLACE_OPEN;
+
+	public String getPlaceOpen() {
+		return placeOpen;
 	}
-	public String getPLACE_PRICE() {
-		return PLACE_PRICE;
+
+	public void setPlaceOpen(String placeOpen) {
+		this.placeOpen = placeOpen;
 	}
-	public void setPLACE_PRICE(String PLACE_PRICE) {
-		this.PLACE_PRICE = PLACE_PRICE;
+
+	public String getPlacePrice() {
+		return placePrice;
 	}
-	public String getPLACE_TIME() {
-		return PLACE_TIME;
+
+	public void setPlacePrice(String placePrice) {
+		this.placePrice = placePrice;
 	}
-	public void setPLACE_TIME(String PLACE_TIME) {
-		this.PLACE_TIME = PLACE_TIME;
+
+	public String getPlaceTime() {
+		return placeTime;
 	}
-	public String getPLACE_OTHER() {
-		return PLACE_OTHER;
+
+	public void setPlaceTime(String placeTime) {
+		this.placeTime = placeTime;
 	}
-	public void setPLACE_OTHER(String PLACE_OTHER) {
-		this.PLACE_OTHER = PLACE_OTHER;
+
+	public String getPlaceOther() {
+		return placeOther;
 	}
-	public String getIMG_NAME() {
-		return IMG_NAME;
+
+	public void setPlaceOther(String placeOther) {
+		this.placeOther = placeOther;
 	}
-	public void setIMG_NAME(String IMG_NAME) {
-		this.IMG_NAME = IMG_NAME;
+
+	public String getImgName() {
+		return imgName;
 	}
-	public String getIMG_PATH() {
-		return IMG_PATH;
+
+	public void setImgName(String imgName) {
+		this.imgName = imgName;
 	}
-	public void setIMG_PATH(String IMG_PATH) {
-		this.IMG_PATH = IMG_PATH;
+
+	public String getImgPath() {
+		return imgPath;
+	}
+
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
 	}
 }
