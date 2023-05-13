@@ -29,6 +29,8 @@ public class BoardDO {
 	private String fileName;
 	//파일 저장 경로
 	private String filePath;
+	//작성자 아이디
+	private String writeIdEmp;
 	
 	public int getBoardSeqno() {
 		return boardSeqno;
@@ -90,5 +92,12 @@ public class BoardDO {
 	public void setFilePath(String filePath) {
 		this.filePath = filePath;
 	}
-	
+
+	public String getWriteIdEmp() {
+		return writeIdEmp;
+	}
+
+	public void setWriteIdEmp(String writeIdEmp) {
+		this.writeIdEmp = writeIdEmp;
+	}
 }

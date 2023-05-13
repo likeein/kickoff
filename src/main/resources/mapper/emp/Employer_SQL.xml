@@ -20,7 +20,7 @@
         FROM
             COMMUNITY_BOARD
         WHERE
-            WRITE_ID = #{empId}
+            WRITE_ID_EMP = #{empId}
         ]]>
     </select>
 
