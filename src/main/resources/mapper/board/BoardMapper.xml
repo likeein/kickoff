@@ -23,7 +23,9 @@
             WRITE_ID,
             FILE_NAME,
             FILE_PATH,
-            WRITE_CONTENT
+            WRITE_CONTENT,
+            VIEW_COUNT,
+            REPORT_COUNT
         )
         VALUES
             (
@@ -32,7 +34,8 @@
                 #{writeId},
                 #{fileName},
                 #{filePath},
-                #{writeContent}
+                #{writeContent},
+                0,0
             )
         ]]>
     </insert>
@@ -60,9 +63,9 @@
             WRITE_CONTENT = #{writeContent},
             FILE_NAME = #{fileName},
             FILE_PATH = #{filePath},
-            WRITE_EDIT_DATE = now()
+            WRITE_EDIT_DATE = #{writeEditDate}
         WHERE
-            BOARD_SQENO = #{boardSeqno}
+            BOARD_SEQNO = #{boardSeqno}
         ]]>
     </update>
 
@@ -73,7 +76,7 @@
         FROM
             COMMUNITY_BOARD
         WHERE
-            BOARD_SQENO =#{boardSeqno}
+            BOARD_SEQNO =#{boardSeqno}
         ]]>
 	</delete>
 
@@ -88,14 +91,14 @@
         )
         VALUES
             (
-                REPORT_NO.NEXTVAL,
+                REPORT_SEQ.NEXTVAL,
                 #{boardSeqno},
-                #{report}
+                #{reportComment}
             )
         ]]>
     </insert>
 
-    <select id="procGetMaxSeqno" parameterType="int">
+    <select id="procGetMaxSeqno" resultType="int">
         <![CDATA[
         SELECT
             MAX(BOARD_SEQNO)
@@ -103,4 +106,15 @@
             COMMUNITY_BOARD
         ]]>
     </select>
+
+    <update id="procAddViewCount" parameterType="com.teamcommit.kickoff.Do.BoardDO">
+        <![CDATA[
+        UPDATE
+            COMMUNITY_BOARD
+        SET
+            VIEW_COUNT = VIEW_COUNT+1
+        WHERE
+            BOARD_SEQNO = #{boardSeqno}
+        ]]>
+    </update>
 </mapper>

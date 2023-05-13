@@ -41,14 +41,7 @@
 		});
 
 
-		function deleteConfirm(){
 
-			if(!confirm("삭제 하시겠습니까?")){
-				return false;
-			}else{
-				location.href="${pageContext.request.contextPath }/board/delete.do?board_idx=${writeContent.boardSeqno}";
-			}
-		}
 
 	</script>
 

@@ -59,7 +59,7 @@
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
                                 <p>풋살장<span>*</span></p>
-                                <input type="text" name="" value="풋살장 이름" readonly>
+                                <input type="text" name="reservationPlaceName" value="" readonly>
                            	</div>
                           	<div class="checkout__input">
                                 <p>코트<span>*</span></p>
@@ -74,7 +74,7 @@
                             </div>
                            	<div class="checkout__input">
                                 <p>위치<span>*</span></p>
-                                <input type="text" name="" value="서울시 강남구" readonly>
+                                <input type="text" name="reservationPlaceAddress" value="" readonly>
                             </div>
                             <div class="checkout__input">
                                 <p>형태<span>*</span></p>
@@ -130,10 +130,10 @@
                             <div class="checkout__input">
                                 <p>예약 상태<span>*</span></p>
                                 <label>
-                                	<input type="radio" onclick='getStatus(event)' checked/>&nbsp예약
+                                	<input type="radio" onclick='getStatus(event)' checked/>&nbsp예약대기
                                 </label>
                                 <label>
-                                	<input type="radio" disabled/>&nbsp예약 완료
+                                	<input type="radio" disabled/>&nbsp예약완료
                                 </label>
                             </div>
                             <div class="checkout__input">
@@ -161,7 +161,7 @@
 									<li>예약 날짜<span id="date"></span></li>
 									<li>시작 시간<span id="startTime"></span></li>
 									<li>종료 시간<span id="endTime"></span></li>
-									<li>예약 상태<span id="status"></span></li>
+									<li>예약 상태<span id="status">예약대기</span></li>
 									<li>대관비<span id="price"></span></li>
 								</ul>
 								<input type="submit" id="insert" class="site-btn-insert" value="등록"></input>

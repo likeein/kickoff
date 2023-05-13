@@ -25,7 +25,7 @@
     <script src="/includes/js/main.js"></script>
 <!-- 여기까지 복붙하기 -->    
 
-<link rel = "stylesheet" href = "/board/css/boardInsertstyle.css" />
+<link rel = "stylesheet" href = "/board/css/boardInsert.css" />
 
 </head>
 <body>
@@ -73,7 +73,7 @@
 		</div>
 		
 		<div class="btn_board">
-		<button type="reset" class="btn_reset" onclick="location.href='/boardDetailWritter?boardSeqno=${boardContents.boardSeqno}';">취소</button>
+		<button type="reset" class="btn_reset" onclick="location.href='/boardDetail?boardSeqno=${boardContents.boardSeqno}';">취소</button>
 		<button type="submit" class="btn_submit" onclick="document.getElementById('frm').submit();">수정</button>
 		</div>
 </div>	

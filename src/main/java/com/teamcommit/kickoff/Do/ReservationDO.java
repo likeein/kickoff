@@ -10,6 +10,10 @@ public class ReservationDO {
 	private String userId;
 	//예약 풋살장 아이디
 	private int placeId;
+	//예약 풋살장 이름
+	private String reservationPlaceName;
+	//예약 풋살장 위치
+	private String reservationPlaceAddress;
 	//예약 날짜
 	private String reservationDate;
 	//예약 인원
@@ -172,4 +176,21 @@ public class ReservationDO {
 	public void setReservationCancel(String reservationCancel) {
 		this.reservationCancel = reservationCancel;
 	}
+
+	public String getReservationPlaceName() {
+		return reservationPlaceName;
+	}
+
+	public void setReservationPlaceName(String reservationPlaceName) {
+		this.reservationPlaceName = reservationPlaceName;
+	}
+
+	public String getReservationPlaceAddress() {
+		return reservationPlaceAddress;
+	}
+
+	public void setReservationPlaceAddress(String reservationPlaceAddress) {
+		this.reservationPlaceAddress = reservationPlaceAddress;
+	}
+
 }

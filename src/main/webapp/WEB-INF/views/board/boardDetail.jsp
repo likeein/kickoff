@@ -35,6 +35,15 @@
 			}
 
 		});
+
+		function deleteConfirm(){
+
+			if(!confirm("삭제 하시겠습니까?")){
+				return false;
+			}else{
+				location.href="/delete?boardSeqno=${boardContents.boardSeqno}";
+			}
+		}
 	</script>
 
 <link rel="stylesheet" href="/board/css/boardDetail.css" />
@@ -124,7 +133,14 @@
 
 			<div class="btn_boarddetail">
 				<button type="reset" class="btn_reset" onclick="location.href='/board';">목록</button>
-				<button class="btn_delete" onclick="location.href='/boardReport';">신고</button>
+				<c:if test="${userId ne boardContents.writeId}">
+					<button class="btn_delete" onclick="location.href='/boardReport?boardSeqno=${boardContents.boardSeqno}';">신고</button>
+				</c:if>
+
+				<c:if test="${userId eq boardContents.writeId}">
+					<button class="btn_update" onclick="location.href='/boardUpdate?boardSeqno=${boardContents.boardSeqno}';">수정</button>
+					<button class="btn_delete" onclick="deleteConfirm();">삭제</button>
+				</c:if>
 			</div>
 		</div>
 	</form>
