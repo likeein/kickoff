@@ -62,7 +62,9 @@ public class HelperController {
             else if(session.getAttribute("userId") != null) {
                 try {
                     List<ReservationDO> list = helperService.selectReservation((String) session.getAttribute("userId"));
+                    String userId = (String) session.getAttribute("userId");
                     model.addAttribute("reservation", list);
+                    model.addAttribute("userId", userId);
                 }
                 catch (Exception e) {
                     model.addAttribute("msg", "예약 내역이 존재하지 않습니다.");
@@ -91,6 +93,14 @@ public class HelperController {
         return view;
     }
 
+    @GetMapping("/helperMessage")
+    public String helperMessage() {
+        String view = "/message/messageInsert";
+
+
+
+        return view;
+    }
 
 
 }

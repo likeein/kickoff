@@ -38,8 +38,8 @@
 	<div class="bg-dark py-5">
 		<div class="container px-4 px-lg-5 my-5">
 			<div class="text-center text-white">
-				<h1 class="display-4 fw-bolder">${content.helperPlace}</h1>
-				<p class="lead fw-normal text-white-50 mb-0">작성자</p>
+				<h1 class="display-4 fw-bolder">${content.helperPlace}, ${content.helperPlaceName}</h1>
+				<p class="lead fw-normal text-white-50 mb-0">${content.helperId}</p>
 			</div>
 		</div>
 	</div>
@@ -67,19 +67,22 @@
 							<td>${content.helperTime}</td>
 						</tr>
 						<tr>
-							<td colspan="4" class="view_text">${content.helperPosition}<br />
-							${content.helperMatch}<br />
-								${content.helperGender}<br />
-								${content.helperWant}<br />
-								${content.helperTeamLevel}<br />
-								${content.helperPlaceName}<br />
-								${content.helperPrice}<br />
+							<td colspan="4" class="view_text">
+							포지션: ${content.helperPosition}<br />
+							경기형식: ${content.helperMatch}<br />
+								모집성별: ${content.helperGender}<br />
+								모집 인원 수: ${content.helperWant}<br />
+								모집 팀 레벨: ${content.helperTeamLevel}<br />
+								풋살장 이름: ${content.helperPlaceName}<br />
+								참가비: ${content.helperPrice}<br />
 							</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
+		<button type = "button" class = "btn" id = "btn" onclick="location.href='/helperMessage';">신청</button>
+		<button type = "button" class = "btn" id = "btn" onclick="location.href='/helperList';">돌아가기</button>
 	</form>
 </body>
 </html>
