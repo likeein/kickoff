@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>Kick Off: 업체 회원 게시글 관리</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!-- Custom styles for this page -->
     <link href="/emp/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
