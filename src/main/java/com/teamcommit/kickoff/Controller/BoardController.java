@@ -55,7 +55,6 @@ public class BoardController {
         userDO.setUserId(userId);
         userDO = loginService.procSetUserInfo(userDO);
 
-        model.addAttribute("userDO",userDO);
         return view;
     }
 

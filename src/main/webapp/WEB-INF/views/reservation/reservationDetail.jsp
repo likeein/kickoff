@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <!DOCTYPE html>
@@ -50,8 +51,8 @@
 							<p>서울 강서구 까치산로28길 33-15</p>
 						</div>
 						<div class="time-price-wrap">
-							<p>5월 3일 20:00~22:00</p>
-							<h3 class="price">대관비 100,000원</h3>
+							<p>5월 3일 ${reservationDetail.reservationStartTime}:00~${reservationDetail.reservationEndTime}:00</p>
+							<h3 class="price">대관비 ${reservationDetail.reservationPrice}원</h3>
 						</div>
 					</div>
 				</div>
@@ -65,7 +66,7 @@
 							<div class="img-wrap">
 								<img src="/reservation/images/court.png">
 							</div>
-							<b class="text-dark">코트</b><small>A코트</small>
+							<b class="text-dark">코트</b><small>${reservationDetail.reservationCourtName}</small>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">
@@ -83,7 +84,14 @@
 							<div class="img-wrap">
 								<img src="/reservation/images/loading.png">
 							</div>
-							<b class="text-dark">예약</b><small>예약대기</small>
+							<c:choose>
+								<c:when test="${reservationDetail.reservationStatus == 'Y'}">
+									<b class="text-dark">예약</b><small>예약대기</small>
+								</c:when>
+								<c:otherwise>
+									<b class="text-dark">예약</b><small>예약완료</small>
+								</c:otherwise>
+							</c:choose>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">
@@ -103,7 +111,14 @@
 								<img src="/reservation/images/sunlight.png">
 								<!-- <img src="/TeamCommit/resource/reservation/images/no sunlight.png"> -->
 							</div>
-							<b class="text-dark">공간</b><small>실외</small>
+							<c:choose>
+								<c:when test="${reservationDetail.reservationCourtForm == 'outdoor'}">
+									<b class="text-dark">공간</b><small>실외</small>
+								</c:when>
+								<c:otherwise>
+									<b class="text-dark">공간</b><small>실내</small>
+								</c:otherwise>
+							</c:choose>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">

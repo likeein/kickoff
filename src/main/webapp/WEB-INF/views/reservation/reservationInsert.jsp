@@ -63,10 +63,10 @@
                            	</div>
                           	<div class="checkout__input">
                                 <p>코트<span>*</span></p>
-                                <select id="courtName" name="RESERVATION_COURT_NAME" value="${RESERVATION_COURT_NAME}" onChange="selectCourt(this)">
+                                <select id="courtName" name="reservationCourtName" onChange="selectCourt(this)">
                                 	<option value="">코트 선택하기</option>
                                 	<option value="A코트">A코트</option>
-                                	<option value="A코트">A코트</option>
+                                	<option value="B코트">B코트</option>
                                 	<option value="C코트">C코트</option>
                                 	<option value="D코트">D코트</option>
                                 	<option value="E코트">E코트</option>
@@ -79,21 +79,21 @@
                             <div class="checkout__input">
                                 <p>형태<span>*</span></p>
                                 <label>
-                                	<input type="radio" name="RESERVATION_COURT_FORM" value="indoor" onclick='getPlaceForm(event)' />&nbsp실내
+                                	<input type="radio" name="reservationCourtForm" value="indoor" onclick='getPlaceForm(event)' />&nbsp실내
                                 </label>
                                 <label>
-                                	<input type="radio" name="RESERVATION_COURT_FORM" value="outdoor" onclick='getPlaceForm(event)' />&nbsp실외
+                                	<input type="radio" name="reservationCourtForm" value="outdoor" onclick='getPlaceForm(event)' />&nbsp실외
                                 </label>
                             </div>
                    			<div class="checkout__input">
                         		<p>예약 날짜<span>*</span></p>
-                       			<input id="setDate" name="RESERVATION_DATE" onChange="getDate()" />
+                       			<input id="setDate" name="reservationDate" onChange="getDate()" />
                    			</div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>시작 시간<span>*</span></p>
-                                        <select id="openTime" name="RESERVATION_START_TIME" onChange="getStartTime(this)">
+                                        <select id="openTime" name="reservationStartTime" onChange="getStartTime(this)">
                                         	<option value="">시작 시간 선택</option>
                                         	<c:forEach var="i" begin="1" end="24">
 	                                        	<c:choose>
@@ -111,7 +111,7 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>종료 시간<span>*</span></p>
-                                        <select id="closeTime" name="RESERVATION_END_TIME" onChange="getEndTime(this)">
+                                        <select id="closeTime" name="reservationEndTime" onChange="getEndTime(this)">
                                         	<option value="">종료 시간 선택</option>
                                         	<c:forEach var="i" begin="1" end="24">
 	                                        	<c:choose>
@@ -138,11 +138,11 @@
                             </div>
                             <div class="checkout__input">
                                 <p>대관비<span>*</span></p>
-                                <input type="number" class="inputPrice" id="inputPrice" name="RESERVATION_PRICE" onChange="getPrice()" placeholder="ex) 50000">
+                                <input type="number" class="inputPrice" id="inputPrice" name="reservationPrice" onChange="getPrice()" placeholder="ex) 50000">
                             </div>
                             <div class="checkout__input">
 								<p>기타사항</p>
-                               	<textarea class="etc" name="RESERVATION_COMMENT"></textarea>
+                               	<textarea class="etc" name="reservationComment"></textarea>
                             </div>
                         </div>
                         
@@ -161,7 +161,7 @@
 									<li>예약 날짜<span id="date"></span></li>
 									<li>시작 시간<span id="startTime"></span></li>
 									<li>종료 시간<span id="endTime"></span></li>
-									<li>예약 상태<span id="status">예약</span></li>
+									<li>예약 상태<span id="status"></span></li>
 									<li>대관비<span id="price"></span></li>
 								</ul>
 								<input type="submit" id="insert" class="site-btn-insert" value="등록"></input>
