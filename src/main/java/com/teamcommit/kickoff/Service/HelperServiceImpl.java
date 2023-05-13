@@ -2,6 +2,7 @@ package com.teamcommit.kickoff.Service;
 
 import com.teamcommit.kickoff.Dao.HelperDAO;
 import com.teamcommit.kickoff.Do.HelperDO;
+import com.teamcommit.kickoff.Do.MessageDO;
 import com.teamcommit.kickoff.Do.ReservationDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,4 +35,7 @@ public class HelperServiceImpl implements HelperService {
     public HelperDO selectHelperDetail(int helperSeqno) {
         return helperMapper.selectHelperDetail(helperSeqno);
     }
+
+    @Override
+    public void insertMessage(MessageDO messageDO) {helperMapper.insertMessage(messageDO);}
 }

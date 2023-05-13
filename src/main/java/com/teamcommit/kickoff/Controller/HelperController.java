@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.*;
@@ -118,9 +117,19 @@ public class HelperController {
         return view;
     }
 
-    /*@PostMapping("/helperMessage")
-    public String helperMessage(@ModelAttribute("messageDO") MessageDO messageDO, Model model, HttpSession session) {
+   @PostMapping("/helperMessage")
+    public String helperMessage(@ModelAttribute("messageDO") MessageDO messageDO, Model model) {
+        String view = "/message/helperMessageInsert";
 
-    }*/
+            try {
+                helperService.insertMessage(messageDO);
+                model.addAttribute("msgScript", "alert('메시지를 보냈습니다!');");
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+                model.addAttribute("msgScript", "alert('양식이 올바르지 않습니다.');");
+            }
+        return view;
+    }
 
 }

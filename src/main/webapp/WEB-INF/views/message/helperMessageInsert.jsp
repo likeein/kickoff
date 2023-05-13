@@ -23,6 +23,9 @@
 
 
 	<script src="/includes/js/main.js"></script>
+	<script>
+		${msgScript}
+	</script>
 </head>
 <body>
 <header>
@@ -38,7 +41,7 @@
 					<ul>
 						<li>
 							<span class="col1">용병 게시글 번호 : </span>
-							<span class="col2"><input type="number" name="helperSeqno" id = "helperSeqno" disabled placeholder="${helperS}"></span>
+							<span class="col2"><input type="number" name="helperSeqno" id = "helperSeqno" disabled placeholder="${helperSeqNo}"></span>
 						</li>
 						<li>
 							<span class="col1">보내는 사람 : </span>

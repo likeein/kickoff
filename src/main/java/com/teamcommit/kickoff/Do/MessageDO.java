@@ -23,7 +23,7 @@ public class MessageDO {
 	//메시지 열람 구분
 	private String messageType;
 
-	private int helperSeqNo;
+	private int helperSeqno;
 
 	private String messageTitle;
 
@@ -35,12 +35,12 @@ public class MessageDO {
 		this.messageTitle = messageTitle;
 	}
 
-	public int getHelperSeqNo() {
-		return helperSeqNo;
+	public int getHelperSeqno() {
+		return helperSeqno;
 	}
 
-	public void setHelperSeqNo(int helperSeqNo) {
-		this.helperSeqNo = helperSeqNo;
+	public void setHelperSeqno(int helperSeqno) {
+		this.helperSeqno = helperSeqno;
 	}
 
 	public int getMessageSeqno() {
