@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,9 +99,9 @@
                                                     </td>
                                                     <td>
                                                         <div class="table-data__info">
-                                                            <h6>lori lynch</h6>
+                                                            <h6>kickoff</h6>
                                                             <span>
-                                                                <a>johndoe@gmail.com</a>
+                                                                <a>kickoff@gmail.com</a>
                                                             </span>
                                                         </div>
                                                     </td>
@@ -108,15 +109,14 @@
                                                         <span class="role admin">admin</span>
                                                     </td>
                                                     <td>
-                                                        <span class="cancel-number">0회</span>
+                                                        <span class="cancel-number">0</span>
                                                     </td>
                                                     <td>
-                                                        <span class="rest-number">0회</span>
+                                                        <span class="rest-number">0</span>
                                                     </td>
                                                     <td>
                                                         <div class="rs-select2--trans rs-select2--sm">
                                                             <span class="status-active">활동</span>
-                                                            <div class="dropDownSelect2"></div>
                                                         </div>
                                                     </td>
                                                     <td>
@@ -124,6 +124,7 @@
                                                         <button class="btn-out">탈퇴</button>
                                                     </td>
                                                 </tr>
+                                                    <c:forEach var="list" items="${userList}">
                                                 <tr>
                                                     <td>
                                                         <label class="au-checkbox">
@@ -133,25 +134,24 @@
                                                     </td>
                                                     <td>
                                                         <div class="table-data__info">
-                                                            <h6>lori lynch</h6>
+                                                            <h6><c:out value="${list.userName}" /></h6>
                                                             <span>
-                                                                <a>johndoe@gmail.com</a>
+                                                                <a><c:out value="${list.userEmail}" /></a>
                                                             </span>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <span class="role master">Master</span>
-                                                    </td>
-                                                     <td>
-                                                        <span class="cancel-number">0회</span>
+                                                        <span class="role admin"><c:out value="${list.userClassification}" /></span>
                                                     </td>
                                                     <td>
-                                                        <span class="rest-number">0회</span>
+                                                        <span class="cancel-number"><c:out value="${list.userCancelCount}" /></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="rest-number"><c:out value="${list.userStopCount}" /></span>
                                                     </td>
                                                     <td>
                                                         <div class="rs-select2--trans rs-select2--sm">
-                                                           <span class="status-active">활동</span>
-                                                            <div class="dropDownSelect2"></div>
+                                                            <span class="${list.userStatus eq '활동' ? 'status-active' : 'status-stop'}">${list.userStatus}</span>
                                                         </div>
                                                     </td>
                                                     <td>
@@ -159,111 +159,21 @@
                                                         <button class="btn-out">탈퇴</button>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox" checked="checked">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>
-                                                    <td>
-                                                        <div class="table-data__info">
-                                                            <h6>lori lynch</h6>
-                                                            <span>
-                                                                <a>johndoe@gmail.com</a>
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="role user">user</span>
-                                                    </td>
-                                                     <td>
-                                                        <span class="cancel-number">10회</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="rest-number">1회</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rs-select2--trans rs-select2--sm">
-                                                            <span class="status-stop">정지</span>
-                                                            <div class="dropDownSelect2"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn-stop">정지</button>
-                                                        <button class="btn-out">탈퇴</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>
-                                                    <td>
-                                                        <div class="table-data__info">
-                                                            <h6>lori lynch</h6>
-                                                            <span>
-                                                                <a>johndoe@gmail.com</a>
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="role user">User</span>
-                                                    </td>
-                                                     <td>
-                                                        <span class="cancel-number">3회</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="rest-number">0회</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rs-select2--trans rs-select2--sm">
-                                                           		<span class="status-active">활동</span>
-                                                            <div class="dropDownSelect2"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn-stop">정지</button>
-                                                        <button class="btn-out">탈퇴</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>
-                                                    <td>
-                                                        <div class="table-data__info">
-                                                            <h6>lori lynch</h6>
-                                                            <span>
-                                                                <a>johndoe@gmail.com</a>
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="role emp">Emp</span>
-                                                    </td>
-                                                     <td>
-                                                        <span class="cancel-number">0회</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="rest-number">0회</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rs-select2--trans rs-select2--sm">
-                                                           <span class="status-active">활동</span>
-                                                            <div class="dropDownSelect2"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn-stop">정지</button>
-                                                        <button class="btn-out">탈퇴</button>
-                                                    </td>
-                                                </tr>
+                                                    </c:forEach>
+
+
+<%--                                                    <td>--%>
+<%--                                                        <span class="role master">Master</span>--%>
+<%--                                                    </td>--%>
+<%--                                                    --%>
+<%--                                                    <td>--%>
+<%--                                                        <span class="role user">user</span>--%>
+<%--                                                    </td>--%>
+<%--                                                    --%>
+<%--                                              --%>
+<%--                                                    <td>--%>
+<%--                                                        <span class="role emp">Emp</span>--%>
+<%--                                                    </td>--%>
                                             </tbody>
                                         </table>
                                     </div>

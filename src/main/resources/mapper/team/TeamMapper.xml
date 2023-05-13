@@ -44,17 +44,17 @@
 <!--        ]]>-->
 <!--    </select>&ndash;&gt;-->
 
-<!--    &lt;!&ndash; Board Detail &ndash;&gt;-->
-<!--    <select id="getBoardContents" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.BoardDO">-->
-<!--        <![CDATA[-->
-<!--        SELECT-->
-<!--            *-->
-<!--        FROM-->
-<!--            COMMUNITY_BOARD-->
-<!--        WHERE-->
-<!--            BOARD_SEQNO = #{boardSeqno}-->
-<!--        ]]>-->
-<!--    </select>-->
+    <!-- Board Detail -->
+    <select id="getTeamContents" parameterType="com.teamcommit.kickoff.Do.TeamDO" resultType="com.teamcommit.kickoff.Do.TeamDO">
+        <![CDATA[
+        SELECT
+            *
+        FROM
+            TEAM
+        WHERE
+            TEAM_NAME = #{teamName}
+        ]]>
+    </select>
 
 <!--    &lt;!&ndash; Board Update &ndash;&gt;-->
 <!--    <update id="updaateBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO">-->

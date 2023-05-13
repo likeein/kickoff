@@ -8,4 +8,6 @@ import java.util.List;
 public interface TeamMapper {
 
     public List<TeamDO> getList(TeamDO teamDO);
+
+    public TeamDO getTeamContents(String teamName);
 }

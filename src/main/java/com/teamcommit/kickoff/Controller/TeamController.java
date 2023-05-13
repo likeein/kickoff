@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -31,6 +28,17 @@ public class TeamController {
 
         List<TeamDO> teamList = teamService.getList(teamDO);
         model.addAttribute("teamList", teamList);
+
+        return view;
+    }
+
+    // 팀 게시글 상세보기
+    @RequestMapping( "/teamDetail")
+    public String teamDetail(@ModelAttribute("teamDO") TeamDO teamDO, @RequestParam(value = "teamName") String teamName, Model model) throws Exception {
+        String view = "/team/teamDetail";
+
+        TeamDO teamContents = teamService.getTeamContents(teamName);
+        model.addAttribute("teamContents", teamContents);
 
         return view;
     }
