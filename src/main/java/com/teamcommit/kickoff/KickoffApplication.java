@@ -10,7 +10,7 @@ public class KickoffApplication extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(ServletInitializer.class);
+		return application.sources(KickoffApplication.class);
 	}
 
 	public static void main(String[] args) {

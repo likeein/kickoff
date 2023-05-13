@@ -64,6 +64,7 @@
               </div>
             </li>
           </ul>
+          <button type="button" class="nope-button" onclick="location.href='/main';">비동의</button>
           <button type="button" class="next-button" onclick="location.href='/SignupEmp';">동의</button>
         </form>
       </div>    

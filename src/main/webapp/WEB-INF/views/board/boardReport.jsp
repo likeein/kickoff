@@ -68,7 +68,7 @@
 		</label>
 		<br />
 		<div class="btn_boardreport">
-				<button type="reset" class="btn_reset" onclick="location.href='/boardDetail';">취소</button>
+				<button type="reset" class="btn_reset" onclick="location.href='/board';">취소</button>
 				<button type="submit" class="btn_delete" onclick="document.getElementById('frm').submit();">신고</button>
 		</div>
 	</div>

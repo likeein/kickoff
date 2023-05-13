@@ -45,16 +45,11 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-bootWar.enabled = false
-war.enabled = true
-
-bootWar {
-	archiveBaseName = "kickoff"
-	archiveFileName = "kickoff.war"
-	archiveVersion = "0.0.0"
-}
-
 war {
 	archiveBaseName = "kickoff"
 	archiveFileName = "kickoff.war"
+	enabled = false
+	manifest {
+		attributes 'Main-Class': 'com.teamcommit.kickoff.MainController'
+	}
 }

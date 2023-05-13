@@ -51,6 +51,11 @@ public class BoardController {
         UserDO userDO =new UserDO();
         userDO.setUserId(userId);
         userDO = loginService.procSetUserInfo(userDO);
+        //로그인한 업체ID로 로그인 정보 가져오기
+        String empId = (String) request.getSession().getAttribute("empId");
+        EmployerDO employerDO = new EmployerDO();
+        employerDO.setEmpId(empId);
+        employerDO = loginService.procSetEmployerInfo(employerDO);
 
         return view;
     }
@@ -83,11 +88,11 @@ public class BoardController {
         return mv;
     }
 
-    //게시판 상세보기(작성자)
+    /*게시판 상세보기(작성자)
     @RequestMapping( "/boardDetailWritter")
     public String boardDetailWritter(@ModelAttribute("boardDO") BoardDO boardDO, HttpServletRequest request, Model model) throws Exception {
 
-        String view = "/board/boardDetailWritter";
+        String view = "/board/boardDetail";
 
         Map<String, ?> inputFlashMap = RequestContextUtils.getInputFlashMap(request);
         if (null != inputFlashMap){
@@ -95,7 +100,7 @@ public class BoardController {
         }
 
         return view;
-    }
+    }*/
 
     //게시판 상세보기
     @RequestMapping( "/boardDetail")
@@ -104,12 +109,15 @@ public class BoardController {
 
         //로그인한 이용자 ID로 로그인 정보 가져오기
         String userId = (String) request.getSession().getAttribute("userId");
+        /*//로그인한 이용자 ID로 로그인 정보 가져오기
+        String empId = (String) request.getSession().getAttribute("empId");*/
 
         BoardDO boardContents = boardService.getBoardContents(boardSeqno);
 
         boardService.procAddViewCount(boardContents);
         model.addAttribute("boardContents", boardContents);
         model.addAttribute("userId", userId);
+//        model.addAttribute("empId", empId);
 
         return view;
     }

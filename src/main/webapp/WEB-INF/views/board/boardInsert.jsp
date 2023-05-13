@@ -71,11 +71,22 @@
 		</div>
 		
 		<div class="writer">
-		<span class="formWriter">
+		<<span class="formWriter">
 		<label for="writeId" class="writeId" >작성자 : ${userId}</label>
-            <%--<label for="writeId" class="writeId" ><c:out value="${list.writeId}" /></label>--%>
 		</span>
-        <input type="hidden" id="writeId" name="writeId" value="${userId}">
+            <input type="hidden" id="writeId" name="writeId" value="${userId}">
+        <%--<c:if test="${!empty userId and empty empId}">
+            <span class="formWriter">
+		    <label for="writeId" class="writeId" >작성자 : ${userId}</label>
+		    </span>
+            <input type="hidden" id="writeId" name="writeId" value="${userId}">
+        </c:if>
+        <c:if test="${empty userId and !empty empId}">
+            <span class="formWriter">
+		    <label for="writeId" class="writeId" >작성자 : ${empId}</label>
+		    </span>
+            <input type="hidden" id="writeId" name="writeId" value="${empId}">
+        </c:if>--%>
 		</div>
 		
 		<div class="filebox bs3-primary preview-image">
@@ -99,7 +110,7 @@
 </div>
 </form>
 <!-- Footer-->
-<%@include file="/includes/footer.jsp"%>
+<%--<%@include file="/includes/footer.jsp"%>--%>
 </body>
 </html>
 
