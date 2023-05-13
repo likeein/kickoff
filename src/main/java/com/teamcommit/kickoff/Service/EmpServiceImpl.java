@@ -22,7 +22,7 @@ public class EmpServiceImpl implements EmpService {
     public EmployerDO info_fix(EmployerDO employerDO) { return this.empMapper.info_fix(employerDO); }
 
     @Override
-    public List<BoardDO> getList(BoardDO boardDO) {
+    public List<BoardDO> getList(BoardDO boardDO) throws Exception{
         return empMapper.getList(boardDO);
     }
 
@@ -38,8 +38,8 @@ public class EmpServiceImpl implements EmpService {
     }
 
     @Override
-    public List<ReservationDO> getList() throws Exception {
-        return null;
+    public List<ReservationDO> selectReservation(ReservationDO reservationDO) throws Exception {
+        return empMapper.selectReservation(reservationDO);
     }
 
 }
