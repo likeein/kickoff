@@ -3,6 +3,7 @@ package com.teamcommit.kickoff.Controller;
 
 import com.teamcommit.kickoff.Common.CommandMap;
 import com.teamcommit.kickoff.Do.*;
+import com.teamcommit.kickoff.Service.BoardService;
 import com.teamcommit.kickoff.Service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,6 +23,7 @@ public class EmpController {
     @Qualifier("EmpService")
     @Autowired
     private EmpService empService;
+    private BoardService boardService;
 
     @GetMapping("/empReservation")
     public String empReservation(Model model) {
@@ -45,11 +47,11 @@ public class EmpController {
 
 
     @RequestMapping(value = "/myBoard", method = RequestMethod.GET)
-    public String Boardlist(@ModelAttribute("BoardDO") BoardDO BoardDO, HttpServletRequest request, Model model) {
+    public String boardList(@ModelAttribute("BoardDO") BoardDO BoardDO, HttpServletRequest request, Model model) throws Exception {
 
         String view = "/emp/myBoard";
 
-        List<BoardDO> boardList = empService.getList(BoardDO);
+        List<BoardDO> boardList = boardService.getList(BoardDO);
         model.addAttribute("boardList", boardList);
 
         return view;
@@ -93,7 +95,7 @@ public class EmpController {
     }
 
 
-    /* 풋살장 목록 */
+    /* 풋살장 목록
     @RequestMapping(value = "/empFutsalFix", method = RequestMethod.GET)
     public String Boardlist(@ModelAttribute("PlaceDO") PlaceDO PlaceDO, HttpServletRequest request, Model model) {
 
@@ -103,6 +105,6 @@ public class EmpController {
         model.addAttribute("boardList", boardList);
 
         return view;
-    }
+    } */
 
 }

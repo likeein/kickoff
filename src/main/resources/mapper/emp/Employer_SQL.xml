@@ -4,7 +4,7 @@
 <mapper namespace="com.teamcommit.kickoff.Service.EmpMapper">
 
     <!-- Employer Board List -->
-    <select id="getList" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.EmployerDO">
+    <select id="boardList" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.BoardDO">
         <![CDATA[
         SELECT
             *

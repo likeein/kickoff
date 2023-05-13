@@ -2,6 +2,7 @@ package com.teamcommit.kickoff.Controller;
 
 import com.teamcommit.kickoff.Common.CommandMap;
 import com.teamcommit.kickoff.Do.GameDO;
+import com.teamcommit.kickoff.Do.TeamDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import com.teamcommit.kickoff.Service.GameService;
@@ -9,7 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.support.RequestContextUtils;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -24,18 +27,48 @@ public class GameController {
     private GameService gameService;
 
     @GetMapping("/game")
-    public String gameDetail(@ModelAttribute("gameDO") GameDO gameDO, Model model){
-            String view = "/game/game";
+    public String gameDetail(@ModelAttribute("gameDO") GameDO gameDO, Model model) {
+        String view = "/game/game";
 
-            try {
-                List<GameDO> list = gameService.gameDetail(gameDO);
-                model.addAttribute("table", list);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return view;
+        try {
+            List<GameDO> list = gameService.gameDetail(gameDO);
+            model.addAttribute("table", list);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        return view;
     }
+
+
+    @RequestMapping("/gameScore")
+    public String gameScore(@ModelAttribute("gameDO") GameDO gameDO, @RequestParam("gameSeqno") int gameSeqno, Model model) throws Exception {
+        String view = "/game/gameScore";
+
+        try {
+            GameDO gameScoreDetail = gameService.getGameScoreDetail(gameSeqno);
+            model.addAttribute("gameScoreDetail", gameScoreDetail);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return view;
+    }
+
+    @RequestMapping("/gameUpdate")
+    public String insert(@ModelAttribute("gameDO") GameDO gameDO, HttpServletRequest request, Model model) throws Exception {
+        String view = "/game/gameUpdate";
+        String teamName = (String) request.getSession().getAttribute("teamName");
+        TeamDO teamDO = new TeamDO();
+        teamDO.setTeamName(teamName);
+
+        return view;
+    }
+}
+
+
+
+
 
     /*
     @RequestMapping("/gameDetail")

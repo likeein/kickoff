@@ -14,7 +14,7 @@ public interface EmpService {
 
     EmployerDO info_fix(EmployerDO employerDO);
 
-    List<BoardDO> getList(BoardDO boardDO);
+    List<BoardDO> getList(BoardDO boardDO) throws Exception;
 
     List<PlaceDO> getList(PlaceDO placeDO);
 

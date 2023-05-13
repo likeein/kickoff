@@ -10,7 +10,7 @@ import java.util.Map;
 public interface GameMapper {
     List<GameDO> gameDetail(GameDO gameDO);
 
-    List<GameDO> selectGameDetail();
+    GameDO getGameScoreDetail(int gameSeqno);
 
     Map<String, Object> selectMemInfo(Map<String, Object> map);
 }

@@ -23,8 +23,8 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public List<GameDO> selectGameDetail() throws Exception {
-        return gameMapper.selectGameDetail();
+    public GameDO getGameScoreDetail(int gameSeqno) throws Exception {
+        return gameMapper.getGameScoreDetail(gameSeqno);
     }
 
 
