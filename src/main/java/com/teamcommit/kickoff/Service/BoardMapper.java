@@ -20,4 +20,6 @@ public interface BoardMapper {
     public void getBoardDelete(int boardSeqno);
 
     public void reportBoard(ReportDO reportDO);
+
+    public Integer procGetMaxSeqno();
 }
