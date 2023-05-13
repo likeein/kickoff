@@ -18,7 +18,7 @@
         <![CDATA[
         INSERT INTO COMMUNITY_BOARD
         (
-            BOARD_SEQ,
+            BOARD_SEQNO,
             WRITE_TITLE,
             WRITE_ID,
             FILE_NAME,

@@ -28,4 +28,14 @@ public class LoginServiceImpl implements LoginService {
 
         return this.loginMapper.findUser_id(userName, userPhoneNumber);
     }
+
+    // 업체 회원 아이디 찾기
+    public String findEmp_id(String empName, String empNo) {
+        return this.loginMapper.findEmp_id(empName, empNo);
+    }
+
+    @Override
+    public UserDO procSetUserInfo(UserDO userDO) {
+        return this.loginMapper.procSetUserInfo(userDO);
+    }
 }

@@ -10,7 +10,7 @@
 <body style="overflow-y: hidden">
 <div class="container" id="container">
   <div class="form-container sign-up-container">
-    <form action="#">
+    <form form method="POST" name="findEmp" action="/findEmp">
       <h1>비밀번호 찾기</h1>
       <h4>업체 회원용</h4>
       <br />
@@ -21,7 +21,7 @@
     </form>
   </div>
   <div class="form-container sign-in-container">
-    <form action="#">
+    <form form method="POST" name="findEmp" action="/findEmp">
       <h1>아이디 찾기</h1>
       <h4>업체 회원용</h4>
       <br />

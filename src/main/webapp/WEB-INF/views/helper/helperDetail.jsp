@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Kick Off: 자유게시판 글 상세보기</title>
+<title>Kick Off: 용병 상세보기</title>
 <!-- include할 문서에 스타일, js -->
 <link rel="stylesheet"
 	href="/includes/css/style.css">
@@ -38,12 +38,12 @@
 	<div class="bg-dark py-5">
 		<div class="container px-4 px-lg-5 my-5">
 			<div class="text-center text-white">
-				<h1 class="display-4 fw-bolder">게시글 제목</h1>
-				<p class="lead fw-normal text-white-50 mb-0">작성자</p>
+				<h1 class="display-4 fw-bolder">${content.helperPlace}, ${content.helperPlaceName}</h1>
+				<p class="lead fw-normal text-white-50 mb-0">${content.helperId}</p>
 			</div>
 		</div>
 	</div>
-	<form role="form" action="/board/create_action" method="post">
+	<form role="form" method="post">
 		<div class="container">
 			<div class="table-responsive">
 				<table class="board_detail">
@@ -56,72 +56,33 @@
 					<tbody>
 						<tr>
 							<th scope="row">글 번호</th>
-							<td>글번호</td>
+							<td>${content.helperSeqno}</td>
 							<th scope="row">조회수</th>
 							<td>조회수</td>
 						</tr>
 						<tr>
 							<th scope="row">작성자</th>
-							<td>작성자</td>
-							<th scope="row">작성일</th>
-							<td>작성일</td>
+							<td>${content.helperId}</td>
+							<th scope="row">경기 날짜</th>
+							<td>${content.helperTime}</td>
 						</tr>
 						<tr>
-							<th scope="row">제목</th>
-							<td colspan="3"><input type="text" id="title" name="title"
-								value="제목제목" /></td>
-						</tr>
-						<tr>
-							<td colspan="4" class="view_text"><textarea title="내용"
-									id="contents" name="contents" value="내용내용"></textarea></td>
+							<td colspan="4" class="view_text">
+							포지션: ${content.helperPosition}<br />
+							경기형식: ${content.helperMatch}<br />
+								모집성별: ${content.helperGender}<br />
+								모집 인원 수: ${content.helperWant}<br />
+								모집 팀 레벨: ${content.helperTeamLevel}<br />
+								풋살장 이름: ${content.helperPlaceName}<br />
+								참가비: ${content.helperPrice}<br />
+							</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
-			<br />
-			<hr style="color: #B1D7B4;">
-			
-			<!-- 댓글 -->
-			<div class="reply">
-				<table id="tblListComment" class="table table-bordered">
-
-					<c:if test="${ clist.size() == 0 }">
-						<tr>
-							<td colspan="2">댓글이 없습니다.</td>
-						</tr>
-					</c:if>
-
-					<c:forEach items="${ clist }" var="cdto">
-						<tr>
-							<td>${ cdto.content } <span>${ cdto.name }. ${ cdto.regdate }</span>
-							</td>
-							<td><input type="button" value="삭제하기" class="btn btn-default"
-								onclick="location.href='/myapp/board/delcomment.do?seq=${ cdto.seq }&pseq=${ dto.seq }';" />
-							</td>
-						</tr>
-					</c:forEach>
-				</table>
-
-				<form method="POST" action="/myapp/board/addcomment.do">
-					<table id="tblAddComment" class="table table-bordered">
-						<tr>
-							<td>
-								<input type="text" name="content" id="content" class="form-control" required placeholder="댓글을 작성하세요. " />
-							</td>
-							<td>
-								<input type="button" id="btn btn-primary" class="btn btn-primary" value="댓글쓰기">
-							</td>
-						</tr>
-					</table>
-					<input type="hidden" name="pseq" value="${ dto.seq }" />
-				</form>
-			</div>
-
-			<div class="btn_boarddetail">
-				<button type="reset" class="btn_reset" onclick="location.href='/board';">목록</button>
-				<button class="btn_delete" onclick="location.href='/boardReport';">신고</button>
-			</div>
 		</div>
+		<button type = "button" class = "btn" id = "btn" onclick="location.href='/helperMessage';">신청</button>
+		<button type = "button" class = "btn" id = "btn" onclick="location.href='/helperList';">돌아가기</button>
 	</form>
 </body>
 </html>

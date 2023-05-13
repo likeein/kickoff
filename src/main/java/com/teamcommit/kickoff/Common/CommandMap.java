@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class CommandMap {
 
-    Map<String, Object> map = new HashMap<>();
+    Map<String, Object> map = new HashMap<String, Object>();
 
     public Object get(String key) {
         return map.get(key);
@@ -20,32 +20,12 @@ public class CommandMap {
         return map.remove(key);
     }
 
-    public boolean containsKey(String key) {
-        return map.containsKey(key);
-    }
-
-    public boolean containsValue(Object value) {
-        return map.containsValue(value);
-    }
-
     public void clear() {
         map.clear();
     }
 
-    public Set<Map.Entry<String, Object>> entrySet() {
-        return map.entrySet();
-    }
-
-    public Set<String> keySet() {
-        return map.keySet();
-    }
-
     public boolean isEmpty() {
         return map.isEmpty();
-    }
-
-    public void putAll(Map<? extends String, ?extends Object> m) {
-        map.putAll(m);
     }
 
     public Map<String, Object> getMap() {

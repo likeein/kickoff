@@ -56,32 +56,32 @@
 					<tbody>
 						<tr>
 							<th scope="row">풋살팀 이름</th>
-							<td></td>
+							<td>${teamContents.teamName}</td>
 							<th scope="row">모집 상태</th>
-							<td style="color: red; font-weight: bold;">모집 완료</td>
+							<td style="color: red; font-weight: bold;">${teamContents.teamStatus}</td>
 						</tr>
 						<tr>
 							<th scope="row">풋살팀 성별</th>
-							<td></td>
+							<td>${teamContents.teamGender}</td>
 							<th scope="row">모집 인원</th>
-							<td></td>
+							<td>${teamContents.teamNumber}</td>
 						</tr>
 						<tr>
 							<th scope="row">풋살팀 소속 지역</th>
-							<td></td>
+							<td>${teamContents.teamLocal}</td>
 							<th scope="row">풋살팀 등급</th>
-							<td></td>
+							<td>${teamContents.teamGrade}</td>
 						</tr>
 						<tr>
 							<th scope="row">모집 시작일</th>
-							<td></td>
+							<td>${teamContents.teamStartDate}</td>
 							<th scope="row">모집 종료일</th>
-							<td></td>
+							<td>${teamContents.teamEndDate}</td>
 						</tr>
 						<tr>
 							<th scope="row">기타 사항</th>
 							<td colspan="4" class="view_text"><textarea title="내용"
-									id="contents" name="contents" value="내용내용"></textarea></td>
+									id="contents" name="contents">${teamContents.teamOther}</textarea></td>
 						</tr>
 					</tbody>
 				</table>

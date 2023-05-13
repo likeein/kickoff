@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface TeamService {
 
-    List<TeamDO> getList(TeamDO teamDO);
+    List<TeamDO> getList(TeamDO teamDO) throws Exception;
 
 //    void insertTeam(TeamDO teamDO) throws Exception;
 
-//    TeamDO getTeamContents(String userName);
+    TeamDO getTeamContents(String teamName) throws Exception;
 
 //    void updateTeam(TeamDO teamDO) throws Exception;
 

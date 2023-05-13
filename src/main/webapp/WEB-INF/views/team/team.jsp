@@ -92,26 +92,23 @@
                                     <tbody>
                                     <c:forEach var="list" items="${teamList}">
                                         <tr>
-                                            <td><c:out value="${list.teamName}" /></td>
+                                            <td>
+                                                <a href="/teamDetail?teamName=${list.teamName}">
+                                                <c:out value="${list.teamName}" />
+                                            </td>
                                             <td><c:out value="${list.teamGender}" /></td>
                                             <td><c:out value="${list.teamNumber}" /></td>
                                             <td><c:out value="${list.teamStartDate}" /></td>
                                             <td><c:out value="${list.teamEndDate}" /></td>
-                                            <td><button class="btn-end">모집 완료</button></td>
+                                            <td>
+                                                <span class="${list.teamStatus eq '모집 중' ? 'team-ing' : 'team-end'}">${list.teamStatus}</span>
+                                            </td>
                                         </tr>
-<%--                                         <tr>--%>
-<%--                                            <th>4조 FC</th>--%>
-<%--                                            <th>혼성</th>--%>
-<%--                                            <th>5명</th>--%>
-<%--                                            <th>2023.04.04</th>--%>
-<%--                                            <th>2023.05.16</th>--%>
-<%--                                            <th><button class="btn-ing">모집 중</button></th>--%>
-<%--                                        </tr>--%>
                                     </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
-                            <button onclick="location.href='/teamInsert';">팀 등록</button>
+                            <a href="/teamInsert"><button type="insert" class="btn_insert">팀 등록</button></a>
                         </div>
                     </div>
 

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.teamcommit.kickoff.Service.HelperMapper">
+
+    <select id="selectHelper" parameterType="com.teamcommit.kickoff.Do.HelperDO" resultType="com.teamcommit.kickoff.Do.HelperDO">
+        <![CDATA[
+        SELECT *
+        FROM
+            HELPER_BOARD
+        ]]>
+    </select>
+
+    <select id = "selectReservation" parameterType="String" resultType="com.teamcommit.kickoff.Do.ReservationDO">
+        <![CDATA[
+        SELECT *
+        from
+            RESERVATION
+        where id = #{userId}
+        ]]>
+    </select>
+
+    <select id="selectHelperDetail" parameterType="com.teamcommit.kickoff.Do.HelperDO" resultType="com.teamcommit.kickoff.Do.HelperDO">
+        <![CDATA[
+        SELECT *
+        FROM
+            HELPER_BOARD
+        WHERE HELPER_SEQNO = #{helperSeqno}
+        ]]>
+    </select>
+
+    <insert id = "insertHelper" parameterType="com.teamcommit.kickoff.Do.HelperDO">
+        <![CDATA[
+        INSERT INTO HELPER_BOARD
+        (
+         HELPER_SEQNO,
+         HELPER_ID,
+         HELPER_POSITION,
+         HELPER_PRICE,
+         HELPER_MATCH,
+         HELPER_PLACE,
+         HELPER_GENDER,
+         HELPER_WANT,
+         HELPER_TIME,
+         HELPER_TEAMLEVEL,
+         HELPER_PLACE_NAME
+         )
+        VALUES(
+               HELPER_SEQ.NEXTVAL,
+               #{helperId},
+               #{helperPosition},
+               #{helperPrice},
+               #{helperMatch},
+               #{helperPlace},
+               #{helperGender},
+               #{helperWant},
+               #{helperTime},
+               #{helperTeamLevel},
+               #{helperPlaceName}
+        )
+        ]]>
+    </insert>
+</mapper>
