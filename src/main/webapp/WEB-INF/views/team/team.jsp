@@ -92,7 +92,10 @@
                                     <tbody>
                                     <c:forEach var="list" items="${teamList}">
                                         <tr>
-                                            <td><c:out value="${list.teamName}" /></td>
+                                            <td>
+                                                <a href="/teamDetail?teamName=${list.teamName}">
+                                                <c:out value="${list.teamName}" />
+                                            </td>
                                             <td><c:out value="${list.teamGender}" /></td>
                                             <td><c:out value="${list.teamNumber}" /></td>
                                             <td><c:out value="${list.teamStartDate}" /></td>

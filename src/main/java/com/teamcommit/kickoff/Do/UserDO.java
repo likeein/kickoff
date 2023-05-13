@@ -24,6 +24,12 @@ public class UserDO {
 	private String userPosition;
 	//사용자 정지 횟수
 	private int userStopCount;
+	// 사용자 예약 취소 횟수
+	private int userCancelCount;
+	// 사용자 상태
+	private String userStatus;
+	// 사용자 구분
+	private String userClassification;
 	
 	public String getUserId() {
 		return userId;
@@ -84,5 +90,23 @@ public class UserDO {
 	}
 	public void setUserStopCount(int userStopCount) {
 		this.userStopCount = userStopCount;
+	}
+	public int getUserCancelCount() {
+		return userCancelCount;
+	}
+	public void setUserCancelCount(int userCancelCount) {
+		this.userCancelCount = userCancelCount;
+	}
+	public String getUserStatus() {
+		return userStatus;
+	}
+	public void setUserStatus(String userStatus) {
+		this.userStatus = userStatus;
+	}
+	public String getUserClassification() {
+		return userClassification;
+	}
+	public void setUserClassification(String userClassification) {
+		this.userClassification = userClassification;
 	}
 }
