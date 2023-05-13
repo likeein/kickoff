@@ -19,6 +19,8 @@
             *
         FROM
             COMMUNITY_BOARD
+        WHERE
+            WRITE_ID = #{empId}
         ]]>
     </select>
 

@@ -58,7 +58,7 @@
 						 <a href="/logout"><span class="icon-lock"></span></a>
 					 </li>
 					 <li>
-						 <a href="/empFutsal"><span class="icon-person"></span></a>
+						 <a href="/empReservation"><span class="icon-person"></span></a>
 					 </li>
 				 </ul>
 			 </c:if>

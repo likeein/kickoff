@@ -5,6 +5,7 @@ import com.teamcommit.kickoff.Common.CommandMap;
 import com.teamcommit.kickoff.Do.*;
 import com.teamcommit.kickoff.Service.BoardService;
 import com.teamcommit.kickoff.Service.EmpService;
+import com.teamcommit.kickoff.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -23,7 +24,12 @@ public class EmpController {
     @Qualifier("EmpService")
     @Autowired
     private EmpService empService;
+
+    @Autowired
     private BoardService boardService;
+
+    @Autowired
+    private LoginService loginService;
 
     @GetMapping("/empReservation")
     public String empReservation(@ModelAttribute("reservationDO") ReservationDO reservationDO, Model model) {
@@ -44,6 +50,12 @@ public class EmpController {
     public String boardList(@ModelAttribute("boardDO") BoardDO BoardDO, HttpServletRequest request, Model model) throws Exception {
 
         String view = "/emp/myBoard";
+
+        //로그인한 업체ID로 로그인 정보 가져오기
+        String empId = (String) request.getSession().getAttribute("empId");
+        EmployerDO employerDO = new EmployerDO();
+        employerDO.setEmpId(empId);
+        employerDO = loginService.procSetEmployerInfo(employerDO);
 
         List<BoardDO> boardList = boardService.getList(BoardDO);
         model.addAttribute("boardList", boardList);
