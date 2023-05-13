@@ -2,10 +2,12 @@ package com.teamcommit.kickoff.Controller;
 
 import com.teamcommit.kickoff.Common.CommandMap;
 import com.teamcommit.kickoff.Do.GameDO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import com.teamcommit.kickoff.Service.GameService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,14 +20,21 @@ import java.util.Map;
 @Controller
 public class GameController {
 
-    @Resource(name = "gameService")
+    @Autowired
     private GameService gameService;
 
     @GetMapping("/game")
-    public String gameList() {
-        String view = "/game/game";
+    public String gameList(@ModelAttribute("gameDO") GameDO gameDO, Model model){
+            String view = "/game/game";
 
-        return view;
+            try {
+                List<GameDO> list = gameService.gameDetail(gameDO);
+                model.addAttribute("table", list);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return view;
+        }
     }
 
     /*
@@ -62,5 +71,3 @@ public class GameController {
         return mv;
     }
      */
-}
-

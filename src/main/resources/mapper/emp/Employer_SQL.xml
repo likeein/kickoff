@@ -54,8 +54,13 @@
                     PLACE_ADDRESS,
                     PLACE_PHONE_NUMBER,
                     PLACE_HOMEPAGE,
+                    PLACE_GROUND,
                     PLACE_SIZE,
+                    PLACE_FORM,
+                    PLACE_LIGHT,
+                    PLACE_OPEN,
                     PLACE_PRICE,
+                    PLACE_TIME,
                     PLACE_OTHER
                 )
                 VALUES (
@@ -66,7 +71,7 @@
                     #{PLACE_PHONE_NUMBER},
                     #{PLACE_HOMEPAGE},
                     #{PLACE_GROUND},
-                    #{RESERVATION_COMMENT},
+                    #{PLACE_PRICE},
                     SYSDATE
                 )
             ]]>

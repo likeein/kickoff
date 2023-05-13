@@ -2,6 +2,8 @@ package com.teamcommit.kickoff.Service;
 
 import com.teamcommit.kickoff.Dao.GameDAO;
 import com.teamcommit.kickoff.Do.GameDO;
+import com.teamcommit.kickoff.Do.HelperDO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -15,9 +17,12 @@ public class GameServiceImpl implements GameService {
     @Resource(name="gameDAO")
     private GameDAO gameDAO;
 
-    @Override
-    public void gameDetail(Map<String, Object> map, HttpServletRequest request) throws Exception {
+    @Autowired
+    private GameMapper gameMapper;
 
+    @Override
+    public List<GameDO> gameDetail(GameDO gameDO) throws Exception {
+        return gameMapper.gameDetail(gameDO);
     }
 
     @Override
