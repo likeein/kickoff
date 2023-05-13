@@ -3,8 +3,17 @@
 
 <mapper namespace="com.teamcommit.kickoff.Service.EmpMapper">
 
+    <select id="selectReservation" parameterType="com.teamcommit.kickoff.Do.ReservationDO" resultType="com.teamcommit.kickoff.Do.ReservationDO">
+        <![CDATA[
+        SELECT
+            *
+        FROM
+            RESERVATION
+        ]]>
+    </select>
+
     <!-- Employer Board List -->
-    <select id="boardList" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.BoardDO">
+    <select id="getList" parameterType="com.teamcommit.kickoff.Do.BoardDO" resultType="com.teamcommit.kickoff.Do.BoardDO">
         <![CDATA[
         SELECT
             *

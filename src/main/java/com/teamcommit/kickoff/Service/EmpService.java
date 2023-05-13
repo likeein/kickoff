@@ -20,5 +20,5 @@ public interface EmpService {
 
     void insertFutsal(Map<String, Object> map, HttpServletRequest request) throws Exception;
 
-    List<ReservationDO> getList() throws Exception;
+    List<ReservationDO> selectReservation(ReservationDO reservationDO) throws Exception;
 }
