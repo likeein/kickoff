@@ -18,4 +18,7 @@ public interface HelperService {
 
     public void insertMessage(MessageDO messageDO);
 
+    public void updateStatus();
+
+
 }

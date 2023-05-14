@@ -1,6 +1,5 @@
 package com.teamcommit.kickoff.Controller;
 
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonValueFormatVisitor;
 import com.teamcommit.kickoff.Do.HelperDO;
 import com.teamcommit.kickoff.Do.MessageDO;
 import com.teamcommit.kickoff.Do.ReservationDO;
@@ -12,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.time.LocalDate;
 import java.util.*;
 
 @Controller
@@ -28,6 +26,8 @@ public class HelperController {
         String view = "/helper/helperList";
 
         try {
+
+            helperService.updateStatus();
             List<HelperDO> list = helperService.selectHelper(helperDO);
             model.addAttribute("table", list);
         }

@@ -83,5 +83,14 @@
         ]]>
     </insert>
 
+    <update id = "updateStatus" parameterType="String">
+        <![CDATA[
+        UPDATE HELPER_BOARD
+        SET HELPER_STATUS = '마감'
+        WHERE HELPER_SEQNO = (SELECT HELPER_SEQNO
+                              FROM MESSAGE
+                              WHERE HELPER_YN = 'Y')
+            ]]>
+    </update>
 
 </mapper>
