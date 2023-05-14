@@ -59,7 +59,7 @@
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
                                 <p>풋살장<span>*</span></p>
-                                <input type="text" class="inputPlaceName" id="inputPlaceName" name="reservationPlaceName" onChange="getPlaceName()" placeholder="풋살장 이름을 입력해주세요."/>
+                                <input type="text" class="inputPlaceName" id="inputPlaceName" value="${placeInfo.placeName}" readonly/>
                            	</div>
                           	<div class="checkout__input">
                                 <p>코트<span>*</span></p>
@@ -74,7 +74,7 @@
                             </div>
                            	<div class="checkout__input">
                                 <p>위치<span>*</span></p>
-                                <input type="text" class="inputAddress" id="inputAddress" name="reservationPlaceAddress" onChange="getAddress()"placeholder="풋살장 위치를 입력해주세요.">
+                                <input type="text" class="inputAddress" id="inputAddress" value="${placeInfo.placeAddress} readonly">
                             </div>
                             <div class="checkout__input">
                                 <p>형태<span>*</span></p>
@@ -163,9 +163,9 @@
 									Title<span>Content</span>
 								</div>
 								<ul>
-									<li>풋살장<span id="placeName"></span></li>
+									<li>풋살장<span>${placeInfo.placeName}</span></li>
 									<li>코트<span id="court"></span></li>
-									<li>위치<span id="address"></span></li>
+									<li>위치<span>${placeInfo.placeAddress}</span></li>
 									<li>형태<span id="placeForm"></span></li>
                                     <li>추천 경기<span id="headcount"></span></li>
 									<li>예약 날짜<span id="date"></span></li>
@@ -181,8 +181,8 @@
                                 <input type="hidden" name="reservationPlaceSize" value="${placeInfo.placeSize}" />
                                 <input type="hidden" name="reservationPlaceGround" value="${placeInfo.placeGround}" />
                                 <input type="hidden" name="reservationPlaceParking" value="${placeInfo.placeParking}" />
-								<input type="submit" id="insert" class="site-btn-insert" value="등록"></input>
-                               <%-- <a href="#this" id="insert" class="site-btn-insert">등록</a>--%>
+
+								<input type="submit" id="insert" class="site-btn-insert" value="등록"/>
                                 <a href="/reservation" id="cancle" class="site-btn-cancle">취소</a>
 							</div>
 						</div>

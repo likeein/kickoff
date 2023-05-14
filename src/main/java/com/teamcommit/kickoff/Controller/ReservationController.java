@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -66,15 +67,13 @@ public class ReservationController {
         return mv;
     }
 
-    @RequestMapping(value = "/reservationDetail", method=RequestMethod.GET)
-    public String reservationDetail(@ModelAttribute("reservationDO") ReservationDO reservationDO, @RequestParam("reservationNo") int reservationNo, Model model) throws Exception {
+    @RequestMapping(value = "/reservationDetail")
+    public String reservationDetail(@ModelAttribute("reservationDO") ReservationDO reservationDO, @RequestParam("reservationNo") int reservationNo, Model model, HttpServletRequest request) throws Exception {
 
         String view = "/reservation/reservationDetail";
 
         ReservationDO reservationDetail = reservationService.selectReservationDetail(reservationNo);
         model.addAttribute("reservationDetail", reservationDetail);
-
-        System.out.println(model);
 
         return view;
     }
@@ -90,23 +89,20 @@ public class ReservationController {
     }
 
     @RequestMapping(value="/reservationUpdate")
-    public String reservationUpdate(@ModelAttribute("reservationDO") ReservationDO reservationDO, HttpServletRequest request, RedirectAttributes redirect , Model model){
+    public ModelAndView reservationUpdate(@ModelAttribute("reservationDO") ReservationDO reservationDO, @RequestParam("reservationNo") int reservationNo) throws Exception {
+        ModelAndView mv = new ModelAndView("redirect:/reservationDetail?reservationNo="+reservationNo);
+
+        reservationService.updateReservation(reservationDO);
+
+        return mv;
+    }
+
+    @RequestMapping(value = "/reservationRequest")
+    public String reservationRequestForm(@ModelAttribute("reservationDO") ReservationDO reservationDO, HttpServletRequest request, Model model) throws Exception {
+        String view = "/reservation/reservationRequest";
 
 
-        try {
-
-            reservationService.updateReservation(reservationDO);
-            redirect.addFlashAttribute("redirect", reservationDO.getReservationNo());
-
-            redirect.addFlashAttribute("msg", "풋살장 예약 수정되었습니다.");
-
-        } catch (Exception e) {
-
-            redirect.addFlashAttribute("msg", "오류가 발생되었습니다.");
-
-        }
-
-        return "redirect:/reservationDetail?reservationNo=" + reservationDO.getReservationNo();
+        return view;
     }
 
 }

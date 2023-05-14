@@ -83,23 +83,21 @@
     <update id="updateReservation" parameterType="com.teamcommit.kickoff.Do.ReservationDO">
         <![CDATA[
         UPDATE
-            RESERVATION_COURT_NAME,
-            RESERVATION_COURT_FORM,
-            RESERVATION_DATE,
-            RESERVATION_START_TIME,
-            RESERVATION_END_TIME,
-            RESERVATION_STATUS,
-            RESERVATION_PRICE,
-            RESERVATION_COMMENT
+            RESERVATION
         SET
-            #{reservationCourtname},
-            #{reservationCourtForm},
-            #{reservationDate},
-            #{reservationStartTime},
-            #{reservationEndTime},
-            #{reservationStatus},
-            #{reservationPrice},
-            #{reservationComment}
+            RESERVATION_PLACE_NAME = #{reservationPlaceName},
+            RESERVATION_COURT_NAME = #{reservationCourtName},
+            RESERVATION_PLACE_ADDRESS = #{reservationPlaceAddress},
+            RESERVATION_COURT_FORM = #{reservationCourtForm},
+            RESERVATION_HEADCOUNT = #{reservationHeadcount},
+            RESERVATION_DATE = #{reservationDate},
+            RESERVATION_START_TIME = #{reservationStartTime},
+            RESERVATION_END_TIME = #{reservationEndTime},
+            RESERVATION_STATUS = #{reservationStatus},
+            RESERVATION_PRICE = #{reservationPrice},
+            RESERVATION_COMMENT = #{reservationComment},
+            RESERVATION_REG_DATE =  #{reservationRegDate},
+            RESERVATION_EDIT_DATE = SYSDATE
         WHERE
             RESERVATION_NO = #{reservationNo}
         ]]>
@@ -110,9 +108,11 @@
         <![CDATA[
         SELECT
             PLACE_ID,
+            PLACE_NAME,
             PLACE_SIZE,
             PLACE_GROUND,
             PLACE_PARKING,
+            PLACE_ADDRESS,
             IMG_NAME,
             IMG_PATH
         FROM
