@@ -38,7 +38,7 @@
 			<div class="root-container">
 				<!-- 추후 풋살장이미지 경로 변경해야함 -->
 				<div class="picture">
-					<img class="mainImage" src="/reservation/images/court.jpg">
+					<img class="mainImage" src="${reservationDetail.imgPath}${reservationDetail.imgName}">
 				</div>
 			</div>
 
@@ -47,11 +47,11 @@
 				<div class="container p-0 px-md-3">
 					<div class="ground-title-content">
 						<div class="address-wrap">
-							<h4 class="title">강서 화곡 신정 FC</h4>
-							<p>서울 강서구 까치산로28길 33-15</p>
+							<h4 class="title">${reservationDetail.reservationPlaceName}</h4>
+							<p>${reservationDetail.reservationPlaceAddress}</p>
 						</div>
 						<div class="time-price-wrap">
-							<p>5월 3일 ${reservationDetail.reservationStartTime}:00~${reservationDetail.reservationEndTime}:00</p>
+							<p>${reservationDetail.reservationDate} ${reservationDetail.reservationStartTime}:00~${reservationDetail.reservationEndTime}:00</p>
 							<h3 class="price">대관비 ${reservationDetail.reservationPrice}원</h3>
 						</div>
 					</div>
@@ -72,7 +72,7 @@
 							<div class="img-wrap">
 								<img src="/reservation/images/size.png">
 							</div>
-							<b class="text-dark">규격</b><small>30 x 27</small>
+							<b class="text-dark">규격</b><small>${placeInfo.placeSize}</small>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">

@@ -17,8 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class ReservationController {
@@ -43,42 +44,41 @@ public class ReservationController {
     }
 
     @RequestMapping(value = "/reservationInsertForm")
-    public String reservationInsertForm(@ModelAttribute("reservationDO") ReservationDO reservationDO,  @RequestParam("placeId") int placeId, HttpServletRequest request, Model model) throws Exception {
+    public String reservationInsertForm(@ModelAttribute("reservationDO") ReservationDO reservationDO, HttpServletRequest request, Model model) throws Exception {
         String view = "/reservation/reservationInsert";
 
-/*        String empId = (String) request.getSession().getAttribute("empId");
+        String empId = (String) request.getSession().getAttribute("empId");
         EmployerDO employerDO = new EmployerDO();
         employerDO.setEmpId(empId);
-        employerDO = loginService.procSetEmployerInfo(employerDO);*/
+        employerDO = loginService.procSetEmployerInfo(employerDO);
 
-/*        PlaceDO placeInfo = reservationService.selectPlaceInfo(placeId);
-        model.addAttribute("placeInfo", placeInfo);*/
-
-        System.out.println(model);
+        PlaceDO imgInfo = reservationService.selectImgInfo(employerDO.getEmpId());
+        model.addAttribute("imgInfo", imgInfo);
 
         return view;
     }
 
     @RequestMapping("/reservationInsert")
-    public ModelAndView reservationInsert(@ModelAttribute("reservationDO") ReservationDO reservationDO, HttpSession session) throws Exception {
+    public ModelAndView reservationInsert(@ModelAttribute("reservationDO") ReservationDO reservationDO, HttpServletRequest request, Model model) throws Exception {
 
         ModelAndView mv = new ModelAndView("redirect:/reservation");
 
         reservationService.insertReservation(reservationDO);
 
-
         return mv;
     }
 
     @RequestMapping("/reservationDetail")
-    public String reservationDetail(@ModelAttribute("reservationDO") ReservationDO reservationDO, @RequestParam("reservationNo") int reservationNo, Model model) throws Exception {
+    public String reservationDetail(@ModelAttribute("reservationDO") ReservationDO reservationDO, @RequestParam("reservationNo") int reservationNo, @RequestParam("placeId") int placeId, Model model) throws Exception {
 
         String view = "/reservation/reservationDetail";
 
         ReservationDO reservationDetail = reservationService.selectReservationDetail(reservationNo);
         model.addAttribute("reservationDetail", reservationDetail);
 
-        System.out.println(model);
+        PlaceDO placeInfo = reservationService.selectPlaceInfo(placeId);
+        model.addAttribute("placeInfo", placeInfo);
+
         return view;
     }
 

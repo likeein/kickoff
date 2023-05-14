@@ -741,6 +741,8 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .inputPrice:hover,
+.inputPlaceName:hover,
+.inputAddress:hover,
 select:hover,
 .etc:hover,
 .form-control:hover {
@@ -748,6 +750,8 @@ select:hover,
 }
 
 .inputPrice:focus,
+.inputPlaceName:focus,
+.inputAddress:focus,
 select:focus,
 .etc:focus,
 .form-control:focus {
@@ -757,6 +761,8 @@ select:focus,
 }
 
 .inputPrice:disabled,
+.inputPlaceName:disabled,
+.inputAddress:disabled,
 select:disabled,
 .etc:disabled,
 .form-control:disabled {
@@ -824,7 +830,7 @@ select:disabled,
 	margin-bottom: 25px;
 }
 
-.checkout__order a.site-btn-insert {
+.checkout__order input.site-btn-insert {
 	font-size: 15px;
 	letter-spacing: 2px;
 	width: 40%;

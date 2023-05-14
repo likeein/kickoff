@@ -33,8 +33,17 @@ public class PlaceDO {
 	//이미지 파일 저장 경로
 	private String imgPath;
 
+	private String empId;
+
 	public PlaceDO() {
 
+	}
+	public String getEmpId() {
+		return empId;
+	}
+
+	public void setEmpId(String empId) {
+		this.empId = empId;
 	}
 
 	public int getPlaceId() {

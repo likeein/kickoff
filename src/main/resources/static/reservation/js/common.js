@@ -12,7 +12,13 @@ function selectCourt(e) {
 	const text = e.options[e.selectedIndex].text;
 
 	document.getElementById('court').innerText = text;
-	document.getElementById('court2').innerText = text;
+}
+
+/* headcount */
+function selectHeadcount(e) {
+	const text = e.options[e.selectedIndex].text;
+
+	document.getElementById('headcount').innerText = text;
 }
 
 /* placeForm */
@@ -40,7 +46,21 @@ function getStatus(event) {
 }
 
 /* input text */
-/* price*/
+/* place name */
+function getPlaceName()  {
+	const text = document.getElementById('inputPlaceName').value;
+
+	document.getElementById('placeName').innerText = text;
+}
+
+/* place address */
+function getAddress()  {
+	const text = document.getElementById('inputAddress').value;
+
+	document.getElementById('address').innerText = text;
+}
+
+/* price */
 function getPrice()  {
 	const text = document.getElementById('inputPrice').value;
 	

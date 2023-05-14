@@ -19,8 +19,8 @@
         <![CDATA[
             INSERT INTO RESERVATION (
                 RESERVATION_NO,
-            /*    USER_ID,
-                PLACE_ID, */
+                EMP_ID,
+                PLACE_ID,
                 RESERVATION_PLACE_NAME,
                 RESERVATION_PLACE_ADDRESS,
                 RESERVATION_COURT_NAME,
@@ -31,10 +31,15 @@
                 RESERVATION_STATUS,
                 RESERVATION_PRICE,
                 RESERVATION_COMMENT,
-                RESERVATION_REG_DATE
+                RESERVATION_HEADCOUNT,
+                RESERVATION_REG_DATE,
+                IMG_NAME,
+                IMG_PATH
             )
             VALUES (
                 RESERVATION_SEQ.NEXTVAL,
+                #{empId},
+                #{placeId},
                 #{reservationPlaceName},
                 #{reservationPlaceAddress},
                 #{reservationCourtName},
@@ -45,7 +50,10 @@
                 '예약대기',
                 #{reservationPrice},
                 #{reservationComment},
-                SYSDATE
+                #{reservationHeadcount},
+                SYSDATE,
+                #{imgName},
+                #{imgPath}
             )
         ]]>
     </insert>
@@ -87,7 +95,7 @@
         ]]>
     </update>
 
-    <!-- Place info -->
+    <!-- place info -->
     <select id="selectPlaceInfo" parameterType="com.teamcommit.kickoff.Do.PlaceDO" resultType="com.teamcommit.kickoff.Do.PlaceDO">
         <![CDATA[
         SELECT *
@@ -95,6 +103,20 @@
             PLACE
         WHERE
             PLACE_ID = #{placeId}
+        ]]>
+    </select>
+
+    <!-- img info -->
+    <select id="selectImgInfo" parameterType="com.teamcommit.kickoff.Do.PlaceDO" resultType="com.teamcommit.kickoff.Do.PlaceDO">
+        <![CDATA[
+        SELECT
+            IMG_NAME,
+            IMG_PATH,
+            PLACE_ID
+        FROM
+            PLACE
+        WHERE
+            EMP_ID = #{empId}
         ]]>
     </select>
 
