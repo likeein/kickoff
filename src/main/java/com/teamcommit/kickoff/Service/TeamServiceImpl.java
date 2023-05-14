@@ -20,13 +20,19 @@ import java.util.List;
         }
 
         @Override
-        public TeamDO getTeamContents(String teamName) throws Exception {
-            return teamMapper.getTeamContents(teamName);
+        public TeamDO getTeamContents(int teamSeqNo) throws Exception {
+            return teamMapper.getTeamContents(teamSeqNo);
         }
 
         @Override
         public void insertTeam(TeamDO teamDO) throws Exception {
             teamMapper.insertTeam(teamDO);
+        }
+
+        @Override
+        public List<TeamDO> rankList(TeamDO teamDO) throws Exception
+        {
+            return teamMapper.rankList(teamDO);
         }
 //
 //        @Override

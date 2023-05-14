@@ -144,7 +144,7 @@
                                                          <span class="
                                                              <c:choose>
                                                                 <c:when test="${list.userClassification == 'Admin'}">role admin</c:when>
-                                                                <c:when test="${list.userClassification == 'Master'}">role master</c:when>
+                                                                <c:when test="${list.userClassification == 'Leader'}">role master</c:when>
                                                                 <c:when test="${list.userClassification == 'User'}">role user</c:when>
                                                                 <c:when test="${list.userClassification == 'Emp'}">role emp</c:when>
                                                                 <c:otherwise>default-role</c:otherwise>

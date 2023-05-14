@@ -19,6 +19,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
@@ -46,10 +48,10 @@ public class TeamController {
 
     // 팀 게시글 상세보기
     @RequestMapping( "/teamDetail")
-    public String teamDetail(@ModelAttribute("teamDO") TeamDO teamDO, @RequestParam(value = "teamName") String teamName, Model model) throws Exception {
+    public String teamDetail(@ModelAttribute("teamDO") TeamDO teamDO, @RequestParam("teamSeqNo") int teamSeqNo, HttpServletRequest request, Model model) throws Exception {
         String view = "/team/teamDetail";
 
-        TeamDO teamContents = teamService.getTeamContents(teamName);
+        TeamDO teamContents = teamService.getTeamContents(teamSeqNo);
         model.addAttribute("teamContents", teamContents);
 
         return view;
@@ -61,26 +63,32 @@ public class TeamController {
         String view = "/team/teamInsert";
 
         if(session.getAttribute("userId") == null) {
-            model.addAttribute("script", "alert('로그인 후 이용이 가능합니다.');");
+            model.addAttribute("script", "alert('로그인 후 이용하실 수 있습니다.');");
             view = "login/loginAll";
         }
         else if (session.getAttribute("userId") != null) {
-            try {
                 teamService.insertTeam(teamDO);
                 model.addAttribute("script", "alert('팀 등록을 완료하였습니다.');");
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-                model.addAttribute("script", "alert('중복된 값이거나 양식이 올바르지 않습니다.');");
-            }
         }
         return view;
     }
 
     // 팀 랭킹
-    @GetMapping("/teamRank")
-    public String teamRank() {
+    @RequestMapping(value = "/teamRank", method = RequestMethod.GET)
+    public String TeamRank(@ModelAttribute("teamDO") TeamDO teamDO, HttpServletRequest request, Model model) throws Exception {
+
         String view = "/team/teamRank";
+
+        List<TeamDO> teamRankList = teamService.rankList(teamDO);
+        model.addAttribute("teamRankList", teamRankList);
+
+        return view;
+    }
+
+    // 팀 지원
+    @GetMapping("/teamApply")
+    public String teamApply() {
+        String view = "/team/teamApply";
 
         return view;
     }

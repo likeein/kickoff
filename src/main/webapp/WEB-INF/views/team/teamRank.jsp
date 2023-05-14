@@ -60,16 +60,26 @@
                     </tr>
                   </thead>
                   <tbody>
-                  <c:forEach var="list" items="${teamList}">
-                    <tr>            
+                  <c:forEach var="list" items="${teamRankList}">
+                    <tr>
                       <td>
                         <p class="font-weight-bold mb-0">
-                          <img src="/team/img/free-icon-gold-medal-1910528.png" alt="Gold Medal"
-                               c:if="${list.teamRank == 1}"/>
-                          <img src="/team/img/free-icon-silver-medal-1910534.png" alt="Silver Medal"
-                               c:if="${list.teamRank == 2}"/>
-                          <img src="/team/img/free-icon-bronze-medal-1910542.png" alt="Bronze Medal"
-                               c:if="${list.teamRank == 3}"/>
+                          <c:choose>
+                            <c:when test="${list.teamRank == 1}">
+                              <img src="/team/img/free-icon-gold-medal-1910528.png" alt="Gold Medal"/>
+                            </c:when>
+                            <c:when test="${list.teamRank == 2}">
+                              <img src="/team/img/free-icon-silver-medal-1910534.png" alt="Silver Medal"/>
+                            </c:when>
+                            <c:when test="${list.teamRank == 3}">
+                              <img src="/team/img/free-icon-bronze-medal-1910542.png" alt="Bronze Medal"/>
+                            </c:when>
+                            <c:otherwise>
+                             <span style="padding-right: 11px;">
+                              <c:out value="${list.teamRank}" />
+                            </span>
+                            </c:otherwise>
+                          </c:choose>
                         </p>
                       </td>
                       <td class="align-middle text-center text-sm"> <!-- width 값 조정 -->
