@@ -18,6 +18,7 @@
     <insert id="insertReservation" parameterType="com.teamcommit.kickoff.Do.ReservationDO">
         <![CDATA[
             INSERT INTO RESERVATION (
+                RESERVATION_TYPE,
                 RESERVATION_NO,
                 EMP_ID,
                 PLACE_ID,
@@ -33,10 +34,15 @@
                 RESERVATION_COMMENT,
                 RESERVATION_HEADCOUNT,
                 RESERVATION_REG_DATE,
+                RESERVATION_CANCEL,
+                RESERVATION_PLACE_SIZE,
+                RESERVATION_PLACE_GROUND,
+                RESERVATION_PLACE_PARKING,
                 IMG_NAME,
                 IMG_PATH
             )
             VALUES (
+                'EMP',
                 RESERVATION_SEQ.NEXTVAL,
                 #{empId},
                 #{placeId},
@@ -52,6 +58,10 @@
                 #{reservationComment},
                 #{reservationHeadcount},
                 SYSDATE,
+                'N',
+                #{reservationPlaceSize},
+                #{reservationPlaceGround},
+                #{reservationPlaceParking},
                 #{imgName},
                 #{imgPath}
             )
@@ -98,26 +108,36 @@
     <!-- place info -->
     <select id="selectPlaceInfo" parameterType="com.teamcommit.kickoff.Do.PlaceDO" resultType="com.teamcommit.kickoff.Do.PlaceDO">
         <![CDATA[
-        SELECT *
-        FROM
-            PLACE
-        WHERE
-            PLACE_ID = #{placeId}
-        ]]>
-    </select>
-
-    <!-- img info -->
-    <select id="selectImgInfo" parameterType="com.teamcommit.kickoff.Do.PlaceDO" resultType="com.teamcommit.kickoff.Do.PlaceDO">
-        <![CDATA[
         SELECT
+            PLACE_ID,
+            PLACE_SIZE,
+            PLACE_GROUND,
+            PLACE_PARKING,
             IMG_NAME,
-            IMG_PATH,
-            PLACE_ID
+            IMG_PATH
         FROM
             PLACE
         WHERE
             EMP_ID = #{empId}
         ]]>
     </select>
+
+<!--    &lt;!&ndash; place info &ndash;&gt;
+    <select id="selectPlaceInfo" parameterType="com.teamcommit.kickoff.Do.PlaceDO" resultType="com.teamcommit.kickoff.Do.PlaceDO">
+        <![CDATA[
+        SELECT *
+        FROM
+            PLACE
+        WHERE
+            PLACE_ID = (
+                        SELECT
+                            PLACE_ID
+                        FROM
+                            RESERVATION
+                        WHERE
+                            RESERVATION_NO = #{reservationNo} AND RESERVATION_CANCEL = 'N'
+                        )
+        ]]>
+    </select>-->
 
 </mapper>

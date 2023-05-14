@@ -16,12 +16,6 @@ public interface ReservationService {
 
     void updateReservation(ReservationDO reservationDO) throws Exception;
 
-    PlaceDO selectImgInfo(String empId) throws Exception;
-
-    PlaceDO selectPlaceInfo(int placeId) throws Exception;
-
-    /*    Map<String, Object> selectReservationDetail(Map<String, Object> map) throws Exception;*/
-
-    /*Map<String, Object> selectMemInfo(Map<String, Object> map) throws Exception;*/
+    PlaceDO selectPlaceInfo(String empId) throws Exception;
 
 }
