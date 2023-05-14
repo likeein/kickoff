@@ -30,4 +30,9 @@ public interface BoardMapper {
     public void procAddViewCount(BoardDO boardDO);
 
     public  void insertReply(ReplyDO replyDO);
+
+    public List<ReplyDO> getreplyList(int boardSeqno);
+
+    public void getReplyDelete(int replyNo);
+
 }

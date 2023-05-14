@@ -32,4 +32,9 @@ public interface BoardService {
     void procAddViewCount(BoardDO boardDO);
 
     void insertReply(ReplyDO replyDO) throws Exception;
+
+    List<ReplyDO> getreplyList(int boardSeqno) throws Exception;
+
+    void getReplyDelete(int replyNo) throws Exception;
+
 }

@@ -12,16 +12,16 @@
 				<h1>업체 회원가입</h1>
 				<br /> <br />
 				<div class="signupform" style="overflow: auto; width: 350px; height: 350px; background: #F7F6DC​; border-radius: 10px;">
-					<input type="text" placeholder="아이디" />
+					<input type="text" id="empId" name="empId" placeholder="아이디" />
 					<button>중복확인</button>
-					<input type="password" placeholder="비밀번호" /> 
-					<input type="password" placeholder="비밀번호 확인" /> 
-					<input type="text" placeholder="업체 이름" /> 
-					<input type="text" placeholder="업체 번호" />
-					<input type="text" placeholder="업체 주소" /> 
-					<input type="email"placeholder="이메일" /> 
-					<input type="date" placeholder="업체 등록일" />
-					<input type="text" placeholder="사업자 번호" />
+					<input type="password" id="empPw" name="empPw" placeholder="비밀번호" />
+					<input type="password" id="empPw" name="empPw" placeholder="비밀번호 확인" />
+					<input type="text" id="empName" name="empName" placeholder="업체 이름" />
+					<input type="text" id="empPhoneNumber" name="empPhoneNumber" placeholder="업체 번호" />
+					<input type="text" id="empAddress" name="empAddress" placeholder="업체 주소" />
+					<input type="email" id="empEmail" name="empEmail" placeholder="이메일" />
+					<input type="date" id="empDate" name="empDate" placeholder="업체 등록일" />
+					<input type="text" id="empNo" name="empNo" placeholder="사업자 번호" />
 					<button>사업자 번호 인증</button>
 				</div>
 				<br />

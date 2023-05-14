@@ -129,6 +129,20 @@
         ]]>
     </update>
 
+    <!-- Reply List -->
+    <select id="getreplyList" parameterType="com.teamcommit.kickoff.Do.ReplyDO" resultType="com.teamcommit.kickoff.Do.ReplyDO">
+        <![CDATA[
+        SELECT
+            *
+        FROM
+            REPLY
+        WHERE
+            BOARD_SEQNO = #{boardSeqno}
+        ORDER BY
+            REPLY_NO ASC
+        ]]>
+    </select>
+
     <!-- Reply Insert -->
     <insert id="insertReply" parameterType="com.teamcommit.kickoff.Do.ReplyDO">
         <![CDATA[
@@ -150,4 +164,25 @@
             )
         ]]>
     </insert>
+
+    <!-- Reply Delete -->
+    <delete id="getReplyDelete" parameterType="com.teamcommit.kickoff.Do.ReplyDO" >
+    <![CDATA[
+        DELETE
+        FROM
+            REPLY
+        WHERE
+            REPLY_NO = #{replyNo}
+        ]]>
+	</delete>
+
+    <!-- Reply COUNT
+    <select id="getReplyDelete" parameterType="com.teamcommit.kickoff.Do.ReplyDO" >
+    <![CDATA[
+        SELECT COUNT(*)
+        FROM REPLY
+        WHERE BOARD_SEQNO = #{boardSeqno}
+        ]]>
+	</select>-->
+
 </mapper>
