@@ -1,7 +1,9 @@
 package com.teamcommit.kickoff.Service;
 
 import com.teamcommit.kickoff.Do.BoardDO;
+import com.teamcommit.kickoff.Do.ReplyDO;
 import com.teamcommit.kickoff.Do.ReportDO;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 import java.util.Map;
@@ -23,6 +25,11 @@ public interface BoardService {
     // 가장큰 시퀀스 값 가져오기
     Integer procGetMaxSeqno() throws Exception;
 
+    // 가장큰 시퀀스 값 가져오기
+    Integer procGetMaxNo() throws Exception;
+
     //조회수 증가
     void procAddViewCount(BoardDO boardDO);
+
+    void insertReply(ReplyDO replyDO) throws Exception;
 }

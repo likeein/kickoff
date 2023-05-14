@@ -78,7 +78,7 @@
         FROM
             COMMUNITY_BOARD
         WHERE
-            BOARD_SEQNO =#{boardSeqno}
+            BOARD_SEQNO = #{boardSeqno}
         ]]>
 	</delete>
 
@@ -109,6 +109,15 @@
         ]]>
     </select>
 
+    <select id="procGetMaxNo" resultType="int">
+        <![CDATA[
+        SELECT
+            MAX(REPLY_NO)
+        FROM
+            REPLY
+        ]]>
+    </select>
+
     <update id="procAddViewCount" parameterType="com.teamcommit.kickoff.Do.BoardDO">
         <![CDATA[
         UPDATE
@@ -119,4 +128,26 @@
             BOARD_SEQNO = #{boardSeqno}
         ]]>
     </update>
+
+    <!-- Reply Insert -->
+    <insert id="insert_reply" parameterType="com.teamcommit.kickoff.Do.ReplyDO">
+        <![CDATA[
+        INSERT INTO REPLY
+        (
+            REPLY_NO,
+            REPLY_ID,
+            BOARD_SEQNO,
+            REPLY_CONTENT,
+            REPLY_ID
+        )
+        VALUES
+            (
+                REPLY_SEQ.NEXTVAL,
+                #{replyId},
+                #{boardSeqno},
+                #{replyContent},
+                #{replyIdEmp}
+            )
+        ]]>
+    </insert>
 </mapper>

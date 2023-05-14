@@ -88,7 +88,7 @@
                                                 <c:out value="${list.writeTitle}" />
                                                 </a>
                                             </td>
-                                            <td><c:out value="${list.writeId}" /></td>
+                                            <td><c:out value="${list.writeId}${list.writeIdEmp}" /></td>
                                             <td><c:out value="${list.viewCount}" /></td>
                                             <td><c:out value="${list.writeRegDate}" /></td>
                                             <td><c:out value="${list.reportCount}" /></td>

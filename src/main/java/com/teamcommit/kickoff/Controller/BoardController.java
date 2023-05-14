@@ -109,15 +109,15 @@ public class BoardController {
 
         //로그인한 이용자 ID로 로그인 정보 가져오기
         String userId = (String) request.getSession().getAttribute("userId");
-        /*//로그인한 이용자 ID로 로그인 정보 가져오기
-        String empId = (String) request.getSession().getAttribute("empId");*/
+        //로그인한 이용자 ID로 로그인 정보 가져오기
+        String empId = (String) request.getSession().getAttribute("empId");
 
         BoardDO boardContents = boardService.getBoardContents(boardSeqno);
 
         boardService.procAddViewCount(boardContents);
         model.addAttribute("boardContents", boardContents);
         model.addAttribute("userId", userId);
-//        model.addAttribute("empId", empId);
+        model.addAttribute("empId", empId);
 
         return view;
     }
@@ -156,7 +156,7 @@ public class BoardController {
     //게시판 삭제
     @RequestMapping("/delete")
     public ModelAndView delete(@ModelAttribute("boardDO") BoardDO boardDO, @RequestParam("boardSeqno") int boardSeqno, RedirectAttributes redirect, Model model) throws Exception {
-
+        
         ModelAndView mv = new ModelAndView("redirect:/board");
 
         try {
@@ -198,4 +198,31 @@ public class BoardController {
         return mv;
     }
 
+    //댓글 등록
+    @RequestMapping( "/insert_reply")
+    public ModelAndView insert_reply(@ModelAttribute("replyDO") ReplyDO replyDO, @RequestParam("boardSeqno") int boardSeqno, ModelMap model, HttpServletRequest request, RedirectAttributes redirect) throws Exception {
+
+        ModelAndView mv = new ModelAndView("redirect:/boardDetail?boardSeqno:"+boardSeqno);
+
+        try{
+
+            replyDO.setBoardSeqno(boardSeqno);
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+            Date time = new Date();
+
+            String time1 = format.format(time);
+            replyDO.setReplyRegDate(time1);
+
+            System.out.println("1111111111111111111111111");
+            boardService.insertReply(replyDO);
+            System.out.println("22222222222222222222222222222");
+            redirect.addFlashAttribute("redirect", replyDO.getBoardSeqno());
+            redirect.addFlashAttribute("msg","댓글 등록되었습니다." );
+        } catch (Exception e) {
+            redirect.addFlashAttribute("msg", "오류가 발생되었습니다. 다시 시도해주세요.");
+        }
+        System.out.println("333333333333333333333");
+        return mv;
+    }
 }
