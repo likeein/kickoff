@@ -14,10 +14,10 @@ public interface LoginService {
     EmployerDO emp_login(EmployerDO empDO);
 
     // 개인 회원 아이디 찾기
-    String findUser_id(String userName, String userPhoneNumber);
+    UserDO findUser_id(UserDO userDO);
 
     // 업체 회원 아이디 찾기
-    String findEmp_id(String empName, String empNo);
+    EmployerDO findEmp_id(EmployerDO empDO);
 
     // 로그인한 이용자 정보 가져오기
     UserDO procSetUserInfo(UserDO userDO);

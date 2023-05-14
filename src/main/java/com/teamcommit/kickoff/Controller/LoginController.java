@@ -141,32 +141,31 @@ public class LoginController {
 
     // 아이디 찾기
     @RequestMapping(value = {"/findUser", "/findEmp"})
-    public ModelAndView find_id(@RequestParam("userName") String userName,
-                          @RequestParam("userPhoneNumber") String phoneNumber,
-                          @RequestParam("empName") String empName,
-                          @RequestParam("empNo") String empNo, Model model) {
+    public ModelAndView find_id(HttpServletRequest request, Model model,
+                                @RequestParam(required = true, value = "userName") String userName,
+                                @RequestParam(required = true, value = "userPhoneNumber") String userPhoneNumber,
+                                @RequestParam(required = true, value = "empName") String empName,
+                                @RequestParam(required = true, value = "empNo") String empNo,
+                                UserDO userDO, EmployerDO empDO) {
 
-        String userResult = "";
-        String empResult = "";
+        if (userDO.getUserName() != null && userDO.getUserPhoneNumber() != null) {
+            userDO.setUserName(userName);
+            userDO.setUserPhoneNumber(userPhoneNumber);
 
-        if (userName != null && phoneNumber != null) {
-            userResult = this.loginService.findUser_id(userName, phoneNumber);
-        } else {
-            empResult = this.loginService.findEmp_id(empName, empNo);
+            UserDO userResult = this.loginService.findUser_id(userDO);
+            model.addAttribute("useDO", userResult);
+        } else if(empDO.getEmpName() != null && empDO.getEmpNo() != null) {
+            empDO.setEmpName(empName);
+            empDO.setEmpNo(empNo);
+
+            EmployerDO empResult = this.loginService.findEmp_id(empDO);
+            model.addAttribute("empDO", empResult);
         }
-        model.addAttribute("userResult", userResult);
-        model.addAttribute("empResult", empResult);
 
         // 아이디 보여주는 페이지로 이동
         ModelAndView mv = new ModelAndView("/login/findId");
         return mv;
     }
-
-//    @RequestMapping("/findId")
-//    public String showUser_id(@ModelAttribute("result") String result, Model model) {
-//        model.addAttribute("userId", result);
-//        return "/login/findId";
-//    }
 
     // 아이디 찾기 페이지 이동
     @RequestMapping("/findId")

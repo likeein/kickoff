@@ -19,15 +19,15 @@
         <%-- 개인회원 아이디 표시 --%>
         <c:if test="${not empty userResult}">
             <h4>개인 회원 아이디:</h4>
-            <p>${userResult}</p>
-            <br /><br />
+            <p>${userDO.userId}</p>
+            <br /><br /><br />
         </c:if>
 
         <%-- 업체 회원 아이디 표시 --%>
         <c:if test="${not empty empResult}">
             <h4>업체 회원 아이디:</h4>
-            <p>${empResult}</p>
-            <br /><br />
+            <p>${empDO.empId}</p>
+            <br /><br /><br />
         </c:if>
 	      <button onclick="location.href='/loginAll';">로그인</button><br /><br /><br />
     </form>

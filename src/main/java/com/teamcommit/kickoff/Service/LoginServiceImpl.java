@@ -24,14 +24,14 @@ public class LoginServiceImpl implements LoginService {
     }
 
    // 개인 회원 아이디 찾기
-    public String findUser_id(String userName, String userPhoneNumber) {
+    public UserDO findUser_id(UserDO userDO) {
 
-        return this.loginMapper.findUser_id(userName, userPhoneNumber);
+        return this.loginMapper.findUser_id(userDO);
     }
 
     // 업체 회원 아이디 찾기
-    public String findEmp_id(String empName, String empNo) {
-        return this.loginMapper.findEmp_id(empName, empNo);
+    public EmployerDO findEmp_id(EmployerDO empDO) {
+        return this.loginMapper.findEmp_id(empDO);
     }
 
     // 로그인한 이용자 정보 가져오기
