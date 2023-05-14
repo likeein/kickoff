@@ -20,6 +20,7 @@
         (
             TEAM_SEQID,
             TEAM_SEQNO,
+            TEAM_SEQID,
             TEAM_NAME,
             TEAM_NUMBER,
             TEAM_GENDER,

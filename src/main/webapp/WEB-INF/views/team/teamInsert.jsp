@@ -49,7 +49,7 @@
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form id="frm" name="frm" action="/teamInsert" method="POST">
+                <form id="frm" name="frm" action="/teamInsert" method="POST" onsubmit="return _onSubmit();">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
@@ -128,13 +128,13 @@
 									Title<span>Content</span>
 								</div>
 								<ul>
-									<li>풋살팀 이름<span>이름이름</span></li>
-									<li>모집 인원<span id="team-number"></span></li>
-									<li>풋살팀 성별<span id="team-gender"></span></li>
-									<li>풋살팀 소속 지역<span id="team-local"></span></li>
-									<li>모집 시작일<span id="open-date"></span></li>
-									<li>모집 종료일<span id="close-date"></span></li>
-									<li>모집 상태<span id="team-status"></span></li>
+									<li>풋살팀 이름<span id="teamName"></span></li>
+									<li>모집 인원<span id="teamNumber"></span></li>
+									<li>풋살팀 성별<span id="teamGender"></span></li>
+									<li>풋살팀 소속 지역<span id="teamLocal"></span></li>
+									<li>모집 시작일<span id="teamStartDate"></span></li>
+									<li>모집 종료일<span id="teamEndDate"></span></li>
+									<li>모집 상태<span id="teamStatus"></span></li>
 								</ul>
                                 <button onclick="location.href='/team';" type="submit" id="insert" class="site-btn-insert">등록</button>
 								<button onclick="location.href='/team';" type="button" id="cancel" class="site-btn-cancel">취소</button>
