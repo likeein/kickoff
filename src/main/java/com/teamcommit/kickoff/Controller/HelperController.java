@@ -61,17 +61,18 @@ public class HelperController {
 
     @GetMapping("/helperReservation")
     public String helperInsert(@RequestParam(value = "helperPlaceName") String helperPlaceName, @RequestParam(value = "helperAddress") String helperAddress,
-                               @RequestParam(value = "helperTime") String helperTime, Model model) {
+                               @RequestParam(value = "helperTime") String helperTime, @RequestParam(value = "userId") String userId, Model model) {
         String view = "forward:/helperInsert";
         model.addAttribute("placeName", helperPlaceName);
         model.addAttribute("address", helperAddress);
         model.addAttribute("date", helperTime);
+        model.addAttribute("helperId", userId);
         return view;
     }
 
     @PostMapping("/helperReservation")
-    public String helperInsert(@ModelAttribute("helperDO") HelperDO helperDO, Model model, HttpSession session) {
-        String view = "/helper/helperList";
+    public String helperInsert(@ModelAttribute("helperDO") HelperDO helperDO, Model model) {
+        String view = "/helper/helperInsert";
 
             try {
                 helperService.insertHelper(helperDO);

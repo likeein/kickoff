@@ -44,6 +44,10 @@
 		}
 	</style>
 
+	<script>
+		${script}
+	</script>
+
 </head>
 <body style="overflow-x: hidden">
 
@@ -99,7 +103,7 @@
 						<td><c:out value="${list.reservationPlaceName}" /></td>
 						<td><c:out value = "${list.reservationPlaceAddress}" /></td>
 						<td><c:out value = "${list.reservationDate}" /></td>
-						<td><button type = "button" class = "btn_detail" onclick="location.href='/helperReservation?helperPlaceName=${list.reservationPlaceName}&helperAddress=${list.reservationPlaceAddress}&helperTime=${list.reservationDate}';">등록</button></td>
+						<td><button type = "button" class = "btn_detail" onclick="location.href='/helperReservation?helperPlaceName=${list.reservationPlaceName}&helperAddress=${list.reservationPlaceAddress}&helperTime=${list.reservationDate}&userId=${userId}';">등록</button></td>
 					</tr>
 					</c:forEach>
 				</table>
@@ -119,7 +123,7 @@
 
 	<div class = "userBox">
 		<label>신청자 ID:</label>
-		<input type = "text" name = "userId" id = "userId" disabled value = " ${userId}" required />
+		<input type = "text" name = "userId" id = "userId" disabled value = " ${helperId}" required />
 	</div>
 
 	<div class = "helperBox">
