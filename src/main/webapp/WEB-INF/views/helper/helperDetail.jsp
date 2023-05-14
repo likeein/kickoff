@@ -52,8 +52,8 @@
 	<div class="bg-dark py-5">
 		<div class="container px-4 px-lg-5 my-5">
 			<div class="text-center text-white">
-				<h1 class="display-4 fw-bolder">${content.helperPlace}, ${content.helperPlaceName}</h1>
-				<p class="lead fw-normal text-white-50 mb-0">${content.helperId}</p>
+				<h1 class="display-4 fw-bolder">${content.helperPlaceName}</h1>
+				<p class="lead fw-normal text-white-50 mb-0">${content.userId}</p>
 			</div>
 		</div>
 	</div>
@@ -76,7 +76,7 @@
 						</tr>
 						<tr>
 							<th scope="row">작성자</th>
-							<td>${content.helperId}</td>
+							<td>${content.userId}</td>
 							<th scope="row">경기 날짜</th>
 							<td>${content.helperTime}</td>
 						</tr>

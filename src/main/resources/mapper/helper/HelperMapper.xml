@@ -14,9 +14,9 @@
     <select id = "selectReservation" parameterType="String" resultType="com.teamcommit.kickoff.Do.ReservationDO">
         <![CDATA[
         SELECT *
-        from
+        FROM
             RESERVATION
-        where id = #{userId}
+        WHERE USER_ID = #{userId} AND RESERVATION_TYPE = 'USER'
         ]]>
     </select>
 
@@ -34,29 +34,31 @@
         INSERT INTO HELPER_BOARD
         (
          HELPER_SEQNO,
-         HELPER_ID,
+         USER_ID,
          HELPER_POSITION,
          HELPER_PRICE,
          HELPER_MATCH,
-         HELPER_PLACE,
+         HELPER_ADDRESS,
          HELPER_GENDER,
          HELPER_WANT,
          HELPER_TIME,
          HELPER_TEAMLEVEL,
-         HELPER_PLACE_NAME
+         HELPER_PLACE_NAME,
+         HELPER_STATUS
          )
         VALUES(
                HELPER_SEQ.NEXTVAL,
-               #{helperId},
+               #{userId},
                #{helperPosition},
                #{helperPrice},
                #{helperMatch},
-               #{helperPlace},
+               #{helperAddress},
                #{helperGender},
                #{helperWant},
                #{helperTime},
                #{helperTeamLevel},
-               #{helperPlaceName}
+               #{helperPlaceName},
+               '진행 중'
         )
         ]]>
     </insert>

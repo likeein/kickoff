@@ -19,11 +19,30 @@
 	<script src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
 	<script src="/includes/js/main.js"></script>
 	<script src = "/helper/js/helperInsert.js"></script>
-	<script>
-		${script}
-	</script>
+
 
 	<title>Kick Off: 용병모집</title>
+
+	<style>
+		.bluetop {
+			border-collapse: collapse;
+			border-top: 3px solid #ffc090;
+		}
+		.bluetop th {
+			color: #fff;
+			background: #b1d7b4;
+		}
+		.bluetop th, .bluetop td {
+			padding: 10px;
+			border-bottom: 1px solid #ddd;
+		}
+		.bluetop th:first-child, .bluetop td:first-child {
+			border-left: 0;
+		}
+		.bluetop th:last-child, .bluetop td:last-child {
+			border-right: 0;
+		}
+	</style>
 
 </head>
 <body style="overflow-x: hidden">
@@ -57,9 +76,9 @@
 
 	<div class = "reservationBox">
 		<label>예약 내역: </label>&nbsp;
-		<input type = "text" name = "helperPlaceName" id = "helperPlaceName" disabled placeholder = " 업체명" required /><br />
-		<input type = "text" name = "helperAddress" id = "helperAddress" disabled placeholder = " 업체위치" required /><br />
-		<input type = "text" name = "helperTime" id = "helperTime" disabled placeholder = " 매치날짜" required /><br />
+		<input type = "text" name = "helperPlaceName" id = "helperPlaceName" disabled value = " ${placeName}" required /><br />
+		<input type = "text" name = "helperAddress" id = "helperAddress" disabled value = " ${address}" required /><br />
+		<input type = "text" name = "helperTime" id = "helperTime" disabled value = " ${date}" required /><br />
 		<button type = "button" class = "reservation" id = "reservation">내역조회</button>
 	</div>
 
@@ -68,17 +87,19 @@
 		<button type = "reset" class="reservationClose">x</button>
 		<div>
 			${msg}
-				<table>
+				<table class = "bluetop">
 					<tr>
 						<th>업체명</th>
 						<th>업체위치</th>
 						<th>경기 날짜</th>
+						<th></th>
 					</tr>
 					<c:forEach var="list" items="${reservation}">
 					<tr>
 						<td><c:out value="${list.reservationPlaceName}" /></td>
 						<td><c:out value = "${list.reservationPlaceAddress}" /></td>
-						<td><c:out value = "${list.reservationPlaceAddress}" /></td>
+						<td><c:out value = "${list.reservationDate}" /></td>
+						<td><button type = "button" class = "btn_detail" onclick="location.href='/helperReservation?helperPlaceName=${list.reservationPlaceName}&helperAddress=${list.reservationPlaceAddress}&helperTime=${list.reservationDate}';">등록</button></td>
 					</tr>
 					</c:forEach>
 				</table>
@@ -98,7 +119,7 @@
 
 	<div class = "userBox">
 		<label>신청자 ID:</label>
-		<input type = "text" name = "helperId" id = "helperId" disabled placeholder="${userId}" required/>
+		<input type = "text" name = "userId" id = "userId" disabled value = " ${userId}" required />
 	</div>
 
 	<div class = "helperBox">
