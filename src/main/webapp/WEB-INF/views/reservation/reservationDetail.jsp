@@ -47,7 +47,7 @@
 				<div class="container p-0 px-md-3">
 					<div class="ground-title-content">
 						<div class="address-wrap">
-							<h4 class="title">${reservationDetail.reservationPlaceName}</h4>
+							<h3 class="placeName">${reservationDetail.reservationPlaceName}</h3>
 							<p>${reservationDetail.reservationPlaceAddress}</p>
 						</div>
 						<div class="time-price-wrap">
@@ -66,19 +66,19 @@
 							<div class="img-wrap">
 								<img src="/reservation/images/court.png">
 							</div>
-							<b class="text-dark">코트</b><small>${reservationDetail.reservationCourtName}</small>
+							<b class="text-dark">코트이름</b><small>${reservationDetail.reservationCourtName}</small>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">
 								<img src="/reservation/images/size.png">
 							</div>
-							<b class="text-dark">규격</b><small>${placeInfo.placeSize}</small>
+							<b class="text-dark">구장규격</b><small>${reservationDetail.reservationPlaceSize}</small>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">
 								<img src="/reservation/images/vs.png">
 							</div>
-							<b class="text-dark">경기</b><small>6 vs 6</small>
+							<b class="text-dark">추천경기</b><small>${reservationDetail.reservationHeadcount}</small>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">
@@ -86,10 +86,10 @@
 							</div>
 							<c:choose>
 								<c:when test="${reservationDetail.reservationStatus == '예약대기'}">
-									<b class="text-dark">예약</b><small>예약대기</small>
+									<b class="text-dark">예약상태</b><small>예약대기</small>
 								</c:when>
 								<c:otherwise>
-									<b class="text-dark">예약</b><small>예약완료</small>
+									<b class="text-dark">예약상태</b><small>예약완료</small>
 								</c:otherwise>
 							</c:choose>
 						</div>
@@ -97,34 +97,62 @@
 							<div class="img-wrap">
 								<img src="/reservation/images/form.png">
 							</div>
-							<b class="text-dark">바닥</b><small>천연잔디</small>
-						</div>
-						<div class="facility-wrap">
-							<div class="img-wrap">
-								<img src="/reservation/images/personnel.png">
-							</div>
-							<b class="text-dark">인원</b><small>12명</small>
-						</div>
-						<div class="facility-wrap">
-							<div class="img-wrap">
-								<!-- 실외, 실내 따라 각 아이콘 가져오기 -->
-								<img src="/reservation/images/sunlight.png">
-								<!-- <img src="/TeamCommit/resource/reservation/images/no sunlight.png"> -->
-							</div>
 							<c:choose>
-								<c:when test="${reservationDetail.reservationCourtForm == 'outdoor'}">
-									<b class="text-dark">공간</b><small>실외</small>
+								<c:when test="${reservationDetail.reservationPlaceGround == '천연잔디'}">
+									<b class="text-dark">바닥형태</b><small>천연잔디</small>
+								</c:when>
+								<c:when test="${reservationDetail.reservationPlaceGround == '인조잔디'}">
+									<b class="text-dark">바닥형태</b><small>인조잔디</small>
 								</c:when>
 								<c:otherwise>
-									<b class="text-dark">공간</b><small>실내</small>
+									<b class="text-dark">바닥형태</b><small>피치플로어</small>
 								</c:otherwise>
 							</c:choose>
 						</div>
 						<div class="facility-wrap">
 							<div class="img-wrap">
-								<img src="/reservation/images/lighting.png">
+								<img src="/reservation/images/parking.png">
 							</div>
-							<b class="text-dark">조명</b><small>YES</small>
+							<c:choose>
+								<c:when test="${reservationDetail.reservationPlaceParking == 'Y'}">
+									<b class="text-dark">주차장</b><small>YES</small>
+								</c:when>
+								<c:otherwise>
+									<b class="text-dark">주차장</b><small>NO</small>
+								</c:otherwise>
+							</c:choose>
+						</div>
+						<div class="facility-wrap">
+							<c:choose>
+								<c:when test="${reservationDetail.reservationCourtForm == 'outdoor'}">
+									<div class="img-wrap">
+										<img src="/reservation/images/sunlight.png">
+									</div>
+									<b class="text-dark">공간형태</b><small>실외</small>
+								</c:when>
+								<c:otherwise>
+									<div class="img-wrap">
+										<img src="/reservation/images/noSunlight.png">
+									</div>
+									<b class="text-dark">공간형태</b><small>실내</small>
+								</c:otherwise>
+							</c:choose>
+						</div>
+						<div class="facility-wrap">
+							<c:choose>
+								<c:when test="${reservationDetail.reservationPlaceParking == 'YES'}">
+									<div class="img-wrap">
+										<img src="/reservation/images/lighting.png">
+									</div>
+									<b class="text-dark">조명</b><small>YES</small>
+								</c:when>
+								<c:otherwise>
+									<div class="img-wrap">
+										<img src="/reservation/images/noLighting.png">
+									</div>
+									<b class="text-dark">조명</b><small>NO</small>
+								</c:otherwise>
+							</c:choose>
 						</div>
 					</div>
 				</div>
@@ -135,7 +163,7 @@
 					<div class="map-container">
 						<div id="map">지도지도 카카오 API 자리</div>
 						<div class="title-wrap be-default mb-3">
-							<p>서울 강서구 까치산로28길 33-15</p>
+							<p>${reservationDetail.reservationPlaceAddress}</p>
 						</div>
 					</div>
 				</div>
@@ -150,20 +178,55 @@
 		</div>
 	</div>
 
-
 	<!-- footer -->
 	<%@include file="/includes/footer.jsp"%>
 
 	<!-- script -->
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5d724483fb639866457f6535349fcd24&libraries=services"></script>
+	<script>
+		/* Kakao Map */
+
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+		mapOption = {
+		center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+		level: 3 // 지도의 확대 레벨
+		};
+
+		// 지도를 생성합니다
+		var map = new kakao.maps.Map(mapContainer, mapOption);
+
+		// 주소-좌표 변환 객체를 생성합니다
+		var geocoder = new kakao.maps.services.Geocoder();
+
+		// 주소로 좌표를 검색합니다
+		geocoder.addressSearch('${reservationDetail.reservationPlaceAddress}', function(result, status) {
+
+		// 정상적으로 검색이 완료됐으면
+		if (status === kakao.maps.services.Status.OK) {
+
+		var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+		// 결과값으로 받은 위치를 마커로 표시합니다
+		var marker = new kakao.maps.Marker({
+		map: map,
+		position: coords
+		});
+
+		// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+		map.setCenter(coords);
+		}
+		});
+		var zoomControl = new kakao.maps.ZoomControl();
+		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+	</script>
+
 	<script src="/includes/js/jquery-3.3.1.min.js"></script>
 	<script src="/includes/js/jquery.lettering.js"></script>
 	<script src="/includes/js/jquery.sticky.js"></script>
 	<script src="/includes/js/ScrollMagic.min.js"></script>
 	<script src="/includes/js/scrollmagic.animation.gsap.min.js"></script>
 	<script src="/includes/js/main.js"></script>
-	
 	<!-- map script -->
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f57239f34313ff7472d82f235d2600be"></script>
 	<script src="/includes/js/kakaoMap.js"></script>
 </body>
 </html>

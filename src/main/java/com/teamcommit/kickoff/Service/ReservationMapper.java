@@ -20,7 +20,5 @@ public interface ReservationMapper {
 
     public void updateReservation(ReservationDO reservationDO);
 
-    public PlaceDO selectPlaceInfo(int placeId);
-
-    public PlaceDO selectImgInfo(String empId);
+    public PlaceDO selectPlaceInfo(String empId);
 }

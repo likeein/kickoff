@@ -35,9 +35,20 @@ public class PlaceDO {
 
 	private String empId;
 
+	private String placeParking;
+
 	public PlaceDO() {
 
 	}
+
+	public String getPlaceParking() {
+		return placeParking;
+	}
+
+	public void setPlaceParking(String placeParking) {
+		this.placeParking = placeParking;
+	}
+
 	public String getEmpId() {
 		return empId;
 	}
