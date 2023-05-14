@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service("reservationService")
 public class ReservationServiceImpl implements ReservationService {
@@ -34,6 +35,10 @@ public class ReservationServiceImpl implements ReservationService {
         reservationMapper.updateReservation(reservationDO);
     }
 
+    @Override
+    public PlaceDO selectImgInfo(String empId) throws Exception {
+        return reservationMapper.selectImgInfo(empId);
+    }
     @Override
     public PlaceDO selectPlaceInfo(int placeId) throws Exception {
         return reservationMapper.selectPlaceInfo(placeId);

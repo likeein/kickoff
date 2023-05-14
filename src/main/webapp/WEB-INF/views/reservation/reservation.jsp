@@ -40,13 +40,13 @@
     <!-- Section-->
 	<section class="py-5">
     	<div class="container px-4 px-lg-5">
-			<%--<c:if test="${employerDO.empId == true}">--%>
-      		<div class="card-footer pt-0 border-top-0 bg-transparent">
-            	<div class="text-center insert">
-              		<a class="court-insert" href="reservationInsertForm">풋살장 등록</a>
-              	</div>
-          	</div>
-			<%--</c:if>--%>
+			<c:if test="${empId != null}">
+				<div class="card-footer pt-0 border-top-0 bg-transparent">
+					<div class="text-center insert">
+						<a class="court-insert" href="reservationInsertForm">풋살장 등록</a>
+					</div>
+				</div>
+			</c:if>
 			<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             
             	<%--<c:choose>
@@ -55,19 +55,19 @@
 			                <div class="col mb-5">
 			                    <div class="card h-100">
 			                        <!-- Product image-->
-			                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+			                        <img class="card-img-top" src="${row.imgPath}${row.imgName}"/>
 			                        <!-- Product details-->
 			                        <div class="card-body p-4">
 			                            <div class="text-center">
 											<!-- PLACE NAME -->
 			                                <h5 class="fw-bolder">
-												<c:out value="${row.reservationNo}" />
+												<c:out value="${row.reservationPlaceName}"/>
 											</h5>
 			                                <!-- RESERVATION DATE -->
-			                                <c:out value="${row.reservationDate}" />
+			                                <c:out value="${row.reservationDate}"/>
 			                                <br>
 			                                <!-- RESERVATION PRICE -->
-											<c:out value="${row.reservationPrice}" />
+											<c:out value="${row.reservationPrice}"/>원
 			                            </div>
 			                        </div>
 			                        <!-- Product actions-->

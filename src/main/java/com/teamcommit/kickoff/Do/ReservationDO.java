@@ -17,7 +17,7 @@ public class ReservationDO {
 	//예약 날짜
 	private String reservationDate;
 	//예약 인원
-	private int reservationNumber;
+	private String reservationNumber;
 	//예약 상태
 	private String reservationStatus;
 	//예약 등록 일자
@@ -41,8 +41,48 @@ public class ReservationDO {
 	//예약 취소 유무
 	private String reservationCancel;
 
+	private String empId;
+
+	private String imgName;
+
+	private String imgPath;
+
+	private String reservationHeadcount;
+
 	public ReservationDO() {
 
+	}
+
+	public String getReservationHeadcount() {
+		return reservationHeadcount;
+	}
+
+	public void setReservationHeadcount(String reservationHeadcount) {
+		this.reservationHeadcount = reservationHeadcount;
+	}
+
+	public String getEmpId() {
+		return empId;
+	}
+
+	public void setEmpId(String empId) {
+		this.empId = empId;
+	}
+
+	public String getImgName() {
+		return imgName;
+	}
+
+	public void setImgName(String imgName) {
+		this.imgName = imgName;
+	}
+
+	public String getImgPath() {
+		return imgPath;
+	}
+
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
 	}
 
 	public ReservationDO(int reservationNo) {
@@ -81,11 +121,11 @@ public class ReservationDO {
 		this.reservationDate = reservationDate;
 	}
 
-	public int getReservationNumber() {
+	public String getReservationNumber() {
 		return reservationNumber;
 	}
 
-	public void setReservationNumber(int reservationNumber) {
+	public void setReservationNumber(String reservationNumber) {
 		this.reservationNumber = reservationNumber;
 	}
 

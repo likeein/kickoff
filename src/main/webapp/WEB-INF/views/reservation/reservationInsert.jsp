@@ -55,11 +55,15 @@
         <div class="container">
             <div class="checkout__form">
                 <form role="form" id="frm" name="frm" action="/reservationInsert" method="POST">
+                    <input type="hidden" name="empId" value="${empId}" />
+                    <input type="hidden" name="imgName" value="${imgInfo.imgName}" />
+                    <input type="hidden" name="imgPath" value="${imgInfo.imgPath}" />
+                    <input type="hidden" name="placeId" value="${imgInfo.placeId}" />
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
                                 <p>풋살장<span>*</span></p>
-                                <input type="text" name="reservationPlaceName" value="" readonly>
+                                <input type="text" class="inputPlaceName" id="inputPlaceName" name="reservationPlaceName" onChange="getPlaceName()" placeholder="풋살장 이름을 입력해주세요."/>
                            	</div>
                           	<div class="checkout__input">
                                 <p>코트<span>*</span></p>
@@ -74,7 +78,7 @@
                             </div>
                            	<div class="checkout__input">
                                 <p>위치<span>*</span></p>
-                                <input type="text" name="reservationPlaceAddress" value="" readonly>
+                                <input type="text" class="inputAddress" id="inputAddress" name="reservationPlaceAddress" onChange="getAddress()"placeholder="풋살장 위치를 입력해주세요.">
                             </div>
                             <div class="checkout__input">
                                 <p>형태<span>*</span></p>
@@ -84,6 +88,15 @@
                                 <label>
                                 	<input type="radio" name="reservationCourtForm" value="outdoor" onclick='getPlaceForm(event)' />&nbsp실외
                                 </label>
+                            </div>
+                            <div class="checkout__input">
+                                <p>추천 인원<span>*</span></p>
+                                <select id="inputHeadcount" name="reservationHeadcount" onChange="selectHeadcount(this)">
+                                    <option value="">추천인원 선택하기</option>
+                                    <option value="4 vs 4">4 vs 4</option>
+                                    <option value="5 vs 5">5 vs 5</option>
+                                    <option value="6 vs 6">6 vs 6</option>
+                                </select>
                             </div>
                    			<div class="checkout__input">
                         		<p>예약 날짜<span>*</span></p>
@@ -154,10 +167,11 @@
 									Title<span>Content</span>
 								</div>
 								<ul>
-									<li>풋살장<span>풋살장 이름</span></li>
+									<li>풋살장<span id="placeName"></span></li>
 									<li>코트<span id="court"></span></li>
-									<li>위치<span>서울시 강남구</span></li>
+									<li>위치<span id="address"></span></li>
 									<li>형태<span id="placeForm"></span></li>
+                                    <li>추천 인원<span id="headcount"></span></li>
 									<li>예약 날짜<span id="date"></span></li>
 									<li>시작 시간<span id="startTime"></span></li>
 									<li>종료 시간<span id="endTime"></span></li>
