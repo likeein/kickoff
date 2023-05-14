@@ -16,9 +16,9 @@ public interface EmpService {
 
     List<BoardDO> getList(BoardDO boardDO) throws Exception;
 
-    List<PlaceDO> getList(PlaceDO placeDO);
-
-    void insertFutsal(Map<String, Object> map, HttpServletRequest request) throws Exception;
-
     List<ReservationDO> selectReservation(ReservationDO reservationDO) throws Exception;
+
+    PlaceDO empFutsalInsert(int placeId) throws Exception;
+
+    void updateFutsal(PlaceDO placeDO) throws Exception;
 }

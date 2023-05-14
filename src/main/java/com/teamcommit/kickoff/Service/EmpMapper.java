@@ -8,16 +8,19 @@ import com.teamcommit.kickoff.Do.ReservationDO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface EmpMapper {
     public List<EmployerDO> getList(EmployerDO employerDO);
-
-    public List<PlaceDO> getList(PlaceDO placeDO);
 
     EmployerDO info_fix(EmployerDO employerDO);
 
     List<BoardDO> getList(BoardDO boardDO);
 
     List<ReservationDO> selectReservation(ReservationDO reservationDO);
+
+    public PlaceDO empFutsalInsert(int placeId);
+
+    public void updateFutsal(PlaceDO placeDO);
 }

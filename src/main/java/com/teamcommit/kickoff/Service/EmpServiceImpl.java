@@ -27,15 +27,12 @@ public class EmpServiceImpl implements EmpService {
     }
 
     @Override
-    public List<PlaceDO> getList(PlaceDO placeDO) { return empMapper.getList(placeDO); }
-
-    @Resource(name = "placeDAO")
-    private PlaceDAO placeDAO;
+    public PlaceDO empFutsalInsert(int placeId) throws Exception {
+        return empMapper.empFutsalInsert(placeId);
+    }
 
     @Override
-    public void insertFutsal(Map<String, Object> map, HttpServletRequest request) throws Exception {
-        placeDAO.insertFutsal(map);
-    }
+    public void updateFutsal(PlaceDO placeDO) { empMapper.updateFutsal(placeDO);  }
 
     @Override
     public List<ReservationDO> selectReservation(ReservationDO reservationDO) throws Exception {

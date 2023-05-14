@@ -42,7 +42,7 @@
 
 							<!-- Header -->
 								<header id="header">
-									<a href="empReservation.jsp" class="logo"><strong>마이 페이지</strong> 업체 회원용</a>									
+									<a href="/empReservation" class="logo"><strong>마이 페이지</strong> 업체 회원용</a>
 								</header>
 							
 							<!-- Begin Page Content -->

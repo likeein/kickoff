@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -80,23 +81,39 @@ public class EmpController {
     }
 
     /* 풋살장 등록 */
-    @RequestMapping("/empFutsal")
-    public String empFutsalInsert(@ModelAttribute("employerDO") EmployerDO employerDO, HttpServletRequest request, Model model) throws Exception {
+    @RequestMapping(value = "/empFutsalForm")
+    public String empFutsalForm(@ModelAttribute("placeDO") PlaceDO placeDO, @RequestParam("placeId") int placeId, Model model) throws Exception {
         String view = "/emp/empFutsal";
 
-        String empId = (String) request.getSession().getAttribute("empId");
-        EmployerDO employerDO = new EmployerDO();
-        employerDO.setEmpId(empId);
-        employerDO = loginService.procSetEmployerInfo(employerDO);
+        PlaceDO empFutsalInsert = empService.empFutsalInsert(placeId);
+        model.addAttribute("empFutsalInsert", empFutsalInsert);
 
-        PlaceDO imgInfo = empService.selectImgInfo(employerDO.getEmpId());
-        model.addAttribute("imgInfo", imgInfo);
 
         return view;
     }
 
+    @RequestMapping(value="/empFutsal")
+    public String empFutsal(@ModelAttribute("placeDO") PlaceDO placeDO, HttpServletRequest request, RedirectAttributes redirect , Model model){
 
-    /* 풋살장 목록 */
+
+        try {
+
+            empService.updateFutsal(placeDO);
+            redirect.addFlashAttribute("redirect", placeDO.getPlaceId());
+
+            redirect.addFlashAttribute("msg", "풋살장 등록이 완료되었습니다.");
+
+        } catch (Exception e) {
+
+            redirect.addFlashAttribute("msg", "오류가 발생되었습니다.");
+
+        }
+
+        return "redirect:/empFutsal=" + placeDO.getPlaceId();
+    }
+
+
+    /* 풋살장 목록
     @RequestMapping(value = "/empFutsalFix", method = RequestMethod.GET)
     public String Boardlist(@ModelAttribute("PlaceDO") PlaceDO PlaceDO, HttpServletRequest request, Model model) {
 
@@ -106,6 +123,6 @@ public class EmpController {
         model.addAttribute("boardList", boardList);
 
         return view;
-    }
+    } */
 
 }
