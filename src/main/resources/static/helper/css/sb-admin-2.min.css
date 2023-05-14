@@ -166,7 +166,7 @@ button {
   display: block;
 } */
 
-.table-responsive .btn_insert {
+.table-responsive .btn_insert, .btn_detail {
   text-align: center;
   display: inline-block;
   margin: auto;
