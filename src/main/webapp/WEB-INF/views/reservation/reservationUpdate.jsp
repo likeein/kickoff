@@ -54,17 +54,15 @@
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form id="frm" name="frm" action="#" method="POST">
-                    <input type="hidden" id="reservationNo" name="reservationNo" value="${reservationDetail.reservationNo}" />
+                <form role="frm" id="frm" name="frm" action="/reservationUpdate" method="POST">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
                                <p>풋살장<span>*</span></p>
-                               <input type="text" value="여기에 '풋살장 이름' 가져오기 (입력 비활성화)" readonly>
-                               <!-- readonly: 입력 필드 비활성화되지만 form으로 전송 가능 -->
+                               <input type="text" name="reservationPlaceName" value="${reservationDetail.reservationPlaceName}" readonly>
                            	</div>
                           	<div class="checkout__input">
-                                <p>코트<span>*${reservationDetail.reservationCourtName}</span></p>
+                                <p>코트<span>*</span></p>
                                 <select id="courtName" name="reservationCourtName" onChange="selectCourt(this)">
                                 	<option value="">코트 선택하기</option>
                                     <option value="A코트" <c:if test="${reservationDetail.reservationCourtName == 'A코트'}">selected</c:if>>A코트</option>
@@ -76,26 +74,35 @@
                             </div>
                            	<div class="checkout__input">
                                 <p>위치<span>*</span></p>
-                                <input type="text" value="'주소' 정보 가져오기 (입력 비활성화)" readonly>
+                                <input type="text" name="reservationPlaceAddress" value="${reservationDetail.reservationPlaceAddress}" readonly>
                             </div>
                             <div class="checkout__input">
                                 <p>형태<span>*</span></p>
                                 <label>
-                                	<input type="radio" name="placeForm" value="indoor" onclick='getPlaceForm(event)' <c:if test="${reservationDetail.reservationCourtForm eq 'indoor'}">checked="checked"</c:if>/>&nbsp실내
+                                	<input type="radio" name="reservationCourtForm" value="indoor" onclick='getPlaceForm(event)' <c:if test="${reservationDetail.reservationCourtForm eq 'indoor'}">checked="checked"</c:if>/>&nbsp실내
                                 </label>
                                 <label>
-                                	<input type="radio" name="placeForm" value="outdoor" onclick='getPlaceForm(event)' <c:if test="${reservationDetail.reservationCourtForm eq 'outdoor'}">checked="checked"</c:if>/>&nbsp실외
+                                	<input type="radio" name="reservationCourtForm" value="outdoor" onclick='getPlaceForm(event)' <c:if test="${reservationDetail.reservationCourtForm eq 'outdoor'}">checked="checked"</c:if>/>&nbsp실외
                                 </label>
+                            </div>
+                            <div class="checkout__input">
+                                <p>추천 경기<span>*</span></p>
+                                <select id="inputHeadcount" name="reservationHeadcount" onChange="selectHeadcount(this)">
+                                    <option value="">추천경기 선택하기</option>
+                                    <option value="4 vs 4" <c:if test="${reservationDetail.reservationHeadcount == '4 vs 4'}">selected</c:if>>4 vs 4</option>
+                                    <option value="5 vs 5" <c:if test="${reservationDetail.reservationHeadcount == '5 vs 5'}">selected</c:if>>5 vs 5</option>
+                                    <option value="6 vs 6" <c:if test="${reservationDetail.reservationHeadcount == '6 vs 6'}">selected</c:if>>6 vs 6</option>
+                                </select>
                             </div>
                    			<div class="checkout__input">
                         		<p>예약 날짜<span>*</span></p>
-                       			<input id="setDate" onChange="getDate()" />
+                       			<input id="setDate" name="reservationDate" value="${reservationDetail.reservationDate}" onChange="getDate()" />
                    			</div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>시작 시간<span>*</span></p>
-                                        <select id="openTime" name="openTime" onChange="getStartTime(this)">
+                                        <select id="openTime" name="reservationStartTime" value="${reservationDetail.reservationStartTime}" onChange="getStartTime(this)">
                                         	<option value="">시작 시간 선택</option>
                                         	<c:forEach var="i" begin="1" end="24">
 	                                        	<c:choose>
@@ -113,7 +120,7 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>종료 시간<span>*</span></p>
-                                        <select id="closeTime" name="closeTime" onChange="getEndTime(this)">
+                                        <select id="closeTime" name="reservationEndTime" onChange="getEndTime(this)">
                                         	<option value="">종료 시간 선택</option>
                                         	<c:forEach var="i" begin="1" end="24">
 	                                        	<c:choose>
@@ -132,10 +139,10 @@
                             <div class="checkout__input">
                                 <p>예약 상태<span>*</span></p>
                                 <label>
-                                    <input type="radio" name="status" value="예약대기" onclick='getStatus(event)' <c:if test="${reservationDetail.reservationStatus eq '예약대기'}">checked="checked"</c:if>/>&nbsp예약대기
+                                    <input type="radio" name="reservationStatus" value="예약대기" onclick='getStatus(event)' <c:if test="${reservationDetail.reservationStatus eq '예약대기'}">checked="checked"</c:if>/>&nbsp예약대기
                                 </label>
                                 <label>
-                                    <input type="radio" name="status" value="예약완료" onclick='getStatus(event)'<c:if test="${reservationDetail.reservationStatus eq '예약완료'}">checked="checked"</c:if>/>&nbsp예약완료
+                                    <input type="radio" name="reservationStatus" value="예약완료" onclick='getStatus(event)'<c:if test="${reservationDetail.reservationStatus eq '예약완료'}">checked="checked"</c:if>/>&nbsp예약완료
                                 </label>
                             </div>
                             <div class="checkout__input">
@@ -144,7 +151,7 @@
                             </div>
                             <div class="checkout__input">
 								<p>기타사항</p>
-                               	<textarea class="etc" name="reservationComment" value="${reservationDetail.reservationComment}"></textarea>
+                               	<textarea class="etc" name="reservationComment">${reservationDetail.reservationComment}</textarea>
                             </div>
                         </div>
                         
@@ -156,18 +163,22 @@
 									Title<span>Content</span>
 								</div>
 								<ul>
-									<li>풋살장<span>이름이름</span></li>
+									<li>풋살장<span>${reservationDetail.reservationPlaceName}</span></li>
 									<li>코트<span id="court"></span></li>
-									<li>위치<span>주소주소</span></li>
+									<li>위치<span>${reservationDetail.reservationPlaceAddress}</span></li>
 									<li>형태<span id="placeForm"></span></li>
+                                    <li>추천 경기<span id="headcount"></span></li>
 									<li>예약 날짜<span id="date"></span></li>
 									<li>시작 시간<span id="startTime"></span></li>
 									<li>종료 시간<span id="endTime"></span></li>
 									<li>예약 상태<span id="status"></span></li>
 									<li>대관비<span id="price"></span></li>
 								</ul>
-								<a href="#this" id="insert" class="site-btn-insert">수정</a>
-								<a href="#this" id="cancle" class="site-btn-cancle">취소</a>
+                                <input type="hidden" name="reservationNo" value="${reservationDetail.reservationNo}" />
+                                <input type="hidden" name="reservationRegDate" value="${reservationDetail.reservationRegDate}" />
+                                <%-- Button --%>
+                                <input type="submit" id="insert" class="site-btn-insert" value="등록"/>
+								<a href="/reservationDetail?reservationNo=${reservationDetail.reservationNo}" id="cancle" class="site-btn-cancle">취소</a>
 							</div>
 						</div>
 					</div>
@@ -185,9 +196,6 @@
 			format: "yyyy-mm-dd",
             uiLibrary: 'bootstrap4'
         });
-
-
-
 	</script>
 	
     <!-- Js Plugins -->

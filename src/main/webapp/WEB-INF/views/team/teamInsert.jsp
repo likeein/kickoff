@@ -54,15 +54,15 @@
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
                                <p>풋살팀 이름<span>*</span></p>
-                               <input type="text" name="teamName">
+                               <input type="text" name="teamName" id="insertName" class="insertName">
                            	</div>
                            	<div class="checkout__input">
                                <p>모집 인원<span>*</span></p>
-                               <input type="text" name="teamNumber" onChange="selectNumber(this)">
+                               <input type="text" name="teamNumber" id="insertNumber" class="insertNumber" onChange="selectNumber(this)">
                            	</div>
                           	<div class="checkout__input">
                                 <p>풋살팀 성별<span>*</span></p>
-                                <select name="teamGender" onChange="selectGender(this)">
+                                <select name="teamGender" id="insertGender" class="insertGender" onChange="selectGender(this)">
                                 	<option value="">성별 선택하기</option>
                                 	<option value="A">남성</option>
                                 	<option value="B">여성</option>
@@ -71,51 +71,52 @@
                             </div>
                            	<div class="checkout__input">
                                 <p>풋살팀 소속지역<span>*</span></p>
-                                <select name="teamLocal" onChange="selectTeam(this)">
-                                	<option>서울</option>
-                                   <option>경기</option>
-                                   <option>인천</option>
-                                   <option>강원</option>
-                                   <option>대전</option>
-                                   <option>충남/세종</option>
-                                   <option>충북</option>
-                                   <option>대구</option>
-                                   <option>경북</option>
-                                   <option>부산</option>
-                                   <option>울산</option>
-                                   <option>경남</option>
-                                   <option>광주</option>
-                                   <option>전남</option>
-                                   <option>전북</option>
-                                   <option>제주</option>
+                                <select name="teamLocal" id="insertLocal" class="insertLocal" onChange="selectTeam(this)">
+                                    <option value="서울">서울</option>
+                                   <option value="경기">경기</option>
+                                   <option value="인천">인천</option>
+                                   <option value="강원">강원</option>
+                                   <option value="대전">대전</option>
+                                   <option value="충남">충남</option>
+                                    <option value="세종">세종</option>
+                                   <option value="충북">충북</option>
+                                   <option value="대구">대구</option>
+                                   <option value="경북">경북</option>
+                                   <option value="부산">부산</option>
+                                   <option value="울산">울산</option>
+                                   <option value="경남">경남</option>
+                                   <option value="광주">광주</option>
+                                   <option value="전남">전남</option>
+                                   <option value="전북">전북</option>
+                                   <option value="제주">제주</option>
                                 </select>
                             </div> 
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>모집 시작일<span>*</span></p>
-                                        	<input type="date" name="teamStartDate" onChange="getStartDate(this)">
+                                        	<input type="date" name="teamStartDate" id="insertStartDate" class="insertStartDate" onChange="getStartDate(this)">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>모집 종료일<span>*</span></p>
-                                        	<input type="date" name="teamEndDate" onChange="getEndDate(this)">
+                                        	<input type="date" name="teamEndDate" id="insertEndDate" class="insertEndDate" onChange="getEndDate(this)">
                                     </div>
                                 </div>
                             </div>
                              <div class="checkout__input">
                                 <p>모집 상태<span>*</span></p>
                                 <label>
-                                	<input type="radio" name="teamStatus" value="indoor" onclick='getPlaceForm(event)' checked/>&nbsp모집중
+                                	<input type="radio" name="teamStatus" id="insertStatus-ing" class="insertStatus-ing" value="ing" onclick='getPlaceForm(event)' checked/>&nbsp모집중
                                 </label>
                                 <label>
-                                	<input type="radio" name="teamStatus" value="outdoor" onclick='getPlaceForm(event)' />&nbsp모집완료
+                                	<input type="radio" name="teamStatus" id="insertStatus-end" class="insertStatus-end" value="end" onclick='getPlaceForm(event)' />&nbsp모집완료
                                 </label>
                             </div>
                             <div class="checkout__input">
 								<p>기타사항</p>
-                               	<textarea class="etc" name="teamOther"></textarea>
+                               	<textarea class="etc" name="insertOther" class="insertOther" team="teamOther"></textarea>
                             </div>
                         </div>
                         
@@ -135,8 +136,8 @@
 									<li>모집 종료일<span id="teamEndDate"></span></li>
 									<li>모집 상태<span id="teamStatus"></span></li>
 								</ul>
-								<a type="submit" onclick="document.getElementById('frm').submit();" id="insert" class="site-btn-insert">등록</a>
-								<a href="#" onclick="location.href='/team';" id="cancel" class="site-btn-cancel">취소</a>
+                                <button onclick="location.href='/team';" type="submit" id="insert" class="site-btn-insert">등록</button>
+								<button onclick="location.href='/team';" type="button" id="cancel" class="site-btn-cancel">취소</button>
 							</div>
 						</div>
 					</div>

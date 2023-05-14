@@ -36,7 +36,6 @@
 
 			<!-- 풋살장 이미지 -->
 			<div class="root-container">
-				<!-- 추후 풋살장이미지 경로 변경해야함 -->
 				<div class="picture">
 					<img class="mainImage" src="${reservationDetail.imgPath}${reservationDetail.imgName}">
 				</div>
@@ -169,11 +168,17 @@
 				</div>
 
 				<!-- button -->
-				<div class="btn-container">
-					<!-- <a href="#this" id="list" class="btn">목록</a> -->
-					<a href="/reservationUpdateForm?reservationNo=${reservationDetail.reservationNo}" id="update" class="btn">수정</a>
-					<a href="/reservationRequest?reservationNo=${reservationDetail.reservationNo}" id="booking" class="btn">예약</a>
-				</div>
+				<c:if test="${empId != null && empId == reservationDetail.empId}">
+					<div class="btn-container">
+						<a href="/reservationUpdateForm?reservationNo=${reservationDetail.reservationNo}" id="update" class="btn">수정</a>
+						<a href="/reservation" id="list" class="btn">목록</a>
+					</div>
+				</c:if>
+				<c:if test="${userId != null && empId == null}">
+					<div class="btn-container2">
+						<a href="/reservationRequest?reservationNo=${reservationDetail.reservationNo}" id="booking" class="booking">예약</a>
+					</div>
+				</c:if>
 			</div>
 		</div>
 	</div>

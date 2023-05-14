@@ -515,7 +515,7 @@ select:disabled,
 	margin-bottom: 25px;
 }
 
-.checkout__order a.site-btn-insert {
+.checkout__order .site-btn-insert {
 	font-size: 15px;
 	letter-spacing: 2px;
 	width: 40%;
@@ -524,7 +524,7 @@ select:disabled,
     margin-right: 20px;
 }
 
-.checkout__order a.site-btn-cancel {
+.checkout__order .site-btn-cancel {
 	font-size: 15px;
 	letter-spacing: 2px;
 	width: 40%;
