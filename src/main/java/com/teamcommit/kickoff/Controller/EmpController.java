@@ -80,25 +80,23 @@ public class EmpController {
     }
 
     /* 풋살장 등록 */
-    @GetMapping("/empFutsal")
-    public String empFutsal() {
+    @RequestMapping("/empFutsal")
+    public String empFutsalInsert(@ModelAttribute("employerDO") EmployerDO employerDO, HttpServletRequest request, Model model) throws Exception {
         String view = "/emp/empFutsal";
+
+        String empId = (String) request.getSession().getAttribute("empId");
+        EmployerDO employerDO = new EmployerDO();
+        employerDO.setEmpId(empId);
+        employerDO = loginService.procSetEmployerInfo(employerDO);
+
+        PlaceDO imgInfo = empService.selectImgInfo(employerDO.getEmpId());
+        model.addAttribute("imgInfo", imgInfo);
 
         return view;
     }
 
-    @RequestMapping("/empFutsal")
-    public ModelAndView empFutsal(CommandMap commandMap, HttpServletRequest request) throws Exception {
 
-        ModelAndView mv = new ModelAndView("redirect:/empFutsalFix");
-
-        empService.insertFutsal(commandMap.getMap(), request);
-
-        return mv;
-    }
-
-
-    /* 풋살장 목록
+    /* 풋살장 목록 */
     @RequestMapping(value = "/empFutsalFix", method = RequestMethod.GET)
     public String Boardlist(@ModelAttribute("PlaceDO") PlaceDO PlaceDO, HttpServletRequest request, Model model) {
 
@@ -108,6 +106,6 @@ public class EmpController {
         model.addAttribute("boardList", boardList);
 
         return view;
-    } */
+    }
 
 }
