@@ -4,6 +4,8 @@ import java.util.Date;
 
 public class ReservationDO {
 
+	private String reservationType;
+
 	//예약 고유 번호
 	private int reservationNo;
 	//예약자 아이디
@@ -49,8 +51,46 @@ public class ReservationDO {
 
 	private String reservationHeadcount;
 
+	private String reservationPlaceSize;
+
+	private String reservationPlaceGround;
+
+	private String reservationPlaceParking;
+
 	public ReservationDO() {
 
+	}
+
+	public String getReservationType() {
+		return reservationType;
+	}
+
+	public void setReservationType(String reservationType) {
+		this.reservationType = reservationType;
+	}
+
+	public String getReservationPlaceSize() {
+		return reservationPlaceSize;
+	}
+
+	public void setReservationPlaceSize(String reservationPlaceSize) {
+		this.reservationPlaceSize = reservationPlaceSize;
+	}
+
+	public String getReservationPlaceGround() {
+		return reservationPlaceGround;
+	}
+
+	public void setReservationPlaceGround(String reservationPlaceGround) {
+		this.reservationPlaceGround = reservationPlaceGround;
+	}
+
+	public String getReservationPlaceParking() {
+		return reservationPlaceParking;
+	}
+
+	public void setReservationPlaceParking(String reservationPlaceParking) {
+		this.reservationPlaceParking = reservationPlaceParking;
 	}
 
 	public String getReservationHeadcount() {

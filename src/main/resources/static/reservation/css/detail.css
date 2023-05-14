@@ -106,7 +106,7 @@ body {
 }
 
 .ground-title-content {
-	padding: 1rem;
+	padding: 1.5rem 1rem 1rem 1rem;
 	display: flex;
 	justify-content: space-between;
 	background-color: #fff;
@@ -126,9 +126,9 @@ body {
 	flex: 1;
 }
 
-h4.title {
-	font-size: 16px;
-	font-weight: 400px;
+h3.placeName {
+	font-size: 18px;
+	font-weight: bold;
 }
 
 .time-price-wrap {

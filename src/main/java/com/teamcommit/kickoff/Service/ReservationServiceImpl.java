@@ -36,12 +36,8 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public PlaceDO selectImgInfo(String empId) throws Exception {
-        return reservationMapper.selectImgInfo(empId);
-    }
-    @Override
-    public PlaceDO selectPlaceInfo(int placeId) throws Exception {
-        return reservationMapper.selectPlaceInfo(placeId);
+    public PlaceDO selectPlaceInfo(String empId) throws Exception {
+        return reservationMapper.selectPlaceInfo(empId);
     }
 
 }

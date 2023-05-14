@@ -55,10 +55,6 @@
         <div class="container">
             <div class="checkout__form">
                 <form role="form" id="frm" name="frm" action="/reservationInsert" method="POST">
-                    <input type="hidden" name="empId" value="${empId}" />
-                    <input type="hidden" name="imgName" value="${imgInfo.imgName}" />
-                    <input type="hidden" name="imgPath" value="${imgInfo.imgPath}" />
-                    <input type="hidden" name="placeId" value="${imgInfo.placeId}" />
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
@@ -90,9 +86,9 @@
                                 </label>
                             </div>
                             <div class="checkout__input">
-                                <p>추천 인원<span>*</span></p>
+                                <p>추천 경기<span>*</span></p>
                                 <select id="inputHeadcount" name="reservationHeadcount" onChange="selectHeadcount(this)">
-                                    <option value="">추천인원 선택하기</option>
+                                    <option value="">추천경기 선택하기</option>
                                     <option value="4 vs 4">4 vs 4</option>
                                     <option value="5 vs 5">5 vs 5</option>
                                     <option value="6 vs 6">6 vs 6</option>
@@ -171,13 +167,20 @@
 									<li>코트<span id="court"></span></li>
 									<li>위치<span id="address"></span></li>
 									<li>형태<span id="placeForm"></span></li>
-                                    <li>추천 인원<span id="headcount"></span></li>
+                                    <li>추천 경기<span id="headcount"></span></li>
 									<li>예약 날짜<span id="date"></span></li>
 									<li>시작 시간<span id="startTime"></span></li>
 									<li>종료 시간<span id="endTime"></span></li>
 									<li>예약 상태<span id="status">예약대기</span></li>
 									<li>대관비<span id="price"></span></li>
 								</ul>
+                                <input type="hidden" name="empId" value="${empId}" />
+                                <input type="hidden" name="imgName" value="${placeInfo.imgName}" />
+                                <input type="hidden" name="imgPath" value="${placeInfo.imgPath}" />
+                                <input type="hidden" name="placeId" value="${placeInfo.placeId}" />
+                                <input type="hidden" name="reservationPlaceSize" value="${placeInfo.placeSize}" />
+                                <input type="hidden" name="reservationPlaceGround" value="${placeInfo.placeGround}" />
+                                <input type="hidden" name="reservationPlaceParking" value="${placeInfo.placeParking}" />
 								<input type="submit" id="insert" class="site-btn-insert" value="등록"></input>
                                <%-- <a href="#this" id="insert" class="site-btn-insert">등록</a>--%>
                                 <a href="/reservation" id="cancle" class="site-btn-cancle">취소</a>

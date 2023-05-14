@@ -17,9 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class ReservationController {
@@ -52,8 +50,8 @@ public class ReservationController {
         employerDO.setEmpId(empId);
         employerDO = loginService.procSetEmployerInfo(employerDO);
 
-        PlaceDO imgInfo = reservationService.selectImgInfo(employerDO.getEmpId());
-        model.addAttribute("imgInfo", imgInfo);
+        PlaceDO placeInfo = reservationService.selectPlaceInfo(employerDO.getEmpId());
+        model.addAttribute("placeInfo", placeInfo);
 
         return view;
     }
@@ -68,16 +66,15 @@ public class ReservationController {
         return mv;
     }
 
-    @RequestMapping("/reservationDetail")
-    public String reservationDetail(@ModelAttribute("reservationDO") ReservationDO reservationDO, @RequestParam("reservationNo") int reservationNo, @RequestParam("placeId") int placeId, Model model) throws Exception {
+    @RequestMapping(value = "/reservationDetail", method=RequestMethod.GET)
+    public String reservationDetail(@ModelAttribute("reservationDO") ReservationDO reservationDO, @RequestParam("reservationNo") int reservationNo, Model model) throws Exception {
 
         String view = "/reservation/reservationDetail";
 
         ReservationDO reservationDetail = reservationService.selectReservationDetail(reservationNo);
         model.addAttribute("reservationDetail", reservationDetail);
 
-        PlaceDO placeInfo = reservationService.selectPlaceInfo(placeId);
-        model.addAttribute("placeInfo", placeInfo);
+        System.out.println(model);
 
         return view;
     }
