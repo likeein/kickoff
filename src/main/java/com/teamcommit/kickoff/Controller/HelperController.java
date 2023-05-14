@@ -53,6 +53,7 @@ public class HelperController {
                     model.addAttribute("userId", userId);
                 }
                 catch (Exception e) {
+                    e.printStackTrace();
                     model.addAttribute("msg", "예약 내역이 존재하지 않습니다.");
                 }
             }
