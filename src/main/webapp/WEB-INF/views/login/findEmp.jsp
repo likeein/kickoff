@@ -21,14 +21,14 @@
     </form>
   </div>
   <div class="form-container sign-in-container">
-    <form form method="POST" name="findEmp" action="/findEmp">
+    <form form method="POST" name="findEmp" action="/findId">
       <h1>아이디 찾기</h1>
       <h4>업체 회원용</h4>
       <br />
-	      <input type="text" placeholder="업체명" />
-	      <input type="text" placeholder="사업자 번호" />
-	      	      <button class="confirm" id="confirmNumber">사업자 번호 인증</button><br /><br />
-	      <button onclick="location.href='/findId';">아이디 찾기</button>
+	      <input type="text" placeholder="업체명" name="empName"/>
+	      <input type="text" placeholder="사업자 번호" name="empNo" />
+<%--	      	      <button class="confirm" id="confirmNumber">사업자 번호 인증</button><br /><br />--%>
+	      <button type="submit" id="findId" onclick="location.href='/findId';">아이디 찾기</button>
     </form>
   </div>
   <div class="overlay-container">

@@ -24,7 +24,7 @@
     <!-- 개인 회원 아이디 찾기 -->
     <select id="findUser_id" parameterType="com.teamcommit.kickoff.Do.UserDO" resultType="com.teamcommit.kickoff.Do.UserDO">
         <![CDATA[
-        SELECT USER_ID = #{userId}
+        SELECT *
         FROM USERS
         WHERE USER_NAME = #{userName} AND USER_PHONE_NUMBER = #{userPhoneNumber}
         ]]>
@@ -33,7 +33,7 @@
     <!-- 업체 회원 아이디 찾기 -->
     <select id="findEmp_id" parameterType="com.teamcommit.kickoff.Do.EmployerDO" resultType="com.teamcommit.kickoff.Do.EmployerDO">
         <![CDATA[
-        SELECT EMP_ID = #{empId}
+        SELECT *
         FROM EMPLOYER
         WHERE EMP_NAME = #{empName} AND EMP_NO = #{empNo}
         ]]>
