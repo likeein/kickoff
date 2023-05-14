@@ -353,11 +353,15 @@
                   <div class="post-entry-contents">
                     <h3><a href="#">지금 예약 가능해요! ⚽</a></h3>
                     <table class="bluetop">
-					  <tr> <th>업체명</th> <th>지역</th> <th>조명</th> <th>형태</th> </tr>
-					  <tr> <td>서울 풋살장</td> <td>서울</td> <td>유</td> <td>실내</td> </tr>
-					  <tr><td>부산 풋살장</td><td>부산</td> <td>유</td> <td>실외</td></tr>
-					  <tr><td>대구 풋살장</td><td>대구</td> <td>유</td> <td>실내</td></tr>
-					  <tr><td>울산 풋살장</td><td>울산</td> <td>유</td> <td>실외</td></tr>
+					  <tr> <th>업체명</th> <th>코트 이름</th> <th>추천 인원</th> <th>상태</th> </tr>
+                      <c:forEach var="list" items="${resList}">
+                        <tr>
+                          <td><c:out value="${list.reservationPlaceName}" /></td>
+                          <td><c:out value="${list.reservationCourtName}" /></td>
+                          <td><c:out value="${list.reservationHeadcount}" /></td>
+                          <td><c:out value="${list.reservationStatus}" /></td>
+                        </tr>
+                      </c:forEach>
 					</table>
                     <p><a href="/reservation" class="readmore">Read more</a></p>
                   </div>
@@ -370,11 +374,15 @@
                   <div class="post-entry-contents">
                     <h3><a href="#">최근 매치 등록 🏆</a></h3>
                     <table class="bluetop">
-					  <tr> <th>업체명</th> <th>지역</th> <th>팀 레벨</th> <th>경기 방식</th> </tr>
-					  <tr> <td>서울 풋살장</td> <td>서울</td> <td>1</td> <td>3 vs 3</td> </tr>
-					  <tr><td>부산 풋살장</td><td>부산</td> <td>2</td> <td>5 vs 5</td> </tr>
-					  <tr><td>대구 풋살장</td><td>대구</td> <td>3</td> <td>3 vs 3</td> </tr>
-					  <tr><td>울산 풋살장</td><td>울산</td> <td>4</td> <td>6 vs 6</td> </tr>
+					  <tr> <th>경기 방식</th> <th>팀 성별</th> <th>경기 날짜</th> <th>시간</th> </tr>
+                      <c:forEach var="gList" items="${gameList}">
+                        <tr>
+                          <td><c:out value="${gList.gameStyle}" /></td>
+                          <td><c:out value="${gList.gameGender}" /></td>
+                          <td><c:out value="${gList.gameDate}" /></td>
+                          <td><c:out value="${gList.gameStartTime}" /></td>
+                        </tr>
+                      </c:forEach>
 					</table>
                     <p><a href="/game" class="readmore">Read more</a></p>
                   </div>
@@ -385,13 +393,17 @@
                 <div class="post-entry" data-aos="fade-up" data-aos-delay="200">
                   <a href="#" class="thumb"></a>
                   <div class="post-entry-contents">
-                    <h3><a href="#">게시판 TOP 10 🔥</a></h3>
+                    <h3><a href="#">오늘 올라온 소식이에요! 🔥</a></h3>
                     <table class="bluetop">
 					  <tr> <th>제목</th> <th>작성자</th> <th>조회수</th> <th>작성일</th> </tr>
-					  <tr> <td>서울 풋살장</td> <td>서울</td> <td>유</td> <td>실내</td> </tr>
-					  <tr><td>부산 풋살장</td><td>부산</td> <td>유</td> <td>실외</td></tr>
-					  <tr><td>대구 풋살장</td><td>대구</td> <td>유</td> <td>실내</td></tr>
-					  <tr><td>울산 풋살장</td><td>울산</td> <td>유</td> <td>실외</td></tr>
+                      <c:forEach var="bList" items="${boardList}">
+                        <tr>
+                          <td><c:out value="${bList.writeTitle}" /></td>
+                          <td><c:out value="${bList.writeId}" /></td>
+                          <td><c:out value="${bList.viewCount}" /></td>
+                          <td><c:out value="${bList.writeRegDate}" /></td>
+                        </tr>
+                      </c:forEach>
 					</table>
                     <p><a href="/board" class="readmore">Read more</a></p>
                   </div>
