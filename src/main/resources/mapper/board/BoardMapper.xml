@@ -130,7 +130,7 @@
     </update>
 
     <!-- Reply Insert -->
-    <insert id="insert_reply" parameterType="com.teamcommit.kickoff.Do.ReplyDO">
+    <insert id="insertReply" parameterType="com.teamcommit.kickoff.Do.ReplyDO">
         <![CDATA[
         INSERT INTO REPLY
         (
@@ -138,7 +138,7 @@
             REPLY_ID,
             BOARD_SEQNO,
             REPLY_CONTENT,
-            REPLY_ID
+            REPLY_ID_EMP
         )
         VALUES
             (

@@ -103,7 +103,7 @@ public class BoardController {
     }*/
 
     //게시판 상세보기
-    @RequestMapping( "/boardDetail")
+    @GetMapping("/boardDetail")
     public String boardDetail(@ModelAttribute("boardDO") BoardDO boardDO, @RequestParam("boardSeqno") int boardSeqno, HttpServletRequest request, Model model) throws Exception {
         String view = "/board/boardDetail";
 
@@ -199,10 +199,10 @@ public class BoardController {
     }
 
     //댓글 등록
-    @RequestMapping( "/insert_reply")
+    @PostMapping( "/boardDetail")
     public ModelAndView insert_reply(@ModelAttribute("replyDO") ReplyDO replyDO, @RequestParam("boardSeqno") int boardSeqno, ModelMap model, HttpServletRequest request, RedirectAttributes redirect) throws Exception {
 
-        ModelAndView mv = new ModelAndView("redirect:/boardDetail?boardSeqno:"+boardSeqno);
+        ModelAndView mv = new ModelAndView("redirect:/boardDetail?boardSeqno="+boardSeqno);
 
         try{
 
@@ -221,6 +221,7 @@ public class BoardController {
             redirect.addFlashAttribute("msg","댓글 등록되었습니다." );
         } catch (Exception e) {
             redirect.addFlashAttribute("msg", "오류가 발생되었습니다. 다시 시도해주세요.");
+            e.printStackTrace();
         }
         System.out.println("333333333333333333333");
         return mv;
