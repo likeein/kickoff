@@ -11,11 +11,13 @@ public class ReplyDO {
 	//게시글 번호
 	private int boardSeqno;
 	//댓글 작성일
-	private Date replyRegDate;
+	private String replyRegDate;
 	//댓글 수정일
-	private Date replyEditDate;
+	private String replyEditDate;
 	//댓글 내용
 	private String replyContent;
+	//댓글 작성자 아이디
+	private String replyIdEmp;
 	
 	public int getReplyNo() {
 		return replyNo;
@@ -35,16 +37,16 @@ public class ReplyDO {
 	public void setBoardSeqno(int boardSeqno) {
 		this.boardSeqno = boardSeqno;
 	}
-	public Date getReplyRegDate() {
+	public String getReplyRegDate() {
 		return replyRegDate;
 	}
-	public void setReplyRegDate(Date replyRegDate) {
+	public void setReplyRegDate(String replyRegDate) {
 		this.replyRegDate = replyRegDate;
 	}
-	public Date getReplyEditDate() {
+	public String getReplyEditDate() {
 		return replyEditDate;
 	}
-	public void setReplyEditDate(Date replyEditDate) {
+	public void setReplyEditDate(String replyEditDate) {
 		this.replyEditDate = replyEditDate;
 	}
 	public String getReplyContent() {
@@ -54,4 +56,11 @@ public class ReplyDO {
 		this.replyContent = replyContent;
 	}
 
+	public String getReplyIdEmp() {
+		return replyIdEmp;
+	}
+
+	public void setReplyIdEmp(String replyIdEmp) {
+		this.replyIdEmp = replyIdEmp;
+	}
 }

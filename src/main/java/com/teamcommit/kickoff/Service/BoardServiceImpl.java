@@ -51,10 +51,18 @@ public class BoardServiceImpl implements BoardService{
         return boardMapper.procGetMaxSeqno();
     }
 
+    public Integer procGetMaxNo() throws Exception {
+        return boardMapper.procGetMaxNo();
+    }
+
     //조회수 증가
     @Override
     public void procAddViewCount(BoardDO boardDO) {
         boardMapper.procAddViewCount(boardDO);
+    }
+
+    public void insertReply(ReplyDO replyDO) throws Exception{
+        boardMapper.insertReply(replyDO);
     }
 
 }
