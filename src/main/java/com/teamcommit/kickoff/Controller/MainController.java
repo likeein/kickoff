@@ -3,9 +3,8 @@ package com.teamcommit.kickoff.Controller;
 import com.teamcommit.kickoff.Do.BoardDO;
 import com.teamcommit.kickoff.Do.GameDO;
 import com.teamcommit.kickoff.Do.ReservationDO;
-import com.teamcommit.kickoff.Service.BoardService;
-import com.teamcommit.kickoff.Service.GameService;
-import com.teamcommit.kickoff.Service.ReservationService;
+import com.teamcommit.kickoff.Service.MainService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,27 +17,21 @@ import java.util.List;
 public class MainController {
 
 	@Autowired
-	private BoardService boardService;
-
-	@Autowired
-	private GameService gameService;
-
-	@Autowired
-	private ReservationService reservationService;
-
+	private MainService mainService;
 
 	@GetMapping("/main")
 	public String main(@ModelAttribute("boardDO") BoardDO boardDO, @ModelAttribute("reservationDO") ReservationDO reservationDO, @ModelAttribute("gameDO") GameDO gameDO, Model model) {
 		String view = "/main";
+		String resResult = "", gameResult = "", boardResult = "";
 
 		try {
-			List<ReservationDO> reservationList = reservationService.selectReservationList(reservationDO);
+			List<ReservationDO> reservationList = mainService.selectReservationMain();
 			model.addAttribute("resList", reservationList);
 
-			List<GameDO> gameList = gameService.gameDetail(gameDO);
+			List<GameDO> gameList = mainService.selectGameMain();
 			model.addAttribute("gameList", gameList);
 
-			List<BoardDO> boardList = boardService.getList(boardDO);
+			List<BoardDO> boardList = mainService.selectBoardMain();
 			model.addAttribute("boardList", boardList);
 		}
 		catch (Exception e) {
