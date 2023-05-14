@@ -31,6 +31,8 @@ public class BoardDO {
 	private String filePath;
 	//작성자 아이디
 	private String writeIdEmp;
+	//게시글 댓글수
+	private int replyCount;
 	
 	public int getBoardSeqno() {
 		return boardSeqno;
@@ -99,5 +101,13 @@ public class BoardDO {
 
 	public void setWriteIdEmp(String writeIdEmp) {
 		this.writeIdEmp = writeIdEmp;
+	}
+
+	public int getReplyCount() {
+		return replyCount;
+	}
+
+	public void setReplyCount(int replyCount) {
+		this.replyCount = replyCount;
 	}
 }

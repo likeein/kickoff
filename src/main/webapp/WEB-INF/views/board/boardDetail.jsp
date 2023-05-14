@@ -117,18 +117,18 @@
 			<div class="reply">
 				<table id="tblListComment" class="table table-bordered">
 
-					<c:if test="${ clist.size() == 0 }">
+					<c:if test="${ replyList.size() == 0 }">
 						<tr>
 							<td colspan="2">댓글이 없습니다.</td>
 						</tr>
 					</c:if>
 
-					<c:forEach items="${ clist }" var="cdto">
+					<c:forEach items="${ replyList }" var="list">
 						<tr>
-							<td>${ cdto.content } <span>${ cdto.name }. ${ cdto.regdate }</span>
+							<td>${ replyList.replyContent } <span>${ replyList.replyId }${ replyList.replyIdEmp }</span>
 							</td>
-							<td><input type="button" value="삭제하기" class="btn btn-default"
-								onclick="location.href='/myapp/board/delcomment.do?seq=${ cdto.seq }&pseq=${ dto.seq }';" />
+							<td><input type="button" value="삭제하기" class="btn btn-default" id="deleteRely" name="deleteRely"
+								onclick="location.href='/boardDetil?boardSeqno=' + boardSeqno + 'replyNo=' + replyNo;" />
 							</td>
 						</tr>
 					</c:forEach>

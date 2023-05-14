@@ -51,6 +51,7 @@ public class BoardServiceImpl implements BoardService{
         return boardMapper.procGetMaxSeqno();
     }
 
+    @Override
     public Integer procGetMaxNo() throws Exception {
         return boardMapper.procGetMaxNo();
     }
@@ -61,8 +62,19 @@ public class BoardServiceImpl implements BoardService{
         boardMapper.procAddViewCount(boardDO);
     }
 
+    @Override
     public void insertReply(ReplyDO replyDO) throws Exception{
         boardMapper.insertReply(replyDO);
+    }
+
+    @Override
+    public List<ReplyDO> getreplyList(int boardSeqno) throws Exception {
+        return boardMapper.getreplyList(boardSeqno);
+    }
+
+    @Override
+    public void getReplyDelete(int replyNo) throws Exception {
+        boardMapper.getReplyDelete(replyNo);
     }
 
 }
