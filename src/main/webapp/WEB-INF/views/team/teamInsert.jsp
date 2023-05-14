@@ -49,16 +49,16 @@
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form id="frm" name="frm" action="/teamInsert" method="POST">
+                <form id="frm" name="frm" action="/teamInsert" method="POST" onsubmit="return _onSubmit();">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
                                <p>풋살팀 이름<span>*</span></p>
-                               <input type="text" value="" name="teamName">
+                               <input type="text" name="teamName">
                            	</div>
                            	<div class="checkout__input">
                                <p>모집 인원<span>*</span></p>
-                               <input type="text" value="" name="teamNumber" onChange="selectNumber(this)">
+                               <input type="text" name="teamNumber" onChange="selectNumber(this)">
                            	</div>
                           	<div class="checkout__input">
                                 <p>풋살팀 성별<span>*</span></p>
@@ -127,15 +127,15 @@
 									Title<span>Content</span>
 								</div>
 								<ul>
-									<li>풋살팀 이름<span>이름이름</span></li>
-									<li>모집 인원<span id="team-number"></span></li>
-									<li>풋살팀 성별<span id="team-gender"></span></li>
-									<li>풋살팀 소속 지역<span id="team-local"></span></li>
-									<li>모집 시작일<span id="open-date"></span></li>
-									<li>모집 종료일<span id="close-date"></span></li>
-									<li>모집 상태<span id="team-status"></span></li>
+									<li>풋살팀 이름<span id="teamName"></span></li>
+									<li>모집 인원<span id="teamNumber"></span></li>
+									<li>풋살팀 성별<span id="teamGender"></span></li>
+									<li>풋살팀 소속 지역<span id="teamLocal"></span></li>
+									<li>모집 시작일<span id="teamStartDate"></span></li>
+									<li>모집 종료일<span id="teamEndDate"></span></li>
+									<li>모집 상태<span id="teamStatus"></span></li>
 								</ul>
-								<a href="#" onclick="location.href='/team';" id="insert" class="site-btn-insert">등록</a>
+								<a type="submit" onclick="document.getElementById('frm').submit();" id="insert" class="site-btn-insert">등록</a>
 								<a href="#" onclick="location.href='/team';" id="cancel" class="site-btn-cancel">취소</a>
 							</div>
 						</div>
