@@ -133,8 +133,8 @@
 						</tr>
 					</c:forEach>
 				</table>
-
-				<form  method="POST" id="frm" name="frm" action="/insert_reply" >
+				<%-- action="/insert_reply"  --%>
+				<form  method="POST" id="frm" name="frm">
 					<table id="tblAddComment" class="table table-bordered">
 						<tr>
 							<td>
