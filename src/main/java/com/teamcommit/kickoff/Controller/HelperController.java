@@ -26,7 +26,6 @@ public class HelperController {
         String view = "/helper/helperList";
 
         try {
-
             helperService.updateStatus();
             List<HelperDO> list = helperService.selectHelper(helperDO);
             model.addAttribute("table", list);
@@ -37,6 +36,7 @@ public class HelperController {
         return view;
     }
 
+    // insert 부분은 아직 미완성...! 예약 내역 완성되는대로 다시 츄라이
     @GetMapping("/helperInsert")
     public String helperInsert(Model model, HttpSession session) {
         String view = "/helper/helperInsert";
