@@ -8,11 +8,7 @@ import java.util.Date;
 public class TeamDO {
 
 	//풋살팀 아이디
-	private int teamId;
-	//팀장 아이디
-	private String masterId;
-	//팀원 아이디
-	private String memberId;
+	private int teamSeqId;
 	//팀 이름
 	private String teamName;
 	//팀 인원수
@@ -38,23 +34,11 @@ public class TeamDO {
 	// 팀 게시글 번호
 	private int teamSeqNo;
 	
-	public int getTeamId() {
-		return teamId;
+	public int getTeamSeqId() {
+		return teamSeqId;
 	}
-	public void setTeamId(int teamId) {
-		this.teamId = teamId;
-	}
-	public String getMasterId() {
-		return masterId;
-	}
-	public void setMasterId(String masterId) {
-		this.masterId = masterId;
-	}
-	public String getMemberId() {
-		return memberId;
-	}
-	public void setMemberId(String memberId) {
-		this.memberId = memberId;
+	public void setTeamSeqId(int teamSeqId) {
+		this.teamSeqId = teamSeqId;
 	}
 	public String getTeamName() {
 		return teamName;

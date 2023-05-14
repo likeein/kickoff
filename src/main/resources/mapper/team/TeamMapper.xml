@@ -18,6 +18,7 @@
         <![CDATA[
         INSERT INTO TEAM
         (
+            TEAM_SEQID,
             TEAM_SEQNO,
             TEAM_NAME,
             TEAM_NUMBER,
@@ -29,11 +30,12 @@
             TEAM_OTHER
         )
         VALUES(
-                  TEAM_SQ.NEXTVAL,
+                  TEAM_SEQID.NEXTVAL,
+                  TEAM_SEQ.NEXTVAL,
                   #{teamName},
                   #{teamNumber},
                   #{teamGender},
-                  #{team_local},
+                  #{teamLocal},
                   #{teamStartDate},
                   #{teamEndDate},
                   #{teamStatus},
@@ -51,7 +53,18 @@
         FROM
             TEAM
         WHERE
-            TEAM_NAME = #{teamName}
+            TEAM_SEQNO = #{teamSeqNo}
+        ]]>
+    </select>
+
+    <!-- Team RankList -->
+    <select id="rankList" parameterType="com.teamcommit.kickoff.Do.TeamDO" resultType="com.teamcommit.kickoff.Do.TeamDO">
+        <![CDATA[
+        SELECT
+            *
+        FROM
+            TEAM
+            ORDER BY TEAM_RANK ASC
         ]]>
     </select>
 
