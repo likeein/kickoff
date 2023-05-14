@@ -31,10 +31,6 @@
 
     <link rel = "stylesheet" href = "/includes/css/week.css" />
 
-    <script>
-        ${script}
-    </script>
-
 </head>
 
 <body id="page-top">
