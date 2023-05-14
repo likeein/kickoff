@@ -5,6 +5,7 @@ import com.teamcommit.kickoff.Do.PlaceDO;
 import com.teamcommit.kickoff.Do.ReservationDO;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ReservationService {
 
@@ -14,6 +15,8 @@ public interface ReservationService {
     ReservationDO selectReservationDetail(int reservationNO) throws Exception;
 
     void updateReservation(ReservationDO reservationDO) throws Exception;
+
+    PlaceDO selectImgInfo(String empId) throws Exception;
 
     PlaceDO selectPlaceInfo(int placeId) throws Exception;
 

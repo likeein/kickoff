@@ -7,6 +7,7 @@ import com.teamcommit.kickoff.Do.UserDO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface ReservationMapper {
@@ -20,4 +21,6 @@ public interface ReservationMapper {
     public void updateReservation(ReservationDO reservationDO);
 
     public PlaceDO selectPlaceInfo(int placeId);
+
+    public PlaceDO selectImgInfo(String empId);
 }
