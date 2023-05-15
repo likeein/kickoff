@@ -56,11 +56,7 @@
 
 		function reportConfirm(){
 
-			if(!confirm("신고 하시겠습니까?")){
-				return false;
-			}else{
-				location.href="/boardReport?boardSeqno=${boardContents.boardSeqno}";
-			}
+			location.href="/boardReport?boardSeqno=${boardContents.boardSeqno}";
 		}
 	</script>
 
