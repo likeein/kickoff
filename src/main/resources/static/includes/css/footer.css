@@ -3,6 +3,7 @@
 * {
 	margin: 0;
 	font-family: 'Noto Sans KR', sans-serif !important;
+	font-weight: bold;
 }
 
 *, ::after, ::before {

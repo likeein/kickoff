@@ -42,7 +42,8 @@ public class BoardController {
     //게시판 등록페이지 이동
     @RequestMapping( "/boardInsert")
     public String insert(@ModelAttribute("boardDO") BoardDO boardDO, HttpServletRequest request, Model model) throws Exception {
-        String view = "/board/boardInsert";
+        String view = "";
+
         //로그인한 이용자 ID로 로그인 정보 가져오기
         String userId = (String) request.getSession().getAttribute("userId");
         UserDO userDO =new UserDO();
@@ -53,6 +54,14 @@ public class BoardController {
         EmployerDO employerDO = new EmployerDO();
         employerDO.setEmpId(empId);
         employerDO = loginService.procSetEmployerInfo(employerDO);
+
+        if(userId == null && empId == null) {
+            model.addAttribute("msg", "alert('로그인 후 이용해주세요');");
+            view = "forward:/board";
+        }
+        else if(userId != null || empId != null) {
+            view = "/board/boardInsert";
+        }
 
         return view;
     }
@@ -168,9 +177,22 @@ public class BoardController {
 
     //게시판 신고
     @RequestMapping( "/boardReport")
-    public String boardReport(@ModelAttribute("boardDO") BoardDO boardDO, @RequestParam("boardSeqno") int boardSeqno, Model model) throws Exception {
-        String view = "/board/boardReport";
+    public String boardReport(@ModelAttribute("boardDO") BoardDO boardDO, @RequestParam("boardSeqno") int boardSeqno, HttpServletRequest request, Model model) throws Exception {
+        String view = "";
+
+        //로그인한 이용자 ID로 로그인 정보 가져오기
+        String userId = (String) request.getSession().getAttribute("userId");
+        //로그인한 이용자 ID로 로그인 정보 가져오기
+        String empId = (String) request.getSession().getAttribute("empId");
         model.addAttribute("boardSeqno",boardSeqno);
+
+        if(userId == null && empId == null) {
+            model.addAttribute("msg", "alert('로그인 후 이용해주세요');");
+            view = "forward:/board";
+        }
+        else if(userId != null || empId != null) {
+            view = "/board/boardReport";
+        }
 
         return view;
     }

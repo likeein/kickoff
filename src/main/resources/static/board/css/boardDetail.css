@@ -5,6 +5,7 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	font-weight: bold;
 }
 
 panel, panel-body
@@ -116,7 +117,7 @@ button {
 
 .bg-dark {
 	--bs-bg-opacity: 1;
-	background-color: #B1D7B4 !important;
+	background-color: #7fb77e !important;
 	color: #FFF;
 	width: 100%;
 	text-align: center;

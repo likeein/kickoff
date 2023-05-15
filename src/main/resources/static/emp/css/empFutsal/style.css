@@ -30,6 +30,9 @@
 /* Template default CSS
 /*----------------------------------------*/
 
+*{
+	font-weight: bold;
+}
 
 .spad {
 	padding-top: 100px;
