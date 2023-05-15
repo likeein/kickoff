@@ -18,7 +18,6 @@
         <![CDATA[
         INSERT INTO TEAM
         (
-            TEAM_SEQID,
             TEAM_SEQNO,
             TEAM_SEQID,
             TEAM_NAME,
@@ -31,8 +30,8 @@
             TEAM_OTHER
         )
         VALUES(
-                  TEAM_SEQID.NEXTVAL,
                   TEAM_SEQ.NEXTVAL,
+                  TEAM_SEQID.NEXTVAL,
                   #{teamName},
                   #{teamNumber},
                   #{teamGender},
@@ -58,31 +57,31 @@
         ]]>
     </select>
 
-    <!-- Team RankList -->
+    <!-- TeamRank List -->
     <select id="rankList" parameterType="com.teamcommit.kickoff.Do.TeamDO" resultType="com.teamcommit.kickoff.Do.TeamDO">
         <![CDATA[
         SELECT
             *
         FROM
             TEAM
-            ORDER BY TEAM_RANK ASC
+        ORDER BY TEAM_RANK ASC
         ]]>
     </select>
 
-<!--    &lt;!&ndash; Board Update &ndash;&gt;-->
-<!--    <update id="updaateBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO">-->
-<!--        <![CDATA[-->
-<!--        UPDATE-->
-<!--            COMMUNITY_BOARD-->
-<!--        SET-->
-<!--            WRITE_TITLE = #{writeTitle},-->
-<!--            WRITE_CONTENT = #{writeContent},-->
-<!--            FILE_NAME = #{fileName},-->
-<!--            FILE_PATH = #{filePath},-->
-<!--            WRITE_EDIT_DATE = now()-->
-<!--        WHERE-->
-<!--            BOARD_SQENO = #{boardSeqno}-->
-<!--        ]]>-->
-<!--    </update>-->
+    <!--    &lt;!&ndash; Board Update &ndash;&gt;-->
+    <!--    <update id="updaateBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO">-->
+    <!--        <![CDATA[-->
+    <!--        UPDATE-->
+    <!--            COMMUNITY_BOARD-->
+    <!--        SET-->
+    <!--            WRITE_TITLE = #{writeTitle},-->
+    <!--            WRITE_CONTENT = #{writeContent},-->
+    <!--            FILE_NAME = #{fileName},-->
+    <!--            FILE_PATH = #{filePath},-->
+    <!--            WRITE_EDIT_DATE = now()-->
+    <!--        WHERE-->
+    <!--            BOARD_SQENO = #{boardSeqno}-->
+    <!--        ]]>-->
+    <!--    </update>-->
 
 </mapper>

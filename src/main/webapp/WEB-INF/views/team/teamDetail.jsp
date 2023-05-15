@@ -43,7 +43,7 @@
 			</div>
 		</div>
 	</div>
-	<form role="form" action="/board/create_action" method="post">
+	<form role="form" action="/teamDetail" method="post">
 		<div class="container">
 			<div class="table-responsive">
 				<table class="board_detail">

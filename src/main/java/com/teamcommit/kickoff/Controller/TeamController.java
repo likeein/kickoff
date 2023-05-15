@@ -57,20 +57,37 @@ public class TeamController {
         return view;
     }
 
-    // 팀 등록
-    @RequestMapping("/teamInsert")
-    public String teamInsert(@ModelAttribute("teamDO") TeamDO teamDO, Model model, HttpSession session) throws Exception {
-        String view = "/team/teamInsert";
+    // 팀 등록 페이지 이동
+    @GetMapping("/teamInsert")
+    public String teamInsert(HttpSession session, Model model) {
+        String view = "";
 
         if(session.getAttribute("userId") == null) {
             model.addAttribute("script", "alert('로그인 후 이용하실 수 있습니다.');");
             view = "login/loginAll";
         }
         else if (session.getAttribute("userId") != null) {
-                teamService.insertTeam(teamDO);
-                model.addAttribute("script", "alert('팀 등록을 완료하였습니다.');");
+            view = "team/teamInsert";
         }
         return view;
+    }
+
+    // 팀 등록 요청
+    @RequestMapping("/teamInsertAction")
+    public ModelAndView teamInsertAction(@ModelAttribute("teamDO") TeamDO teamDO, Model model, HttpSession session) throws Exception {
+        ModelAndView mv = new ModelAndView();
+
+        try {
+            teamService.insertTeam(teamDO);
+            mv = new ModelAndView("redirect:/team");
+
+            model.addAttribute("script", "alert('팀 등록을 완료하였습니다.');");
+
+        } catch (Exception e) {
+            model.addAttribute("script", "alert('잘못된 요청입니다. 다시 시도해 주세요.');");
+        }
+
+        return mv;
     }
 
     // 팀 랭킹

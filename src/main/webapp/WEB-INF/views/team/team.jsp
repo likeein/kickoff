@@ -107,7 +107,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <button type="submit" class="btn_insert" onclick="location.href='/teamInsert';">팀 등록</button>
+                            <button class="btn_insert" onclick="location.href='/teamInsert';">팀 등록</button>
                         </div>
                     </div>
 

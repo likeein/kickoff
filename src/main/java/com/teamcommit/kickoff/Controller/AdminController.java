@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -22,9 +23,9 @@ public class AdminController {
     @Qualifier("AdminService")
     private AdminService adminService;
 
-    // 게시판 목록
+    // 회원 목록
     @RequestMapping( "/userManagement")
-    public String userlist(@ModelAttribute("userDO") UserDO userDO, HttpServletRequest request, Model model) throws Exception {
+    public String userManagement(@ModelAttribute("userDO") UserDO userDO, HttpServletRequest request, Model model) throws Exception {
 
         String view = "/admin/userManagement";
 
@@ -33,6 +34,14 @@ public class AdminController {
 
         return view;
     }
+
+//    // 회원 탈퇴 기능
+//    @RequestMapping("/deleteUser")
+//    public String deleteUser(@RequestParam("userId") String userId) {
+//        adminService.userDelete(userId);
+//
+//        return "/admin/userManagement";
+//    }
 
     // 신고 게시물 관리 페이지 이동
     @GetMapping("/boardManagement")
