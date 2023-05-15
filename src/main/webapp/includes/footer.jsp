@@ -9,7 +9,7 @@
 				<h3>KICK OFF</h3>
 				<p>풋살만을 위한 사이트</p>
 				<p>
-					<a href="/main/main.jsp" class="go-home">Go Home</a>
+					<a href="/main" class="go-home">Go Home</a>
 				</p>
 				<!-- Read more => 이용약관으로 변환 -->
 			</div>
