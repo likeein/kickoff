@@ -40,6 +40,16 @@ public class ReservationServiceImpl implements ReservationService {
         return reservationMapper.selectPlaceInfo(empId);
     }
 
+    @Override
+    public void insertUserInfo(ReservationDO reservationDO, String userId) {
+        reservationMapper.insertUserInfo(reservationDO, userId);
+    }
+
+    @Override
+    public void insertReservationRequest(ReservationDO reservationDO) throws Exception {
+        reservationMapper.insertReservationRequest(reservationDO);
+    }
+
 }
 
 

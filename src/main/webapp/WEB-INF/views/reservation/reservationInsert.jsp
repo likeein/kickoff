@@ -54,12 +54,12 @@
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form role="form" id="frm" name="frm" action="/reservationInsert" method="POST">
+                <form role="form" id="frmSubmit" name="frmSubmit" action="" method="POST">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
                                 <p>풋살장<span>*</span></p>
-                                <input type="text" class="inputPlaceName" id="inputPlaceName" value="${placeInfo.placeName}" readonly/>
+                                <input type="text" class="inputPlaceName" id="inputPlaceName" name="reservationPlaceName" value="${placeInfo.placeName}" readonly/>
                            	</div>
                           	<div class="checkout__input">
                                 <p>코트<span>*</span></p>
@@ -74,7 +74,7 @@
                             </div>
                            	<div class="checkout__input">
                                 <p>위치<span>*</span></p>
-                                <input type="text" class="inputAddress" id="inputAddress" value="${placeInfo.placeAddress} readonly">
+                                <input type="text" class="inputAddress" id="inputAddress" name="reservationPlaceAddress" value="${placeInfo.placeAddress}" readonly>
                             </div>
                             <div class="checkout__input">
                                 <p>형태<span>*</span></p>
@@ -182,7 +182,7 @@
                                 <input type="hidden" name="reservationPlaceGround" value="${placeInfo.placeGround}" />
                                 <input type="hidden" name="reservationPlaceParking" value="${placeInfo.placeParking}" />
 
-								<input type="submit" id="insert" class="site-btn-insert" value="등록"/>
+								<input type="button" id="insert" class="site-btn-insert" onclick="validCheck()" value="등록"/>
                                 <a href="/reservation" id="cancle" class="site-btn-cancle">취소</a>
 							</div>
 						</div>
@@ -202,7 +202,6 @@
 			format: "yyyy-mm-dd",
 		    uiLibrary: 'bootstrap4',
 		});
-
     </script>
 	
     <!-- Js Plugins -->
@@ -214,6 +213,7 @@
     <script src="/reservation/js/mixitup.min.js"></script>
     <script src="/reservation/js/owl.carousel.min.js"></script>
     <script src="/reservation/js/main.js"></script>
+	<script src="/reservation/js/validation.js"></script>
 	<script src="/reservation/js/common.js"></script>
 
     <script src="/main/js/vendor/jquery.lettering.js"></script>

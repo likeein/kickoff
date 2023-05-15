@@ -176,7 +176,7 @@
 				</c:if>
 				<c:if test="${userId != null && empId == null}">
 					<div class="btn-container2">
-						<a href="/reservationRequest?reservationNo=${reservationDetail.reservationNo}" id="booking" class="booking">예약</a>
+						<a href="/reservationRequestForm?reservationNo=${reservationDetail.reservationNo}" id="booking" class="booking">예약</a>
 					</div>
 				</c:if>
 			</div>
@@ -187,7 +187,7 @@
 	<%@include file="/includes/footer.jsp"%>
 
 	<!-- script -->
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5d724483fb639866457f6535349fcd24&libraries=services"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c12ebb063cb05a9fc037082cb8601ef1&libraries=services"></script>
 	<script>
 		/* Kakao Map */
 

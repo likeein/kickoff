@@ -51,15 +51,19 @@
         ]]>
     </insert>
 
-    <select id="empFutsalInsert" parameterType="com.teamcommit.kickoff.Do.PlaceDO" resultType="com.teamcommit.kickoff.Do.PlaceDO">
+    <insert id="empFutsalInsert" parameterType="com.teamcommit.kickoff.Do.PlaceDO">
         <![CDATA[
-            SELECT *
-            FROM
-                PLACE
-            WHERE
-                PLACE_ID = #{placeId}
+        INSERT INTO PLACE (
+            PLACE_NAME,
+            PLACE_ADDRESS,
+        )
+        VALUES (
+            RESERVATION_SEQ.NEXTVAL,
+            #{placeName},
+            #{placeAddress}
+        )
         ]]>
-    </select>
+    </insert>
 
     <!-- Futsal(place) Insert -->
     <update id="updateFutsal" parameterType="com.teamcommit.kickoff.Do.PlaceDO">
