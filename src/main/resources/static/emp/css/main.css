@@ -3806,6 +3806,23 @@
 
 /* Header */
 
+	.kickoff-logo {
+		text-align: center !important;
+		padding: 28px 0 28px 0 !important;
+		font-size: 30px !important;
+		font-weight: bold !important;
+		font-family: 'Noto Sans KR' !important;
+		color: #ffffff !important;
+		background: #7fb77e !important;
+		border: none !important;
+		border-radius: 0.375em !important;
+		text-transform: uppercase !important;
+	}
+
+	#header {
+		display: grid !important;
+	}
+
 	#header {
 		display: -moz-flex;
 		display: -webkit-flex;

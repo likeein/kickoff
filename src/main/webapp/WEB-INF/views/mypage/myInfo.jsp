@@ -7,8 +7,8 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-<link rel="stylesheet" href="/kickoff/resource/myPage/css/myInfo.css">
-<link rel="stylesheet" href="/kickoff/resource/myPage/css/main.css" />
+<link rel="stylesheet" href="/myPage/css/myInfo.css">
+<link rel="stylesheet" href="/myPage/css/main.css" />
 <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 </head>
@@ -22,7 +22,9 @@
 
 				<!-- Header -->
 				<header id="header">
-					<a href="myInfo.jsp" class="logo"><strong>회원정보 수정</strong></a>
+					<input type="button" onclick="location.href='main'" class="kickoff" value="Kick Off"/>
+					<br>
+					<a href="/myInfo" class="logo"><strong>회원정보 수정</strong></a>
 				</header>
 
 				<!-- Begin Page Content -->
@@ -43,7 +45,7 @@
 							<br />
 							<button>수정하기</button>
 							<br /> 
-							<a href="/TeamCommit/viewex/main/main.jsp">회원 탈퇴</a>
+							<a href="/main">회원 탈퇴</a>
 						</form>
 					</div>
 
@@ -63,12 +65,12 @@
 						<h2>MyPage</h2>
 					</header>
 					<ul>
-						<li><a href="myReservation.jsp">예약 내역</a></li>
-						<li><a href="myBoard.jsp">내 게시글</a></li>
-						<li><a href="myInfo.jsp">회원 정보 수정</a></li>
-						<li><a href="myTeam.jsp">팀</a></li>
-						<li><a href="myMessage.jsp">메시지</a></li>
-						<li><a href="myHelper.jsp">용병</a></li>
+						<li><a href="/myReservation">예약 내역</a></li>
+						<li><a href="/myBoardList">내 게시글</a></li>
+						<li><a href="/myInfo">회원 정보 수정</a></li>
+						<li><a href="/myTeam">팀</a></li>
+						<li><a href="/myMessage">메시지</a></li>
+						<li><a href="/myHelper">용병</a></li>
 					</ul>
 				</nav>
 
@@ -81,11 +83,11 @@
 	</div>
 
 	<!-- Scripts -->
-	<script src="/kickoff/resource/myPage/js/jquery.min.js"></script>
-	<script src="/kickoff/resource/myPage/js/skel.min.js"></script>
-	<script src="/kickoff/resource/myPage/js/util.js"></script>
+	<script src="/myPage/js/jquery.min.js"></script>
+	<script src="/myPage/js/skel.min.js"></script>
+	<script src="/myPage/js/util.js"></script>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="/kickoff/resource/myPage/js/main.js"></script>
+	<script src="/myPage/js/main.js"></script>
 
 </body>
 </html>

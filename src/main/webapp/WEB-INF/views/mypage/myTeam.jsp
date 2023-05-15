@@ -7,7 +7,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-<link rel="stylesheet" href="/kickoff/resource/myPage/css/main.css" />
+<link rel="stylesheet" href="/myPage/css/main.css" />
 <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
@@ -15,11 +15,11 @@
 <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
 <!-- Vendor CSS-->
-<link href="/kickoff/resource/myPage/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-<link href="/kickoff/resource/myPage/vendor/mdi-font/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+<link href="/myPage/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+<link href="/myPage/vendor/mdi-font/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
 <!-- Main CSS-->
-<link href="/kickoff/resource/myPage/css/theme.css" rel="stylesheet" media="all">
+<link href="/myPage/css/theme.css" rel="stylesheet" media="all">
 </head>
 <body>
 	<!-- Wrapper -->
@@ -31,7 +31,9 @@
 
 				<!-- Header -->
 				<header id="header">
-					<a href="myTeam.jsp" class="logo"><strong>소속팀</strong></a>
+					<input type="button" onclick="location.href='main'" class="kickoff" value="Kick Off"/>
+					<br>
+					<a href="/myTeam" class="logo"><strong>소속팀</strong></a>
 				</header>
 
 				<section class="section">
@@ -156,12 +158,12 @@
 						<h2>MyPage</h2>
 					</header>
 					<ul>
-						<li><a href="myReservation.jsp">예약 내역</a></li>
-						<li><a href="myBoard.jsp">내 게시글</a></li>
-						<li><a href="myInfo.jsp">회원 정보 수정</a></li>
-						<li><a href="myTeam.jsp">팀</a></li>
-						<li><a href="myMessage.jsp">메시지</a></li>
-						<li><a href="myHelper.jsp">용병</a></li>
+						<li><a href="/myReservation">예약 내역</a></li>
+						<li><a href="/myBoardList">내 게시글</a></li>
+						<li><a href="/myInfo">회원 정보 수정</a></li>
+						<li><a href="/myTeam">팀</a></li>
+						<li><a href="/myMessage">메시지</a></li>
+						<li><a href="/myHelper">용병</a></li>
 					</ul>
 				</nav>
 
@@ -176,23 +178,23 @@
 	</div>
 
 	<!-- Scripts -->
-	<script src="/kickoff/resource/myPage/js/jquery.min.js"></script>
-	<script src="/kickoff/resource/myPage/js/skel.min.js"></script>
-	<script src="/kickoff/resource/myPage/js/util.js"></script>
+	<script src="/myPage/js/jquery.min.js"></script>
+	<script src="/myPage/js/skel.min.js"></script>
+	<script src="/myPage/js/util.js"></script>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="/kickoff/resource/myPage/js/main.js"></script>
+	<script src="/myPage/js/main.js"></script>
 	<!-- Jquery JS-->
-	<script src="/kickoff/resource/myPage/vendor/jquery-3.2.1.min.js"></script>
+	<script src="/myPage/vendor/jquery-3.2.1.min.js"></script>
 	<!-- Bootstrap JS-->
 	<script
-		src="/kickoff/resource/myPage/vendor/bootstrap-4.1/popper.min.js"></script>
+		src="/myPage/vendor/bootstrap-4.1/popper.min.js"></script>
 	<script
-		src="/kickoff/resource/myPage/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+		src="/myPage/vendor/bootstrap-4.1/bootstrap.min.js"></script>
 	<!-- Vendor JS       -->
-	<script src="/kickoff/resource/myPage/vendor/select2/select2.min.js"></script>
+	<script src="/myPage/vendor/select2/select2.min.js"></script>
 
 	<!-- Main JS-->
-	<script src="/kickoff/resource/myPage/js/reservationMain.js"></script>
+	<script src="/myPage/js/reservationMain.js"></script>
 
 
 </body>

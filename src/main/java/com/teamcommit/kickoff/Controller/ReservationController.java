@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -58,7 +56,7 @@ public class ReservationController {
         return view;
     }
 
-    @RequestMapping("/reservationInsert")
+    @RequestMapping(value = "/reservationInsert")
     public ModelAndView reservationInsert(@ModelAttribute("reservationDO") ReservationDO reservationDO, HttpServletRequest request, Model model) throws Exception {
 
         ModelAndView mv = new ModelAndView("redirect:/reservation");
@@ -113,7 +111,7 @@ public class ReservationController {
         return view;
     }
 
-    @RequestMapping("/reservationRequest")
+    @RequestMapping(value = "/reservationRequest")
     public ModelAndView reservationRequest(@ModelAttribute("reservationDO") ReservationDO reservationDO) throws Exception {
 
         ModelAndView mv = new ModelAndView("redirect:/reservation");
@@ -122,6 +120,7 @@ public class ReservationController {
 
         return mv;
     }
+
 }
 
 
