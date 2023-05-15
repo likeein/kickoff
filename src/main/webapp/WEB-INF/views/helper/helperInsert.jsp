@@ -44,9 +44,7 @@
 		}
 	</style>
 
-	<script>
-		${script}
-	</script>
+
 
 </head>
 <body style="overflow-x: hidden">
@@ -133,7 +131,7 @@
 
 	<div class = "genderBox">
 		<label>남자</label>
-		<input type = "radio" name = "helperGender" id = "helperGender" value = "남자" />
+		<input type = "radio" name = "helperGender" id = "helperGender" value = "남자" required />
 
 		<label>여자</label>
 		<input type = "radio" name = "helperGender" id = "helperGender" value = "여자" />
