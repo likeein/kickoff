@@ -76,8 +76,8 @@
         )
         VALUES (
                     MESSAGE_SEQ.NEXTVAL,
-                   #{messageSendId},
                    #{messageReceiveId},
+                   #{messageSendId},
                    #{messageContent},
                    #{messageTitle},
                    #{helperSeqno}
