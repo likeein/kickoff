@@ -144,7 +144,7 @@
 											<span class="opener">풋살장 관리</span>
 											<ul>
 												<li><a href="/empFutsal">풋살장 등록</a></li>
-												<li><a href="/empFutsalFix">풋살장 수정</a></li>
+												<li><a href="/empFutsalFix">풋살장 목록</a></li>
 											</ul>
 										</li>										
 									</ul>

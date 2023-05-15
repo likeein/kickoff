@@ -13,9 +13,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kick off: 풋살장 등록 관리</title>
 
-    <!-- Google Font -->
+    <!-- Google Font
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-	
+	-->
 	<!-- calendar -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -121,7 +121,7 @@
 																<input type="radio" name="placeLight" value="Y" onclick='getPlaceLight(event)' <c:if test="${empFutsalInsert.placeLight eq 'Y'}">checked="checked"</c:if>/>&nbsp있음
 															</label>
 															<label>
-																<input type="radio" name="placeLight" value="N" onclick='getPlaceLight(event)' <c:if test="${empFutsalInsert.placeLight eq 'N'}">checked="checked"</c:if>/> />&nbsp없음
+																<input type="radio" name="placeLight" value="N" onclick='getPlaceLight(event)' <c:if test="${empFutsalInsert.placeLight eq 'N'}">checked="checked"</c:if>/>&nbsp없음
 															</label>
 														</div>
 														<div class="checkout__input">
@@ -130,7 +130,7 @@
 																<input type="radio" name="placeParking" value="Y" onclick='getPlaceParking(event)' <c:if test="${empFutsalInsert.placeParking eq 'Y'}">checked="checked"</c:if>/>&nbsp있음
 															</label>
 															<label>
-																<input type="radio" name="placeParking" value="N" onclick='getPlaceParking(event)' <c:if test="${empFutsalInsert.placeParking eq 'N'}">checked="checked"</c:if>/> />&nbsp없음
+																<input type="radio" name="placeParking" value="N" onclick='getPlaceParking(event)' <c:if test="${empFutsalInsert.placeParking eq 'N'}">checked="checked"</c:if>/>&nbsp없음
 															</label>
 														</div>
 						                            </div>
@@ -174,7 +174,7 @@
 											<span class="opener active">풋살장 관리</span>
 											<ul>
 												<li><a href="/empFutsal">풋살장 등록</a></li>
-												<li><a href="/empFutsalFix">풋살장 수정</a></li>
+												<li><a href="/empFutsalFix">풋살장 목록</a></li>
 											</ul>
 										</li>										
 									</ul>
