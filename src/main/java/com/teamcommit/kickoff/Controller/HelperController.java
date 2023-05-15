@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.*;
@@ -42,7 +43,7 @@ public class HelperController {
         String view = "/helper/helperInsert";
 
             if(session.getAttribute("userId") == null) {
-                model.addAttribute("script", "alert('로그인 후 이용이 가능합니다.');");
+                model.addAttribute("script", "alert('일반 회원 로그인 후 이용이 가능합니다.');");
                 view = "login/loginAll";
             }
             else if(session.getAttribute("userId") != null) {
@@ -98,7 +99,7 @@ public class HelperController {
         return view;
     }
 
-    @RequestMapping("/helperDetail")
+    @RequestMapping(value = "/helperDetail", method = RequestMethod.GET)
     public String helperDetail(@ModelAttribute("helperDO") HelperDO helperDO, @RequestParam(value = "helperSeqno") int helperSeqno, HttpSession session) {
         String view = "/helper/helperDetail";
 
@@ -115,32 +116,42 @@ public class HelperController {
     }
 
     @GetMapping("/helperMessage")
-    public String helperMessage(Model model, HttpSession session) {
-        String view = "/message/helperMessageInsert";
+    public ModelAndView helperMessage(Model model, HttpSession session) {
+        ModelAndView mv = new ModelAndView("/message/helperMessageInsert");
 
         if(session.getAttribute("userId") == null) {
-            model.addAttribute("messageScript", "alert('로그인 후 이용해주세요');");
-            view = "forward:/helperDetail?helperSeqno=" + (Integer)session.getAttribute("helperSeqNo");
+            model.addAttribute("userScript", "alert('일반 회원 로그인 후 이용해주세요');");
+            mv.setViewName("forward:/helperDetail?helperSeqno=" + (Integer)session.getAttribute("helperSeqNo"));
         }
         else if(session.getAttribute("userId") != null) {
             try{
                 HelperDO message = helperService.selectHelperDetail((Integer)session.getAttribute("helperSeqNo"));
-                session.setAttribute("message", message);
-
                 String userId = (String)session.getAttribute("userId");
-                session.setAttribute("messageUserId", userId);
+
+                if(message.getUserId().equals(userId)) {
+                    model.addAttribute("userScript", "alert('본인 게시글에는 신청을 할 수 없습니다!');");
+                    mv.setViewName("forward:/helperDetail?helperSeqno=" + (Integer)session.getAttribute("helperSeqNo"));
+                }
+                else {
+                    session.setAttribute("message", message);
+                    session.setAttribute("messageUserId", userId);
+                }
             }
             catch (Exception e) {
                 e.printStackTrace();
             }
         }
 
-        return view;
+        return mv;
     }
 
    @PostMapping("/helperMessage")
-    public String helperMessage(@ModelAttribute("messageDO") MessageDO messageDO, Model model) {
+    public String helperMessage(@ModelAttribute("messageDO") MessageDO messageDO, Model model, HttpSession session) {
         String view = "/message/helperMessageInsert";
+
+        HelperDO receive = (HelperDO) session.getAttribute("message");
+        messageDO.setMessageReceiveId(receive.getUserId());
+        messageDO.setMessageSendId((String) session.getAttribute("messageUserId"));
 
             try {
                 helperService.insertMessage(messageDO);
@@ -150,6 +161,7 @@ public class HelperController {
                 e.printStackTrace();
                 model.addAttribute("msgScript", "alert('양식이 올바르지 않습니다.');");
             }
+
         return view;
     }
 

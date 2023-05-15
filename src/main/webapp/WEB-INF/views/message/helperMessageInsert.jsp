@@ -41,15 +41,15 @@
 					<ul>
 						<li>
 							<span class="col1">용병 게시글 번호 : </span>
-							<span class="col2"><input type="number" name="helperSeqno" id = "helperSeqno" disabled placeholder="${helperSeqNo}"></span>
+							<span class="col2"><input type="number" name="helperSeqno" id = "helperSeqno" disabled value ="${helperSeqNo}" required /></span>
 						</li>
 						<li>
 							<span class="col1">보내는 사람 : </span>
-							<span class="col2"><input type="text" name="messageSendId" id ="messageSendId" disabled placeholder="${messageUserId}"></span>
+							<span class="col2"><input type="text" name="messageSendId" id ="messageSendId" disabled value = "${messageUserId}" required /></span>
 						</li>
 						<li>
 							<span class="col1">수신 아이디 : </span>
-							<span class="col2"><input type="text" name="messageReceiveId" id = "messageReceiveId" disabled placeholder="${message.userId}"></span>
+							<span class="col2"><input type="text" name="messageReceiveId" id = "messageReceiveId" disabled value ="${message.userId}" required /></span>
 						</li>
 						<li>
 							<span class="col1">제목 : </span>
