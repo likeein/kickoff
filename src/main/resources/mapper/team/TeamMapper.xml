@@ -20,6 +20,7 @@
         (
             TEAM_SEQNO,
             TEAM_SEQID,
+            LEADER_ID,
             TEAM_NAME,
             TEAM_NUMBER,
             TEAM_GENDER,
@@ -32,6 +33,7 @@
         VALUES(
                   TEAM_SEQ.NEXTVAL,
                   TEAM_SEQID.NEXTVAL,
+                  #{leaderId},
                   #{teamName},
                   #{teamNumber},
                   #{teamGender},

@@ -140,8 +140,10 @@
 <%--                        </div>--%>
 <%--                    </div>--%>
             </form>
+            <div class="btn_container">
             <button type="submit" onclick="document.getElementById('frm').submit();" id="insert" class="site-btn-insert">등록</button>
             <button type="reset" onclick="location.href='/team';" id="cancel" class="site-btn-cancel">취소</button>
+            </div>
         </div>
     </div>
 </section>
