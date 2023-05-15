@@ -134,16 +134,22 @@ public class EmpController {
     }
 
 
-    /* 풋살장 목록
+    /* 풋살장 목록 */
     @RequestMapping(value = "/empFutsalFix", method = RequestMethod.GET)
-    public String Boardlist(@ModelAttribute("PlaceDO") PlaceDO PlaceDO, HttpServletRequest request, Model model) {
+    public String empFutsalList() {
 
         String view = "/emp/empFutsalFix";
 
-        List<PlaceDO> boardList = empService.getList(PlaceDO);
-        model.addAttribute("boardList", boardList);
+        return view;
+    }
+
+    /* 회원 정보 수정 */
+    @RequestMapping(value = "/fixInfo", method = RequestMethod.GET)
+    public String updateEmpInfo() {
+
+        String view = "/emp/fixInfo";
 
         return view;
-    } */
+    }
 
 }

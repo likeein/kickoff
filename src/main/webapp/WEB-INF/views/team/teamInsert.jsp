@@ -51,6 +51,7 @@
         <div class="checkout__form">
             <form id="frm" name="frm" action="/teamInsertAction" method="POST" onsubmit="return _onSubmit();">
 <%--                <div class="row">--%>
+                <div class="row-request-container">
                     <div class="col-lg-8 col-md-6">
                         <div class="checkout__input">
                             <p>풋살팀 이름<span>*</span></p>
@@ -120,33 +121,18 @@
                             <textarea class="etc" name="teamOther"></textarea>
                         </div>
                     </div>
-
-                    <!-- Check List -->
-<%--                    <div class="col-lg-4 col-md-6">--%>
-<%--                        <div class="checkout__order">--%>
-<%--                            <h4>Check List</h4>--%>
-<%--                            <div class="checkout__order__products">--%>
-<%--                                Title<span>Content</span>--%>
-<%--                            </div>--%>
-<%--                            <ul>--%>
-<%--                                <li>풋살팀 이름<span id="teamName"></span></li>--%>
-<%--                                <li>모집 인원<span id="teamNumber"></span></li>--%>
-<%--                                <li>풋살팀 성별<span id="teamGender"></span></li>--%>
-<%--                                <li>풋살팀 소속 지역<span id="teamLocal"></span></li>--%>
-<%--                                <li>모집 시작일<span id="teamStartDate"></span></li>--%>
-<%--                                <li>모집 종료일<span id="teamEndDate"></span></li>--%>
-<%--                                <li>모집 상태<span id="teamStatus"></span></li>--%>
-<%--                            </ul>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
+                    <div class="btn_container">
+                        <button type="submit" onclick="document.getElementById('frm').submit();" id="insert" class="site-btn-insert">등록</button>
+                        <button type="reset" onclick="location.href='/team';" id="cancel" class="site-btn-cancel">취소</button>
+                    </div>
+                </div>
             </form>
-            <div class="btn_container">
-            <button type="submit" onclick="document.getElementById('frm').submit();" id="insert" class="site-btn-insert">등록</button>
-            <button type="reset" onclick="location.href='/team';" id="cancel" class="site-btn-cancel">취소</button>
-            </div>
         </div>
     </div>
 </section>
+
+<!-- Footer -->
+<%@include file="/includes/footer.jsp"%>
 
 
 <!-- Js Plugins -->

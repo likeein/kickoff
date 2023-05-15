@@ -54,7 +54,7 @@
 	<section class="checkout spad">
 		<div class="container">
 			<div class="checkout__form">
-				<form id="frm" name="frm" action="" method="POST">
+				<form id="frm" name="frm" action="/reservationRequest" onsubmit="return _onSubmit();" method="POST">
 					<div class="row-request-container">
 						<div class="col-lg-8-1 col-md-6">
 							<div class="checkout__input__request">
@@ -102,7 +102,7 @@
 							<input type="hidden" name="userId" value="${userId}" />
 							<input type="hidden" name="reservationPlaceName" value="${reservationDetail.reservationPlaceName}" />
 							<div class="btn-container">
-								<input type="button" id="insert" class="request" onclick="requestSubmit()" value="신청"/>
+								<input type="submit" id="insert" class="request" onclick="updateConfirm(); return false;" value="신청"/>
 								<a href="/reservation" id="cancle" class="cancle">취소</a>
 							</div>
 						</div>
@@ -121,6 +121,26 @@
 			format: "yyyy-mm-dd",
             uiLibrary: 'bootstrap4'
         });
+
+		function updateConfirm() {
+
+			if(!confirm("신청하시겠습니까?")){
+				return false;
+			} else {
+				location.href="/reservationRequest";
+			}
+		}
+/*
+		function requestSubmit() {
+			const frm = document.forms[0];
+			let isValid = true;
+
+			if (isValid) {
+				alert('풋살장 예약 신청되었습니다.')
+				frm.action = 'reservationRequest';
+				frm.submit();
+			}
+		}*/
 	</script>
 	
     <!-- Js Plugins -->
@@ -133,7 +153,7 @@
     <script src="/reservation/js/owl.carousel.min.js"></script>
     <script src="/reservation/js/main.js"></script>
 	<script src="/reservation/js/common.js"></script>
-	
+
     <script src="/includes/js/jquery.lettering.js"></script>
     <script src="/includes/js/jquery.sticky.js"></script>
     <script src="/includes/js/ScrollMagic.min.js"></script>

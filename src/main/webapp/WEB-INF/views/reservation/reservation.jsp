@@ -48,47 +48,48 @@
 				</div>
 			</c:if>
 			<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-
             	<c:choose>
             		<c:when test="${fn:length(reservationList) > 0}">
             			<c:forEach var="row" items="${reservationList}">
-			                <div class="col mb-5">
-			                    <div class="card h-100">
-			                        <!-- Product image-->
-			                        <img class="card-img-top" src="${row.imgPath}${row.imgName}"/>
-			                        <!-- Product details-->
-			                        <div class="card-body p-4">
-			                            <div class="text-center">
-											<!-- PLACE NAME -->
-			                                <h5 class="fw-bolder">
-												<c:out value="${row.reservationPlaceName}"/>
-											</h5>
-			                                <!-- RESERVATION DATE -->
-			                                <c:out value="${row.reservationDate}"/>
-			                                <br>
-			                                <!-- RESERVATION PRICE -->
-											<c:out value="${row.reservationPrice}"/>원
-			                            </div>
-			                        </div>
-			                        <!-- Product actions-->
-			                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-										<c:choose>
-											<c:when test="${userId != null || empId != null}">
-												<div class="text-center">
-													<a class="btn btn-outline-dark mt-auto" href="/reservationDetail?reservationNo=${row.reservationNo}">상세보기</a>
-													<%--onclick="check()--%>
-													<%--href="/reservationDetail?reservationNo=${row.reservationNo}" --%>
-												</div>
-											</c:when>
-											<c:otherwise>
-												<div class="text-center">
-													<a class="btn btn-outline-dark mt-auto" onclick="check()">상세보기</a>
-												</div>
-											</c:otherwise>
-										</c:choose>
-			                        </div>
-			                    </div>
-			                </div>
+							<c:if test="${row.reservationType == 'EMP'}">
+								<div class="col mb-5">
+									<div class="card h-100">
+										<!-- Product image-->
+										<img class="card-img-top" src="${row.imgPath}${row.imgName}"/>
+										<!-- Product details-->
+										<div class="card-body p-4">
+											<div class="text-center">
+												<!-- PLACE NAME -->
+												<h5 class="fw-bolder">
+													<c:out value="${row.reservationPlaceName}"/>
+												</h5>
+												<!-- RESERVATION DATE -->
+												<c:out value="${row.reservationDate}"/>
+												<br>
+												<!-- RESERVATION PRICE -->
+												<c:out value="${row.reservationPrice}"/>원
+											</div>
+										</div>
+										<!-- Product actions-->
+										<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+											<c:choose>
+												<c:when test="${userId != null || empId != null}">
+													<div class="text-center">
+														<a class="btn btn-outline-dark mt-auto" href="/reservationDetail?reservationNo=${row.reservationNo}">상세보기</a>
+														<%--onclick="check()--%>
+														<%--href="/reservationDetail?reservationNo=${row.reservationNo}" --%>
+													</div>
+												</c:when>
+												<c:otherwise>
+													<div class="text-center">
+														<a class="btn btn-outline-dark mt-auto" onclick="check()">상세보기</a>
+													</div>
+												</c:otherwise>
+											</c:choose>
+										</div>
+									</div>
+								</div>
+							</c:if>
 						</c:forEach>
 					</c:when>
 					<c:otherwise>

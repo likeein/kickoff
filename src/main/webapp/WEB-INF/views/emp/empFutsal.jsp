@@ -42,6 +42,8 @@
 
 							<!-- Header -->
 								<header id="header">
+									<input type="button" onclick="location.href='main'" class="kickoff-logo" value="Kick Off"/>
+									<br>
 									<a href="/empReservation" class="logo"><strong>마이 페이지</strong> 업체 회원용</a>
 								</header>
 							
