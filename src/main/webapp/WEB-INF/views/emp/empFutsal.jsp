@@ -56,29 +56,27 @@
 								    	<!-- 이미지 class 추가 -->
 								    	<div class="checkout__form">
 								    		<div class="futsal">								    		
-								        	<form id="frm" name="frm" action="#" method="POST">								            	
+								        	<form id="frm" name="frm" action="#" method="POST">
+												<input type="hidden" id="placeId" name="placeId" value="${empFutsalInsert.placeId}" />
 								                	<div class="col-lg-8 col-md-6">
 								                		<div class="checkout__input">
 								                		<div class="filebox bs3-primary preview-image">
 											    			<p>풋살장 이미지<span>*</span></p>
-						              						<input class="upload-name" value="파일선택" disabled="disabled" style="width: 500px;">
+						              						<input class="upload-name" value="파일선택" disabled="disabled"style="width: 500px;">
 						              						<label for="input_file">업로드</label> 
 						              						<input type="file" id="input_file" class="upload-hidden"> 
 			       										</div>
 														<div class="checkout__input">
 							                               <p>풋살장<span>*</span></p>
-							                               <input type="text" value="여기에 '풋살장 이름' 가져오기 (입력 비활성화)" readonly>
-                               								<!-- readonly: 입력 필드 비활성화되지만 form으로 전송 가능 -->
+							                               <textarea class="etc" name="placeName" value="${empFutsalInsert.placeName}"></textarea>
                            								</div>
                           							<div class="checkout__input">
-                                						<p>코트<span>*</span></p>
+                                						<p>바닥 형태<span>*${empFutsalInsert.placeGround}</span></p>
                                 							<select id="courtName" onChange="selectCourt(this)">
-							                                	<option value="">코트 선택하기</option>
-							                                	<option value="A">A코트</option>
-							                                	<option value="B">B코트</option>
-							                                	<option value="C">C코트</option>
-							                                	<option value="D">D코트</option>
-							                                	<option value="E">E코트</option>
+							                                	<option value="">바닥 선택하기</option>
+																<option value="A" <c:if test="${empFutsalInsert.placeGround == '인조잔디'}">selected</c:if>>인조잔디</option>
+							                                	<option value="B" <c:if test="${empFutsalInsert.placeGround == '피치플로어'}">selected</c:if>>피치플로어</option>
+							                                	<option value="C" <c:if test="${empFutsalInsert.placeGround == '천연잔디'}">selected</c:if>>천연잔디</option>
 							                                </select>
                             						</div>
 						                           	<div class="checkout__input">
@@ -86,24 +84,24 @@
 						                                <input type="text" value="'주소' 정보 가져오기 (입력 비활성화)" readonly>
 						                            </div>
 						                            <div class="checkout__input">
-						                                <p>형태<span>*</span></p>
+						                                <p>풋살장 형태<span>*</span></p>
 						                                <label>
-						                                	<input type="radio" name="placeForm" value="indoor" onclick='getPlaceForm(event)' />&nbsp실내
+															<input type="radio" name="placeForm" value="indoor" onclick='getPlaceForm(event)' <c:if test="${empFutsalInsert.placeForm eq 'indoor'}">checked="checked"</c:if>/>&nbsp실내
 						                                </label>
 						                                <label>
-						                                	<input type="radio" name="placeForm" value="outdoor" onclick='getPlaceForm(event)' />&nbsp실외
+						                                	<input type="radio" name="placeForm" value="outdoor" onclick='getPlaceForm(event)' <c:if test="${empFutsalInsert.placeForm eq 'outdoor'}">checked="checked"</c:if>/> />&nbsp실외
 						                                </label>
 						                            </div>
 						                            <div class="checkout__input">
-						                                <p>예약 날짜<span>*</span></p>
+						                                <p>개방 일수<span>*</span></p>
 						                                <input id="setDate" onChange="getDate()" />
 						                            </div>
 						                            <div class="row">
 						                                <div class="col-lg-6">
 						                                    <div class="checkout__input">
-						                                        <p>시작 시간<span>*</span></p>
+						                                        <p>대여 시간<span>*</span></p>
 						                                        <select id="openTime" name="openTime" onChange="getStartTime(this)">
-						                                        	<option value="">시작 시간 선택</option>
+						                                        	<option value="">대여 시간 선택</option>
 						                                        	<c:forEach var="i" begin="1" end="24">
 							                                        	<c:choose>
 							                                        		<c:when test="${i lt 10}">
@@ -117,32 +115,32 @@
 						                                        </select>
 						                                    </div>
 						                                </div>
-						                                <div class="col-lg-6">
-						                                    <div class="checkout__input">
-						                                        <p>종료 시간<span>*</span></p>
-						                                        <select id="closeTime" name="closeTime" onChange="getEndTime(this)">
-						                                        	<option value="">종료 시간 선택</option>
-						                                        	<c:forEach var="i" begin="1" end="24">
-							                                        	<c:choose>
-							                                        		<c:when test="${i lt 10}">
-							                                        			<option value="0${i}">0${i}:00</option>
-							                                        		</c:when>
-							                                        		<c:otherwise>
-							                                        			<option value="${i}">${i}:00</option>
-							                                        		</c:otherwise>
-							                                        	</c:choose>
-						                                        	</c:forEach>
-						                                        </select>
-						                                    </div>
-						                                </div>
+														<div class="checkout__input">
+															<p>조명<span>*</span></p>
+															<label>
+																<input type="radio" name="placeLight" value="Y" onclick='getPlaceLight(event)' <c:if test="${empFutsalInsert.placeLight eq 'Y'}">checked="checked"</c:if>/>&nbsp있음
+															</label>
+															<label>
+																<input type="radio" name="placeLight" value="N" onclick='getPlaceLight(event)' <c:if test="${empFutsalInsert.placeLight eq 'N'}">checked="checked"</c:if>/> />&nbsp없음
+															</label>
+														</div>
+														<div class="checkout__input">
+															<p>주차장<span>*</span></p>
+															<label>
+																<input type="radio" name="placeParking" value="Y" onclick='getPlaceParking(event)' <c:if test="${empFutsalInsert.placeParking eq 'Y'}">checked="checked"</c:if>/>&nbsp있음
+															</label>
+															<label>
+																<input type="radio" name="placeParking" value="N" onclick='getPlaceParking(event)' <c:if test="${empFutsalInsert.placeParking eq 'N'}">checked="checked"</c:if>/> />&nbsp없음
+															</label>
+														</div>
 						                            </div>
 						                            <div class="checkout__input">
 						                                <p>가격<span>*</span></p>
-						                                <input type="number" class="inputPrice" id="inputPrice" onChange="getPrice()" placeholder="ex) 50000">
+						                                <input type="number" class="inputPrice" id="inputPrice" value="${empFutsalInsert.placePrice}" onChange="getPrice()" placeholder="ex) 50000">
 						                            </div>
 						                            <div class="checkout__input">
 														<p>기타사항</p>
-						                               	<textarea class="etc"></textarea>
+						                               	<textarea class="etc" value="${empFutsalInsert.placeOther}"></textarea>
 						                            </div>
 						                        </div>
 						                        </div>						                     
