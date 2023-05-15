@@ -89,7 +89,7 @@
 															<input type="radio" name="placeForm" value="indoor" onclick='getPlaceForm(event)' <c:if test="${empFutsalInsert.placeForm eq 'indoor'}">checked="checked"</c:if>/>&nbsp실내
 						                                </label>
 						                                <label>
-						                                	<input type="radio" name="placeForm" value="outdoor" onclick='getPlaceForm(event)' <c:if test="${empFutsalInsert.placeForm eq 'outdoor'}">checked="checked"</c:if>/> />&nbsp실외
+						                                	<input type="radio" name="placeForm" value="outdoor" onclick='getPlaceForm(event)' <c:if test="${empFutsalInsert.placeForm eq 'outdoor'}">checked="checked"</c:if>/>&nbsp실외
 						                                </label>
 						                            </div>
 						                            <div class="checkout__input">

@@ -100,7 +100,7 @@
                                                 </td>
                                                 <td><c:out value="${list.reservationPlaceName}"/></td>
                                                 <td>
-                                                    <span class="block-email"><c:out value="${list.reservationNo}"/></span>
+                                                    <span class="block-email"><c:out value="${list.userId}"/></span>
                                                 </td>
                                                 <td class="desc"><c:out value="${list.reservationRegDate}"/></td>
                                                 <td><c:out value="${list.reservationDate}"/></td>
