@@ -113,10 +113,10 @@ public class HelperController {
         else if(session.getAttribute("userId") != null) {
             try{
                 HelperDO message = helperService.selectHelperDetail((Integer)session.getAttribute("helperSeqNo"));
-                model.addAttribute("message", message);
+                session.setAttribute("message", message);
 
                 String userId = (String)session.getAttribute("userId");
-                model.addAttribute("userId", userId);
+                session.setAttribute("messageUserId", userId);
             }
             catch (Exception e) {
                 e.printStackTrace();
