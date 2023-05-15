@@ -113,25 +113,17 @@
     </select>
 
     <!-- user info -->
-    <update id="insertUserInfo" parameterType="com.teamcommit.kickoff.Do.ReservationDO">
+    <select id="insertUserInfo" parameterType="com.teamcommit.kickoff.Do.UserDO" resultType="com.teamcommit.kickoff.Do.UserDO">
         <![CDATA[
-            UPDATE
-                RESERVATION
-            SET (
-                RESERVATION_USER_NAME,
-                RESERVATION_USER_PHONE
-                ) = ( SELECT
-                          USER_NAME AS RESERVATION_USER_NAME,
-                          USER_PHONE_NUMBER AS RESERVATION_USER_PHONE
-                      FROM
-                          USERS
-                      WHERE
-                          USER_ID = #{userId}
-                    )
-            WHERE
-                RESERVATION_NO = #{reservationNo}
+        SELECT
+            USER_NAME,
+            USER_PHONE_NUMBER
+        FROM
+            USERS
+        WHERE
+            USER_ID = #{userId}
         ]]>
-    </update>
+    </select>
 
     <!-- reservation request insert -->
     <insert id="insertReservationRequest" parameterType="com.teamcommit.kickoff.Do.ReservationDO">
@@ -139,7 +131,6 @@
             INSERT INTO RESERVATION (
                 RESERVATION_TYPE,
                 RESERVATION_NO,
-                PLACE_ID,
                 RESERVATION_PLACE_NAME,
                 RESERVATION_COURT_NAME,
                 RESERVATION_USER_NAME,
@@ -149,13 +140,12 @@
                 RESERVATION_END_TIME,
                 RESERVATION_GAME_STYLE,
                 RESERVATION_PRICE,
-                RESERVATION_STATS,
+                RESERVATION_STATUS,
                 RESERVATION_REG_DATE
             )
             VALUES (
                        'USER',
                        RESERVATION_SEQ.NEXTVAL,
-                       #{placeId},
                        #{reservationPlaceName},
                        #{reservationCourtName},
                        #{reservationUserName},
