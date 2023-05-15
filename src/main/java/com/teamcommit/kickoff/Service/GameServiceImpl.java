@@ -18,8 +18,8 @@ public class GameServiceImpl implements GameService {
     private GameMapper gameMapper;
 
     @Override
-    public List<GameDO> gameDetail(GameDO gameDO) throws Exception {
-        return gameMapper.gameDetail(gameDO);
+    public List<GameDO> gameDetail() throws Exception {
+        return gameMapper.gameDetail();
     }
 
     @Override

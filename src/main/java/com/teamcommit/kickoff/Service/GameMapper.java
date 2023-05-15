@@ -8,7 +8,7 @@ import java.util.Map;
 
 @Mapper
 public interface GameMapper {
-    public List<GameDO> gameDetail(GameDO gameDO);
+    public List<GameDO> gameDetail();
 
     public GameDO getGameScoreDetail(int gameSeqno);
 

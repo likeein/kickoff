@@ -24,11 +24,11 @@ public class GameController {
     private GameService gameService;
 
     @GetMapping("/game")
-    public String gameDetail(@ModelAttribute("gameDO") GameDO gameDO, Model model) throws Exception {
+    public String gameDetail(Model model) throws Exception {
         String view = "/game/game";
 
         try {
-            List<GameDO> list = gameService.gameDetail(gameDO);
+            List<GameDO> list = gameService.gameDetail();
             model.addAttribute("table", list);
         } catch (Exception e) {
             e.printStackTrace();

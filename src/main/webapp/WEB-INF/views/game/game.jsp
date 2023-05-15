@@ -72,8 +72,8 @@
                         </thead>
                         <c:forEach var="list" items="${table}">
                             <tr>
-                                <td><c:out value="${list.placeDO.placeName}" /></td>
-                                <td><c:out value="${list.teamDO.team1Name} VS ${list.teamDO.team2Name}" /></td>
+                                <td><c:out value="${list.placeName}" /></td>
+                                <td><c:out value="${list.team1Name} VS ${list.team2Name}" /></td>
                                 <td><c:out value="${list.gameDate}" /></td>
                                 <td><c:out value="${list.gameStyle}" /></td>
                                 <td><c:out value="${list.gameGender}" /></td>

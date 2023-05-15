@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface GameService {
 
-    List<GameDO> gameDetail(GameDO gameDO) throws Exception;
+    List<GameDO> gameDetail() throws Exception;
 
     GameDO getGameScoreDetail(int gameSeqno) throws Exception;
 
