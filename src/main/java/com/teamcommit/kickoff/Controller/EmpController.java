@@ -109,7 +109,7 @@ public class EmpController {
 
         }
 
-        return "redirect:/empFutsal=" + placeDO.getPlaceId();
+        return "redirect:/empFutsal?placeId:"+ placeDO.getPlaceId();
     }
 
 

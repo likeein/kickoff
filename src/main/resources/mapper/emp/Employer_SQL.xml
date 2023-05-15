@@ -51,42 +51,53 @@
         ]]>
     </insert>
 
-    <!-- Futsal(place) Insert -->
-    <insert id="insertFutsal" parameterType="hashmap" useGeneratedKeys="true" keyProperty="PLACE">
-        <selectKey keyProperty="PLACE" resultType="string" order="BEFORE">
-            SELECT PLACE_SEQ.NEXTVAL FROM DUAL
-        </selectKey>
+    <select id="empFutsalInsert" parameterType="com.teamcommit.kickoff.Do.PlaceDO" resultType="com.teamcommit.kickoff.Do.PlaceDO">
         <![CDATA[
-                INSERT INTO PLACE
-                (
-                    PLACE_ID,
-                    IMG_NAME,
-                    PLACE_NAME,
-                    PLACE_ADDRESS,
-                    PLACE_PHONE_NUMBER,
-                    PLACE_HOMEPAGE,
-                    PLACE_GROUND,
-                    PLACE_SIZE,
-                    PLACE_FORM,
-                    PLACE_LIGHT,
-                    PLACE_OPEN,
-                    PLACE_PRICE,
-                    PLACE_TIME,
-                    PLACE_OTHER
-                )
-                VALUES (
-                    PLACE_ID.NEXTVAL,
-                    #{PLACE_IMG_NAME},
-                    #{PLACE_NAME},
-                    #{PLACE_ADDRESS},
-                    #{PLACE_PHONE_NUMBER},
-                    #{PLACE_HOMEPAGE},
-                    #{PLACE_GROUND},
-                    #{PLACE_PRICE},
-                    SYSDATE
-                )
-            ]]>
-    </insert>
+            SELECT *
+            FROM
+                PLACE
+            WHERE
+                PLACE_ID = #{placeId}
+        ]]>
+    </select>
+
+    <!-- Futsal(place) Insert -->
+    <update id="updateFutsal" parameterType="com.teamcommit.kickoff.Do.PlaceDO">
+        <![CDATA[
+        UPDATE
+            IMG_NAME,
+            PLACE_NAME,
+            PLACE_ADDRESS,
+            PLACE_PHONE_NUMBER,
+            PLACE_HOMEPAGE,
+            PLACE_GROUND,
+            PLACE_SIZE,
+            PLACE_FORM,
+            PLACE_LIGHT,
+            PLACE_OPEN,
+            PLACE_PRICE,
+            PLACE_TIME,
+            PLACE_OTHER,
+            PLACE_PARKING
+        SET
+            #{imgName},
+            #{placeName},
+            #{placeAddress},
+            #{placePhoneNumber},
+            #{placeHomepage},
+            #{placeGround},
+            #{placeSize},
+            #{placeForm},
+            #{placeLight},
+            #{placeOpen}
+            #{placePrice},
+            #{placeTime},
+            #{placeOther},
+            #{placeParking}
+        WHERE
+            EMP_ID = #{empId}
+        ]]>
+    </update>
 
 
 
