@@ -252,7 +252,7 @@ button.btn, .reservation, .reservationClose {
 
 .modal_wrap{
         display: none;
-        width: 500px;
+        width: 600px;
         height: 500px;
         position: absolute;
         top:50%;

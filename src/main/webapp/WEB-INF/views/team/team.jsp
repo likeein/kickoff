@@ -93,7 +93,6 @@
                                     <c:forEach var="list" items="${teamList}">
                                         <tr>
                                             <td>
-                                                <a href="/teamDetail?teamName=${list.teamName}">
                                                 <c:out value="${list.teamName}" />
                                             </td>
                                             <td><c:out value="${list.teamGender}" /></td>
@@ -101,14 +100,14 @@
                                             <td><c:out value="${list.teamStartDate}" /></td>
                                             <td><c:out value="${list.teamEndDate}" /></td>
                                             <td>
-                                                <span class="${list.teamStatus eq '모집 중' ? 'team-ing' : 'team-end'}">${list.teamStatus}</span>
+                                                <button type = "button" class = "btn_detail" onclick="location.href='/teamDetail?teamSeqNo=${list.teamSeqNo}';">${list.teamStatus}</button></span>
                                             </td>
                                         </tr>
                                     </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
-                            <a href="/teamInsert"><button type="insert" class="btn_insert">팀 등록</button></a>
+                            <button class="btn_insert" onclick="location.href='/teamInsert';">팀 등록</button>
                         </div>
                     </div>
 
@@ -158,6 +157,28 @@
 
 
     <script src="/includes/js/main.js"></script>
+
+    <script>
+        // 상태 정보 담아두는 버튼의 클래스명 들고와서 변수에 저장하기
+        var buttons = document.getElementsByClassName("btn_detail");
+        // 클래스는 중복 선언이 가능하기 때문에 앞에 선언한 변수에 각 버튼의 클래스명이 여러개 저장이 됩니다.
+        // 따라서 테이블에 나타나 버튼의 갯수만큼 buttons 변수에 저장이 되고, 길이가 정해지기 때문에 배열을 나누듯이 반복으로 하나씩 분류를 해야해요
+        for (var i = 0; i < buttons.length; i++) {
+            // i번째 클래스의 버튼을 저장하는 변수를 선언합니다.
+            var button = buttons[i];
+            // 해당 버튼 안의 텍스트에 맞게 조건을 넣어서 색상 또는 비활성화 상태를 지정해주시면 됩니다.
+            // ex) 버튼의 텍스트가 진행 중인 경우 : 버튼 색상을 #FFC090로 변경, 버튼의 텍스트가 마감인 경우: 색상을 lightgray로 변경하고 비활성화 상태로 만들기.
+            if (button.innerText === "모집 중") {
+                button.style.backgroundColor = "#FFC090";
+            } else if (button.innerText === "모집 완료") {
+                button.style.backgroundColor = "lightgray";
+                button.disabled = true;
+            }
+        }
+        // 최종적으로 해당 반복문을 실행하면 아직 모집이 진행 중인 버튼은 활성화 상태이고, 색상이 #FFC090됩니다.
+        // 마감인 경우에는 비활성화 상태가 되어 상세보기 또는 신청 페이지로 접근이 불가능하고, 색상 또한 lightgray로 변경됩니다.
+    </script>
+
 
 </body>
 

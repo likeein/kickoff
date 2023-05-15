@@ -71,7 +71,7 @@
 		</div>
 		
 		<div class="writer">
-		<<span class="formWriter">
+		<span class="formWriter">
 		<label for="writeId" class="writeId" >작성자 : ${userId}</label>
             <label class="writeIdEmp">${empId}</label>
 		</span>

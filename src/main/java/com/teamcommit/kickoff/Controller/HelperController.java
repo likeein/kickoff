@@ -42,7 +42,8 @@ public class HelperController {
         String view = "/helper/helperInsert";
 
             if(session.getAttribute("userId") == null) {
-                model.addAttribute("msg", "로그인 후 이용해주세요.");
+                model.addAttribute("script", "alert('로그인 후 이용이 가능합니다.');");
+                view = "login/loginAll";
             }
             else if(session.getAttribute("userId") != null) {
                 try {
@@ -52,30 +53,36 @@ public class HelperController {
                     model.addAttribute("userId", userId);
                 }
                 catch (Exception e) {
+                    e.printStackTrace();
                     model.addAttribute("msg", "예약 내역이 존재하지 않습니다.");
                 }
             }
         return view;
     }
 
-    @PostMapping("/helperInsert")
-    public String helperInsert(@ModelAttribute("helperDO") HelperDO helperDO, Model model, HttpSession session) {
-        String view = "/helper/helperInsert";
+    @GetMapping("/helperReservation")
+    public String helperInsert(@RequestParam(value = "helperPlaceName") String helperPlaceName, @RequestParam(value = "helperAddress") String helperAddress,
+                               @RequestParam(value = "helperTime") String helperTime, @RequestParam(value = "userId") String userId, Model model) {
+        String view = "forward:/helperInsert";
+        model.addAttribute("placeName", helperPlaceName);
+        model.addAttribute("address", helperAddress);
+        model.addAttribute("date", helperTime);
+        model.addAttribute("helperId", userId);
+        return view;
+    }
 
-        if(session.getAttribute("userId") == null) {
-            model.addAttribute("script", "alert('로그인 후 이용이 가능합니다.');");
-            view = "login/loginAll";
-        }
-        else if (session.getAttribute("userId") != null) {
+    @PostMapping("/helperReservation")
+    public String helperInsert(@ModelAttribute("helperDO") HelperDO helperDO, HttpSession session) {
+        String view = "redirect:/helperList";
+
             try {
                 helperService.insertHelper(helperDO);
-                model.addAttribute("script", "alert('용병 모집을 등록했습니다!');");
+                session.setAttribute("script", "alert('용병 모집을 등록했습니다!');");
             }
             catch (Exception e) {
                 e.printStackTrace();
-                model.addAttribute("script", "alert('중복된 값이거나 양식이 올바르지 않습니다.');");
+                session.setAttribute("script", "alert('양식을 제대로 입력해주세요 :)');");
             }
-        }
         return view;
     }
 

@@ -8,7 +8,7 @@ public class HelperDO {
 	//용병 게시글 번호
 	private int helperSeqno;
 	//사용자 아이디
-	private String helperId;
+	private String userId;
 	//경기 번호
 	private int gameSeqno;
 	//메시지 번호
@@ -37,12 +37,12 @@ public class HelperDO {
 		this.helperSeqno = helperSeqno;
 	}
 
-	public String getHelperId() {
-		return helperId;
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setHelperId(String helperId) {
-		this.helperId = helperId;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public int getGameSeqno() {
@@ -148,25 +148,4 @@ public class HelperDO {
 	public void setHelperPlaceName(String helperPlaceName) {
 		this.helperPlaceName = helperPlaceName;
 	}
-
-	/*public String selectValue(String what) {
-		String result = "";
-
-		if (what.equals("t")) {
-			for (String str : this.getHelperTeamLevel()) {
-				result = str;
-			}
-		}
-		else if (what.equals("p")) {
-			for (String str : this.getHelperPosition()) {
-				result = str;
-			}
-		}
-		else if (what.equals("m")) {
-			for (String str : this.getHelperMatch()) {
-				result = str;
-			}
-		}
-		return result;
-	}*/
 }

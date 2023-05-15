@@ -44,6 +44,24 @@
 				location.href="/delete?boardSeqno=${boardContents.boardSeqno}";
 			}
 		}
+
+		function updateConfirm(){
+
+			if(!confirm("수정 하시겠습니까?")){
+				return false;
+			}else{
+				location.href="/boardUpdate?boardSeqno=${boardContents.boardSeqno}";
+			}
+		}
+
+		function reportConfirm(){
+
+			if(!confirm("신고 하시겠습니까?")){
+				return false;
+			}else{
+				location.href="/boardReport?boardSeqno=${boardContents.boardSeqno}";
+			}
+		}
 	</script>
 
 <link rel="stylesheet" href="/board/css/boardDetail.css" />
@@ -59,7 +77,7 @@
 			</div>
 		</div>
 	</div>
-	<form role="form" action="/board/create_action" method="post">
+	<form role="form" method="post">
 		<div class="container">
 			<div class="table-responsive">
 				<table class="board_detail">
@@ -99,47 +117,50 @@
 			<div class="reply">
 				<table id="tblListComment" class="table table-bordered">
 
-					<c:if test="${ clist.size() == 0 }">
+					<c:if test="${ replyList.size() == 0 }">
 						<tr>
 							<td colspan="2">댓글이 없습니다.</td>
 						</tr>
 					</c:if>
 
-					<c:forEach items="${ clist }" var="cdto">
+					<c:forEach items="${ replyList }" var="list">
 						<tr>
-							<td>${ cdto.content } <span>${ cdto.name }. ${ cdto.regdate }</span>
+							<td>${ replyList.replyContent } <span>${ replyList.replyId }${ replyList.replyIdEmp }</span>
 							</td>
-							<td><input type="button" value="삭제하기" class="btn btn-default"
-								onclick="location.href='/myapp/board/delcomment.do?seq=${ cdto.seq }&pseq=${ dto.seq }';" />
+							<td><input type="button" value="삭제하기" class="btn btn-default" id="deleteRely" name="deleteRely"
+								onclick="location.href='/boardDetil?boardSeqno=' + boardSeqno + 'replyNo=' + replyNo;" />
 							</td>
 						</tr>
 					</c:forEach>
 				</table>
-
-				<form method="POST" action="/myapp/board/addcomment.do">
+				<%-- action="/insert_reply"  --%>
+				<form  method="POST" id="frm" name="frm">
 					<table id="tblAddComment" class="table table-bordered">
 						<tr>
 							<td>
-								<input type="text" name="content" id="content" class="form-control" required placeholder="댓글을 작성하세요. " />
+								<label class="replyId" >${userId}</label>
+								<label class="replyIdEmp">${empId}</label>
+								<input type="hidden" id="replyId" name="replyId" value="${userId}">
+								<input type="hidden" id="replyIdEmp" name="replyIdEmp" value="${empId}">
+								<input type="text" name="replyContent" id="replyContent" class="form-control" />
 							</td>
 							<td>
-								<input type="button" id="btn btn-primary" class="btn btn-primary" value="댓글쓰기">
+								<input type="submit" id="btn btn-primary" class="btn btn-primary" value="댓글쓰기" onclick="document.getElementById('frm').submit();">
 							</td>
 						</tr>
 					</table>
-					<input type="hidden" name="pseq" value="${ dto.seq }" />
 				</form>
 			</div>
 
 			<div class="btn_boarddetail">
 				<button type="reset" class="btn_reset" onclick="location.href='/board';">목록</button>
-				<c:if test="${userId ne boardContents.writeId}">
-					<button class="btn_delete" onclick="location.href='/boardReport?boardSeqno=${boardContents.boardSeqno}';">신고</button>
+				<c:if test="${(userId ne boardContents.writeId) || (empId ne boardContents.writeIdEmp)}">
+					<button class="btn_report" onclick="reportConfirm(); return false;">신고</button>
 				</c:if>
 
-				<c:if test="${userId eq boardContents.writeId}">
-					<button class="btn_update" onclick="location.href='/boardUpdate?boardSeqno=${boardContents.boardSeqno}';">수정</button>
-					<button class="btn_delete" onclick="deleteConfirm();">삭제</button>
+				<c:if test="${(userId eq boardContents.writeId) && (empId eq boardContents.writeIdEmp)}">
+					<button class="btn_update" onclick="updateConfirm(); return false;">수정</button>
+					<button class="btn_delete" onclick="deleteConfirm(); return false;">삭제</button>
 				</c:if>
 			</div>
 		</div>

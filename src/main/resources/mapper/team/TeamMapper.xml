@@ -19,6 +19,7 @@
         INSERT INTO TEAM
         (
             TEAM_SEQNO,
+            TEAM_SEQID,
             TEAM_NAME,
             TEAM_NUMBER,
             TEAM_GENDER,
@@ -29,11 +30,12 @@
             TEAM_OTHER
         )
         VALUES(
-                  TEAM_SQ.NEXTVAL,
+                  TEAM_SEQ.NEXTVAL,
+                  TEAM_SEQID.NEXTVAL,
                   #{teamName},
                   #{teamNumber},
                   #{teamGender},
-                  #{team_local},
+                  #{teamLocal},
                   #{teamStartDate},
                   #{teamEndDate},
                   #{teamStatus},
@@ -51,24 +53,35 @@
         FROM
             TEAM
         WHERE
-            TEAM_NAME = #{teamName}
+            TEAM_SEQNO = #{teamSeqNo}
         ]]>
     </select>
 
-<!--    &lt;!&ndash; Board Update &ndash;&gt;-->
-<!--    <update id="updaateBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO">-->
-<!--        <![CDATA[-->
-<!--        UPDATE-->
-<!--            COMMUNITY_BOARD-->
-<!--        SET-->
-<!--            WRITE_TITLE = #{writeTitle},-->
-<!--            WRITE_CONTENT = #{writeContent},-->
-<!--            FILE_NAME = #{fileName},-->
-<!--            FILE_PATH = #{filePath},-->
-<!--            WRITE_EDIT_DATE = now()-->
-<!--        WHERE-->
-<!--            BOARD_SQENO = #{boardSeqno}-->
-<!--        ]]>-->
-<!--    </update>-->
+    <!-- TeamRank List -->
+    <select id="rankList" parameterType="com.teamcommit.kickoff.Do.TeamDO" resultType="com.teamcommit.kickoff.Do.TeamDO">
+        <![CDATA[
+        SELECT
+            *
+        FROM
+            TEAM
+        ORDER BY TEAM_RANK ASC
+        ]]>
+    </select>
+
+    <!--    &lt;!&ndash; Board Update &ndash;&gt;-->
+    <!--    <update id="updaateBoard" parameterType="com.teamcommit.kickoff.Do.BoardDO">-->
+    <!--        <![CDATA[-->
+    <!--        UPDATE-->
+    <!--            COMMUNITY_BOARD-->
+    <!--        SET-->
+    <!--            WRITE_TITLE = #{writeTitle},-->
+    <!--            WRITE_CONTENT = #{writeContent},-->
+    <!--            FILE_NAME = #{fileName},-->
+    <!--            FILE_PATH = #{filePath},-->
+    <!--            WRITE_EDIT_DATE = now()-->
+    <!--        WHERE-->
+    <!--            BOARD_SQENO = #{boardSeqno}-->
+    <!--        ]]>-->
+    <!--    </update>-->
 
 </mapper>

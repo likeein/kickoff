@@ -78,6 +78,15 @@ body {
 	padding-left: 30%;
 }
 
+.btn-container2 {
+	max-width: 800px;
+	position: relative;
+	width: 100%;
+	margin-top: 3%;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
 .full-cover {
 	background-color: #fff;
 	background-position: center;
@@ -209,7 +218,22 @@ small {
 	text-align: center;
 }
 
-.btn:hover {
+.booking {
+	width: 100%;
+	font-size: 20px;
+	color: #ffffff;
+	font-weight: 800;
+	display: inline-block;
+	padding: 15px 60px 12px;
+	margin-right: 15px;
+	background: #7fb77e;
+	border: none;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.btn:hover,
+.booking:hover {
 	background: #ffc090;
 }
 

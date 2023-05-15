@@ -9,7 +9,9 @@ public interface TeamMapper {
 
     public List<TeamDO> getList(TeamDO teamDO);
 
-    public TeamDO getTeamContents(String teamName);
+    public TeamDO getTeamContents(int teamSeqNo);
 
     public void insertTeam(TeamDO teamDO);
+
+    public List<TeamDO> rankList(TeamDO teamDO);
 }

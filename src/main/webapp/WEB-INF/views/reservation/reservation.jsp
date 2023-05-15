@@ -48,9 +48,9 @@
 				</div>
 			</c:if>
 			<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            
-            	<%--<c:choose>
-            		<c:when test="${fn:length(reservetionlist) > 0}">--%>
+
+            	<c:choose>
+            		<c:when test="${fn:length(reservationList) > 0}">
             			<c:forEach var="row" items="${reservationList}">
 			                <div class="col mb-5">
 			                    <div class="card h-100">
@@ -72,57 +72,44 @@
 			                        </div>
 			                        <!-- Product actions-->
 			                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-			                            <div class="text-center">
-			                            	<a class="btn btn-outline-dark mt-auto" href="/reservationDetail?reservationNo=${row.reservationNo}">상세보기</a>
-										</div>
+										<c:choose>
+											<c:when test="${userId != null || empId != null}">
+												<div class="text-center">
+													<a class="btn btn-outline-dark mt-auto" href="/reservationDetail?reservationNo=${row.reservationNo}">상세보기</a>
+													<%--onclick="check()--%>
+													<%--href="/reservationDetail?reservationNo=${row.reservationNo}" --%>
+												</div>
+											</c:when>
+											<c:otherwise>
+												<div class="text-center">
+													<a class="btn btn-outline-dark mt-auto" onclick="check()">상세보기</a>
+												</div>
+											</c:otherwise>
+										</c:choose>
 			                        </div>
 			                    </div>
 			                </div>
 						</c:forEach>
-					<%--  </c:when>
-                      <c:otherwise>
-                          <div class="listNone">
-                              조회된 결과가 없습니다.
-                          </div>
-                      </c:otherwise>
-                  </c:choose>--%>
-
-	                   <%-- <div class="col mb-5">
-			                    <div class="card h-100">
-			                        <!-- Product image-->
-			                        <img class="card-img-top" src="/reservation/images/court2.jpg" />
-			                        <!-- Product details-->
-			                        <div class="card-body p-4">
-			                            <div class="text-center">
-			                                <!-- Product name-->
-			                                <h5 class="fw-bolder">서울 풋살장(파주)</h5>
-			                                <!-- Reservation days -->
-			                                2023.04.29 (토) <!-- 예약 가능 날짜 가져오기(오늘 날짜 기준으로) -->
-			                                <br>
-			                                <!-- Product price-->
-			                                100,000원
-			                            </div>
-			                        </div>
-			                        <!-- Product actions-->
-			                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-			                            <div class="text-center">
-			                            	<a class="btn btn-outline-dark mt-auto" href="/reservationDetail">상세보기</a>
-			                            </div>
-			                        </div>
-			                    </div>
-			                </div>--%>
-
-
-
-
+					</c:when>
+					<c:otherwise>
+						<div class="listNone">
+							조회된 결과가 없습니다.
+						</div>
+					</c:otherwise>
+				</c:choose>
             </div>
         </div>
     </section>
     
     <!-- Footer-->
     <%@include file="/includes/footer.jsp"%>
-    
-    
+
+    <script>
+		function check() {
+			alert("로그인 후 이용해주세요.")
+			location.href="/loginAll";
+		}
+	</script>
     
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

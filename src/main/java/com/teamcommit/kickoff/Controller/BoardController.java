@@ -12,14 +12,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.servlet.support.RequestContextUtils;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class BoardController {
@@ -103,21 +100,21 @@ public class BoardController {
     }*/
 
     //게시판 상세보기
-    @RequestMapping( "/boardDetail")
+    @GetMapping("/boardDetail")
     public String boardDetail(@ModelAttribute("boardDO") BoardDO boardDO, @RequestParam("boardSeqno") int boardSeqno, HttpServletRequest request, Model model) throws Exception {
         String view = "/board/boardDetail";
 
         //로그인한 이용자 ID로 로그인 정보 가져오기
         String userId = (String) request.getSession().getAttribute("userId");
-        /*//로그인한 이용자 ID로 로그인 정보 가져오기
-        String empId = (String) request.getSession().getAttribute("empId");*/
+        //로그인한 이용자 ID로 로그인 정보 가져오기
+        String empId = (String) request.getSession().getAttribute("empId");
 
         BoardDO boardContents = boardService.getBoardContents(boardSeqno);
 
         boardService.procAddViewCount(boardContents);
         model.addAttribute("boardContents", boardContents);
         model.addAttribute("userId", userId);
-//        model.addAttribute("empId", empId);
+        model.addAttribute("empId", empId);
 
         return view;
     }
@@ -156,7 +153,7 @@ public class BoardController {
     //게시판 삭제
     @RequestMapping("/delete")
     public ModelAndView delete(@ModelAttribute("boardDO") BoardDO boardDO, @RequestParam("boardSeqno") int boardSeqno, RedirectAttributes redirect, Model model) throws Exception {
-
+        
         ModelAndView mv = new ModelAndView("redirect:/board");
 
         try {
@@ -198,4 +195,58 @@ public class BoardController {
         return mv;
     }
 
+    // 댓글 목록
+    @RequestMapping( "/replyList")
+    public ModelAndView replyList(@ModelAttribute("replyDO") ReplyDO replyDO, @RequestParam("boardSeqno") int boardSeqno, HttpServletRequest request, Model model) throws Exception {
+
+        ModelAndView mv = new ModelAndView("redirect:/boardDetail?boardSeqno="+boardSeqno);
+
+        List<ReplyDO> replyList = boardService.getreplyList(boardSeqno);
+        //redirect.addFlashAttribute("redirect", replyDO.getBoardSeqno());
+        model.addAttribute("replyList", replyList);
+
+        return mv;
+    }
+
+    //댓글 등록
+    @PostMapping( "/boardDetail")
+    public ModelAndView insert_reply(@ModelAttribute("replyDO") ReplyDO replyDO, @RequestParam("boardSeqno") int boardSeqno, ModelMap model, HttpServletRequest request, RedirectAttributes redirect) throws Exception {
+
+        ModelAndView mv = new ModelAndView("redirect:/boardDetail?boardSeqno="+boardSeqno);
+
+        try{
+
+            replyDO.setBoardSeqno(boardSeqno);
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+            Date time = new Date();
+
+            String time1 = format.format(time);
+            replyDO.setReplyRegDate(time1);
+
+            boardService.insertReply(replyDO);
+            redirect.addFlashAttribute("redirect", replyDO.getBoardSeqno());
+            redirect.addFlashAttribute("msg","댓글 등록되었습니다." );
+        } catch (Exception e) {
+            redirect.addFlashAttribute("msg", "오류가 발생되었습니다. 다시 시도해주세요.");
+            e.printStackTrace();
+        }
+        return mv;
+    }
+
+    //게시판 삭제
+    @RequestMapping("/deleteRely")
+    public ModelAndView deleteRely(@ModelAttribute("boardDO") BoardDO boardDO, @RequestParam("boardSeqno") int boardSeqno, @RequestParam("replyNo") int replyNo, RedirectAttributes redirect, Model model) throws Exception {
+
+        ModelAndView mv = new ModelAndView("redirect:/boardDetil?boardSeqno=" + boardSeqno + "replyNo=" + replyNo);
+
+        try {
+            boardService.getReplyDelete(replyNo);
+            redirect.addFlashAttribute("msg", "삭제 완료되었습니다.");
+        } catch (Exception e) {
+            redirect.addFlashAttribute("msg", "오류가 발생되었습니다. 다시 시도해주세요.");
+        }
+
+        return mv;
+    }
 }

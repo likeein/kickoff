@@ -43,7 +43,7 @@
 			</div>
 		</div>
 	</div>
-	<form role="form" action="/board/create_action" method="post">
+	<form role="form" action="/teamDetail" method="post">
 		<div class="container">
 			<div class="table-responsive">
 				<table class="board_detail">
@@ -91,7 +91,7 @@
 
 			<div class="btn_boarddetail">
 				<button type="reset" class="btn_reset" onclick="location.href='/team';">목록</button>
-				<button type="button" class="btn_apply" onclick="location.href='/teamReply';">팀 지원</button>
+				<button type="button" class="btn_apply" onclick="location.href='/teamApply';">팀 지원</button>
 			</div>
 		</div>
 	</form>

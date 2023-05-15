@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 <link rel = "stylesheet" href = "/login/css/loginAll.css">
 <title>Kick Off: 로그인</title>
+<script>
+    ${script}
+</script>
 </head>
 <body style="overflow-y: hidden">
 <div class="container" id="container">

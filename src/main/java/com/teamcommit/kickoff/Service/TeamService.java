@@ -11,7 +11,9 @@ public interface TeamService {
 
     void insertTeam(TeamDO teamDO) throws Exception;
 
-    TeamDO getTeamContents(String teamName) throws Exception;
+    TeamDO getTeamContents(int teamSeqNo) throws Exception;
+
+    List<TeamDO> rankList(TeamDO teamDO) throws Exception;
 
 //    void updateTeam(TeamDO teamDO) throws Exception;
 
