@@ -15,4 +15,6 @@ public interface GameService {
 
     Map<String, Object> selectMemInfo(Map<String, Object> map) throws Exception;
 
+    void insertGame(GameDO gameDO) throws Exception;
+
 }

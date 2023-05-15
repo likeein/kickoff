@@ -31,8 +31,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />    
-	
+    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
@@ -52,13 +52,14 @@
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form id="frm" name="frm" action="#" method="POST">
+                <form id="frm" name="frm" method="POST">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
 							<div class="checkout__input">
                                <p>풋살장 선택<span>*</span></p>
                                <input type="text" value="여기에 '풋살장 이름' 가져오기 (입력 비활성화)" readonly>
                                <!-- readonly: 입력 필드 비활성화되지만 form으로 전송 가능 -->
+
                            	</div>
                           	<div class="checkout__input">
                                 <p>경기 형태<span>*</span></p>
@@ -171,7 +172,7 @@
 									<li>종료 시간<span id="endTime"></span></li>
 									<li>매칭 상태<span id="status">매칭 중</span></li>									
 								</ul>
-								<a href="gameDetail.jsp" id="insert" class="site-btn-insert">등록</a>
+                                <button type = "submit" id="insert" class="site-btn-insert" onclick="location.href='/helperInsert';">등록</button>
 								<a href="game.jsp" id="cancle" class="site-btn-cancle">취소</a>
 							</div>
 						</div>
