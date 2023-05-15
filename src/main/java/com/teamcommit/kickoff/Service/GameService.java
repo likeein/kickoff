@@ -10,7 +10,6 @@ public interface GameService {
 
     List<GameDO> gameDetail(GameDO gameDO) throws Exception;
 
-
     GameDO getGameScoreDetail(int gameSeqno) throws Exception;
 
     Map<String, Object> selectMemInfo(Map<String, Object> map) throws Exception;

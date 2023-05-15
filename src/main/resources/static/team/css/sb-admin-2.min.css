@@ -38,15 +38,13 @@ button {
 	border-radius: 20px;
 	font-size: 14px;
 	color: #ffffff;
-	font-weight: 800;
+	font-weight: 900;
 	text-transform: uppercase;
 	display: inline-block;
 	padding: 13px 30px 12px;
 	background: #B1D7B4;
 	border: none;
 	margin: 0 auto;
-	margin-bottom: 3em;
-	margin-top: 3em;
 	display:block;
 	}
 	
@@ -1532,7 +1530,7 @@ pre code {
 }
 
 .table td, .table th {
-	padding: .75rem;
+	padding: 0.75rem;
 	vertical-align: center;
 	border-top: 1px solid #e3e6f0
 }
