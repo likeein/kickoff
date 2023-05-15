@@ -100,6 +100,8 @@
 								<input type="text" name="reservationPrice" value="${reservationDetail.reservationPrice}원" readonly>
 							</div>
 							<input type="hidden" name="userId" value="${userId}" />
+							<input type="hidden" name="placeId" value="${reservationDetail.placeId}" />
+							<input type="hidden" name="reservationPlaceAddress" value="${reservationDetail.reservationPlaceAddress}" />
 							<input type="hidden" name="reservationPlaceName" value="${reservationDetail.reservationPlaceName}" />
 							<div class="btn-container">
 								<input type="submit" id="insert" class="request" onclick="updateConfirm(); return false;" value="신청"/>

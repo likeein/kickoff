@@ -27,6 +27,7 @@
 		.bluetop {
 			border-collapse: collapse;
 			border-top: 3px solid #ffc090;
+			width: 100%;
 		}
 		.bluetop th {
 			color: #fff;

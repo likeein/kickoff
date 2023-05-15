@@ -84,15 +84,15 @@ public class HelperController {
 
     @PostMapping("/helperReservation")
     public String helperInsert(@ModelAttribute("helperDO") HelperDO helperDO, HttpSession session, Model model) {
-        String view = "redirect:/helperList";
+        String view = "/helper/helperList";
 
             try {
                 helperService.insertHelper(helperDO);
-                session.setAttribute("script", "alert('용병 모집을 등록했습니다!');");
+                model.addAttribute("script", "alert('용병 모집을 등록했습니다!');");
             }
             catch (Exception e) {
                 e.printStackTrace();
-                session.setAttribute("script", "alert('양식을 제대로 입력해주세요 :)');");
+                model.addAttribute("script", "alert('양식을 제대로 입력해주세요 :)');");
             }
 
 
