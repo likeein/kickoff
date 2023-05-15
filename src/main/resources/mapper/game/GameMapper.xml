@@ -23,7 +23,7 @@
         ]]>
     </select>
 
-    <insert id = "selectGame" parameterType="com.teamcommit.kickoff.Do.GameDO">
+    <insert id = "insertGame" parameterType="com.teamcommit.kickoff.Do.GameDO">
         <![CDATA[
         INSERT INTO GAME
         (

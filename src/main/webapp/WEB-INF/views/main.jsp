@@ -395,7 +395,7 @@
                   <div class="post-entry-contents">
                     <h3><a href="#">오늘 올라온 소식이에요! 🔥</a></h3>
                     <table class="bluetop">
-					  <tr> <th>제목</th> <th>작성자</th> <th>조회수</th> <th>작성일</th> </tr>
+					  <tr> <th>제목</th> <th>작성자</th> <th Style="width:80px;">조회수</th> <th>작성일</th> </tr>
                       <c:forEach var="bList" items="${boardList}">
                         <tr>
                           <td><c:out value="${bList.writeTitle}" /></td>

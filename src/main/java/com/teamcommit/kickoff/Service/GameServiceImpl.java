@@ -33,5 +33,8 @@ public class GameServiceImpl implements GameService {
         return gameMapper.selectMemInfo(map);
     }
 
-
+    @Override
+    public void insertGame(GameDO gameDO) throws Exception {
+        gameMapper.insertGame(gameDO);
+    }
 }

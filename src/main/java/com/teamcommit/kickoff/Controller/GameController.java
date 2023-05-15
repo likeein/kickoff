@@ -57,12 +57,29 @@ public class GameController {
         return mv;
     }
 
-    @RequestMapping("/gameUpdate")
+    @GetMapping("/gameUpdate")
     public String insert(@ModelAttribute("gameDO") GameDO gameDO, HttpServletRequest request, Model model) throws Exception {
         String view = "/game/gameUpdate";
         String teamName = (String) request.getSession().getAttribute("teamName");
         TeamDO teamDO = new TeamDO();
         teamDO.setTeamName(teamName);
+
+        return view;
+    }
+
+    @RequestMapping("/gameInsert")
+    public String insertGame(@ModelAttribute("gameDO") GameDO gameDO, HttpServletRequest session, Model model) {
+        String view = "redirect:/game";
+
+        try{
+            gameService.insertGame(gameDO);
+            session.setAttribute("script", "alert('매칭 경기를 등록했습니다! 메시지를 기다려주세요 :)');");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            session.setAttribute("script", "alert('문제가 발생했습니다. 다시 시도해주세요.');");
+        }
+
 
         return view;
     }

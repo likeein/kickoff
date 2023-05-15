@@ -13,4 +13,6 @@ public interface GameMapper {
     GameDO getGameScoreDetail(int gameSeqno);
 
     Map<String, Object> selectMemInfo(Map<String, Object> map);
+
+    void insertGame(GameDO gameDO);
 }
