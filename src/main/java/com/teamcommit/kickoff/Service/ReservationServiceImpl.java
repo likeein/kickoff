@@ -3,6 +3,7 @@ package com.teamcommit.kickoff.Service;
 import com.teamcommit.kickoff.Do.EmployerDO;
 import com.teamcommit.kickoff.Do.PlaceDO;
 import com.teamcommit.kickoff.Do.ReservationDO;
+import com.teamcommit.kickoff.Do.UserDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,8 +42,8 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public void insertUserInfo(ReservationDO reservationDO, String userId) {
-        reservationMapper.insertUserInfo(reservationDO, userId);
+    public UserDO insertUserInfo(String userId) {
+        return reservationMapper.insertUserInfo(userId);
     }
 
     @Override

@@ -22,7 +22,7 @@ public interface ReservationMapper {
 
     public PlaceDO selectPlaceInfo(String empId);
 
-    public void insertUserInfo(ReservationDO reservationDO, String userId);
+    public UserDO insertUserInfo(String userId);
 
     public void insertReservationRequest(ReservationDO reservationDO);
 
