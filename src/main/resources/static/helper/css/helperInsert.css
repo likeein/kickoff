@@ -250,10 +250,9 @@ button.btn, .reservation, .reservationClose {
   --button-hover-bg-color: #7fb77e;
 }
 
-
 .modal_wrap{
         display: none;
-        width: 600px;
+        width: 500px;
         height: 500px;
         position: absolute;
         top:50%;

@@ -129,6 +129,7 @@
     <insert id="insertReservationRequest" parameterType="com.teamcommit.kickoff.Do.ReservationDO">
         <![CDATA[
             INSERT INTO RESERVATION (
+                USER_ID,
                 RESERVATION_TYPE,
                 RESERVATION_NO,
                 RESERVATION_PLACE_NAME,
@@ -141,9 +142,12 @@
                 RESERVATION_GAME_STYLE,
                 RESERVATION_PRICE,
                 RESERVATION_STATUS,
-                RESERVATION_REG_DATE
+                RESERVATION_REG_DATE,
+                PLACE_ID,
+                RESERVATION_PLACE_ADDRESS
             )
             VALUES (
+                        #{userId},
                        'USER',
                        RESERVATION_SEQ.NEXTVAL,
                        #{reservationPlaceName},
@@ -156,7 +160,9 @@
                        #{reservationGameStyle},
                        #{reservationPrice},
                        '예약대기',
-                       SYSDATE
+                       SYSDATE,
+                       #{placeId},
+                       #{reservationPlaceAddress}
             )
         ]]>
     </insert>
