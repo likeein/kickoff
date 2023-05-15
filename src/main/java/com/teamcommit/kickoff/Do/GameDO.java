@@ -18,7 +18,7 @@ public class GameDO {
 	//메시지 번호
 	private int messageSeqno;
 	//경기 날짜
-	private Date gameDate;
+	private String gameDate;
 	//경기 시작 시간
 	private String gameStartTime;
 	//경기 종료 시간
@@ -34,24 +34,12 @@ public class GameDO {
 	//매칭 기타사항
 	private String gameOther;
 
-	private PlaceDO placeDO;
-	private TeamDO teamDO;
+	private String placeName;
 
-	public PlaceDO getPlaceDO() {
-		return placeDO;
-	}
+	private String team1Name;
 
-	public void setPlaceDO(PlaceDO placeDO) {
-		this.placeDO = placeDO;
-	}
+	private String team2Name;
 
-	public TeamDO getTeamDO() {
-		return teamDO;
-	}
-
-	public void setTeamDO(TeamDO teamDO) {
-		this.teamDO = teamDO;
-	}
 
 	public int getGameSeqno() {
 		return gameSeqno;
@@ -93,11 +81,11 @@ public class GameDO {
 		this.messageSeqno = messageSeqno;
 	}
 
-	public Date getGameDate() {
+	public String getGameDate() {
 		return gameDate;
 	}
 
-	public void setGameDate(Date gameDate) {
+	public void setGameDate(String gameDate) {
 		this.gameDate = gameDate;
 	}
 
@@ -155,5 +143,29 @@ public class GameDO {
 
 	public void setGameOther(String gameOther) {
 		this.gameOther = gameOther;
+	}
+
+	public String getPlaceName() {
+		return placeName;
+	}
+
+	public void setPlaceName(String placeName) {
+		this.placeName = placeName;
+	}
+
+	public String getTeam1Name() {
+		return team1Name;
+	}
+
+	public void setTeam1Name(String team1Name) {
+		this.team1Name = team1Name;
+	}
+
+	public String getTeam2Name() {
+		return team2Name;
+	}
+
+	public void setTeam2Name(String team2Name) {
+		this.team2Name = team2Name;
 	}
 }

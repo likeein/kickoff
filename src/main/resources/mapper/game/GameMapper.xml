@@ -3,32 +3,11 @@
 
 
 <mapper namespace="com.teamcommit.kickoff.Service.GameMapper">
-    <resultMap id="teamDO" type="com.teamcommit.kickoff.Do.TeamDO">
-        <result property="team1Name" column="TEAM1_NAME"/>
-        <result property="team2Name" column="TEAM2_NAME"/>
-    </resultMap>
 
-    <resultMap id="placeDO" type="com.teamcommit.kickoff.Do.PlaceDO">
-        <result property="placeName" column="PLACE_NAME"/>
-    </resultMap>
-
-    <resultMap id="gameDO" type="com.teamcommit.kickoff.Do.GameDO">
-        <id property="gameSeqno" column="GAME_SEQNO"/>
-        <result property="gameDate" column="GAME_DATE"/>
-        <result property="gameStyle" column="GAME_STYLE"/>
-        <result property="gameGender" column="GAME_GENDER"/>
-        <result property="gameStatus" column="GAME_STATUS"/>
-        <association property="placeDO" resultMap="placeDO"/>
-        <association property="teamDO" resultMap="teamDO"/>
-    </resultMap>
-
-    <select id="gameDetail" parameterType="com.teamcommit.kickoff.Do.GameDO" resultMap="gameDO">
+    <select id="gameDetail" parameterType="com.teamcommit.kickoff.Do.GameDO" resultType="com.teamcommit.kickoff.Do.GameDO">
         <![CDATA[
-        SELECT G.GAME_SEQNO, P.PLACE_NAME, T1.TEAM_NAME AS TEAM1_NAME, T2.TEAM_NAME AS TEAM2_NAME, G.GAME_DATE, G.GAME_STYLE, G.GAME_GENDER, G.GAME_STATUS
-        FROM GAME G
-                 JOIN TEAM T1 ON G.TEAM1_ID  = T1.TEAM_SEQID
-                 JOIN TEAM T2 ON G.TEAM2_ID  = T2.TEAM_SEQID
-                 JOIN PLACE P ON G.PLACE_ID = P.PLACE_ID
+        SELECT PLACE_NAME, TEAM1_NAME, TEAM2_NAME, GAME_DATE, GAME_STYLE, GAME_GENDER, GAME_STATUS
+        FROM GAME
         ]]>
     </select>
 
