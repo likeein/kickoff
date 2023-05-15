@@ -34,6 +34,25 @@ public class GameDO {
 	//매칭 기타사항
 	private String gameOther;
 
+	private PlaceDO placeDO;
+	private TeamDO teamDO;
+
+	public PlaceDO getPlaceDO() {
+		return placeDO;
+	}
+
+	public void setPlaceDO(PlaceDO placeDO) {
+		this.placeDO = placeDO;
+	}
+
+	public TeamDO getTeamDO() {
+		return teamDO;
+	}
+
+	public void setTeamDO(TeamDO teamDO) {
+		this.teamDO = teamDO;
+	}
+
 	public int getGameSeqno() {
 		return gameSeqno;
 	}

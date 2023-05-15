@@ -24,7 +24,7 @@ public class GameController {
     private GameService gameService;
 
     @GetMapping("/game")
-    public String gameDetail(@ModelAttribute("gameDO") GameDO gameDO, Model model) {
+    public String gameDetail(@ModelAttribute("gameDO") GameDO gameDO, Model model) throws Exception {
         String view = "/game/game";
 
         try {

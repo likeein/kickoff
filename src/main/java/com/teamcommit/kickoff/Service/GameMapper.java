@@ -8,11 +8,11 @@ import java.util.Map;
 
 @Mapper
 public interface GameMapper {
-    List<GameDO> gameDetail(GameDO gameDO);
+    public List<GameDO> gameDetail(GameDO gameDO);
 
-    GameDO getGameScoreDetail(int gameSeqno);
+    public GameDO getGameScoreDetail(int gameSeqno);
 
     Map<String, Object> selectMemInfo(Map<String, Object> map);
 
-    void insertGame(GameDO gameDO);
+    public void insertGame(GameDO gameDO);
 }

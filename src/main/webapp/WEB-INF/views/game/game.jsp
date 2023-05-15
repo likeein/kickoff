@@ -64,7 +64,7 @@
                         <tr>
                             <th>풋살장</th>
                             <th>대전 팀</th>
-                            <th>시작 시간</th>
+                            <th>경기 날짜</th>
                             <th>경기 형태</th>
                             <th>성별</th>
                             <th>매칭 상태</th>
@@ -72,16 +72,16 @@
                         </thead>
                         <c:forEach var="list" items="${table}">
                             <tr>
-                                <td><c:out value="${list.placeName}" /></td>
-                                <td><c:out value="${list.team1Id} v/s ${list.team2Id}" /></td>
-                                <td><c:out value="${list.gameStartTime}" /></td>
+                                <td><c:out value="${list.placeDO.placeName}" /></td>
+                                <td><c:out value="${list.teamDO.team1Name} VS ${list.teamDO.team2Name}" /></td>
+                                <td><c:out value="${list.gameDate}" /></td>
                                 <td><c:out value="${list.gameStyle}" /></td>
                                 <td><c:out value="${list.gameGender}" /></td>
-                                <td><button type = "button" class = "btn_insert" onclick="location.href='/gameDetail?gameSeqno=${list.gameSeqNo}';">${list.gameStatus}</button></td>
+                                <td><button type = "button" class = "btn_detail" onclick="location.href='/gameDetail?gameSeqno=${list.gameSeqno}';">${list.gameStatus}</button></td>
                             </tr>
                         </c:forEach>
                     </table>
-                    <div class="btn_insert">
+                    <div class="btn_container">
                     <button type="button" class="btn_insert" onclick="location.href='/gameScore';">매칭 기록</button>
                     <button type="button" class="btn_insert" onclick="location.href='/gameUpdate';">매칭 글 등록</button>
                 </div>
@@ -101,29 +101,7 @@
         </div>
         <!-- End of Page Wrapper -->
 
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- Bootstrap core JavaScript-->
             <script src="/helper/vendor/jquery/jquery.min.js"></script>
 
@@ -143,5 +121,18 @@
             <script src="/includes/js/main.js"></script>
             <script src="/includes/js/week.js"></script>
 
-            </body>
+        <script>
+            var buttons = document.getElementsByClassName("btn_detail");
+            for (var i = 0; i < buttons.length; i++) {
+                var button = buttons[i];
+
+                if (button.innerText === "모집 중") {
+                    button.style.backgroundColor = "#FFC090";
+                } else if (button.innerText === "모집 완료") {
+                    button.style.backgroundColor = "lightgray";
+                    button.disabled = true;
+                }
+            }
+        </script>
+        </body>
 </html>
