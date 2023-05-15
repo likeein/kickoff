@@ -72,12 +72,12 @@
                         </thead>
                         <c:forEach var="list" items="${table}">
                             <tr>
-                                <td><c:out value="${list.placeId}" /></td>
+                                <td><c:out value="${list.placeName}" /></td>
                                 <td><c:out value="${list.team1Id} v/s ${list.team2Id}" /></td>
                                 <td><c:out value="${list.gameStartTime}" /></td>
                                 <td><c:out value="${list.gameStyle}" /></td>
                                 <td><c:out value="${list.gameGender}" /></td>
-                                <td><button type = "button" class = "btn_insert" onclick="location.href='/gameDetail?gameSeqno=${list.gameStatus}';">매칭 중</button></td>
+                                <td><button type = "button" class = "btn_insert" onclick="location.href='/gameDetail?gameSeqno=${list.gameSeqNo}';">${list.gameStatus}</button></td>
                             </tr>
                         </c:forEach>
                     </table>
