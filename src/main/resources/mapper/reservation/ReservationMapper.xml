@@ -3,8 +3,6 @@
 
 <mapper namespace="com.teamcommit.kickoff.Service.ReservationMapper">
 
-    <!-- Member Info -->
-
     <!-- Reservation List -->
     <select id="selectReservationList" parameterType="com.teamcommit.kickoff.Do.ReservationDO" resultType="com.teamcommit.kickoff.Do.ReservationDO">
         <![CDATA[
@@ -82,62 +80,95 @@
     <!-- Reservation Update -->
     <update id="updateReservation" parameterType="com.teamcommit.kickoff.Do.ReservationDO">
         <![CDATA[
-        UPDATE
-            RESERVATION
-        SET
-            RESERVATION_PLACE_NAME = #{reservationPlaceName},
-            RESERVATION_COURT_NAME = #{reservationCourtName},
-            RESERVATION_PLACE_ADDRESS = #{reservationPlaceAddress},
-            RESERVATION_COURT_FORM = #{reservationCourtForm},
-            RESERVATION_HEADCOUNT = #{reservationHeadcount},
-            RESERVATION_DATE = #{reservationDate},
-            RESERVATION_START_TIME = #{reservationStartTime},
-            RESERVATION_END_TIME = #{reservationEndTime},
-            RESERVATION_STATUS = #{reservationStatus},
-            RESERVATION_PRICE = #{reservationPrice},
-            RESERVATION_COMMENT = #{reservationComment},
-            RESERVATION_REG_DATE =  #{reservationRegDate},
-            RESERVATION_EDIT_DATE = SYSDATE
-        WHERE
-            RESERVATION_NO = #{reservationNo}
+            UPDATE
+                RESERVATION
+            SET
+                RESERVATION_PLACE_NAME = #{reservationPlaceName},
+                RESERVATION_COURT_NAME = #{reservationCourtName},
+                RESERVATION_PLACE_ADDRESS = #{reservationPlaceAddress},
+                RESERVATION_COURT_FORM = #{reservationCourtForm},
+                RESERVATION_HEADCOUNT = #{reservationHeadcount},
+                RESERVATION_DATE = #{reservationDate},
+                RESERVATION_START_TIME = #{reservationStartTime},
+                RESERVATION_END_TIME = #{reservationEndTime},
+                RESERVATION_STATUS = #{reservationStatus},
+                RESERVATION_PRICE = #{reservationPrice},
+                RESERVATION_COMMENT = #{reservationComment},
+                RESERVATION_REG_DATE =  #{reservationRegDate},
+                RESERVATION_EDIT_DATE = SYSDATE
+            WHERE
+                RESERVATION_NO = #{reservationNo}
         ]]>
     </update>
 
     <!-- place info -->
     <select id="selectPlaceInfo" parameterType="com.teamcommit.kickoff.Do.PlaceDO" resultType="com.teamcommit.kickoff.Do.PlaceDO">
         <![CDATA[
-        SELECT
-            PLACE_ID,
-            PLACE_NAME,
-            PLACE_SIZE,
-            PLACE_GROUND,
-            PLACE_PARKING,
-            PLACE_ADDRESS,
-            IMG_NAME,
-            IMG_PATH
-        FROM
-            PLACE
-        WHERE
-            EMP_ID = #{empId}
+            SELECT *
+            FROM
+                PLACE
+            WHERE
+                EMP_ID = #{empId}
         ]]>
     </select>
 
-<!--    &lt;!&ndash; place info &ndash;&gt;
-    <select id="selectPlaceInfo" parameterType="com.teamcommit.kickoff.Do.PlaceDO" resultType="com.teamcommit.kickoff.Do.PlaceDO">
+    <!-- user info -->
+    <update id="insertUserInfo" parameterType="com.teamcommit.kickoff.Do.ReservationDO">
         <![CDATA[
-        SELECT *
-        FROM
-            PLACE
-        WHERE
-            PLACE_ID = (
-                        SELECT
-                            PLACE_ID
-                        FROM
-                            RESERVATION
-                        WHERE
-                            RESERVATION_NO = #{reservationNo} AND RESERVATION_CANCEL = 'N'
-                        )
+            UPDATE
+                RESERVATION
+            SET (
+                RESERVATION_USER_NAME,
+                RESERVATION_USER_PHONE
+                ) = ( SELECT
+                          USER_NAME AS RESERVATION_USER_NAME,
+                          USER_PHONE_NUMBER AS RESERVATION_USER_PHONE
+                      FROM
+                          USERS
+                      WHERE
+                          USER_ID = #{userId}
+                    )
+            WHERE
+                RESERVATION_NO = #{reservationNo}
         ]]>
-    </select>-->
+    </update>
+
+    <!-- reservation request insert -->
+    <insert id="insertReservationRequest" parameterType="com.teamcommit.kickoff.Do.ReservationDO">
+        <![CDATA[
+            INSERT INTO RESERVATION (
+                RESERVATION_TYPE,
+                RESERVATION_NO,
+                PLACE_ID,
+                RESERVATION_PLACE_NAME,
+                RESERVATION_COURT_NAME,
+                RESERVATION_USER_NAME,
+                RESERVATION_USER_PHONE,
+                RESERVATION_DATE,
+                RESERVATION_START_TIME,
+                RESERVATION_END_TIME,
+                RESERVATION_GAME_STYLE,
+                RESERVATION_PRICE,
+                RESERVATION_STATS,
+                RESERVATION_REG_DATE
+            )
+            VALUES (
+                       'USER',
+                       RESERVATION_SEQ.NEXTVAL,
+                       #{placeId},
+                       #{reservationPlaceName},
+                       #{reservationCourtName},
+                       #{reservationUserName},
+                       #{reservationUserPhone},
+                       #{reservationDate},
+                       #{reservationStartTime},
+                       #{reservationEndTime},
+                       #{reservationGameStyle},
+                       #{reservationPrice},
+                       '예약대기',
+                       SYSDATE
+            )
+        ]]>
+    </insert>
 
 </mapper>

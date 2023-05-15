@@ -3,6 +3,7 @@ package com.teamcommit.kickoff.Controller;
 import com.teamcommit.kickoff.Do.EmployerDO;
 import com.teamcommit.kickoff.Do.PlaceDO;
 import com.teamcommit.kickoff.Do.ReservationDO;
+import com.teamcommit.kickoff.Do.UserDO;
 import com.teamcommit.kickoff.Service.LoginService;
 import com.teamcommit.kickoff.Service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,14 +98,29 @@ public class ReservationController {
         return mv;
     }
 
-    @RequestMapping(value = "/reservationRequest")
-    public String reservationRequestForm(@ModelAttribute("reservationDO") ReservationDO reservationDO, HttpServletRequest request, Model model) throws Exception {
+    @RequestMapping(value = "/reservationRequestForm")
+    public String reservationRequestForm(@ModelAttribute("reservationDO") ReservationDO reservationDO, @RequestParam("reservationNo") int reservationNo, HttpServletRequest request, Model model) throws Exception {
         String view = "/reservation/reservationRequest";
 
+        String userId = (String) request.getSession().getAttribute("userId");
+
+        reservationService.insertUserInfo(reservationDO, userId);
+
+        ReservationDO reservationDetail = reservationService.selectReservationDetail(reservationNo);
+        model.addAttribute("reservationDetail", reservationDetail);
 
         return view;
     }
 
+    @RequestMapping("/reservationRequest")
+    public ModelAndView reservationRequest(@ModelAttribute("reservationDO") ReservationDO reservationDO) throws Exception {
+
+        ModelAndView mv = new ModelAndView("redirect:/reservation");
+
+        reservationService.insertReservationRequest(reservationDO);
+
+        return mv;
+    }
 }
 
 

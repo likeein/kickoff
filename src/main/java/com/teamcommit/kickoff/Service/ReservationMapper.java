@@ -21,4 +21,9 @@ public interface ReservationMapper {
     public void updateReservation(ReservationDO reservationDO);
 
     public PlaceDO selectPlaceInfo(String empId);
+
+    public void insertUserInfo(ReservationDO reservationDO, String userId);
+
+    public void insertReservationRequest(ReservationDO reservationDO);
+
 }

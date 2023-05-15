@@ -18,4 +18,8 @@ public interface ReservationService {
 
     PlaceDO selectPlaceInfo(String empId) throws Exception;
 
+    void insertUserInfo(ReservationDO reservationDO, String userId) throws Exception;
+
+    void insertReservationRequest(ReservationDO reservationDO) throws Exception;
+
 }
