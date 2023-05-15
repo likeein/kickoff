@@ -54,54 +54,55 @@
 	<section class="checkout spad">
 		<div class="container">
 			<div class="checkout__form">
-				<form id="frm" name="frm" action="#" method="POST">
+				<form id="frm" name="frm" action="" method="POST">
 					<div class="row-request-container">
 						<div class="col-lg-8-1 col-md-6">
 							<div class="checkout__input__request">
 								<p>풋살장<span>*</span></p>
-								<input type="text" value="'풋살장 이름' 가져오기 (입력 비활성화)" readonly>
-								<!-- readonly: 입력 필드 비활성화되지만 form으로 전송 가능 -->
+								<input name="reservationPlaceName" value="${reservationDetail.reservationPlaceName}" readonly>
 							</div>
 							<div class="checkout__input__request">
 								<p>코트<span>*</span></p>
-								<input type="text" value="A코트" readonly>
+								<input name="reservationCourtName" value="${reservationDetail.reservationCourtName}" readonly>
 							</div>
 							<div class="checkout__input__request">
 								<p>신청자<span>*</span></p>
-								<input type="text" value="유재석" readonly>
+								<input type="text" name="reservationUserName" value="${userInfo.userName}" readonly>
 							</div>
 							<div class="checkout__input__request">
 								<p>번호<span>*</span></p>
-								<input type="text" value="010-1234-5678" readonly>
+								<input type="text" name="reservationUserPhone" value="${userInfo.userPhoneNumber}" readonly>
 							</div>
 							<div class="checkout__input__request">
 								<p>예약날짜<span>*</span></p>
-								<input type="text" value="5월 3일" readonly>
+								<input type="text" name="reservationDate" value="${reservationDetail.reservationDate}" readonly>
 							</div>
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="checkout__input__request">
 										<p>시작 시간<span>*</span></p>
-										<input type="text" value="20:00" readonly>
+										<input type="text" name="reservationStartTime" value="${reservationDetail.reservationStartTime}:00" readonly>
 									</div>
 								</div>
 								<div class="col-lg-6">
 									<div class="checkout__input__request">
 										<p>종료 시간<span>*</span></p>
-										<input type="text" value="22:00" readonly>
+										<input type="text" name="reservationEndTime" value="${reservationDetail.reservationEndTime}:00" readonly>
 									</div>
 								</div>
 							</div>
 							<div class="checkout__input__request">
 								<p>경기<span>*</span></p>
-								<input type="text" value="6 vs 6" readonly>
+								<input type="text" name="reservationGameStyle" value="${reservationDetail.reservationHeadcount}" readonly>
 							</div>
 							<div class="checkout__input__request">
 								<p>대관비<span>*</span></p>
-								<input type="text" value="100,000원" readonly>
+								<input type="text" name="reservationPrice" value="${reservationDetail.reservationPrice}원" readonly>
 							</div>
+							<input type="hidden" name="userId" value="${userId}" />
+							<input type="hidden" name="reservationPlaceName" value="${reservationDetail.reservationPlaceName}" />
 							<div class="btn-container">
-								<a href="/myBoard" id="insert" class="request">신청</a>
+								<input type="button" id="insert" class="request" onclick="requestSubmit()" value="신청"/>
 								<a href="/reservation" id="cancle" class="cancle">취소</a>
 							</div>
 						</div>

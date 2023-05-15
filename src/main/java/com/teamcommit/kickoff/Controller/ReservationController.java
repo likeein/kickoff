@@ -104,7 +104,8 @@ public class ReservationController {
 
         String userId = (String) request.getSession().getAttribute("userId");
 
-        reservationService.insertUserInfo(reservationDO, userId);
+        UserDO userInfo = reservationService.insertUserInfo(userId);
+        model.addAttribute("userInfo", userInfo);
 
         ReservationDO reservationDetail = reservationService.selectReservationDetail(reservationNo);
         model.addAttribute("reservationDetail", reservationDetail);
