@@ -92,7 +92,7 @@
 											<!-- opener 에 원래 active 열고 닫게 할 수 있어야 함 -->
 											<span class="opener active">풋살장 관리</span>
 											<ul>
-												<li><a href="/empFutsal">풋살장 등록</a></li>
+												<li><a href="/empFutsalForm">풋살장 등록</a></li>
 												<li><a href="/empFutsalFix">풋살장 목록</a></li>
 											</ul>
 										</li>										

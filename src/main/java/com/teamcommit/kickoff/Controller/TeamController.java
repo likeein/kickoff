@@ -59,7 +59,7 @@ public class TeamController {
 
     // 팀 등록 페이지 이동
     @GetMapping("/teamInsert")
-    public String teamInsert(HttpSession session, Model model) {
+    public String teamInsert(HttpSession session, Model model, HttpServletRequest request) {
         String view = "";
 
         if(session.getAttribute("userId") == null) {
@@ -102,11 +102,19 @@ public class TeamController {
         return view;
     }
 
-    // 팀 지원
+    // 팀 지원 페이지 이동
     @GetMapping("/teamApply")
-    public String teamApply() {
-        String view = "/team/teamApply";
+    public String teamInsert(HttpSession session, Model model) {
+        String view = "";
 
+        if(session.getAttribute("userId") == null) {
+            model.addAttribute("script", "alert('로그인 후 이용하실 수 있습니다.');");
+            view = "login/loginAll";
+        }
+        else if (session.getAttribute("userId") != null) {
+            view = "team/teamApply";
+        }
         return view;
     }
+
 }

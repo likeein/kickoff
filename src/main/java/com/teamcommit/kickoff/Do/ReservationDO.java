@@ -57,8 +57,28 @@ public class ReservationDO {
 
 	private String reservationPlaceParking;
 
+	private String reservationUserName;
+
+	private String reservationUserPhone;
+
 	public ReservationDO() {
 
+	}
+
+	public String getReservationUserName() {
+		return reservationUserName;
+	}
+
+	public void setReservationUserName(String reservationUserName) {
+		this.reservationUserName = reservationUserName;
+	}
+
+	public String getReservationUserPhone() {
+		return reservationUserPhone;
+	}
+
+	public void setReservationUserPhone(String reservationUserPhone) {
+		this.reservationUserPhone = reservationUserPhone;
 	}
 
 	public String getReservationType() {

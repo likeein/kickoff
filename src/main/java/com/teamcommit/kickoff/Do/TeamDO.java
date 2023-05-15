@@ -33,6 +33,8 @@ public class TeamDO {
 	private String teamStatus;
 	// 팀 게시글 번호
 	private int teamSeqNo;
+
+	private String leaderId;
 	
 	public int getTeamSeqId() {
 		return teamSeqId;
@@ -108,4 +110,10 @@ public class TeamDO {
 	}
 	public int getTeamSeqNo() {return teamSeqNo;}
 	public void setTeamSeqNo(int teamSeqNo) {this.teamSeqNo = teamSeqNo;}
+	public String getLeaderId() {
+		return leaderId;
+	}
+	public void setLeaderId(String leaderId) {
+		this.leaderId = leaderId;
+	}
 }

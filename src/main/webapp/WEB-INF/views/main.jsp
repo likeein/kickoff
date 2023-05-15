@@ -447,8 +447,8 @@
                     <div class="col-md-6">
                       <h3>Telephone</h3>
                       <p>
-                        <a href="#">+1 234 5678 910</a> <br>
-                        <a href="#">+2 234 5678 910</a>
+                        <a href="#this">+1 234 5678 910</a> <br>
+                        <a href="#this">+2 234 5678 910</a>
                       </p>
                     </div>
                   </div>

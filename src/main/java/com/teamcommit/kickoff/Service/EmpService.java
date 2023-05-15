@@ -16,7 +16,7 @@ public interface EmpService {
 
     List<ReservationDO> selectReservation(ReservationDO reservationDO) throws Exception;
 
-    PlaceDO empFutsalInsert(int placeId) throws Exception;
+    PlaceDO empFutsalInsert(PlaceDO placeDO) throws Exception;
 
     void updateFutsal(PlaceDO placeDO) throws Exception;
 }

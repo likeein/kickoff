@@ -6,6 +6,7 @@ import com.teamcommit.kickoff.Do.*;
 import com.teamcommit.kickoff.Service.BoardService;
 import com.teamcommit.kickoff.Service.EmpService;
 import com.teamcommit.kickoff.Service.LoginService;
+import com.teamcommit.kickoff.Service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -31,6 +32,9 @@ public class EmpController {
 
     @Autowired
     private LoginService loginService;
+
+    @Autowired
+    private ReservationService reservationService;
 
     @GetMapping("/empReservation")
     public String empReservation(@ModelAttribute("reservationDO") ReservationDO reservationDO, Model model) {
@@ -82,21 +86,38 @@ public class EmpController {
 
     /* 풋살장 등록 */
     @RequestMapping(value = "/empFutsalForm")
-    public String empFutsalForm(@ModelAttribute("placeDO") PlaceDO placeDO, @RequestParam("placeId") int placeId, Model model) throws Exception {
+    public String empFutsalForm(@ModelAttribute("placeDO") PlaceDO placeDO, Model model, HttpServletRequest request) throws Exception {
         String view = "/emp/empFutsal";
 
-        PlaceDO empFutsalInsert = empService.empFutsalInsert(placeId);
-        model.addAttribute("empFutsalInsert", empFutsalInsert);
+        String empId = (String) request.getSession().getAttribute("empId");
 
+        PlaceDO placeInfo = reservationService.selectPlaceInfo(empId);
+        model.addAttribute("placeInfo", placeInfo);
 
         return view;
     }
 
+    /*
+        reservation에 placeInfo를 가져와서 넘길려고 만들어 놓은게 있어서,
+        그걸 이용해서 정보 가져오려고 reservationService를 사용했어요.
+        사용하기 위해서, 위에 @Autowired로 reservationService 선언했구요.
+        나중에 insert 쿼리에서 where로 placeId 하실 때 사용하시면 될 것 같아요
+        insert쿼리에는 임시로 두개만 적어 놓았어요..
+        그리고 emp의 5개 jsp마다 '풋살장 등록' 클릭 링크 주소 변경해 놓았어요.
+    */
+
     @RequestMapping(value="/empFutsal")
-    public String empFutsal(@ModelAttribute("placeDO") PlaceDO placeDO, HttpServletRequest request, RedirectAttributes redirect , Model model){
+    public ModelAndView empFutsal(@ModelAttribute("placeDO") PlaceDO placeDO, HttpServletRequest request, RedirectAttributes redirect) throws Exception {
+
+        ModelAndView mv = new ModelAndView("redirect:/empFutsalFix");
+
+        empService.empFutsalInsert(placeDO);
+
+        return mv;
 
 
-        try {
+
+/*       try {
 
             empService.updateFutsal(placeDO);
             redirect.addFlashAttribute("redirect", placeDO.getPlaceId());
@@ -109,7 +130,7 @@ public class EmpController {
 
         }
 
-        return "redirect:/empFutsal?placeId:"+ placeDO.getPlaceId();
+        return mv;*/
     }
 
 
