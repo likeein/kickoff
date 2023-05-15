@@ -71,8 +71,8 @@
 						<tr>
 							<th scope="row">글 번호</th>
 							<td>${content.helperSeqno}</td>
-							<th scope="row">조회수</th>
-							<td>조회수</td>
+							<th scope="row">모집 인원 수</th>
+							<td>${content.helperWant}</td>
 						</tr>
 						<tr>
 							<th scope="row">작성자</th>
