@@ -60,6 +60,16 @@ public class HelperController {
         return view;
     }
 
+    @PostMapping("/helperInsert")
+    public String helperInsertNot(Model model, HttpSession session) {
+        String view = "/helper/helperInsert";
+
+        if(model.getAttribute("placeName") == null || model.getAttribute("address") == null || model.getAttribute("date") == null || model.getAttribute("helperId") == null) {
+            session.setAttribute("resScript", "alert('예약을 먼저 진행하여 내역을 등록해주세요 :)');");
+        }
+        return view;
+    }
+
     @GetMapping("/helperReservation")
     public String helperInsert(@RequestParam(value = "helperPlaceName") String helperPlaceName, @RequestParam(value = "helperAddress") String helperAddress,
                                @RequestParam(value = "helperTime") String helperTime, @RequestParam(value = "userId") String userId, Model model) {
@@ -72,7 +82,7 @@ public class HelperController {
     }
 
     @PostMapping("/helperReservation")
-    public String helperInsert(@ModelAttribute("helperDO") HelperDO helperDO, HttpSession session) {
+    public String helperInsert(@ModelAttribute("helperDO") HelperDO helperDO, HttpSession session, Model model) {
         String view = "redirect:/helperList";
 
             try {
@@ -83,6 +93,8 @@ public class HelperController {
                 e.printStackTrace();
                 session.setAttribute("script", "alert('양식을 제대로 입력해주세요 :)');");
             }
+
+
         return view;
     }
 
