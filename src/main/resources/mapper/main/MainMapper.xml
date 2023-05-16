@@ -16,7 +16,7 @@
         <![CDATA[
         SELECT * FROM (SELECT *
                        FROM GAME
-                       WHERE GAME_DATE = SYSDATE) WHERE ROWNUM <= 10
+                       WHERE GAME_DATE = TO_CHAR(SYSDATE, 'YYYY-MM-DD')) WHERE ROWNUM <= 10
 
         ]]>
     </select>
