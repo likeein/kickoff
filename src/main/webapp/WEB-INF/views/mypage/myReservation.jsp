@@ -51,8 +51,8 @@
 												<div class="root-content">
 													<div class="container">
 														<div class="facility-content">
-															<div class="image-wrap">
-																<img class="image" src="${row.imgPath}${row.imgName}" />
+															<div class="image-wrap"><%--${row.imgPath}${row.imgName}--%>
+																<img class="image" src="/images/court1.jpg" />
 															</div>
 															<div class="facility-wrap">
 																<h2>${row.reservationPlaceName}</h2>
