@@ -19,6 +19,12 @@ public class MypageController {
     @Autowired
     ReservationService reservationService;
 
+    @RequestMapping(value = "/myReservation")
+    public String myReservationList() throws Exception{
+        String view = "/mypage/myReservation";
+
+        return view;
+    }
 /*    @RequestMapping(value = "/myReservation")
     public String myReservationList(@ModelAttribute("reservationDO") ReservationDO reservationDO, HttpServletRequest request, Model model) throws Exception {
         String view = "/mypage/myReservation";
