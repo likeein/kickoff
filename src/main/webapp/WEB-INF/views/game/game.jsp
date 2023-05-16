@@ -73,7 +73,7 @@
                         <c:forEach var="list" items="${table}">
                             <tr>
                                 <td><c:out value="${list.placeName}" /></td>
-                                <td><c:out value="${list.team1Name} VS ${list.team2Name}" /></td>
+                                <td><c:out value="${list.team1Name}" /><span style="text-weight:bold; color:red;">&nbsp;VS&nbsp;</span><c:out value="${list.team2Name}" /></td>
                                 <td><c:out value="${list.gameDate}" /></td>
                                 <td><c:out value="${list.gameStyle}" /></td>
                                 <td><c:out value="${list.gameGender}" /></td>
@@ -126,9 +126,9 @@
             for (var i = 0; i < buttons.length; i++) {
                 var button = buttons[i];
 
-                if (button.innerText === "모집 중") {
+                if (button.innerText === "매칭 중") {
                     button.style.backgroundColor = "#FFC090";
-                } else if (button.innerText === "모집 완료") {
+                } else if (button.innerText === "매칭완료") {
                     button.style.backgroundColor = "lightgray";
                     button.disabled = true;
                 }

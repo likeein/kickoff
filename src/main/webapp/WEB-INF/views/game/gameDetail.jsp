@@ -56,11 +56,11 @@
 					<tbody>
 						<tr>
 							<th scope="row">풋살장 이름</th>
-							<td>${gameScoreDetail.placeId}</td>
+							<td>${gameScoreDetail.placeName}</td>
 						</tr>
 						<tr>
 							<th scope="row">팀 이름</th>
-							<td>${gameScoreDetail.team1Id} v/s ${gameScoreDetail.team2Id}</td>
+							<td>${gameScoreDetail.team1Name} <span style="text-weight:bold; color:red;">&nbsp;VS&nbsp;</span> ${gameScoreDetail.team2Name}</td>
 						</tr>
 						<tr>
 							<th scope="row">매칭 일정</th>

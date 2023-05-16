@@ -36,6 +36,16 @@ public class GameController {
         return view;
     }
 
+    @RequestMapping( "/gameDetail")
+    public String gameDetail(@ModelAttribute("gameDO") GameDO gameDO, @RequestParam("gameSeqno") int gameSeqno, HttpServletRequest request, Model model) throws Exception {
+        String view = "/game/gameDetail";
+
+        GameDO gameScoreDetail = gameService.getGameScoreDetail(gameSeqno);
+        model.addAttribute("gameScoreDetail", gameScoreDetail);
+
+        return view;
+    }
+
     @GetMapping("/gameScore")
     public String gameScore() {
         String view = "/game/gameScore";
