@@ -19,17 +19,17 @@ public class MypageController {
     @Autowired
     ReservationService reservationService;
 
-    @RequestMapping(value = "/myReservation")
+/*    @RequestMapping(value = "/myReservation")
     public String myReservationList(@ModelAttribute("reservationDO") ReservationDO reservationDO, HttpServletRequest request, Model model) throws Exception {
-/*        String view = "/mypage/myReservation";
+        String view = "/mypage/myReservation";
 
         String userId = (String) request.getSession().getAttribute("userId");
 
         List<ReservationDO> list = reservationService.selectReservationList(reservationDO);
         model.addAttribute("reservationList", list);
 
-        return view;*/
-    }
+        return view;
+    }*/
 
     @RequestMapping(value = "/myBoardList")
     public String myBoardList() throws Exception {
