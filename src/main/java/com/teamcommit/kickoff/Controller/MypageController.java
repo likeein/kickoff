@@ -1,22 +1,34 @@
 package com.teamcommit.kickoff.Controller;
 
+import com.teamcommit.kickoff.Do.PlaceDO;
 import com.teamcommit.kickoff.Do.ReservationDO;
+import com.teamcommit.kickoff.Service.ReservationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
 public class MypageController {
 
-    @RequestMapping(value = "/myReservation")
-    public String myReservationList() throws Exception {
-        String view = "/mypage/myReservation";
+    @Autowired
+    ReservationService reservationService;
 
-        return view;
+    @RequestMapping(value = "/myReservation")
+    public String myReservationList(@ModelAttribute("reservationDO") ReservationDO reservationDO, HttpServletRequest request, Model model) throws Exception {
+/*        String view = "/mypage/myReservation";
+
+        String userId = (String) request.getSession().getAttribute("userId");
+
+        List<ReservationDO> list = reservationService.selectReservationList(reservationDO);
+        model.addAttribute("reservationList", list);
+
+        return view;*/
     }
 
     @RequestMapping(value = "/myBoardList")

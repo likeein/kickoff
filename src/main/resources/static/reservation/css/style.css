@@ -718,6 +718,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .checkout__input label {
 	margin-right: 30px;
+	color: #b2b2b2;
 }
 
 .checkout__input label input {
