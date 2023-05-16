@@ -69,7 +69,7 @@ footer p {
 }
 
 .footer-container {
-	max-width: 1140px;
+	max-width: 1280px;
 	width: 100%;
 	padding-right: 15px;
 	padding-left: 15px;
@@ -93,7 +93,7 @@ footer p {
 }
 
 .pr-1 {
-	padding-left: 7rem !important;
+	padding-left: 8rem !important;
 }
 
 .go-home {
