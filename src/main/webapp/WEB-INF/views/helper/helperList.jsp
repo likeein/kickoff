@@ -76,7 +76,7 @@
                                     <th>포지션</th>
                                     <th>팀레벨</th>
                                     <th>성별</th>
-                                    <th>위치</th>
+                                    <th>풋살장</th>
                                     <th>경기 날짜</th>
                                     <th>작성자</th>
                                     <th>용병 상태</th>
@@ -88,7 +88,7 @@
                                         <td><c:out value="${list.helperPosition}" /></td>
                                         <td><c:out value="${list.helperTeamLevel}" /></td>
                                         <td><c:out value="${list.helperGender}" /></td>
-                                        <td><c:out value="${list.helperAddress}" /></td>
+                                        <td><c:out value="${list.helperPlaceName}" /></td>
                                         <td><c:out value="${list.helperTime}" /></td>
                                         <td><c:out value="${list.userId}" /></td>
                                         <td><button type = "button" class = "btn_detail" onclick="location.href='/helperDetail?helperSeqno=${list.helperSeqno}';">${list.helperStatus}</button></td>
