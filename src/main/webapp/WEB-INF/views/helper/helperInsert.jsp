@@ -45,6 +45,10 @@
 		}
 	</style>
 
+	<script>
+		${script}
+	</script>
+
 </head>
 <body style="overflow-x: hidden">
 

@@ -32,7 +32,6 @@
     <link rel = "stylesheet" href = "/includes/css/week.css" />
 
     <script>
-        ${script}
         ${returnScript}
     </script>
 
@@ -79,6 +78,7 @@
                                     <th>성별</th>
                                     <th>위치</th>
                                     <th>경기 날짜</th>
+                                    <th>작성자</th>
                                     <th>용병 상태</th>
                                 </tr>
                                 </thead>
@@ -90,6 +90,7 @@
                                         <td><c:out value="${list.helperGender}" /></td>
                                         <td><c:out value="${list.helperAddress}" /></td>
                                         <td><c:out value="${list.helperTime}" /></td>
+                                        <td><c:out value="${list.userId}" /></td>
                                         <td><button type = "button" class = "btn_detail" onclick="location.href='/helperDetail?helperSeqno=${list.helperSeqno}';">${list.helperStatus}</button></td>
                                     </tr>
                                 </c:forEach>

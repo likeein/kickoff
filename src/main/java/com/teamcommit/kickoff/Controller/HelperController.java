@@ -84,7 +84,7 @@ public class HelperController {
 
     @PostMapping("/helperReservation")
     public String helperInsert(@ModelAttribute("helperDO") HelperDO helperDO, HttpSession session, Model model) {
-        String view = "/helper/helperList";
+        String view = "/helper/helperInsert";
 
             try {
                 helperService.insertHelper(helperDO);
