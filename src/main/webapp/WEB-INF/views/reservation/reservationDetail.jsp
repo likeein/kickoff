@@ -45,7 +45,7 @@
 						<div class="ground-title-content">
 							<div class="address-wrap">
 								<h3 class="placeName">${reservationDetail.reservationPlaceName}</h3>
-								<p>${reservationDetail.reservationPlaceAddress}</p>
+								<p class="address">${reservationDetail.reservationPlaceAddress}</p>
 							</div>
 							<div class="time-price-wrap">
 								<p>${reservationDetail.reservationDate} ${reservationDetail.reservationStartTime}:00~${reservationDetail.reservationEndTime}:00</p>
@@ -158,7 +158,7 @@
 							구장위치<span>*</span>
 						</h5>
 						<div class="map-container">
-							<div id="map">지도지도 카카오 API 자리</div>
+							<div id="map"></div>
 							<div class="title-wrap be-default mb-3">
 								<p>${reservationDetail.reservationPlaceAddress}</p>
 							</div>
